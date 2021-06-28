@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.joinedGameUpdatedPayload = exports.gameActionRequestPayload = exports.gameStatusCheckRequestPayload = exports.gameOfferingCancelRequestPayload = exports.gameRematchDenyRequestPayload = exports.gameRematchAcceptRequestPayload = exports.gameRematchOfferingRequestPayload = exports.gameMoveRequestPayload = exports.gameAbortionRequestPayload = exports.gameResignationRequestPayload = exports.gameDrawDenyRequestPayload = exports.gameDrawAcceptRequestPayload = exports.gameDrawOfferingRequestPayload = exports.gameChallengeDenyRequestPayload = exports.gameChallengeAcceptRequestPayload = exports.gameChallengeOfferingRequestPayload = exports.gameJoinRequestPayload = void 0;
+exports.joinedGameUpdatedPayload = exports.gameActionRequestPayload = exports.gameStatusCheckRequestPayload = exports.gameOfferingCancelRequestPayload = exports.gameTakebackOfferingDenyRequestPayload = exports.gameTakebackOfferingAcceptRequestPayload = exports.gameTakebackOfferingRequestPayload = exports.gameRematchDenyRequestPayload = exports.gameRematchAcceptRequestPayload = exports.gameRematchOfferingRequestPayload = exports.gameMoveRequestPayload = exports.gameAbortionRequestPayload = exports.gameResignationRequestPayload = exports.gameDrawDenyRequestPayload = exports.gameDrawAcceptRequestPayload = exports.gameDrawOfferingRequestPayload = exports.gameChallengeDenyRequestPayload = exports.gameChallengeAcceptRequestPayload = exports.gameChallengeOfferingRequestPayload = exports.gameJoinRequestPayload = void 0;
 var io = require("io-ts");
 var gameRecord_1 = require("../records/gameRecord");
 var chessGame_1 = require("../chessGame");
@@ -62,6 +62,22 @@ exports.gameRematchAcceptRequestPayload = io.type({
 });
 exports.gameRematchDenyRequestPayload = io.type({
     kind: io.literal('gameRematchDenyRequest'),
+    content: io.undefined,
+});
+exports.gameTakebackOfferingRequestPayload = io.type({
+    kind: io.literal('gameTakebackOfferingRequest'),
+    content: io.type({
+        toUserId: io.string,
+        byUserId: io.string,
+        gameId: io.string,
+    }),
+});
+exports.gameTakebackOfferingAcceptRequestPayload = io.type({
+    kind: io.literal('gameTakebackOfferingAcceptRequest'),
+    content: io.undefined,
+});
+exports.gameTakebackOfferingDenyRequestPayload = io.type({
+    kind: io.literal('gameTakebackOfferingDenyRequest'),
     content: io.undefined,
 });
 exports.gameOfferingCancelRequestPayload = io.type({
