@@ -113,6 +113,10 @@ export const gameTakebackOfferingDenyRequestPayload = io.type({
   content: io.undefined,
 });
 
+export type GameTakebackOfferingDenyRequestPayload = io.TypeOf<
+  typeof gameTakebackOfferingAcceptRequestPayload
+>;
+
 export const gameOfferingCancelRequestPayload = io.type({
   kind: io.literal('gameOfferingCancelRequest'),
   content: io.undefined,
