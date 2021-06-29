@@ -291,6 +291,15 @@ export declare const gameActionRequestPayload: io.UnionC<[io.TypeC<{
     kind: io.LiteralC<"gameDrawOfferingRequest">;
     content: io.UndefinedC;
 }>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingAcceptRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingDenyRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
     kind: io.LiteralC<"gameResignationRequest">;
     content: io.UndefinedC;
 }>, io.TypeC<{
