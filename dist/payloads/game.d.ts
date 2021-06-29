@@ -255,11 +255,7 @@ export declare const gameRematchDenyRequestPayload: io.TypeC<{
 export declare type GameRematchDenyRequestPayload = io.TypeOf<typeof gameRematchDenyRequestPayload>;
 export declare const gameTakebackOfferingRequestPayload: io.TypeC<{
     kind: io.LiteralC<"gameTakebackOfferingRequest">;
-    content: io.TypeC<{
-        toUserId: io.StringC;
-        byUserId: io.StringC;
-        gameId: io.StringC;
-    }>;
+    content: io.UndefinedC;
 }>;
 export declare type GameTakebackOfferingRequestPayload = io.TypeOf<typeof gameTakebackOfferingRequestPayload>;
 export declare const gameTakebackOfferingAcceptRequestPayload: io.TypeC<{

@@ -92,11 +92,7 @@ export type GameRematchDenyRequestPayload = io.TypeOf<typeof gameRematchDenyRequ
 
 export const gameTakebackOfferingRequestPayload = io.type({
   kind: io.literal('gameTakebackOfferingRequest'),
-  content: io.type({
-    toUserId: io.string,
-    byUserId: io.string,
-    gameId: io.string,
-  }),
+  content: io.undefined,
 });
 
 export type GameTakebackOfferingRequestPayload = io.TypeOf<

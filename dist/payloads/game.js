@@ -66,11 +66,7 @@ exports.gameRematchDenyRequestPayload = io.type({
 });
 exports.gameTakebackOfferingRequestPayload = io.type({
     kind: io.literal('gameTakebackOfferingRequest'),
-    content: io.type({
-        toUserId: io.string,
-        byUserId: io.string,
-        gameId: io.string,
-    }),
+    content: io.undefined,
 });
 exports.gameTakebackOfferingAcceptRequestPayload = io.type({
     kind: io.literal('gameTakebackOfferingAcceptRequest'),
