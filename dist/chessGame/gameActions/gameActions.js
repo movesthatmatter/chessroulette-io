@@ -129,9 +129,10 @@ var moveAction = function (prev, _a) {
         return prev;
     }
     var promotion = validMove.promotion, flags = validMove.flags, piece = validMove.piece, restValidMove = __rest(validMove, ["promotion", "flags", "piece"]);
-    var nextMove = __assign(__assign(__assign({}, restValidMove), promotion && promotion !== 'k' && {
+    var nextMove = __assign(__assign(__assign({}, restValidMove), (promotion &&
+        promotion !== 'k' && {
         promotion: promotion,
-    }), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
+    })), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
     var nextHistory = __spreadArrays((prev.history || []), [nextMove]);
     var nextStartedGameProps = {
         state: 'started',
@@ -172,6 +173,10 @@ var abortAction = function (prev) {
 var resignAction = function (prev, resigningColor) {
     return __assign(__assign({}, prev), { state: 'stopped', winner: util_1.otherChessColor(resigningColor) });
 };
+var takebackAction = function (prev) {
+    var prevHistory = prev.history.slice(0, prev.history.length - 1);
+    return __assign(__assign({}, prev), { history: prevHistory });
+};
 var drawAction = function (prev) {
     return __assign(__assign({}, prev), { state: 'stopped', winner: '1/2' });
 };
@@ -182,6 +187,7 @@ exports.actions = {
     draw: drawAction,
     abort: abortAction,
     statusCheck: statusCheck,
+    takeback: takebackAction,
     // @deprecate in favor of statusCheck
     timerFinished: timerFinishedAction,
 };

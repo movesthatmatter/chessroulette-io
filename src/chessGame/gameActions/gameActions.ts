@@ -203,9 +203,10 @@ const moveAction = (
 
   const nextMove: ChessHistoryMove = {
     ...restValidMove,
-    ...promotion && promotion !== 'k' && {
-      promotion,
-    },
+    ...(promotion &&
+      promotion !== 'k' && {
+        promotion,
+      }),
     color: validMove.color === 'b' ? 'black' : 'white',
     clock: nextTimeLeft,
   };
@@ -303,6 +304,14 @@ const resignAction = (
   };
 };
 
+const takebackAction = (prev: ChessGameStateStarted): ChessGameStateStarted => {
+  const prevHistory = prev.history.slice(0, prev.history.length - 1);
+  return {
+    ...prev,
+    history: prevHistory,
+  };
+};
+
 const drawAction = (prev: ChessGameStateStarted): ChessGameStateStopped => {
   return {
     ...prev,
@@ -318,7 +327,7 @@ export const actions = {
   draw: drawAction,
   abort: abortAction,
   statusCheck,
-
+  takeback: takebackAction,
   // @deprecate in favor of statusCheck
   timerFinished: timerFinishedAction,
 };
