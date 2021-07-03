@@ -305,10 +305,12 @@ const resignAction = (
 };
 
 const takebackAction = (prev: ChessGameStateStarted): ChessGameStateStarted => {
-  const prevHistory = prev.history.slice(0, prev.history.length - 1);
+  const updateHistory = prev.history.slice(0, prev.history.length - 1);
+  const newPGN = chessHistoryToSimplePgn(updateHistory);
   return {
     ...prev,
-    history: prevHistory,
+    history: updateHistory,
+    pgn: newPGN,
   };
 };
 
