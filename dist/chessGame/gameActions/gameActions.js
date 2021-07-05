@@ -176,7 +176,12 @@ var resignAction = function (prev, resigningColor) {
 var takebackAction = function (prev) {
     var updateHistory = prev.history.slice(0, prev.history.length - 1);
     var newPGN = util_1.chessHistoryToSimplePgn(updateHistory);
-    return __assign(__assign({}, prev), { history: updateHistory, pgn: newPGN });
+    var instance = sdk_1.getNewChessGame(newPGN);
+    var isValidPgn = instance.load_pgn(newPGN);
+    if (!isValidPgn) {
+        return prev;
+    }
+    return __assign(__assign({}, prev), { history: updateHistory, pgn: newPGN, lastMoveBy: util_1.otherChessColor(prev.lastMoveBy) });
 };
 var drawAction = function (prev) {
     return __assign(__assign({}, prev), { state: 'stopped', winner: '1/2' });
