@@ -309,12 +309,6 @@ const takebackAction = (prev: ChessGameStateStarted): ChessGameStateStarted => {
   const newPGN = chessHistoryToSimplePgn(updateHistory);
   const instance = getNewChessGame(newPGN);
 
-  const isValidPgn = instance.load_pgn(newPGN);
-
-  if (!isValidPgn) {
-    return prev;
-  }
-
   return {
     ...prev,
     history: updateHistory,

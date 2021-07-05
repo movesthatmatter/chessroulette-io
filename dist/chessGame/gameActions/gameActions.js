@@ -177,10 +177,6 @@ var takebackAction = function (prev) {
     var updateHistory = prev.history.slice(0, prev.history.length - 1);
     var newPGN = util_1.chessHistoryToSimplePgn(updateHistory);
     var instance = sdk_1.getNewChessGame(newPGN);
-    var isValidPgn = instance.load_pgn(newPGN);
-    if (!isValidPgn) {
-        return prev;
-    }
     return __assign(__assign({}, prev), { history: updateHistory, pgn: newPGN, lastMoveBy: util_1.otherChessColor(prev.lastMoveBy) });
 };
 var drawAction = function (prev) {
