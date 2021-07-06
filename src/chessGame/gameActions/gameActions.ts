@@ -304,16 +304,79 @@ const resignAction = (
   };
 };
 
-const takebackAction = (prev: ChessGameStateStarted): ChessGameStateStarted => {
+const takebackAction = (
+  prev: ChessGameStateStarted,
+  { movedAt }: { movedAt: ISODateTime }
+): ChessGameStateStarted => {
   const updateHistory = prev.history.slice(0, prev.history.length - 1);
   const newPGN = chessHistoryToSimplePgn(updateHistory);
+  // const instance = getNewChessGame(newPGN);
+  // const moveAtAsDate = new Date(moveAt);
+  // const lastMoveAt = new Date(prev.lastMoveAt);
+  // const turn  = prev.lastMoveBy;
+  // const elapsed = moveAtAsDate.getTime() - lastMoveAt.getTime();
+  // const nextTimeLeft = prev.timeLeft[turn] - elapsed;
+
+  // return {
+  //   ...prev,
+  //   history: updateHistory,
+  //   pgn: newPGN,
+  //   lastMoveBy: otherChessColor(prev.lastMoveBy),
+  // };
+  const { lastMoveBy: prevTurn = 'black' } = prev;
+  const turn = otherChessColor(prevTurn);
+
+  const movedAtAsDate = new Date(movedAt);
+
+  const lastMoveAt = new Date(prev.lastMoveAt);
+  const elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
+  const nextTimeLeft = prev.timeLeft[turn] - elapsed;
+
   const instance = getNewChessGame(newPGN);
+
+  const isValidPgn = instance.load_pgn(chessHistoryToSimplePgn(prev.history));
+
+  if (!isValidPgn) {
+    return prev;
+  }
+
+  const validMove = instance.undo();
+
+  if (!validMove) {
+    return prev;
+  }
+
+  const { promotion, flags, piece, ...restValidMove } = validMove;
+
+  const nextMove: ChessHistoryMove = {
+    ...restValidMove,
+    ...(promotion &&
+      promotion !== 'k' && {
+        promotion,
+      }),
+    color: validMove.color === 'b' ? 'black' : 'white',
+    clock: nextTimeLeft,
+  };
+
+  //const nextHistory = [...(prev.history || []), nextMove];
+
+  const nextStartedGameProps = {
+    state: 'started',
+    pgn: newPGN,
+    history: updateHistory,
+    lastMoveAt: movedAt,
+    lastMoveBy: turn,
+    timeLeft: {
+      ...prev.timeLeft,
+      [turn]: nextTimeLeft,
+    },
+    winner: undefined,
+    lastActivityAt: movedAt,
+  } as const;
 
   return {
     ...prev,
-    history: updateHistory,
-    pgn: newPGN,
-    lastMoveBy: otherChessColor(prev.lastMoveBy),
+    ...nextStartedGameProps,
   };
 };
 

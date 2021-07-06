@@ -173,11 +173,55 @@ var abortAction = function (prev) {
 var resignAction = function (prev, resigningColor) {
     return __assign(__assign({}, prev), { state: 'stopped', winner: util_1.otherChessColor(resigningColor) });
 };
-var takebackAction = function (prev) {
+var takebackAction = function (prev, _a) {
+    var _b;
+    var movedAt = _a.movedAt;
     var updateHistory = prev.history.slice(0, prev.history.length - 1);
     var newPGN = util_1.chessHistoryToSimplePgn(updateHistory);
+    // const instance = getNewChessGame(newPGN);
+    // const moveAtAsDate = new Date(moveAt);
+    // const lastMoveAt = new Date(prev.lastMoveAt);
+    // const turn  = prev.lastMoveBy;
+    // const elapsed = moveAtAsDate.getTime() - lastMoveAt.getTime();
+    // const nextTimeLeft = prev.timeLeft[turn] - elapsed;
+    // return {
+    //   ...prev,
+    //   history: updateHistory,
+    //   pgn: newPGN,
+    //   lastMoveBy: otherChessColor(prev.lastMoveBy),
+    // };
+    var _c = prev.lastMoveBy, prevTurn = _c === void 0 ? 'black' : _c;
+    var turn = util_1.otherChessColor(prevTurn);
+    var movedAtAsDate = new Date(movedAt);
+    var lastMoveAt = new Date(prev.lastMoveAt);
+    var elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
+    var nextTimeLeft = prev.timeLeft[turn] - elapsed;
     var instance = sdk_1.getNewChessGame(newPGN);
-    return __assign(__assign({}, prev), { history: updateHistory, pgn: newPGN, lastMoveBy: util_1.otherChessColor(prev.lastMoveBy) });
+    var isValidPgn = instance.load_pgn(util_1.chessHistoryToSimplePgn(prev.history));
+    if (!isValidPgn) {
+        return prev;
+    }
+    var validMove = instance.undo();
+    if (!validMove) {
+        return prev;
+    }
+    var promotion = validMove.promotion, flags = validMove.flags, piece = validMove.piece, restValidMove = __rest(validMove, ["promotion", "flags", "piece"]);
+    var nextMove = __assign(__assign(__assign({}, restValidMove), (promotion &&
+        promotion !== 'k' && {
+        promotion: promotion,
+    })), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
+    //const nextHistory = [...(prev.history || []), nextMove];
+    var nextStartedGameProps = {
+        state: 'started',
+        pgn: newPGN,
+        history: updateHistory,
+        lastMoveAt: movedAt,
+        lastMoveBy: turn,
+        timeLeft: __assign(__assign({}, prev.timeLeft), (_b = {}, _b[turn] = nextTimeLeft, _b)),
+        winner: undefined,
+        lastActivityAt: movedAt,
+    };
+    return __assign(__assign({}, prev), nextStartedGameProps);
 };
 var drawAction = function (prev) {
     return __assign(__assign({}, prev), { state: 'stopped', winner: '1/2' });
