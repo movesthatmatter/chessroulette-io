@@ -196,20 +196,15 @@ var takebackAction = function (prev, _a) {
     var lastMoveAt = new Date(prev.lastMoveAt);
     var elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
     var nextTimeLeft = prev.timeLeft[turn] - elapsed;
-    var instance = sdk_1.getNewChessGame(newPGN);
-    var isValidPgn = instance.load_pgn(util_1.chessHistoryToSimplePgn(prev.history));
-    if (!isValidPgn) {
-        return prev;
-    }
-    var validMove = instance.undo();
-    if (!validMove) {
-        return prev;
-    }
-    var promotion = validMove.promotion, flags = validMove.flags, piece = validMove.piece, restValidMove = __rest(validMove, ["promotion", "flags", "piece"]);
-    var nextMove = __assign(__assign(__assign({}, restValidMove), (promotion &&
-        promotion !== 'k' && {
-        promotion: promotion,
-    })), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
+    // const nextMove: ChessHistoryMove = {
+    //   ...restValidMove,
+    //   ...(promotion &&
+    //     promotion !== 'k' && {
+    //       promotion,
+    //     }),
+    //   color: validMove.color === 'b' ? 'black' : 'white',
+    //   clock: nextTimeLeft,
+    // };
     //const nextHistory = [...(prev.history || []), nextMove];
     var nextStartedGameProps = {
         state: 'started',

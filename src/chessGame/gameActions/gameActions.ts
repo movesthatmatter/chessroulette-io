@@ -332,31 +332,15 @@ const takebackAction = (
   const elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
   const nextTimeLeft = prev.timeLeft[turn] - elapsed;
 
-  const instance = getNewChessGame(newPGN);
-
-  const isValidPgn = instance.load_pgn(chessHistoryToSimplePgn(prev.history));
-
-  if (!isValidPgn) {
-    return prev;
-  }
-
-  const validMove = instance.undo();
-
-  if (!validMove) {
-    return prev;
-  }
-
-  const { promotion, flags, piece, ...restValidMove } = validMove;
-
-  const nextMove: ChessHistoryMove = {
-    ...restValidMove,
-    ...(promotion &&
-      promotion !== 'k' && {
-        promotion,
-      }),
-    color: validMove.color === 'b' ? 'black' : 'white',
-    clock: nextTimeLeft,
-  };
+  // const nextMove: ChessHistoryMove = {
+  //   ...restValidMove,
+  //   ...(promotion &&
+  //     promotion !== 'k' && {
+  //       promotion,
+  //     }),
+  //   color: validMove.color === 'b' ? 'black' : 'white',
+  //   clock: nextTimeLeft,
+  // };
 
   //const nextHistory = [...(prev.history || []), nextMove];
 
