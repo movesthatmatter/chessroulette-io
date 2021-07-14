@@ -187,7 +187,9 @@ const moveAction = (
   const instance = getNewChessGame();
 
   const isValidPgn =
-    prev.state === 'pending' || instance.load_pgn(chessHistoryToSimplePgn(prev.history));
+    prev.state === 'pending' ||
+    instance.load_pgn(chessHistoryToSimplePgn(prev.history)) ||
+    prev.history.length === 0;
 
   if (!isValidPgn) {
     return prev;

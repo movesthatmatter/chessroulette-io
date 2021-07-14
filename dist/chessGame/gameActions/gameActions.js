@@ -120,7 +120,9 @@ var moveAction = function (prev, _a) {
             lastActivityAt: movedAt });
     }
     var instance = sdk_1.getNewChessGame();
-    var isValidPgn = prev.state === 'pending' || instance.load_pgn(util_1.chessHistoryToSimplePgn(prev.history));
+    var isValidPgn = prev.state === 'pending' ||
+        instance.load_pgn(util_1.chessHistoryToSimplePgn(prev.history)) ||
+        prev.history.length === 0;
     if (!isValidPgn) {
         return prev;
     }
