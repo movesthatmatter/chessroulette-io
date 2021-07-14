@@ -186,6 +186,7 @@ const moveAction = (
 
   const instance = getNewChessGame();
 
+  //Add if history is an empty array it will consider it as an invalid PGN
   const isValidPgn =
     prev.state === 'pending' ||
     instance.load_pgn(chessHistoryToSimplePgn(prev.history)) ||
@@ -313,19 +314,6 @@ const takebackAction = (
 ): ChessGameStateStarted => {
   const updateHistory = prev.history.slice(0, prev.history.length - 1);
   const newPGN = chessHistoryToSimplePgn(updateHistory);
-  // const instance = getNewChessGame(newPGN);
-  // const moveAtAsDate = new Date(moveAt);
-  // const lastMoveAt = new Date(prev.lastMoveAt);
-  // const turn  = prev.lastMoveBy;
-  // const elapsed = moveAtAsDate.getTime() - lastMoveAt.getTime();
-  // const nextTimeLeft = prev.timeLeft[turn] - elapsed;
-
-  // return {
-  //   ...prev,
-  //   history: updateHistory,
-  //   pgn: newPGN,
-  //   lastMoveBy: otherChessColor(prev.lastMoveBy),
-  // };
   const { lastMoveBy: prevTurn = 'black' } = prev;
   const turn = otherChessColor(prevTurn);
 
@@ -334,18 +322,6 @@ const takebackAction = (
   const lastMoveAt = new Date(prev.lastMoveAt);
   const elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
   const nextTimeLeft = prev.timeLeft[turn] - elapsed;
-
-  // const nextMove: ChessHistoryMove = {
-  //   ...restValidMove,
-  //   ...(promotion &&
-  //     promotion !== 'k' && {
-  //       promotion,
-  //     }),
-  //   color: validMove.color === 'b' ? 'black' : 'white',
-  //   clock: nextTimeLeft,
-  // };
-
-  //const nextHistory = [...(prev.history || []), nextMove];
 
   const nextStartedGameProps = {
     state: 'started',

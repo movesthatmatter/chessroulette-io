@@ -120,6 +120,7 @@ var moveAction = function (prev, _a) {
             lastActivityAt: movedAt });
     }
     var instance = sdk_1.getNewChessGame();
+    //Add if history is an empty array it will consider it as an invalid PGN
     var isValidPgn = prev.state === 'pending' ||
         instance.load_pgn(util_1.chessHistoryToSimplePgn(prev.history)) ||
         prev.history.length === 0;
@@ -182,34 +183,12 @@ var takebackAction = function (prev, _a) {
     var movedAt = _a.movedAt;
     var updateHistory = prev.history.slice(0, prev.history.length - 1);
     var newPGN = util_1.chessHistoryToSimplePgn(updateHistory);
-    // const instance = getNewChessGame(newPGN);
-    // const moveAtAsDate = new Date(moveAt);
-    // const lastMoveAt = new Date(prev.lastMoveAt);
-    // const turn  = prev.lastMoveBy;
-    // const elapsed = moveAtAsDate.getTime() - lastMoveAt.getTime();
-    // const nextTimeLeft = prev.timeLeft[turn] - elapsed;
-    // return {
-    //   ...prev,
-    //   history: updateHistory,
-    //   pgn: newPGN,
-    //   lastMoveBy: otherChessColor(prev.lastMoveBy),
-    // };
     var _c = prev.lastMoveBy, prevTurn = _c === void 0 ? 'black' : _c;
     var turn = util_1.otherChessColor(prevTurn);
     var movedAtAsDate = new Date(movedAt);
     var lastMoveAt = new Date(prev.lastMoveAt);
     var elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
     var nextTimeLeft = prev.timeLeft[turn] - elapsed;
-    // const nextMove: ChessHistoryMove = {
-    //   ...restValidMove,
-    //   ...(promotion &&
-    //     promotion !== 'k' && {
-    //       promotion,
-    //     }),
-    //   color: validMove.color === 'b' ? 'black' : 'white',
-    //   clock: nextTimeLeft,
-    // };
-    //const nextHistory = [...(prev.history || []), nextMove];
     var nextStartedGameProps = {
         state: 'started',
         pgn: newPGN,
