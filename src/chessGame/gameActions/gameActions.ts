@@ -213,7 +213,6 @@ const moveAction = (
     color: validMove.color === 'b' ? 'black' : 'white',
     clock: nextTimeLeft,
   };
-  console.log('move action prev', prev);
   const nextHistory = [...(prev.history || []), nextMove];
 
   const nextStartedGameProps = {
@@ -229,7 +228,6 @@ const moveAction = (
     winner: undefined,
     lastActivityAt: movedAt,
   } as const;
-  console.log('move action next ', nextStartedGameProps);
 
   if (prev.state === 'pending') {
     return {

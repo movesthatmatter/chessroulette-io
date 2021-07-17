@@ -136,7 +136,6 @@ var moveAction = function (prev, _a) {
         promotion !== 'k' && {
         promotion: promotion,
     })), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
-    console.log('move action prev', prev);
     var nextHistory = __spreadArrays((prev.history || []), [nextMove]);
     var nextStartedGameProps = {
         state: 'started',
@@ -148,7 +147,6 @@ var moveAction = function (prev, _a) {
         winner: undefined,
         lastActivityAt: movedAt,
     };
-    console.log('move action next ', nextStartedGameProps);
     if (prev.state === 'pending') {
         return __assign(__assign(__assign({}, prev), nextStartedGameProps), { startedAt: movedAt });
     }
