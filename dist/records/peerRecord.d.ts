@@ -280,6 +280,9 @@ export declare const peerRecord: io.IntersectionC<[io.TypeC<{
             lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
                 userId: io.UnionC<[io.UndefinedC, io.StringC]>;
             }>]>;
+            twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+            }>]>;
         }>]>;
     }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
         id: io.StringC;

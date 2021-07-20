@@ -41,6 +41,7 @@ export type UserExternalAccountRecord = io.TypeOf<typeof userExternalAccountReco
 export const userExternalAccountByVendorMap = io.type({
   facebook: io.union([io.undefined, userExternalAccountRecord]),
   lichess: io.union([io.undefined, userExternalAccountRecord]),
+  twitch: io.union([io.undefined, userExternalAccountRecord]),
 });
 
 export type UserExternalAccountByVendorMap = io.TypeOf<typeof userExternalAccountByVendorMap>;

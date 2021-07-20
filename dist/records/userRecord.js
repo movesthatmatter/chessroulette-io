@@ -34,6 +34,7 @@ exports.userExternalAccountRecord = io.type({
 exports.userExternalAccountByVendorMap = io.type({
     facebook: io.union([io.undefined, exports.userExternalAccountRecord]),
     lichess: io.union([io.undefined, exports.userExternalAccountRecord]),
+    twitch: io.union([io.undefined, exports.userExternalAccountRecord]),
 });
 exports.registeredUserRecord = io.intersection([
     exports.registeredUserInfoRecord,

@@ -284,6 +284,9 @@ export declare const registerPeerResponsePayload: io.IntersectionC<[io.TypeC<{
             lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
                 userId: io.UnionC<[io.UndefinedC, io.StringC]>;
             }>]>;
+            twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+            }>]>;
         }>]>;
     }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
         id: io.StringC;
@@ -587,6 +590,9 @@ export declare const myStatsPayload: io.TypeC<{
                     userId: io.UnionC<[io.UndefinedC, io.StringC]>;
                 }>]>;
                 lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+                }>]>;
+                twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
                     userId: io.UnionC<[io.UndefinedC, io.StringC]>;
                 }>]>;
             }>]>;

@@ -534,6 +534,9 @@ export declare const quickPairingMatchedResponse: io.TypeC<{
                     lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
                         userId: io.UnionC<[io.UndefinedC, io.StringC]>;
                     }>]>;
+                    twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+                    }>]>;
                 }>]>;
             }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
                 id: io.StringC;
@@ -2958,6 +2961,9 @@ export declare const quickPairingResponse: io.UnionC<[io.TypeC<{
                         userId: io.UnionC<[io.UndefinedC, io.StringC]>;
                     }>]>;
                     lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+                    }>]>;
+                    twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
                         userId: io.UnionC<[io.UndefinedC, io.StringC]>;
                     }>]>;
                 }>]>;
@@ -5385,6 +5391,9 @@ export declare const challengeAcceptedPayload: io.TypeC<{
                             userId: io.UnionC<[io.UndefinedC, io.StringC]>;
                         }>]>;
                         lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
+                            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+                        }>]>;
+                        twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
                             userId: io.UnionC<[io.UndefinedC, io.StringC]>;
                         }>]>;
                     }>]>;

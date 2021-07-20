@@ -279,6 +279,9 @@ export declare namespace GetUser {
             lichess: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
                 userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
             }>]>;
+            twitch: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
+            }>]>;
         }>]>;
     }>]>;
     const resource: Resource<import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").NullC, import("io-ts").VoidC, import("io-ts").TypeC<{}>]>, import("io-ts").IntersectionC<[import("io-ts").IntersectionC<[import("io-ts").TypeC<{
@@ -560,6 +563,9 @@ export declare namespace GetUser {
             lichess: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
                 userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
             }>]>;
+            twitch: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
+            }>]>;
         }>]>;
     }>]>, import("io-ts").TypeC<{
         type: import("io-ts").LiteralC<"BadRequestError">;
@@ -590,6 +596,9 @@ export declare namespace GetUser {
                 userId: string | undefined;
             } | undefined;
             lichess: {
+                userId: string | undefined;
+            } | undefined;
+            twitch: {
                 userId: string | undefined;
             } | undefined;
         } | undefined;

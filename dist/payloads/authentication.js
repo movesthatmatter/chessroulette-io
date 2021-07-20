@@ -10,6 +10,7 @@ var http_1 = require("../sdk/http");
 exports.externalVendor = io.keyof({
     facebook: null,
     lichess: null,
+    twitch: null,
 });
 // Deprecate User Check in favor of Resource
 exports.userCheckInternalAccountRequestPayload = http_1.httpRequestPayloadFromProps({
@@ -43,24 +44,19 @@ exports.userCheckExistentUserResponsePayloadData = io.type({
     status: io.literal('ExistentUser'),
     accessToken: io.string,
 });
-exports.userCheckResponsePayload = http_1.httpResponsePayload(http_1.okHttpResponsePayload(io.union([
-    exports.userCheckInexitentUserResponsePayloadData,
-    exports.userCheckExistentUserResponsePayloadData,
-])), exports.userCheckVerificationFailedResponsePayload);
+exports.userCheckResponsePayload = http_1.httpResponsePayload(http_1.okHttpResponsePayload(io.union([exports.userCheckInexitentUserResponsePayloadData, exports.userCheckExistentUserResponsePayloadData])), exports.userCheckVerificationFailedResponsePayload);
 // Email Verification
 var verifyEmailModel = http_1.formModel({
     email: io.string,
 });
 exports.verifyEmailRequestPayload = http_1.httpRequestPayloadFromProps(verifyEmailModel);
-exports.verifyEmailResponsePayload = http_1.httpResponsePayload(http_1.okHttpResponsePayload(io.undefined), http_1.errHttpResponsePayload(io.union([
-    http_1.httpInputValidationError(verifyEmailModel),
-    http_1.httpGenericError(),
-])));
+exports.verifyEmailResponsePayload = http_1.httpResponsePayload(http_1.okHttpResponsePayload(io.undefined), http_1.errHttpResponsePayload(io.union([http_1.httpInputValidationError(verifyEmailModel), http_1.httpGenericError()])));
 // Registration - In case the User Check came negative
 var createUserAccountModel = http_1.formModel({
     email: io.string,
     firstName: io.string,
     lastName: io.string,
+    username: io.string,
     external: io.union([
         io.undefined,
         io.type({
@@ -73,10 +69,7 @@ exports.createUserAccountRequestPayload = http_1.httpRequestPayloadFromProps(cre
 exports.createUserAccountResponsePayload = http_1.httpResponsePayload(http_1.okHttpResponsePayloadFromProps({
     // user: userRecord, // TODO: See if this is needed in this call - it's for ease of access at this point
     accessToken: io.string,
-}), http_1.errHttpResponsePayload(io.union([
-    http_1.httpInputValidationError(createUserAccountModel),
-    http_1.httpGenericError(),
-])));
+}), http_1.errHttpResponsePayload(io.union([http_1.httpInputValidationError(createUserAccountModel), http_1.httpGenericError()])));
 exports.guestAuthenticationRequestPayload = http_1.httpRequestPayloadFromProps({
     guestUser: io.union([userRecord_1.guestUserRecord, io.undefined, io.null]),
 });

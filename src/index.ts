@@ -1,6 +1,8 @@
 export * from './records/userRecord';
 export * from './records/roomStatsRecord';
 export * from './records/peerRecord';
+export * from './records/facebookRecords';
+export * from './records/twitchRecords';
 export * from './records/lichessRecords';
 export * from './records/roomRecord';
 export * from './records/challengeRecord';
@@ -8,6 +10,7 @@ export * from './records/chatRecords';
 export * from './records/externalVendorsRecords';
 export * from './records/gameRecord';
 export * from './records/locationRecords';
+export * from './records/collaboratorRecord';
 export * from './payloads';
 export * from './sdk/io';
 export * from './chessGame';

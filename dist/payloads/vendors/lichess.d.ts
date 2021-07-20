@@ -1,12 +1,4 @@
 import * as io from 'io-ts';
-export declare const lichessAuthenticationRedirectUrlResponsePayload: io.TypeC<{
-    redirectUrl: io.StringC;
-}>;
-export declare type LichessAuthenticationRedirectUrlPayload = io.TypeOf<typeof lichessAuthenticationRedirectUrlResponsePayload>;
-export declare const verifyLichessUserRequestPayload: io.TypeC<{
-    token: io.StringC;
-}>;
-export declare type VerifyLichessUserRequestPayload = io.TypeOf<typeof verifyLichessUserRequestPayload>;
 export declare const verifyLichessUserResponsePayload: io.TypeC<{
     user: io.TypeC<{
         email: io.StringC;

@@ -2,6 +2,7 @@ import * as io from 'io-ts';
 export declare const externalVendor: io.KeyofC<{
     facebook: null;
     lichess: null;
+    twitch: null;
 }>;
 export declare type ExternalVendor = io.TypeOf<typeof externalVendor>;
 export declare const userCheckInternalAccountRequestPayload: io.TypeC<{
@@ -20,6 +21,7 @@ export declare const userCheckExternalAccountRequestPayload: io.TypeC<{
         vendor: io.KeyofC<{
             facebook: null;
             lichess: null;
+            twitch: null;
         }>;
         accessToken: io.StringC;
     }>;
@@ -39,6 +41,7 @@ export declare const userCheckRequestPayload: io.UnionC<[io.TypeC<{
         vendor: io.KeyofC<{
             facebook: null;
             lichess: null;
+            twitch: null;
         }>;
         accessToken: io.StringC;
     }>;
@@ -61,6 +64,7 @@ export declare const userCheckInexitentUserResponsePayloadData: io.TypeC<{
         vendor: io.KeyofC<{
             facebook: null;
             lichess: null;
+            twitch: null;
         }>;
         user: io.UnionC<[io.TypeC<{
             email: io.StringC;
@@ -98,6 +102,12 @@ export declare const userCheckInexitentUserResponsePayloadData: io.TypeC<{
             firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
             lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
             name: io.UnionC<[io.StringC, io.UndefinedC]>;
+        }>, io.TypeC<{
+            id: io.StringC;
+            email: io.StringC;
+            display_name: io.StringC;
+            profile_image_url: io.StringC;
+            created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         }>]>;
     }>]>;
 }>;
@@ -116,6 +126,7 @@ export declare const userCheckResponsePayload: io.UnionC<[io.TypeC<{
             vendor: io.KeyofC<{
                 facebook: null;
                 lichess: null;
+                twitch: null;
             }>;
             user: io.UnionC<[io.TypeC<{
                 email: io.StringC;
@@ -153,6 +164,12 @@ export declare const userCheckResponsePayload: io.UnionC<[io.TypeC<{
                 firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
                 lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
                 name: io.UnionC<[io.StringC, io.UndefinedC]>;
+            }>, io.TypeC<{
+                id: io.StringC;
+                email: io.StringC;
+                display_name: io.StringC;
+                profile_image_url: io.StringC;
+                created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             }>]>;
         }>]>;
     }>, io.TypeC<{
@@ -201,10 +218,12 @@ export declare const createUserAccountRequestPayload: io.TypeC<{
         email: io.StringC;
         firstName: io.StringC;
         lastName: io.StringC;
+        username: io.StringC;
         external: io.UnionC<[io.UndefinedC, io.TypeC<{
             vendor: io.KeyofC<{
                 facebook: null;
                 lichess: null;
+                twitch: null;
             }>;
             accessToken: io.StringC;
         }>]>;
@@ -226,10 +245,12 @@ export declare const createUserAccountResponsePayload: io.UnionC<[io.TypeC<{
             email: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
+            username: io.StringC;
             external: io.UnionC<[io.UndefinedC, io.TypeC<{
                 vendor: io.KeyofC<{
                     facebook: null;
                     lichess: null;
+                    twitch: null;
                 }>;
                 accessToken: io.StringC;
             }>]>;

@@ -5,6 +5,7 @@ export declare namespace ConnectExternalAccount {
         vendor: io.KeyofC<{
             facebook: null;
             lichess: null;
+            twitch: null;
         }>;
         accessToken: io.StringC;
     }>;
@@ -287,12 +288,16 @@ export declare namespace ConnectExternalAccount {
             lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
                 userId: io.UnionC<[io.UndefinedC, io.StringC]>;
             }>]>;
+            twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+            }>]>;
         }>]>;
     }>]>;
     const resource: Resource<io.TypeC<{
         vendor: io.KeyofC<{
             facebook: null;
             lichess: null;
+            twitch: null;
         }>;
         accessToken: io.StringC;
     }>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
@@ -574,12 +579,15 @@ export declare namespace ConnectExternalAccount {
             lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
                 userId: io.UnionC<[io.UndefinedC, io.StringC]>;
             }>]>;
+            twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
+            }>]>;
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"BadRequestError">;
         content: io.UndefinedC;
     }>, {
-        vendor: "facebook" | "lichess";
+        vendor: "facebook" | "lichess" | "twitch";
         accessToken: string;
     }, {
         id: string;
@@ -607,6 +615,9 @@ export declare namespace ConnectExternalAccount {
                 userId: string | undefined;
             } | undefined;
             lichess: {
+                userId: string | undefined;
+            } | undefined;
+            twitch: {
                 userId: string | undefined;
             } | undefined;
         } | undefined;
