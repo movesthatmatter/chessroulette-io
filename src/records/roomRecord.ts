@@ -100,6 +100,14 @@ export const privateRoomRecord = io.intersection([
 ]);;
 export type PrivateRoomRecord = io.TypeOf<typeof privateRoomRecord>;
 
+export const roomWithNoActivityRecord = io.intersection([
+  roomRecord,
+  io.type({
+    activity: roomNoActivityRecord,
+  }),
+]);
+export type RoomWithNoActivityRecord = io.TypeOf<typeof roomWithNoActivityRecord>;
+
 export const roomWithPlayActivityRecord = io.intersection([
   roomRecord,
   io.type({
@@ -108,10 +116,10 @@ export const roomWithPlayActivityRecord = io.intersection([
 ]);
 export type RoomWithPlayActivityRecord = io.TypeOf<typeof roomWithPlayActivityRecord>;
 
-export const roomWithNoActivityRecord = io.intersection([
+export const roomWithAnalysisActivityRecord = io.intersection([
   roomRecord,
   io.type({
-    activity: roomNoActivityRecord,
+    activity: roomAnalysisActivityRecord,
   }),
 ]);
-export type RoomWithNoActivityRecord = io.TypeOf<typeof roomWithNoActivityRecord>;
+export type RoomWithAnalysisActivityRecord = io.TypeOf<typeof roomWithAnalysisActivityRecord>;

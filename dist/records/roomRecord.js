@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomWithNoActivityRecord = exports.roomWithPlayActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityOption = void 0;
+exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityOption = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
@@ -71,16 +71,22 @@ exports.privateRoomRecord = io.intersection([
     }),
 ]);
 ;
+exports.roomWithNoActivityRecord = io.intersection([
+    exports.roomRecord,
+    io.type({
+        activity: exports.roomNoActivityRecord,
+    }),
+]);
 exports.roomWithPlayActivityRecord = io.intersection([
     exports.roomRecord,
     io.type({
         activity: exports.roomPlayActivityRecord,
     }),
 ]);
-exports.roomWithNoActivityRecord = io.intersection([
+exports.roomWithAnalysisActivityRecord = io.intersection([
     exports.roomRecord,
     io.type({
-        activity: exports.roomNoActivityRecord,
+        activity: exports.roomAnalysisActivityRecord,
     }),
 ]);
 //# sourceMappingURL=roomRecord.js.map
