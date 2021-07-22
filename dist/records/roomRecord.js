@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomWithNoActivityRecord = exports.roomWithPlayActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityOption = void 0;
+exports.roomWithNoActivityRecord = exports.roomWithPlayActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityOption = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
@@ -9,6 +9,7 @@ var peerRecord_1 = require("./peerRecord");
 exports.roomActivityOption = io.keyof({
     none: null,
     play: null,
+    analysis: null,
 });
 exports.roomNoActivityRecord = io.type({
     type: io.literal('none'),
@@ -22,9 +23,14 @@ exports.roomPlayActivityRecord = io.intersection([
         offer: chessGame_1.chessGameOffer,
     }),
 ]);
+exports.roomAnalysisActivityRecord = io.type({
+    type: io.literal('analysis'),
+    history: chessGame_1.chessHistory,
+});
 exports.roomActivityRecord = io.union([
     exports.roomNoActivityRecord,
     exports.roomPlayActivityRecord,
+    exports.roomAnalysisActivityRecord,
 ]);
 exports.roomType = io.keyof({
     public: null,

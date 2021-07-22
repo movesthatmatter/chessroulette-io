@@ -1,12 +1,13 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
-import { chessGameOffer } from '../chessGame';
+import { chessGameOffer, chessHistory } from '../chessGame';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
 
 export const roomActivityOption = io.keyof({
   none: null,
   play: null,
+  analysis: null,
 });
 export type RoomActivityOption = io.TypeOf<typeof roomActivityOption>;
 
@@ -28,9 +29,17 @@ export const roomPlayActivityRecord = io.intersection([
 
 export type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
 
+export const roomAnalysisActivityRecord = io.type({
+  type: io.literal('analysis'),
+  history: chessHistory,
+});
+
+export type RoomAnalysisActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
+
 export const roomActivityRecord = io.union([
   roomNoActivityRecord,
   roomPlayActivityRecord,
+  roomAnalysisActivityRecord,
 ]);
 
 export type RoomActivityRecord = io.TypeOf<typeof roomActivityRecord>;
