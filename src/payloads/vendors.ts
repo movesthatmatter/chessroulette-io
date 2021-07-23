@@ -1,6 +1,7 @@
 import * as io from 'io-ts';
 
 export const vendorsAuthenticationRedirectUrlResponsePayload = io.type({
+  origin: io.string,
   redirectUrl: io.string,
 });
 

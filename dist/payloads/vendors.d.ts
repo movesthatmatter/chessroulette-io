@@ -1,5 +1,6 @@
 import * as io from 'io-ts';
 export declare const vendorsAuthenticationRedirectUrlResponsePayload: io.TypeC<{
+    origin: io.StringC;
     redirectUrl: io.StringC;
 }>;
 export declare type VendorsAuthenticationRedirectUrlPayload = io.TypeOf<typeof vendorsAuthenticationRedirectUrlResponsePayload>;
