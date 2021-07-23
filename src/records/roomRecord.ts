@@ -31,7 +31,7 @@ export type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
 
 export const roomAnalysisActivityRecord = io.type({
   type: io.literal('analysis'),
-  history: chessHistory,
+  analysisId: io.string,
 });
 
 export type RoomAnalysisActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;

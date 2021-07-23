@@ -25,7 +25,7 @@ exports.roomPlayActivityRecord = io.intersection([
 ]);
 exports.roomAnalysisActivityRecord = io.type({
     type: io.literal('analysis'),
-    history: chessGame_1.chessHistory,
+    analysisId: io.string,
 });
 exports.roomActivityRecord = io.union([
     exports.roomNoActivityRecord,
