@@ -34,7 +34,7 @@ export const roomAnalysisActivityRecord = io.type({
   analysisId: io.string,
 });
 
-export type RoomAnalysisActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
+export type RoomAnalysisActivityRecord = io.TypeOf<typeof roomAnalysisActivityRecord>;
 
 export const roomActivityRecord = io.union([
   roomNoActivityRecord,
