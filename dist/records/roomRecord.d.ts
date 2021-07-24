@@ -2331,7 +2331,7 @@ export declare const roomAnalysisActivityRecord: io.TypeC<{
     type: io.LiteralC<"analysis">;
     analysisId: io.StringC;
 }>;
-export declare type RoomAnalysisActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
+export declare type RoomAnalysisActivityRecord = io.TypeOf<typeof roomAnalysisActivityRecord>;
 export declare const roomActivityRecord: io.UnionC<[io.TypeC<{
     type: io.LiteralC<"none">;
 }>, io.IntersectionC<[io.TypeC<{
