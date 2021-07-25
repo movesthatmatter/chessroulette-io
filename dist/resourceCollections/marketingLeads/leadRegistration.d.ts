@@ -1,22 +1,42 @@
 import * as io from 'io-ts';
-import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from 'src/sdk/resource';
+import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';
 export declare namespace LeadRegistration {
-    const resource: Resource<io.TypeC<{
-        email: io.StringC;
-        accessToken: io.StringC;
+    const resource: Resource<io.UnionC<[io.TypeC<{
+        vendor: io.LiteralC<"Twitch">;
+        vendorData: io.TypeC<{
+            id: io.StringC;
+            email: io.StringC;
+            display_name: io.StringC;
+            profile_image_url: io.StringC;
+            created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        }>;
     }>, io.TypeC<{
+        vendor: io.StringC;
+        vendorData: io.UnknownRecordC;
+    }>]>, io.UnionC<[io.TypeC<{
         vendor: io.StringC;
         campaign: io.StringC;
         vendorData: io.TypeC<{
             accessToken: io.StringC;
             email: io.StringC;
         }>;
-    }>, io.TypeC<{
+    }>, io.UnknownRecordC]>, io.TypeC<{
         type: io.LiteralC<"BadRequestError">;
         content: io.UndefinedC;
     }>, {
-        email: string;
-        accessToken: string;
+        vendor: "Twitch";
+        vendorData: {
+            id: string;
+            email: string;
+            display_name: string;
+            profile_image_url: string;
+            created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+        };
+    } | {
+        vendor: string;
+        vendorData: {
+            [key: string]: unknown;
+        };
     }, {
         vendor: string;
         campaign: string;
@@ -24,6 +44,8 @@ export declare namespace LeadRegistration {
             accessToken: string;
             email: string;
         };
+    } | {
+        [key: string]: unknown;
     }, {
         type: "BadRequestError";
         content: undefined;
