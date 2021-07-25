@@ -10,7 +10,6 @@ var LeadRegistration;
         email: io.string,
         accessToken: io.string,
     });
-    var response = collabLeadRecord_1.leadRecord;
-    LeadRegistration.resource = new resource_1.Resource(request, response);
+    LeadRegistration.resource = new resource_1.Resource(request, collabLeadRecord_1.leadRecord);
 })(LeadRegistration = exports.LeadRegistration || (exports.LeadRegistration = {}));
 //# sourceMappingURL=leadRegistration.js.map

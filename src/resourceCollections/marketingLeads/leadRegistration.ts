@@ -8,9 +8,7 @@ export namespace LeadRegistration {
     accessToken: io.string,
   });
 
-  const response = leadRecord;
-
-  export const resource = new Resource(request, response);
+  export const resource = new Resource(request, leadRecord);
 
   export type Request = RequestOf<typeof resource>;
   export type OkResponse = OkResponseOf<typeof resource>;
