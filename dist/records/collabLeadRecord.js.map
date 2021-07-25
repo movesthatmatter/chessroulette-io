@@ -1,0 +1,1 @@
+{"version":3,"file":"collabLeadRecord.js","sourceRoot":"","sources":["../../src/records/collabLeadRecord.ts"],"names":[],"mappings":";;;AAAA,0BAA4B;AAEf,QAAA,UAAU,GAAG,EAAE,CAAC,IAAI,CAAC;IAChC,MAAM,EAAE,EAAE,CAAC,MAAM;IACjB,QAAQ,EAAE,EAAE,CAAC,MAAM;IACnB,UAAU,EAAE,EAAE,CAAC,IAAI,CAAC;QAClB,WAAW,EAAE,EAAE,CAAC,MAAM;QACtB,KAAK,EAAE,EAAE,CAAC,MAAM;KACjB,CAAC;CACH,CAAC,CAAC"}
