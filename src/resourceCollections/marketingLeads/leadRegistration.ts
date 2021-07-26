@@ -1,21 +1,11 @@
 import * as io from 'io-ts';
-import { twitchUserRecord } from '../../records/twitchRecords';
+import { leadRegistrationTwitchVendorData } from '../../records/twitchRecords';
 import { leadRecord } from '../../records/collabLeadRecord';
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';
 
 export namespace LeadRegistration {
-  const request = io.union([
-    io.type({
-      vendor: io.literal('Twitch'),
-      vendorData: twitchUserRecord,
-    }),
-    io.type({
-      vendor: io.string,
-      vendorData: io.UnknownRecord,
-    }),
-  ]);
-
-  const response = io.union([leadRecord, io.UnknownRecord]);
+  const request = leadRecord;
+  const response = leadRegistrationTwitchVendorData;
 
   export const resource = new Resource(request, response);
 

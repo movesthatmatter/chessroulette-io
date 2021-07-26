@@ -1,12 +1,10 @@
 import * as io from 'io-ts';
+import { leadRegistrationTwitchVendorData } from './twitchRecords';
 
 export const leadRecord = io.type({
-  vendor: io.string,
+  vendor: io.literal('twitch'),
   campaign: io.string,
-  vendorData: io.type({
-    accessToken: io.string,
-    email: io.string,
-  }),
+  vendorData: leadRegistrationTwitchVendorData,
 });
 
 export type LeadRecord = io.TypeOf<typeof leadRecord>;

@@ -86,13 +86,13 @@ export declare namespace Authenticate {
         verificationCode: string;
     } | {
         type: "external";
-        vendor: "facebook" | "lichess" | "twitch";
+        vendor: "twitch" | "facebook" | "lichess";
         accessToken: string;
     }, {
         status: "InexistentUser";
         verificationToken: string;
         external: {
-            vendor: "facebook" | "lichess" | "twitch";
+            vendor: "twitch" | "facebook" | "lichess";
             user: {
                 id: string;
                 email: string;
@@ -143,7 +143,7 @@ export declare namespace Authenticate {
     } | {
         status: "InexistentExternalUserMatchesExistentUser:Email";
         email: string;
-        vendor: "facebook" | "lichess" | "twitch";
+        vendor: "twitch" | "facebook" | "lichess";
     }, {
         type: "VerificationFailed";
         content: undefined;
