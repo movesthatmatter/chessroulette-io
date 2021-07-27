@@ -1,14 +1,10 @@
-import * as io from 'io-ts';
-import { leadRegistrationTwitchVendorData } from '../../records/twitchRecords';
 import { leadRecord } from '../../records/collabLeadRecord';
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';
+import { leadResponsePayload } from '../../payloads/lead';
 
 export namespace LeadRegistration {
   const request = leadRecord;
-  const response = io.type({
-    status: io.union([io.literal('ExistentLead'), io.literal('NewLeadRegisterdSuccessful')]),
-    data: leadRegistrationTwitchVendorData,
-  });
+  const response = leadResponsePayload;
 
   export const resource = new Resource(request, response);
 

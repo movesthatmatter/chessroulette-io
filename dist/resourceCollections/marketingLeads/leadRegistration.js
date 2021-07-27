@@ -1,17 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LeadRegistration = void 0;
-var io = require("io-ts");
-var twitchRecords_1 = require("../../records/twitchRecords");
 var collabLeadRecord_1 = require("../../records/collabLeadRecord");
 var resource_1 = require("../../sdk/resource");
+var lead_1 = require("../../payloads/lead");
 var LeadRegistration;
 (function (LeadRegistration) {
     var request = collabLeadRecord_1.leadRecord;
-    var response = io.type({
-        status: io.union([io.literal('ExistentLead'), io.literal('NewLeadRegisterdSuccessful')]),
-        data: twitchRecords_1.leadRegistrationTwitchVendorData,
-    });
+    var response = lead_1.leadResponsePayload;
     LeadRegistration.resource = new resource_1.Resource(request, response);
 })(LeadRegistration = exports.LeadRegistration || (exports.LeadRegistration = {}));
 //# sourceMappingURL=leadRegistration.js.map
