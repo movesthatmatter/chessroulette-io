@@ -1,4 +1,3 @@
-import * as io from 'io-ts';
 import { leadRegistrationTwitchVendorData } from '../../records/twitchRecords';
 import { leadRecord } from '../../records/collabLeadRecord';
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';

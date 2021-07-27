@@ -1,27 +1,26 @@
-import * as io from 'io-ts';
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';
 export declare namespace LeadRegistration {
-    const resource: Resource<io.TypeC<{
-        vendor: io.LiteralC<"twitch">;
-        campaign: io.StringC;
-        vendorData: io.TypeC<{
-            id: io.StringC;
-            email: io.StringC;
-            display_name: io.StringC;
-            profile_image_url: io.StringC;
-            created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-            accessToken: io.StringC;
+    const resource: Resource<import("io-ts").TypeC<{
+        vendor: import("io-ts").LiteralC<"twitch">;
+        campaign: import("io-ts").StringC;
+        vendorData: import("io-ts").TypeC<{
+            id: import("io-ts").StringC;
+            email: import("io-ts").StringC;
+            display_name: import("io-ts").StringC;
+            profile_image_url: import("io-ts").StringC;
+            created_at: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+            accessToken: import("io-ts").StringC;
         }>;
-    }>, io.TypeC<{
-        id: io.StringC;
-        email: io.StringC;
-        display_name: io.StringC;
-        profile_image_url: io.StringC;
-        created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        accessToken: io.StringC;
-    }>, io.TypeC<{
-        type: io.LiteralC<"BadRequestError">;
-        content: io.UndefinedC;
+    }>, import("io-ts").TypeC<{
+        id: import("io-ts").StringC;
+        email: import("io-ts").StringC;
+        display_name: import("io-ts").StringC;
+        profile_image_url: import("io-ts").StringC;
+        created_at: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        accessToken: import("io-ts").StringC;
+    }>, import("io-ts").TypeC<{
+        type: import("io-ts").LiteralC<"BadRequestError">;
+        content: import("io-ts").UndefinedC;
     }>, {
         vendor: "twitch";
         campaign: string;
