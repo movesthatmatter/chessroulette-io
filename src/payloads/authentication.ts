@@ -1,5 +1,9 @@
 import * as io from 'io-ts';
-import { externalUserRecord } from '../records/externalVendorsRecords';
+import {
+  facebookExternalUserRecord,
+  lichessExternalUserRecord,
+  twitchExternalUserRecord,
+} from '../records/externalVendorsRecords';
 import { guestUserRecord } from '../records/userRecord';
 import {
   errHttpResponsePayload,
@@ -62,10 +66,9 @@ export const userCheckInexitentUserResponsePayloadData = io.type({
   status: io.literal('InexistentUser'),
   external: io.union([
     io.undefined,
-    io.type({
-      vendor: externalVendor,
-      user: externalUserRecord,
-    }),
+    lichessExternalUserRecord,
+    facebookExternalUserRecord,
+    twitchExternalUserRecord,
   ]),
 });
 export type UserCheckInexitentUserResponsePayloadData = io.TypeOf<

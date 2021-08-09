@@ -34,10 +34,9 @@ exports.userCheckInexitentUserResponsePayloadData = io.type({
     status: io.literal('InexistentUser'),
     external: io.union([
         io.undefined,
-        io.type({
-            vendor: exports.externalVendor,
-            user: externalVendorsRecords_1.externalUserRecord,
-        }),
+        externalVendorsRecords_1.lichessExternalUserRecord,
+        externalVendorsRecords_1.facebookExternalUserRecord,
+        externalVendorsRecords_1.twitchExternalUserRecord,
     ]),
 });
 exports.userCheckExistentUserResponsePayloadData = io.type({

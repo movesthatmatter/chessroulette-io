@@ -1,7 +1,11 @@
 import * as io from 'io-ts';
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';
 import { externalVendor } from '../../payloads';
-import { externalUserRecord } from '../../records/externalVendorsRecords';
+import {
+  facebookExternalUserRecord,
+  lichessExternalUserRecord,
+  twitchExternalUserRecord,
+} from '../../records/externalVendorsRecords';
 
 export namespace Authenticate {
   const internalAccountRequest = io.type({
@@ -9,28 +13,24 @@ export namespace Authenticate {
     email: io.string,
     verificationCode: io.string, // This is the code sent in the Email
   });
-  
+
   const externalAccountRequest = io.type({
     type: io.literal('external'),
     vendor: externalVendor,
     accessToken: io.string,
   });
-  
-  const request = io.union([
-    internalAccountRequest,
-    externalAccountRequest,
-  ]);
-  
+
+  const request = io.union([internalAccountRequest, externalAccountRequest]);
+
   const okResponseInexistentUser = io.type({
     status: io.literal('InexistentUser'),
     // This holds the actual information such as email, external user id, etc.
     verificationToken: io.string,
     external: io.union([
       io.undefined,
-      io.type({
-        vendor: externalVendor,
-        user: externalUserRecord,
-      }),
+      lichessExternalUserRecord,
+      twitchExternalUserRecord,
+      facebookExternalUserRecord,
     ]),
   });
 
@@ -47,7 +47,7 @@ export namespace Authenticate {
     email: io.string,
     vendor: externalVendor,
   });
-  
+
   const okResponse = io.union([
     okResponseInexistentUser,
     okResponseExistentUser,
@@ -59,11 +59,7 @@ export namespace Authenticate {
     content: io.undefined,
   });
 
-  export const resource = new Resource(
-    request,
-    okResponse,
-    errResponseVerificationFailed,
-  );
+  export const resource = new Resource(request, okResponse, errResponseVerificationFailed);
 
   export type Request = RequestOf<typeof resource>;
   export type OkResponse = OkResponseOf<typeof resource>;

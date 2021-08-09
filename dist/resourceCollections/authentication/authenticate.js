@@ -17,20 +17,16 @@ var Authenticate;
         vendor: payloads_1.externalVendor,
         accessToken: io.string,
     });
-    var request = io.union([
-        internalAccountRequest,
-        externalAccountRequest,
-    ]);
+    var request = io.union([internalAccountRequest, externalAccountRequest]);
     var okResponseInexistentUser = io.type({
         status: io.literal('InexistentUser'),
         // This holds the actual information such as email, external user id, etc.
         verificationToken: io.string,
         external: io.union([
             io.undefined,
-            io.type({
-                vendor: payloads_1.externalVendor,
-                user: externalVendorsRecords_1.externalUserRecord,
-            }),
+            externalVendorsRecords_1.lichessExternalUserRecord,
+            externalVendorsRecords_1.twitchExternalUserRecord,
+            externalVendorsRecords_1.facebookExternalUserRecord,
         ]),
     });
     var okResponseExistentUser = io.type({

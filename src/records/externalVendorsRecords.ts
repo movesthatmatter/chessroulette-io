@@ -9,4 +9,25 @@ export const externalUserRecord = io.union([
   twitchUserRecord,
 ]);
 
+export const twitchExternalUserRecord = io.type({
+  vendor: io.literal('twitch'),
+  user: twitchUserRecord,
+});
+
+export const lichessExternalUserRecord = io.type({
+  vendor: io.literal('lichess'),
+  user: lichessUserRecord,
+});
+
+export const facebookExternalUserRecord = io.type({
+  vendor: io.literal('facebook'),
+  user: facebookUserRecord,
+});
+
 export type ExternalUserRecord = io.TypeOf<typeof externalUserRecord>;
+
+export type TwitchExternalUserRecord = io.TypeOf<typeof twitchExternalUserRecord>;
+
+export type LichessExternalUserRecord = io.TypeOf<typeof lichessExternalUserRecord>;
+
+export type FacebookExternalUserRecord = io.TypeOf<typeof facebookExternalUserRecord>;
