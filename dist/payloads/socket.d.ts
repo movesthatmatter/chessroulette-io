@@ -3637,6 +3637,18 @@ export declare const iamResponsePayload: io.TypeC<{
             slug: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"private">;
+        }>]>, io.IntersectionC<[io.TypeC<{
+            rated: io.BooleanC;
+            "clock.limit": io.NumberC;
+            "clock.increment": io.NumberC;
+            variant: io.LiteralC<"standard">;
+            color: io.UnionC<[io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                black: null;
+            }>]>;
+        }>, io.TypeC<{
+            type: io.LiteralC<"lichess">;
         }>]>]>;
     }>, io.TypeC<{
         hasActiveChallenge: io.LiteralC<false>;
@@ -7279,6 +7291,18 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             slug: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"private">;
+        }>]>, io.IntersectionC<[io.TypeC<{
+            rated: io.BooleanC;
+            "clock.limit": io.NumberC;
+            "clock.increment": io.NumberC;
+            variant: io.LiteralC<"standard">;
+            color: io.UnionC<[io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                black: null;
+            }>]>;
+        }>, io.TypeC<{
+            type: io.LiteralC<"lichess">;
         }>]>]>;
     }>, io.TypeC<{
         hasActiveChallenge: io.LiteralC<false>;
