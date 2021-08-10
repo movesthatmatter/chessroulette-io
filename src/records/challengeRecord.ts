@@ -67,11 +67,7 @@ export const lichessChallengeRecord = io.intersection([
 
 export type LichessChallengeRecord = io.TypeOf<typeof lichessChallengeRecord>;
 
-export const challengeRecord = io.union([
-  publicChallengeRecord,
-  privateChallengeRecord,
-  lichessChallengeRecord,
-]);
+export const challengeRecord = io.union([publicChallengeRecord, privateChallengeRecord]);
 export type ChallengeRecord = io.TypeOf<typeof challengeRecord>;
 
 export const quickPairingRecord = io.type({

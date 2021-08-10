@@ -62,11 +62,7 @@ exports.lichessChallengeRecord = io.intersection([
         type: io.literal('lichess'),
     }),
 ]);
-exports.challengeRecord = io.union([
-    exports.publicChallengeRecord,
-    exports.privateChallengeRecord,
-    exports.lichessChallengeRecord,
-]);
+exports.challengeRecord = io.union([exports.publicChallengeRecord, exports.privateChallengeRecord]);
 exports.quickPairingRecord = io.type({
     gameSpecs: chessGame_1.gameSpecsRecord,
     createdBy: io.string,

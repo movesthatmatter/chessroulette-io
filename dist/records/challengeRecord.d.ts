@@ -257,41 +257,6 @@ export declare const challengeRecord: io.UnionC<[io.IntersectionC<[io.TypeC<{
     slug: io.StringC;
 }>, io.TypeC<{
     type: io.LiteralC<"private">;
-}>]>, io.IntersectionC<[io.TypeC<{
-    gameSpecs: io.TypeC<{
-        timeLimit: io.KeyofC<{
-            bullet30: null;
-            bullet1: null;
-            blitz2: null;
-            blitz3: null;
-            blitz5: null;
-            rapid10: null;
-            rapid15: null;
-            rapid20: null;
-            rapid30: null;
-            rapid45: null;
-            rapid60: null;
-            untimed: null;
-        }>;
-        preferredColor: io.UnionC<[io.KeyofC<{
-            black: null;
-        }>, io.KeyofC<{
-            white: null;
-        }>, io.KeyofC<{
-            random: null;
-        }>]>;
-    }>;
-    rated: io.BooleanC;
-    "clock.limit": io.NumberC;
-    "clock.increment": io.NumberC;
-    variant: io.LiteralC<"standard">;
-    color: io.UnionC<[io.KeyofC<{
-        white: null;
-    }>, io.KeyofC<{
-        black: null;
-    }>]>;
-}>, io.TypeC<{
-    type: io.LiteralC<"lichess">;
 }>]>]>;
 export declare type ChallengeRecord = io.TypeOf<typeof challengeRecord>;
 export declare const quickPairingRecord: io.TypeC<{

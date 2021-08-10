@@ -207,41 +207,6 @@ export declare const createChallengeResponse: io.UnionC<[io.IntersectionC<[io.Ty
     slug: io.StringC;
 }>, io.TypeC<{
     type: io.LiteralC<"private">;
-}>]>, io.IntersectionC<[io.TypeC<{
-    gameSpecs: io.TypeC<{
-        timeLimit: io.KeyofC<{
-            bullet30: null;
-            bullet1: null;
-            blitz2: null;
-            blitz3: null;
-            blitz5: null;
-            rapid10: null;
-            rapid15: null;
-            rapid20: null;
-            rapid30: null;
-            rapid45: null;
-            rapid60: null;
-            untimed: null;
-        }>;
-        preferredColor: io.UnionC<[io.KeyofC<{
-            black: null;
-        }>, io.KeyofC<{
-            white: null;
-        }>, io.KeyofC<{
-            random: null;
-        }>]>;
-    }>;
-    rated: io.BooleanC;
-    "clock.limit": io.NumberC;
-    "clock.increment": io.NumberC;
-    variant: io.LiteralC<"standard">;
-    color: io.UnionC<[io.KeyofC<{
-        white: null;
-    }>, io.KeyofC<{
-        black: null;
-    }>]>;
-}>, io.TypeC<{
-    type: io.LiteralC<"lichess">;
 }>]>]>;
 export declare type CreateChallengeResponse = io.TypeOf<typeof createChallengeResponse>;
 export declare const removeChallengeRequest: io.TypeC<{
@@ -3270,41 +3235,6 @@ export declare const quickPairingPendingResponse: io.TypeC<{
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>, io.IntersectionC<[io.TypeC<{
-        gameSpecs: io.TypeC<{
-            timeLimit: io.KeyofC<{
-                bullet30: null;
-                bullet1: null;
-                blitz2: null;
-                blitz3: null;
-                blitz5: null;
-                rapid10: null;
-                rapid15: null;
-                rapid20: null;
-                rapid30: null;
-                rapid45: null;
-                rapid60: null;
-                untimed: null;
-            }>;
-            preferredColor: io.UnionC<[io.KeyofC<{
-                black: null;
-            }>, io.KeyofC<{
-                white: null;
-            }>, io.KeyofC<{
-                random: null;
-            }>]>;
-        }>;
-        rated: io.BooleanC;
-        "clock.limit": io.NumberC;
-        "clock.increment": io.NumberC;
-        variant: io.LiteralC<"standard">;
-        color: io.UnionC<[io.KeyofC<{
-            white: null;
-        }>, io.KeyofC<{
-            black: null;
-        }>]>;
-    }>, io.TypeC<{
-        type: io.LiteralC<"lichess">;
     }>]>]>;
 }>;
 export declare type QuickPairingPendingResponse = io.TypeOf<typeof quickPairingPendingResponse>;
@@ -6296,41 +6226,6 @@ export declare const quickPairingResponse: io.UnionC<[io.TypeC<{
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>, io.IntersectionC<[io.TypeC<{
-        gameSpecs: io.TypeC<{
-            timeLimit: io.KeyofC<{
-                bullet30: null;
-                bullet1: null;
-                blitz2: null;
-                blitz3: null;
-                blitz5: null;
-                rapid10: null;
-                rapid15: null;
-                rapid20: null;
-                rapid30: null;
-                rapid45: null;
-                rapid60: null;
-                untimed: null;
-            }>;
-            preferredColor: io.UnionC<[io.KeyofC<{
-                black: null;
-            }>, io.KeyofC<{
-                white: null;
-            }>, io.KeyofC<{
-                random: null;
-            }>]>;
-        }>;
-        rated: io.BooleanC;
-        "clock.limit": io.NumberC;
-        "clock.increment": io.NumberC;
-        variant: io.LiteralC<"standard">;
-        color: io.UnionC<[io.KeyofC<{
-            white: null;
-        }>, io.KeyofC<{
-            black: null;
-        }>]>;
-    }>, io.TypeC<{
-        type: io.LiteralC<"lichess">;
     }>]>]>;
 }>]>;
 export declare type QuickPairingResponse = io.TypeOf<typeof quickPairingResponse>;
