@@ -6,6 +6,9 @@ import {
   lichessExternalUserRecord,
   twitchExternalUserRecord,
 } from '../../records/externalVendorsRecords';
+import { facebookUserRecord } from 'src/records/facebookRecords';
+import { lichessUserRecord } from 'src/records/lichessRecords';
+import { twitchUserRecord } from 'src/records/twitchRecords';
 
 export namespace Authenticate {
   const internalAccountRequest = io.type({
@@ -28,9 +31,21 @@ export namespace Authenticate {
     verificationToken: io.string,
     external: io.union([
       io.undefined,
-      lichessExternalUserRecord,
-      twitchExternalUserRecord,
-      facebookExternalUserRecord,
+      io.type({
+        vendor: io.literal('facebook'),
+        user: facebookUserRecord,
+        accessToken: io.string,
+      }),
+      io.type({
+        vendor: io.literal('lichess'),
+        user: lichessUserRecord,
+        accessToken: io.string,
+      }),
+      io.type({
+        vendor: io.literal('twitch'),
+        user: twitchUserRecord,
+        accessToken: io.string,
+      }),
     ]),
   });
 

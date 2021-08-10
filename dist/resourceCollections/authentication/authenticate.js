@@ -4,7 +4,9 @@ exports.Authenticate = void 0;
 var io = require("io-ts");
 var resource_1 = require("../../sdk/resource");
 var payloads_1 = require("../../payloads");
-var externalVendorsRecords_1 = require("../../records/externalVendorsRecords");
+var facebookRecords_1 = require("src/records/facebookRecords");
+var lichessRecords_1 = require("src/records/lichessRecords");
+var twitchRecords_1 = require("src/records/twitchRecords");
 var Authenticate;
 (function (Authenticate) {
     var internalAccountRequest = io.type({
@@ -24,9 +26,21 @@ var Authenticate;
         verificationToken: io.string,
         external: io.union([
             io.undefined,
-            externalVendorsRecords_1.lichessExternalUserRecord,
-            externalVendorsRecords_1.twitchExternalUserRecord,
-            externalVendorsRecords_1.facebookExternalUserRecord,
+            io.type({
+                vendor: io.literal('facebook'),
+                user: facebookRecords_1.facebookUserRecord,
+                accessToken: io.string,
+            }),
+            io.type({
+                vendor: io.literal('lichess'),
+                user: lichessRecords_1.lichessUserRecord,
+                accessToken: io.string,
+            }),
+            io.type({
+                vendor: io.literal('twitch'),
+                user: twitchRecords_1.twitchUserRecord,
+                accessToken: io.string,
+            }),
         ]),
     });
     var okResponseExistentUser = io.type({

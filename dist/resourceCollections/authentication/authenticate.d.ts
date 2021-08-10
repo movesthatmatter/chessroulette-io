@@ -17,6 +17,16 @@ export declare namespace Authenticate {
         status: io.LiteralC<"InexistentUser">;
         verificationToken: io.StringC;
         external: io.UnionC<[io.UndefinedC, io.TypeC<{
+            vendor: io.LiteralC<"facebook">;
+            user: io.TypeC<{
+                id: io.StringC;
+                email: io.StringC;
+                firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
+                lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
+                name: io.UnionC<[io.StringC, io.UndefinedC]>;
+            }>;
+            accessToken: io.StringC;
+        }>, io.TypeC<{
             vendor: io.LiteralC<"lichess">;
             user: io.TypeC<{
                 email: io.StringC;
@@ -60,16 +70,6 @@ export declare namespace Authenticate {
                 created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             }>;
             accessToken: io.StringC;
-        }>, io.TypeC<{
-            vendor: io.LiteralC<"facebook">;
-            user: io.TypeC<{
-                id: io.StringC;
-                email: io.StringC;
-                firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
-                lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
-                name: io.UnionC<[io.StringC, io.UndefinedC]>;
-            }>;
-            accessToken: io.StringC;
         }>]>;
     }>, io.TypeC<{
         status: io.LiteralC<"ExistentUser">;
@@ -97,13 +97,13 @@ export declare namespace Authenticate {
         status: "InexistentUser";
         verificationToken: string;
         external: {
-            vendor: "twitch";
+            vendor: "facebook";
             user: {
                 id: string;
                 email: string;
-                display_name: string;
-                profile_image_url: string;
-                created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+                firstName: string | undefined;
+                lastName: string | undefined;
+                name: string | undefined;
             };
             accessToken: string;
         } | {
@@ -141,13 +141,13 @@ export declare namespace Authenticate {
             };
             accessToken: string;
         } | {
-            vendor: "facebook";
+            vendor: "twitch";
             user: {
                 id: string;
                 email: string;
-                firstName: string | undefined;
-                lastName: string | undefined;
-                name: string | undefined;
+                display_name: string;
+                profile_image_url: string;
+                created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
             };
             accessToken: string;
         } | undefined;
