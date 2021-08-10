@@ -1,12 +1,8 @@
 import * as io from 'io-ts';
-import { facebookUserRecord } from 'src/records/facebookRecords';
-import { lichessUserRecord } from 'src/records/lichessRecords';
-import { twitchUserRecord } from 'src/records/twitchRecords';
-import {
-  facebookExternalUserRecord,
-  lichessExternalUserRecord,
-  twitchExternalUserRecord,
-} from '../records/externalVendorsRecords';
+import { facebookUserRecord } from '../records/facebookRecords';
+import { lichessUserRecord } from '../records/lichessRecords';
+import { twitchUserRecord } from '../records/twitchRecords';
+
 import { guestUserRecord } from '../records/userRecord';
 import {
   errHttpResponsePayload,

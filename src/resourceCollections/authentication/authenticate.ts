@@ -1,14 +1,9 @@
 import * as io from 'io-ts';
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';
 import { externalVendor } from '../../payloads';
-import {
-  facebookExternalUserRecord,
-  lichessExternalUserRecord,
-  twitchExternalUserRecord,
-} from '../../records/externalVendorsRecords';
-import { facebookUserRecord } from 'src/records/facebookRecords';
-import { lichessUserRecord } from 'src/records/lichessRecords';
-import { twitchUserRecord } from 'src/records/twitchRecords';
+import { facebookUserRecord } from '../../records/facebookRecords';
+import { lichessUserRecord } from '../../records/lichessRecords';
+import { twitchUserRecord } from '../../records/twitchRecords';
 
 export namespace Authenticate {
   const internalAccountRequest = io.type({

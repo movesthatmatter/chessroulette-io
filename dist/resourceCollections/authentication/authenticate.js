@@ -4,9 +4,9 @@ exports.Authenticate = void 0;
 var io = require("io-ts");
 var resource_1 = require("../../sdk/resource");
 var payloads_1 = require("../../payloads");
-var facebookRecords_1 = require("src/records/facebookRecords");
-var lichessRecords_1 = require("src/records/lichessRecords");
-var twitchRecords_1 = require("src/records/twitchRecords");
+var facebookRecords_1 = require("../../records/facebookRecords");
+var lichessRecords_1 = require("../../records/lichessRecords");
+var twitchRecords_1 = require("../../records/twitchRecords");
 var Authenticate;
 (function (Authenticate) {
     var internalAccountRequest = io.type({

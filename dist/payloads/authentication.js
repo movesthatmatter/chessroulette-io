@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.guestAuthenticationResponsePayload = exports.guestAuthenticationRequestPayload = exports.createUserAccountResponsePayload = exports.createUserAccountRequestPayload = exports.verifyEmailResponsePayload = exports.verifyEmailRequestPayload = exports.userCheckResponsePayload = exports.userCheckExistentUserResponsePayloadData = exports.userCheckInexitentUserResponsePayloadData = exports.userCheckVerificationFailedResponsePayload = exports.userCheckRequestPayload = exports.userCheckExternalAccountRequestPayload = exports.userCheckInternalAccountRequestPayload = exports.externalVendor = void 0;
 var io = require("io-ts");
-var facebookRecords_1 = require("src/records/facebookRecords");
-var lichessRecords_1 = require("src/records/lichessRecords");
-var twitchRecords_1 = require("src/records/twitchRecords");
+var facebookRecords_1 = require("../records/facebookRecords");
+var lichessRecords_1 = require("../records/lichessRecords");
+var twitchRecords_1 = require("../records/twitchRecords");
 var userRecord_1 = require("../records/userRecord");
 var http_1 = require("../sdk/http");
 // @Deprecate All in Favor of the Authentication Resource Collection
