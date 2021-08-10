@@ -529,15 +529,18 @@ export declare namespace UserUpdate {
     }>]>, io.TypeC<{
         email: io.StringC;
         externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-            facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
-            lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
-            twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
+            facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
+            lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
+            twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"BadRequestError">;
@@ -569,13 +572,16 @@ export declare namespace UserUpdate {
         email: string;
         externalAccounts: {
             facebook: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
             lichess: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
             twitch: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
         } | undefined;
     }, {

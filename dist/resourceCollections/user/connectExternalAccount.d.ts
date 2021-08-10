@@ -282,15 +282,18 @@ export declare namespace ConnectExternalAccount {
     }>]>, io.TypeC<{
         email: io.StringC;
         externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-            facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
-            lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
-            twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
+            facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
+            lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
+            twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
         }>]>;
     }>]>;
     const resource: Resource<io.TypeC<{
@@ -573,21 +576,24 @@ export declare namespace ConnectExternalAccount {
     }>]>, io.TypeC<{
         email: io.StringC;
         externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-            facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
-            lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
-            twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-            }>]>;
+            facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
+            lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
+            twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                userId: io.StringC;
+                accessToken: io.StringC;
+            }>]>]>;
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"BadRequestError">;
         content: io.UndefinedC;
     }>, {
-        vendor: "lichess" | "twitch" | "facebook";
+        vendor: "twitch" | "lichess" | "facebook";
         accessToken: string;
     }, {
         id: string;
@@ -612,13 +618,16 @@ export declare namespace ConnectExternalAccount {
         email: string;
         externalAccounts: {
             facebook: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
             lichess: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
             twitch: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
         } | undefined;
     }, {
