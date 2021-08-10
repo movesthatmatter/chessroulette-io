@@ -12,6 +12,7 @@ export const baseChallengeRecord = io.type({
 });
 
 export const lichessSeekChallengeRecord = io.type({
+  gameSpecs: ChessGame.gameSpecsRecord,
   rated: io.boolean,
   time: io.number,
   increment: io.number,
@@ -26,6 +27,7 @@ export const lichessSeekChallengeRecord = io.type({
   ]),
 });
 export const lichessPlayerChallengeRecord = io.type({
+  gameSpecs: ChessGame.gameSpecsRecord,
   rated: io.boolean,
   [`clock.limit`]: io.number,
   [`clock.increment`]: io.number,

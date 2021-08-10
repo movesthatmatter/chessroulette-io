@@ -14,6 +14,7 @@ exports.baseChallengeRecord = io.type({
     slug: io.string,
 });
 exports.lichessSeekChallengeRecord = io.type({
+    gameSpecs: ChessGame.gameSpecsRecord,
     rated: io.boolean,
     time: io.number,
     increment: io.number,
@@ -28,6 +29,7 @@ exports.lichessSeekChallengeRecord = io.type({
     ]),
 });
 exports.lichessPlayerChallengeRecord = io.type((_a = {
+        gameSpecs: ChessGame.gameSpecsRecord,
         rated: io.boolean
     },
     _a["clock.limit"] = io.number,
