@@ -1,4 +1,7 @@
 import * as io from 'io-ts';
+import { facebookUserRecord } from 'src/records/facebookRecords';
+import { lichessUserRecord } from 'src/records/lichessRecords';
+import { twitchUserRecord } from 'src/records/twitchRecords';
 import {
   facebookExternalUserRecord,
   lichessExternalUserRecord,
@@ -66,9 +69,21 @@ export const userCheckInexitentUserResponsePayloadData = io.type({
   status: io.literal('InexistentUser'),
   external: io.union([
     io.undefined,
-    lichessExternalUserRecord,
-    facebookExternalUserRecord,
-    twitchExternalUserRecord,
+    io.type({
+      vendor: io.literal('facebook'),
+      user: facebookUserRecord,
+      accessToken: io.string,
+    }),
+    io.type({
+      vendor: io.literal('lichess'),
+      user: lichessUserRecord,
+      accessToken: io.string,
+    }),
+    io.type({
+      vendor: io.literal('twitch'),
+      user: twitchUserRecord,
+      accessToken: io.string,
+    }),
   ]),
 });
 export type UserCheckInexitentUserResponsePayloadData = io.TypeOf<

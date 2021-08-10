@@ -51,6 +51,7 @@ export declare const twitchExternalUserRecord: io.TypeC<{
         profile_image_url: io.StringC;
         created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
     }>;
+    accessToken: io.StringC;
 }>;
 export declare const lichessExternalUserRecord: io.TypeC<{
     vendor: io.LiteralC<"lichess">;
@@ -85,6 +86,7 @@ export declare const lichessExternalUserRecord: io.TypeC<{
             }>;
         }>;
     }>;
+    accessToken: io.StringC;
 }>;
 export declare const facebookExternalUserRecord: io.TypeC<{
     vendor: io.LiteralC<"facebook">;
@@ -95,6 +97,7 @@ export declare const facebookExternalUserRecord: io.TypeC<{
         lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
         name: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>;
+    accessToken: io.StringC;
 }>;
 export declare type ExternalUserRecord = io.TypeOf<typeof externalUserRecord>;
 export declare type TwitchExternalUserRecord = io.TypeOf<typeof twitchExternalUserRecord>;

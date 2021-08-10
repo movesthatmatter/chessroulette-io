@@ -2,7 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.guestAuthenticationResponsePayload = exports.guestAuthenticationRequestPayload = exports.createUserAccountResponsePayload = exports.createUserAccountRequestPayload = exports.verifyEmailResponsePayload = exports.verifyEmailRequestPayload = exports.userCheckResponsePayload = exports.userCheckExistentUserResponsePayloadData = exports.userCheckInexitentUserResponsePayloadData = exports.userCheckVerificationFailedResponsePayload = exports.userCheckRequestPayload = exports.userCheckExternalAccountRequestPayload = exports.userCheckInternalAccountRequestPayload = exports.externalVendor = void 0;
 var io = require("io-ts");
-var externalVendorsRecords_1 = require("../records/externalVendorsRecords");
+var facebookRecords_1 = require("src/records/facebookRecords");
+var lichessRecords_1 = require("src/records/lichessRecords");
+var twitchRecords_1 = require("src/records/twitchRecords");
 var userRecord_1 = require("../records/userRecord");
 var http_1 = require("../sdk/http");
 // @Deprecate All in Favor of the Authentication Resource Collection
@@ -34,9 +36,21 @@ exports.userCheckInexitentUserResponsePayloadData = io.type({
     status: io.literal('InexistentUser'),
     external: io.union([
         io.undefined,
-        externalVendorsRecords_1.lichessExternalUserRecord,
-        externalVendorsRecords_1.facebookExternalUserRecord,
-        externalVendorsRecords_1.twitchExternalUserRecord,
+        io.type({
+            vendor: io.literal('facebook'),
+            user: facebookRecords_1.facebookUserRecord,
+            accessToken: io.string,
+        }),
+        io.type({
+            vendor: io.literal('lichess'),
+            user: lichessRecords_1.lichessUserRecord,
+            accessToken: io.string,
+        }),
+        io.type({
+            vendor: io.literal('twitch'),
+            user: twitchRecords_1.twitchUserRecord,
+            accessToken: io.string,
+        }),
     ]),
 });
 exports.userCheckExistentUserResponsePayloadData = io.type({

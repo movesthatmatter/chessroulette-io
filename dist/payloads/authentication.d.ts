@@ -61,6 +61,16 @@ export declare type UserCheckVerificationFailedResponsePayload = io.TypeOf<typeo
 export declare const userCheckInexitentUserResponsePayloadData: io.TypeC<{
     status: io.LiteralC<"InexistentUser">;
     external: io.UnionC<[io.UndefinedC, io.TypeC<{
+        vendor: io.LiteralC<"facebook">;
+        user: io.TypeC<{
+            id: io.StringC;
+            email: io.StringC;
+            firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
+            lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
+            name: io.UnionC<[io.StringC, io.UndefinedC]>;
+        }>;
+        accessToken: io.StringC;
+    }>, io.TypeC<{
         vendor: io.LiteralC<"lichess">;
         user: io.TypeC<{
             email: io.StringC;
@@ -93,15 +103,7 @@ export declare const userCheckInexitentUserResponsePayloadData: io.TypeC<{
                 }>;
             }>;
         }>;
-    }>, io.TypeC<{
-        vendor: io.LiteralC<"facebook">;
-        user: io.TypeC<{
-            id: io.StringC;
-            email: io.StringC;
-            firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
-            lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
-            name: io.UnionC<[io.StringC, io.UndefinedC]>;
-        }>;
+        accessToken: io.StringC;
     }>, io.TypeC<{
         vendor: io.LiteralC<"twitch">;
         user: io.TypeC<{
@@ -111,6 +113,7 @@ export declare const userCheckInexitentUserResponsePayloadData: io.TypeC<{
             profile_image_url: io.StringC;
             created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         }>;
+        accessToken: io.StringC;
     }>]>;
 }>;
 export declare type UserCheckInexitentUserResponsePayloadData = io.TypeOf<typeof userCheckInexitentUserResponsePayloadData>;
@@ -125,6 +128,16 @@ export declare const userCheckResponsePayload: io.UnionC<[io.TypeC<{
     data: io.UnionC<[io.TypeC<{
         status: io.LiteralC<"InexistentUser">;
         external: io.UnionC<[io.UndefinedC, io.TypeC<{
+            vendor: io.LiteralC<"facebook">;
+            user: io.TypeC<{
+                id: io.StringC;
+                email: io.StringC;
+                firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
+                lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
+                name: io.UnionC<[io.StringC, io.UndefinedC]>;
+            }>;
+            accessToken: io.StringC;
+        }>, io.TypeC<{
             vendor: io.LiteralC<"lichess">;
             user: io.TypeC<{
                 email: io.StringC;
@@ -157,15 +170,7 @@ export declare const userCheckResponsePayload: io.UnionC<[io.TypeC<{
                     }>;
                 }>;
             }>;
-        }>, io.TypeC<{
-            vendor: io.LiteralC<"facebook">;
-            user: io.TypeC<{
-                id: io.StringC;
-                email: io.StringC;
-                firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
-                lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
-                name: io.UnionC<[io.StringC, io.UndefinedC]>;
-            }>;
+            accessToken: io.StringC;
         }>, io.TypeC<{
             vendor: io.LiteralC<"twitch">;
             user: io.TypeC<{
@@ -175,6 +180,7 @@ export declare const userCheckResponsePayload: io.UnionC<[io.TypeC<{
                 profile_image_url: io.StringC;
                 created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             }>;
+            accessToken: io.StringC;
         }>]>;
     }>, io.TypeC<{
         status: io.LiteralC<"ExistentUser">;

@@ -13,13 +13,16 @@ exports.externalUserRecord = io.union([
 exports.twitchExternalUserRecord = io.type({
     vendor: io.literal('twitch'),
     user: twitchRecords_1.twitchUserRecord,
+    accessToken: io.string,
 });
 exports.lichessExternalUserRecord = io.type({
     vendor: io.literal('lichess'),
     user: lichessRecords_1.lichessUserRecord,
+    accessToken: io.string,
 });
 exports.facebookExternalUserRecord = io.type({
     vendor: io.literal('facebook'),
     user: facebookRecords_1.facebookUserRecord,
+    accessToken: io.string,
 });
 //# sourceMappingURL=externalVendorsRecords.js.map

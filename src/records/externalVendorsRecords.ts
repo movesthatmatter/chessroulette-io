@@ -12,16 +12,19 @@ export const externalUserRecord = io.union([
 export const twitchExternalUserRecord = io.type({
   vendor: io.literal('twitch'),
   user: twitchUserRecord,
+  accessToken: io.string,
 });
 
 export const lichessExternalUserRecord = io.type({
   vendor: io.literal('lichess'),
   user: lichessUserRecord,
+  accessToken: io.string,
 });
 
 export const facebookExternalUserRecord = io.type({
   vendor: io.literal('facebook'),
   user: facebookUserRecord,
+  accessToken: io.string,
 });
 
 export type ExternalUserRecord = io.TypeOf<typeof externalUserRecord>;

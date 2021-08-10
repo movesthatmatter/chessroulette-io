@@ -49,6 +49,7 @@ export declare namespace Authenticate {
                     }>;
                 }>;
             }>;
+            accessToken: io.StringC;
         }>, io.TypeC<{
             vendor: io.LiteralC<"twitch">;
             user: io.TypeC<{
@@ -58,6 +59,7 @@ export declare namespace Authenticate {
                 profile_image_url: io.StringC;
                 created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             }>;
+            accessToken: io.StringC;
         }>, io.TypeC<{
             vendor: io.LiteralC<"facebook">;
             user: io.TypeC<{
@@ -67,6 +69,7 @@ export declare namespace Authenticate {
                 lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
                 name: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>;
+            accessToken: io.StringC;
         }>]>;
     }>, io.TypeC<{
         status: io.LiteralC<"ExistentUser">;
@@ -102,6 +105,7 @@ export declare namespace Authenticate {
                 profile_image_url: string;
                 created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
             };
+            accessToken: string;
         } | {
             vendor: "lichess";
             user: {
@@ -135,6 +139,7 @@ export declare namespace Authenticate {
                     } | undefined;
                 };
             };
+            accessToken: string;
         } | {
             vendor: "facebook";
             user: {
@@ -144,6 +149,7 @@ export declare namespace Authenticate {
                 lastName: string | undefined;
                 name: string | undefined;
             };
+            accessToken: string;
         } | undefined;
     } | {
         status: "ExistentUser";
