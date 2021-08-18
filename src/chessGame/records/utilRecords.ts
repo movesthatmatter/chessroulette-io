@@ -276,17 +276,60 @@ export const chessMove = io.intersection([
 ]);
 export type ChessMove = io.TypeOf<typeof chessMove>;
 
-export const chessHistoryMove = io.intersection([
+const branchedHistories: io.Type<ChessHistory[]> = io.recursion('BranchedHistories', () =>
+  io.array(chessHistory)
+);
+
+// type
+
+const chessHistoryBaseMove = io.intersection([
   chessMove,
   io.type({
     san: io.string,
-    color: chessGameColor, // not needed as the order
     clock: io.number, // Corresponds to %clk in the extended PGN: https://www.enpassant.dk/chess/palview/enhancedpgn.htm
   }),
 ]);
+type ChessHistoryBaseMove = io.TypeOf<typeof chessHistoryBaseMove>;
 
+export const chessHistoryWhiteMove = io.intersection([
+  chessHistoryBaseMove,
+  io.type({
+    color: chessColorWhite,
+  }),
+]);
+export type ChessHistoryWhiteMove = io.TypeOf<typeof chessHistoryWhiteMove>;
+
+export const chessHistoryBlackMove = io.intersection([
+  chessHistoryBaseMove,
+  io.type({
+    color: chessColorBlack,
+  }),
+]);
+export type ChessHistoryBlackMove = io.TypeOf<typeof chessHistoryBlackMove>;
+
+export const chessHistoryMove = io.union([chessHistoryWhiteMove, chessHistoryBlackMove]);
 export type ChessHistoryMove = io.TypeOf<typeof chessHistoryMove>;
 
 export const chessHistory = io.array(chessHistoryMove);
-
 export type ChessHistory = io.TypeOf<typeof chessHistory>;
+
+type ChessRecursiveMove = ChessHistoryMove & {
+  branchedHistories?: ChessRecursiveHistory[] | undefined;
+};
+type ChessRecursiveHistory = ChessRecursiveMove[];
+
+export const chessRecursiveMove: io.Type<ChessRecursiveMove> = io.recursion(
+  'ChessRecursiveHistory',
+  () =>
+    io.intersection([
+      chessHistoryMove,
+      io.partial({
+        branchedHistories: io.union([io.array(chessRecursiveHistory), io.undefined]),
+      }),
+    ])
+);
+
+export const chessRecursiveHistory: io.Type<ChessRecursiveHistory> = io.recursion(
+  'ChessRecursiveHistory',
+  () => io.array(chessHistoryMove)
+);

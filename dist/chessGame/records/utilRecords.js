@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.chessHistory = exports.chessHistoryMove = exports.chessMove = exports.activePiecesRecord = exports.capturedPiecesRecord = exports.chessGameOffer = exports.chessGameTakebackOffer = exports.chessGameChallengeOffer = exports.chessGameRematchOffer = exports.gameSpecsRecord = exports.chessGameDrawOffer = exports.partialChessPlayersBySide = exports.chessPlayersBySide = exports.chessGameTimeLimit = exports.chessGameStatePgn = exports.chessGameStateFen = exports.chessPreferredColorOption = exports.chessGameColor = exports.chessColorBlack = exports.chessColorWhite = exports.chessPlayers = exports.chessPlayer = exports.chessPlayerBlack = exports.chessPlayerWhite = exports.chessSquare = exports.capturableChessPieceType = exports.promotionalChessPieceType = exports.chessPieceType = void 0;
+exports.chessRecursiveHistory = exports.chessRecursiveMove = exports.chessHistory = exports.chessHistoryMove = exports.chessHistoryBlackMove = exports.chessHistoryWhiteMove = exports.chessMove = exports.activePiecesRecord = exports.capturedPiecesRecord = exports.chessGameOffer = exports.chessGameTakebackOffer = exports.chessGameChallengeOffer = exports.chessGameRematchOffer = exports.gameSpecsRecord = exports.chessGameDrawOffer = exports.partialChessPlayersBySide = exports.chessPlayersBySide = exports.chessGameTimeLimit = exports.chessGameStatePgn = exports.chessGameStateFen = exports.chessPreferredColorOption = exports.chessGameColor = exports.chessColorBlack = exports.chessColorWhite = exports.chessPlayers = exports.chessPlayer = exports.chessPlayerBlack = exports.chessPlayerWhite = exports.chessSquare = exports.capturableChessPieceType = exports.promotionalChessPieceType = exports.chessPieceType = void 0;
 var io = require("io-ts");
 var userRecord_1 = require("../../records/userRecord");
 // Taken from chess.js
@@ -221,13 +221,38 @@ exports.chessMove = io.intersection([
         promotion: exports.promotionalChessPieceType,
     }),
 ]);
-exports.chessHistoryMove = io.intersection([
+var branchedHistories = io.recursion('BranchedHistories', function () {
+    return io.array(exports.chessHistory);
+});
+// type
+var chessHistoryBaseMove = io.intersection([
     exports.chessMove,
     io.type({
         san: io.string,
-        color: exports.chessGameColor,
         clock: io.number,
     }),
 ]);
+exports.chessHistoryWhiteMove = io.intersection([
+    chessHistoryBaseMove,
+    io.type({
+        color: exports.chessColorWhite,
+    }),
+]);
+exports.chessHistoryBlackMove = io.intersection([
+    chessHistoryBaseMove,
+    io.type({
+        color: exports.chessColorBlack,
+    }),
+]);
+exports.chessHistoryMove = io.union([exports.chessHistoryWhiteMove, exports.chessHistoryBlackMove]);
 exports.chessHistory = io.array(exports.chessHistoryMove);
+exports.chessRecursiveMove = io.recursion('ChessRecursiveHistory', function () {
+    return io.intersection([
+        exports.chessHistoryMove,
+        io.partial({
+            branchedHistories: io.union([io.array(exports.chessRecursiveHistory), io.undefined]),
+        }),
+    ]);
+});
+exports.chessRecursiveHistory = io.recursion('ChessRecursiveHistory', function () { return io.array(exports.chessHistoryMove); });
 //# sourceMappingURL=utilRecords.js.map

@@ -525,7 +525,7 @@ export declare namespace UserRegistration {
     }>, io.TypeC<{
         type: io.LiteralC<"ValidationErrors">;
         content: io.TypeC<{
-            fields: io.PartialC<Record<"firstName" | "lastName" | "username" | "verificationToken" | "countryCode", io.UnionC<[io.StringC, io.UndefinedC]>>>;
+            fields: io.PartialC<Record<"firstName" | "lastName" | "username" | "countryCode" | "verificationToken", io.UnionC<[io.StringC, io.UndefinedC]>>>;
         }>;
     }>, io.TypeC<{
         type: io.LiteralC<"DuplicateUser">;
@@ -545,8 +545,8 @@ export declare namespace UserRegistration {
                 firstName: string | undefined;
                 lastName: string | undefined;
                 username: string | undefined;
-                verificationToken: string | undefined;
                 countryCode: string | undefined;
+                verificationToken: string | undefined;
             };
         };
     } | {
@@ -556,8 +556,8 @@ export declare namespace UserRegistration {
                 firstName?: string | undefined;
                 lastName?: string | undefined;
                 username?: string | undefined;
-                verificationToken?: string | undefined;
                 countryCode?: string | undefined;
+                verificationToken?: string | undefined;
             };
         };
     } | {
