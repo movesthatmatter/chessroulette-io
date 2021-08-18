@@ -306,9 +306,14 @@ export type ChessHistoryMove = io.TypeOf<typeof chessHistoryMove>;
 export const chessHistory = io.array(chessHistoryMove);
 export type ChessHistory = io.TypeOf<typeof chessHistory>;
 
-export type ChessRecursiveMove = ChessHistoryMove & {
+type ChessRecursiveBaseMove = {
   branchedHistories?: ChessRecursiveHistory[] | undefined;
-};
+}
+
+export type ChessRecursiveWhiteMove = ChessHistoryWhiteMove & ChessRecursiveBaseMove;
+export type ChessRecursiveBlackMove = ChessHistoryBlackMove & ChessRecursiveBaseMove;
+
+export type ChessRecursiveMove = ChessRecursiveWhiteMove | ChessRecursiveBlackMove;
 export type ChessRecursiveHistory = ChessRecursiveMove[];
 
 export const chessRecursiveMove: io.Type<ChessRecursiveMove> = io.recursion(
