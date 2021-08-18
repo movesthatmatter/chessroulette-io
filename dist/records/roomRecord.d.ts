@@ -4668,7 +4668,7 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
     slug: io.StringC;
     peers: io.RecordC<io.StringC, io.IntersectionC<[io.TypeC<{
         id: io.StringC;
-        user: io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        user: io.UnionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -4938,23 +4938,7 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
                     ZW: null;
                 }>;
             }>, io.UndefinedC]>;
-        }>]>, io.TypeC<{
-            email: io.StringC;
-            externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-            }>]>;
-        }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        }>]>, io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -4962,8 +4946,6 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
             name: io.StringC;
         }>, io.TypeC<{
             isGuest: io.LiteralC<true>;
-        }>]>, io.TypeC<{
-            sid: io.StringC;
         }>]>]>;
     }>, io.UnionC<[io.TypeC<{
         hasJoinedRoom: io.LiteralC<false>;
@@ -7599,7 +7581,7 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
     slug: io.StringC;
     peers: io.RecordC<io.StringC, io.IntersectionC<[io.TypeC<{
         id: io.StringC;
-        user: io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        user: io.UnionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -7869,23 +7851,7 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
                     ZW: null;
                 }>;
             }>, io.UndefinedC]>;
-        }>]>, io.TypeC<{
-            email: io.StringC;
-            externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-            }>]>;
-        }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        }>]>, io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -7893,8 +7859,6 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
             name: io.StringC;
         }>, io.TypeC<{
             isGuest: io.LiteralC<true>;
-        }>]>, io.TypeC<{
-            sid: io.StringC;
         }>]>]>;
     }>, io.UnionC<[io.TypeC<{
         hasJoinedRoom: io.LiteralC<false>;
@@ -10532,7 +10496,7 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
     slug: io.StringC;
     peers: io.RecordC<io.StringC, io.IntersectionC<[io.TypeC<{
         id: io.StringC;
-        user: io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        user: io.UnionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -10802,23 +10766,7 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
                     ZW: null;
                 }>;
             }>, io.UndefinedC]>;
-        }>]>, io.TypeC<{
-            email: io.StringC;
-            externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-            }>]>;
-        }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        }>]>, io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -10826,8 +10774,6 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
             name: io.StringC;
         }>, io.TypeC<{
             isGuest: io.LiteralC<true>;
-        }>]>, io.TypeC<{
-            sid: io.StringC;
         }>]>]>;
     }>, io.UnionC<[io.TypeC<{
         hasJoinedRoom: io.LiteralC<false>;
@@ -13465,7 +13411,7 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
     slug: io.StringC;
     peers: io.RecordC<io.StringC, io.IntersectionC<[io.TypeC<{
         id: io.StringC;
-        user: io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        user: io.UnionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -13735,20 +13681,7 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
                     ZW: null;
                 }>;
             }>, io.UndefinedC]>;
-        }>]>, io.TypeC<{
-            email: io.StringC;
-            externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-            }>]>;
-        }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        }>]>, io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -13756,8 +13689,6 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
             name: io.StringC;
         }>, io.TypeC<{
             isGuest: io.LiteralC<true>;
-        }>]>, io.TypeC<{
-            sid: io.StringC;
         }>]>]>;
     }>, io.UnionC<[io.TypeC<{
         hasJoinedRoom: io.LiteralC<false>;
@@ -16397,7 +16328,7 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
     slug: io.StringC;
     peers: io.RecordC<io.StringC, io.IntersectionC<[io.TypeC<{
         id: io.StringC;
-        user: io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        user: io.UnionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -16667,23 +16598,7 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
                     ZW: null;
                 }>;
             }>, io.UndefinedC]>;
-        }>]>, io.TypeC<{
-            email: io.StringC;
-            externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-            }>]>;
-        }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        }>]>, io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -16691,8 +16606,6 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
             name: io.StringC;
         }>, io.TypeC<{
             isGuest: io.LiteralC<true>;
-        }>]>, io.TypeC<{
-            sid: io.StringC;
         }>]>]>;
     }>, io.UnionC<[io.TypeC<{
         hasJoinedRoom: io.LiteralC<false>;
@@ -21646,7 +21559,7 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
     slug: io.StringC;
     peers: io.RecordC<io.StringC, io.IntersectionC<[io.TypeC<{
         id: io.StringC;
-        user: io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        user: io.UnionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -21916,23 +21829,7 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
                     ZW: null;
                 }>;
             }>, io.UndefinedC]>;
-        }>]>, io.TypeC<{
-            email: io.StringC;
-            externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.StringC;
-                    accessToken: io.StringC;
-                }>]>]>;
-            }>]>;
-        }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        }>]>, io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             firstName: io.StringC;
             lastName: io.StringC;
@@ -21940,8 +21837,6 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
             name: io.StringC;
         }>, io.TypeC<{
             isGuest: io.LiteralC<true>;
-        }>]>, io.TypeC<{
-            sid: io.StringC;
         }>]>]>;
     }>, io.UnionC<[io.TypeC<{
         hasJoinedRoom: io.LiteralC<false>;
