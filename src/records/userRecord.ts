@@ -67,6 +67,10 @@ export const guestUserRecord = io.intersection([
 
 export type GuestUserRecord = io.TypeOf<typeof guestUserRecord>;
 
-export const userRecord = io.union([registeredUserRecord, guestUserRecord]);
+export const internalUserRecord = io.union([registeredUserRecord, guestUserRecord]);
+
+export type InternalUserRecord = io.TypeOf<typeof internalUserRecord>;
+
+export const userRecord = io.union([registeredUserInfoRecord, guestUserInfoRecord]);
 
 export type UserRecord = io.TypeOf<typeof userRecord>;

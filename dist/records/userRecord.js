@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userRecord = exports.guestUserRecord = exports.registeredUserRecord = exports.userExternalAccountByVendorMap = exports.userExternalAccountRecord = exports.userInfoRecord = exports.registeredUserInfoRecord = exports.guestUserInfoRecord = void 0;
+exports.userRecord = exports.internalUserRecord = exports.guestUserRecord = exports.registeredUserRecord = exports.userExternalAccountByVendorMap = exports.userExternalAccountRecord = exports.userInfoRecord = exports.registeredUserInfoRecord = exports.guestUserInfoRecord = void 0;
 var io = require("io-ts");
 var locationRecords_1 = require("./locationRecords");
 var basicUserInfoRecord = io.type({
@@ -51,5 +51,6 @@ exports.guestUserRecord = io.intersection([
         sid: io.string,
     }),
 ]);
-exports.userRecord = io.union([exports.registeredUserRecord, exports.guestUserRecord]);
+exports.internalUserRecord = io.union([exports.registeredUserRecord, exports.guestUserRecord]);
+exports.userRecord = io.union([exports.registeredUserInfoRecord, exports.guestUserInfoRecord]);
 //# sourceMappingURL=userRecord.js.map
