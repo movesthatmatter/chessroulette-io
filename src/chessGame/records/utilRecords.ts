@@ -276,12 +276,6 @@ export const chessMove = io.intersection([
 ]);
 export type ChessMove = io.TypeOf<typeof chessMove>;
 
-const branchedHistories: io.Type<ChessHistory[]> = io.recursion('BranchedHistories', () =>
-  io.array(chessHistory)
-);
-
-// type
-
 const chessHistoryBaseMove = io.intersection([
   chessMove,
   io.type({
@@ -289,7 +283,6 @@ const chessHistoryBaseMove = io.intersection([
     clock: io.number, // Corresponds to %clk in the extended PGN: https://www.enpassant.dk/chess/palview/enhancedpgn.htm
   }),
 ]);
-type ChessHistoryBaseMove = io.TypeOf<typeof chessHistoryBaseMove>;
 
 export const chessHistoryWhiteMove = io.intersection([
   chessHistoryBaseMove,
@@ -313,10 +306,10 @@ export type ChessHistoryMove = io.TypeOf<typeof chessHistoryMove>;
 export const chessHistory = io.array(chessHistoryMove);
 export type ChessHistory = io.TypeOf<typeof chessHistory>;
 
-type ChessRecursiveMove = ChessHistoryMove & {
+export type ChessRecursiveMove = ChessHistoryMove & {
   branchedHistories?: ChessRecursiveHistory[] | undefined;
 };
-type ChessRecursiveHistory = ChessRecursiveMove[];
+export type ChessRecursiveHistory = ChessRecursiveMove[];
 
 export const chessRecursiveMove: io.Type<ChessRecursiveMove> = io.recursion(
   'ChessRecursiveHistory',

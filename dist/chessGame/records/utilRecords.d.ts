@@ -10302,10 +10302,9 @@ export declare const chessHistory: io.ArrayC<io.UnionC<[io.IntersectionC<[io.Int
     }>;
 }>]>]>>;
 export declare type ChessHistory = io.TypeOf<typeof chessHistory>;
-declare type ChessRecursiveMove = ChessHistoryMove & {
+export declare type ChessRecursiveMove = ChessHistoryMove & {
     branchedHistories?: ChessRecursiveHistory[] | undefined;
 };
-declare type ChessRecursiveHistory = ChessRecursiveMove[];
+export declare type ChessRecursiveHistory = ChessRecursiveMove[];
 export declare const chessRecursiveMove: io.Type<ChessRecursiveMove>;
 export declare const chessRecursiveHistory: io.Type<ChessRecursiveHistory>;
-export {};
