@@ -221,10 +221,6 @@ exports.chessMove = io.intersection([
         promotion: exports.promotionalChessPieceType,
     }),
 ]);
-var branchedHistories = io.recursion('BranchedHistories', function () {
-    return io.array(exports.chessHistory);
-});
-// type
 var chessHistoryBaseMove = io.intersection([
     exports.chessMove,
     io.type({
