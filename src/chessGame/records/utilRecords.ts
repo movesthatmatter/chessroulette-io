@@ -308,7 +308,7 @@ export type ChessHistory = io.TypeOf<typeof chessHistory>;
 
 type ChessRecursiveBaseMove = {
   branchedHistories?: ChessRecursiveHistory[] | undefined;
-}
+};
 
 export type ChessRecursiveWhiteMove = ChessHistoryWhiteMove & ChessRecursiveBaseMove;
 export type ChessRecursiveBlackMove = ChessHistoryBlackMove & ChessRecursiveBaseMove;
@@ -330,4 +330,26 @@ export const chessRecursiveMove: io.Type<ChessRecursiveMove> = io.recursion(
 export const chessRecursiveHistory: io.Type<ChessRecursiveHistory> = io.recursion(
   'ChessRecursiveHistory',
   () => io.array(chessHistoryMove)
+);
+
+export const chessLinearHistoryIndex = io.number;
+export type ChessLinearHistoryIndex = io.TypeOf<typeof chessLinearHistoryIndex>;
+
+export type ChessRecursiveHistoryIndex =
+  | [moveIndex: number, branchIndex: number, branchedMoveIndex: ChessHistoryIndex | undefined]
+  | [moveIndex: number, branchIndex: number];
+
+export type ChessHistoryIndex = ChessLinearHistoryIndex | ChessRecursiveHistoryIndex;
+
+export const chessRecursiveHistoryIndex: io.Type<ChessRecursiveHistoryIndex> = io.recursion(
+  'ChessRecursiveHistoryIndex',
+  () =>
+    io.union([
+      io.tuple([io.number, io.number, io.union([chessHistoryIndex, io.undefined])]),
+      io.tuple([io.number, io.number]),
+    ])
+);
+
+export const chessHistoryIndex: io.Type<ChessHistoryIndex> = io.recursion('ChessHistoryIndex', () =>
+  io.union([io.number, chessRecursiveHistoryIndex])
 );

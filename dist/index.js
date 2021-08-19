@@ -11,6 +11,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Resources = exports.metadata = void 0;
+// TODO: These should be under "records" namespace
 __exportStar(require("./records/userRecord"), exports);
 __exportStar(require("./records/roomStatsRecord"), exports);
 __exportStar(require("./records/peerRecord"), exports);
@@ -25,11 +26,14 @@ __exportStar(require("./records/externalVendorsRecords"), exports);
 __exportStar(require("./records/gameRecord"), exports);
 __exportStar(require("./records/locationRecords"), exports);
 __exportStar(require("./records/collaboratorRecord"), exports);
+__exportStar(require("./records/analysisRecord"), exports);
+// TODO: add a "Payloads" namspace to this
 __exportStar(require("./payloads"), exports);
 __exportStar(require("./sdk/io"), exports);
 __exportStar(require("./chessGame"), exports);
 exports.metadata = require("./metadata");
+exports.Resources = require("./resources");
+// Deprecate
 __exportStar(require("./AsyncResult/AsyncBox"), exports);
 __exportStar(require("ts-results"), exports);
-exports.Resources = require("./resources");
 //# sourceMappingURL=index.js.map
