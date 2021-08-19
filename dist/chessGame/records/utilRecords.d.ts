@@ -10311,4 +10311,10 @@ export declare type ChessRecursiveMove = ChessRecursiveWhiteMove | ChessRecursiv
 export declare type ChessRecursiveHistory = ChessRecursiveMove[];
 export declare const chessRecursiveMove: io.Type<ChessRecursiveMove>;
 export declare const chessRecursiveHistory: io.Type<ChessRecursiveHistory>;
+export declare const chessLinearHistoryIndex: io.NumberC;
+export declare type ChessLinearHistoryIndex = io.TypeOf<typeof chessLinearHistoryIndex>;
+export declare type ChessRecursiveHistoryIndex = [moveIndex: number, branchIndex: number, branchedMoveIndex: ChessHistoryIndex | undefined] | [moveIndex: number, branchIndex: number];
+export declare type ChessHistoryIndex = ChessLinearHistoryIndex | ChessRecursiveHistoryIndex;
+export declare const chessRecursiveHistoryIndex: io.Type<ChessRecursiveHistoryIndex>;
+export declare const chessHistoryIndex: io.Type<ChessHistoryIndex>;
 export {};
