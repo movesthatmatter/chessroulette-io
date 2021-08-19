@@ -1,6 +1,6 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
-import { chessRecursiveHistory } from 'src/chessGame';
+import { chessRecursiveHistory } from '../chessGame';
 
 export const analysisRecord = io.type({
   id: io.string,
