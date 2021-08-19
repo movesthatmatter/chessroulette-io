@@ -6,7 +6,7 @@ import {
   roomType,
   publicRoomRecord,
   privateRoomRecord,
-  roomNoActivityRecord,
+  roomActivityType,
 } from '../records/roomRecord';
 
 // TODO: Not sure how to split the HTTP/Socket payloads while still keeping them 
@@ -21,12 +21,7 @@ export const createRoomRequest = io.intersection([
   }),
   io.partial({
     name: io.string,
-    // TODO: For now a room can only be created from the client
-    // with no activity. In the foture this might change.
-    // A PlayRoom can only be created from a challenge
-    // A Future Custom Room could possibly be created from the client 
-    //  but we'll have to see!
-    activity: roomNoActivityRecord,
+    activityType: roomActivityType, // TODO: "Play" should be excluded from here
   }),
 ]);
 export type CreateRoomRequest = io.TypeOf<typeof createRoomRequest>;

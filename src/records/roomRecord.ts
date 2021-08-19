@@ -1,15 +1,15 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
-import { chessGameOffer, chessHistory } from '../chessGame';
+import { chessGameOffer } from '../chessGame';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
 
-export const roomActivityOption = io.keyof({
+export const roomActivityType = io.keyof({
   none: null,
   play: null,
   analysis: null,
 });
-export type RoomActivityOption = io.TypeOf<typeof roomActivityOption>;
+export type RoomActivityType = io.TypeOf<typeof roomActivityType>;
 
 export const roomNoActivityRecord = io.type({
   type: io.literal('none'),

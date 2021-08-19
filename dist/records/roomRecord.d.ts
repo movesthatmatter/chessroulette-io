@@ -1,10 +1,10 @@
 import * as io from 'io-ts';
-export declare const roomActivityOption: io.KeyofC<{
+export declare const roomActivityType: io.KeyofC<{
     none: null;
     play: null;
     analysis: null;
 }>;
-export declare type RoomActivityOption = io.TypeOf<typeof roomActivityOption>;
+export declare type RoomActivityType = io.TypeOf<typeof roomActivityType>;
 export declare const roomNoActivityRecord: io.TypeC<{
     type: io.LiteralC<"none">;
 }>;

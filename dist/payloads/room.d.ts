@@ -7,8 +7,10 @@ export declare const createRoomRequest: io.IntersectionC<[io.TypeC<{
     }>;
 }>, io.PartialC<{
     name: io.StringC;
-    activity: io.TypeC<{
-        type: io.LiteralC<"none">;
+    activityType: io.KeyofC<{
+        none: null;
+        play: null;
+        analysis: null;
     }>;
 }>]>;
 export declare type CreateRoomRequest = io.TypeOf<typeof createRoomRequest>;

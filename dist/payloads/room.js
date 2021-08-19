@@ -15,12 +15,7 @@ exports.createRoomRequest = io.intersection([
     }),
     io.partial({
         name: io.string,
-        // TODO: For now a room can only be created from the client
-        // with no activity. In the foture this might change.
-        // A PlayRoom can only be created from a challenge
-        // A Future Custom Room could possibly be created from the client 
-        //  but we'll have to see!
-        activity: roomRecord_1.roomNoActivityRecord,
+        activityType: roomRecord_1.roomActivityType,
     }),
 ]);
 exports.createRoomResponse = roomRecord_1.roomRecord;
