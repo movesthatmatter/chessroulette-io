@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityOption = void 0;
+exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
 var chatRecords_1 = require("./chatRecords");
 var peerRecord_1 = require("./peerRecord");
-exports.roomActivityOption = io.keyof({
+exports.roomActivityType = io.keyof({
     none: null,
     play: null,
     analysis: null,
