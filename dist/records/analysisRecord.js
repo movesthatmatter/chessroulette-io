@@ -9,5 +9,6 @@ exports.analysisRecord = io.type({
     createdAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
     updatedAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
     history: chessGame_1.chessRecursiveHistory,
+    focusIndex: chessGame_1.chessHistoryIndex,
 });
 //# sourceMappingURL=analysisRecord.js.map
