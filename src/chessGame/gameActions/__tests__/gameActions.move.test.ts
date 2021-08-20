@@ -1,7 +1,7 @@
 import { toISODateTime } from 'io-ts-isodatetime';
-import { UserInfoRecord } from '../../records/userRecord';
-import { actions } from './gameActions';
-import { ChessGameStatePending, ChessGameStateStarted } from '../records';
+import { UserInfoRecord } from '../../../records/userRecord';
+import { actions } from '../gameActions';
+import { ChessGameStatePending, ChessGameStateStarted } from '../../records';
 import { addSeconds } from 'date-fns';
 
 const playerA: UserInfoRecord = {

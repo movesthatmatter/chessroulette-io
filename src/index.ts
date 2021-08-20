@@ -16,12 +16,13 @@ export * from './records/locationRecords';
 export * from './records/collaboratorRecord';
 export * from './records/analysisRecord';
 
-// TODO: add a "Payloads" namspace to this
+// TODO: add a "Payloads" namespace to this
 export * from './payloads';
 
 export * from './sdk/io';
 
-export * from './chessGame';
+export * from './chessGame'; // TODO add as game namespae
+export * as analysis from './analysis';
 
 export * as metadata from './metadata';
 export * as Resources from './resources';
