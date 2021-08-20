@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.chessHistoryIndex = exports.chessRecursiveHistoryIndex = exports.chessLinearHistoryIndex = exports.chessRecursiveHistory = exports.chessRecursiveMove = exports.chessHistory = exports.chessHistoryMove = exports.chessHistoryBlackMove = exports.chessHistoryWhiteMove = exports.chessMove = exports.activePiecesRecord = exports.capturedPiecesRecord = exports.chessGameOffer = exports.chessGameTakebackOffer = exports.chessGameChallengeOffer = exports.chessGameRematchOffer = exports.gameSpecsRecord = exports.chessGameDrawOffer = exports.partialChessPlayersBySide = exports.chessPlayersBySide = exports.chessGameTimeLimit = exports.chessGameStatePgn = exports.chessGameStateFen = exports.chessPreferredColorOption = exports.chessGameColor = exports.chessColorBlack = exports.chessColorWhite = exports.chessPlayers = exports.chessPlayer = exports.chessPlayerBlack = exports.chessPlayerWhite = exports.chessSquare = exports.capturableChessPieceType = exports.promotionalChessPieceType = exports.chessPieceType = void 0;
+exports.chessHistoryIndex = exports.chessRecursiveHistoryIndex = exports.chessLinearHistoryIndex = exports.chessRecursiveHistory = exports.chessRecursiveMove = exports.chessHistory = exports.chessLinearHistory = exports.chessHistoryMove = exports.chessHistoryBlackMove = exports.chessHistoryWhiteMove = exports.chessMove = exports.activePiecesRecord = exports.capturedPiecesRecord = exports.chessGameOffer = exports.chessGameTakebackOffer = exports.chessGameChallengeOffer = exports.chessGameRematchOffer = exports.gameSpecsRecord = exports.chessGameDrawOffer = exports.partialChessPlayersBySide = exports.chessPlayersBySide = exports.chessGameTimeLimit = exports.chessGameStatePgn = exports.chessGameStateFen = exports.chessPreferredColorOption = exports.chessGameColor = exports.chessColorBlack = exports.chessColorWhite = exports.chessPlayers = exports.chessPlayer = exports.chessPlayerBlack = exports.chessPlayerWhite = exports.chessSquare = exports.capturableChessPieceType = exports.promotionalChessPieceType = exports.chessPieceType = void 0;
 var io = require("io-ts");
 var userRecord_1 = require("../../records/userRecord");
 // Taken from chess.js
@@ -241,7 +241,8 @@ exports.chessHistoryBlackMove = io.intersection([
     }),
 ]);
 exports.chessHistoryMove = io.union([exports.chessHistoryWhiteMove, exports.chessHistoryBlackMove]);
-exports.chessHistory = io.array(exports.chessHistoryMove);
+exports.chessLinearHistory = io.array(exports.chessHistoryMove);
+exports.chessHistory = exports.chessLinearHistory;
 exports.chessRecursiveMove = io.recursion('ChessRecursiveHistory', function () {
     return io.intersection([
         exports.chessHistoryMove,

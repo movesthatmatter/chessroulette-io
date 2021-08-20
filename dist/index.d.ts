@@ -16,6 +16,7 @@ export * from './records/analysisRecord';
 export * from './payloads';
 export * from './sdk/io';
 export * from './chessGame';
+export * as analysis from './analysis';
 export * as metadata from './metadata';
 export * as Resources from './resources';
 export * from './AsyncResult/AsyncBox';

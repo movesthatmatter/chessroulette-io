@@ -303,7 +303,10 @@ export type ChessHistoryBlackMove = io.TypeOf<typeof chessHistoryBlackMove>;
 export const chessHistoryMove = io.union([chessHistoryWhiteMove, chessHistoryBlackMove]);
 export type ChessHistoryMove = io.TypeOf<typeof chessHistoryMove>;
 
-export const chessHistory = io.array(chessHistoryMove);
+export const chessLinearHistory = io.array(chessHistoryMove);
+export type ChessLinearHistory = io.TypeOf<typeof chessLinearHistory>;
+
+export const chessHistory = chessLinearHistory;
 export type ChessHistory = io.TypeOf<typeof chessHistory>;
 
 type ChessRecursiveBaseMove = {
