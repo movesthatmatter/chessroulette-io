@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-import { analysisRecord } from 'src/records/analysisRecord';
+import { analysisRecord } from '../records/analysisRecord';
 import { chessRecursiveHistoryIndex, chessRecursiveMove } from '../chessGame';
 
 export const analysisMoveRequestPayload = io.type({
