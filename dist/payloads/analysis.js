@@ -9,14 +9,14 @@ exports.analysisMoveRequestPayload = io.type({
     content: io.type({
         id: io.string,
         move: chessGame_1.chessRecursiveMove,
-        atIndex: chessGame_1.chessRecursiveHistoryIndex,
+        atIndex: chessGame_1.chessHistoryIndex,
     }),
 });
 exports.analysisFocusRequestPayload = io.type({
     kind: io.literal('analysisRefocusRequest'),
     content: io.type({
         id: io.string,
-        focusIndex: chessGame_1.chessRecursiveHistoryIndex,
+        focusIndex: chessGame_1.chessHistoryIndex,
     }),
 });
 exports.analysisUpdatedResponsePayload = io.type({
