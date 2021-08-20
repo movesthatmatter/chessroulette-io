@@ -16,6 +16,7 @@ import {
 } from './room';
 import { statsSocketPayload } from './stats';
 import { challengeRecord } from '../records/challengeRecord';
+import { analysisMoveRequestPayload, analysisUpdatedResponsePayload } from './analysis';
 
 export const userIdentificationPayload = io.type({
   kind: io.literal('userIdentification'),
@@ -123,6 +124,10 @@ export const socketPayload = io.union([
   // Game Actions
   gameActionRequestPayload,
   joinedGameUpdatedPayload,
+
+  // Analysis
+  analysisMoveRequestPayload,
+  analysisUpdatedResponsePayload,
 
   // Room & Game
   joinedRoomAndGameUpdatedPayload,

@@ -24863,6 +24863,21 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
     }>]>;
 }>, io.TypeC<{
+    kind: io.LiteralC<"analysisMoveRequest">;
+    content: io.TypeC<{
+        id: io.StringC;
+        move: io.Type<import("..").ChessRecursiveMove, import("..").ChessRecursiveMove, unknown>;
+        index: io.Type<import("..").ChessRecursiveHistoryIndex, import("..").ChessRecursiveHistoryIndex, unknown>;
+    }>;
+}>, io.TypeC<{
+    kind: io.LiteralC<"analysisUpdatedResponse">;
+    content: io.TypeC<{
+        id: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        history: io.Type<import("..").ChessRecursiveHistory, import("..").ChessRecursiveHistory, unknown>;
+    }>;
+}>, io.TypeC<{
     kind: io.LiteralC<"joinedRoomAndGameUpdated">;
     content: io.TypeC<{
         room: io.IntersectionC<[io.TypeC<{

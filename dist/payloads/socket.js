@@ -11,6 +11,7 @@ var peer_1 = require("./peer");
 var room_1 = require("./room");
 var stats_1 = require("./stats");
 var challengeRecord_1 = require("../records/challengeRecord");
+var analysis_1 = require("./analysis");
 exports.userIdentificationPayload = io.type({
     kind: io.literal('userIdentification'),
     content: io.union([
@@ -98,6 +99,9 @@ exports.socketPayload = io.union([
     // Game Actions
     game_1.gameActionRequestPayload,
     game_1.joinedGameUpdatedPayload,
+    // Analysis
+    analysis_1.analysisMoveRequestPayload,
+    analysis_1.analysisUpdatedResponsePayload,
     // Room & Game
     room_1.joinedRoomAndGameUpdatedPayload,
     // Stats
