@@ -23,7 +23,7 @@ exports.userIdentificationPayload = io.type({
             isGuest: io.literal(false),
             acessToken: io.string,
         }),
-    ])
+    ]),
 });
 exports.statsReaderIdentificationPayload = io.type({
     kind: io.literal('statsReaderIdentificationPayload'),
@@ -101,6 +101,7 @@ exports.socketPayload = io.union([
     game_1.joinedGameUpdatedPayload,
     // Analysis
     analysis_1.analysisMoveRequestPayload,
+    analysis_1.analysisFocusRequestPayload,
     analysis_1.analysisUpdatedResponsePayload,
     // Room & Game
     room_1.joinedRoomAndGameUpdatedPayload,

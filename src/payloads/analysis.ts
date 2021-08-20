@@ -7,12 +7,23 @@ export const analysisMoveRequestPayload = io.type({
   content: io.type({
     id: io.string,
     move: chessRecursiveMove,
-    index: chessRecursiveHistoryIndex,
+    atIndex: chessRecursiveHistoryIndex,
   }),
 });
 export type AnalysisMoveRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
+
+export const analysisFocusRequestPayload = io.type({
+  kind: io.literal('analysisRefocusRequest'),
+  content: io.type({
+    id: io.string,
+    focusIndex: chessRecursiveHistoryIndex,
+  }),
+});
+export type AnalysisFocusRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
 
 export const analysisUpdatedResponsePayload = io.type({
   kind: io.literal('analysisUpdatedResponse'),
   content: analysisRecord,
 });
+
+export type AnalysisUpdatedResponsePayload = io.TypeOf<typeof analysisUpdatedResponsePayload>;

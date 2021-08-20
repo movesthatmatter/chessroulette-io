@@ -16,7 +16,11 @@ import {
 } from './room';
 import { statsSocketPayload } from './stats';
 import { challengeRecord } from '../records/challengeRecord';
-import { analysisMoveRequestPayload, analysisUpdatedResponsePayload } from './analysis';
+import {
+  analysisFocusRequestPayload,
+  analysisMoveRequestPayload,
+  analysisUpdatedResponsePayload,
+} from './analysis';
 
 export const userIdentificationPayload = io.type({
   kind: io.literal('userIdentification'),
@@ -29,7 +33,7 @@ export const userIdentificationPayload = io.type({
       isGuest: io.literal(false),
       acessToken: io.string,
     }),
-  ])
+  ]),
 });
 export type UserIdentificationPayload = io.TypeOf<typeof userIdentificationPayload>;
 
@@ -127,6 +131,7 @@ export const socketPayload = io.union([
 
   // Analysis
   analysisMoveRequestPayload,
+  analysisFocusRequestPayload,
   analysisUpdatedResponsePayload,
 
   // Room & Game

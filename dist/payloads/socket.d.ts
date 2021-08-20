@@ -24867,7 +24867,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
     content: io.TypeC<{
         id: io.StringC;
         move: io.Type<import("..").ChessRecursiveMove, import("..").ChessRecursiveMove, unknown>;
-        index: io.Type<import("..").ChessRecursiveHistoryIndex, import("..").ChessRecursiveHistoryIndex, unknown>;
+        atIndex: io.Type<import("..").ChessRecursiveHistoryIndex, import("..").ChessRecursiveHistoryIndex, unknown>;
+    }>;
+}>, io.TypeC<{
+    kind: io.LiteralC<"analysisRefocusRequest">;
+    content: io.TypeC<{
+        id: io.StringC;
+        focusIndex: io.Type<import("..").ChessRecursiveHistoryIndex, import("..").ChessRecursiveHistoryIndex, unknown>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
@@ -24876,6 +24882,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         history: io.Type<import("..").ChessRecursiveHistory, import("..").ChessRecursiveHistory, unknown>;
+        focusIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"joinedRoomAndGameUpdated">;
