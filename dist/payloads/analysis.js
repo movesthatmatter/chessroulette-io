@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.analysisUpdatedResponsePayload = exports.analysisMoveRequestPayload = void 0;
 var io = require("io-ts");
-var analysisRecord_1 = require("src/records/analysisRecord");
+var analysisRecord_1 = require("../records/analysisRecord");
 var chessGame_1 = require("../chessGame");
 exports.analysisMoveRequestPayload = io.type({
     kind: io.literal('analysisMoveRequest'),
