@@ -24867,13 +24867,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
     content: io.TypeC<{
         id: io.StringC;
         move: io.Type<import("..").ChessRecursiveMove, import("..").ChessRecursiveMove, unknown>;
-        atIndex: io.Type<import("..").ChessRecursiveHistoryIndex, import("..").ChessRecursiveHistoryIndex, unknown>;
+        atIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"analysisRefocusRequest">;
     content: io.TypeC<{
         id: io.StringC;
-        focusIndex: io.Type<import("..").ChessRecursiveHistoryIndex, import("..").ChessRecursiveHistoryIndex, unknown>;
+        focusIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;

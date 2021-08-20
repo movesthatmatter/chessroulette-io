@@ -4,7 +4,7 @@ export declare const analysisMoveRequestPayload: io.TypeC<{
     content: io.TypeC<{
         id: io.StringC;
         move: io.Type<import("../chessGame").ChessRecursiveMove, import("../chessGame").ChessRecursiveMove, unknown>;
-        atIndex: io.Type<import("../chessGame").ChessRecursiveHistoryIndex, import("../chessGame").ChessRecursiveHistoryIndex, unknown>;
+        atIndex: io.Type<import("../chessGame").ChessHistoryIndex, import("../chessGame").ChessHistoryIndex, unknown>;
     }>;
 }>;
 export declare type AnalysisMoveRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
@@ -12,7 +12,7 @@ export declare const analysisFocusRequestPayload: io.TypeC<{
     kind: io.LiteralC<"analysisRefocusRequest">;
     content: io.TypeC<{
         id: io.StringC;
-        focusIndex: io.Type<import("../chessGame").ChessRecursiveHistoryIndex, import("../chessGame").ChessRecursiveHistoryIndex, unknown>;
+        focusIndex: io.Type<import("../chessGame").ChessHistoryIndex, import("../chessGame").ChessHistoryIndex, unknown>;
     }>;
 }>;
 export declare type AnalysisFocusRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
