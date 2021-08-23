@@ -8,14 +8,14 @@ export declare const analysisMoveRequestPayload: io.TypeC<{
     }>;
 }>;
 export declare type AnalysisMoveRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
-export declare const analysisFocusRequestPayload: io.TypeC<{
+export declare const analysisRefocusRequestPayload: io.TypeC<{
     kind: io.LiteralC<"analysisRefocusRequest">;
     content: io.TypeC<{
         id: io.StringC;
         focusIndex: io.Type<import("../chessGame").ChessHistoryIndex, import("../chessGame").ChessHistoryIndex, unknown>;
     }>;
 }>;
-export declare type AnalysisFocusRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
+export declare type AnalysisRefocusRequestPayload = io.TypeOf<typeof analysisRefocusRequestPayload>;
 export declare const analysisUpdatedResponsePayload: io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
     content: io.TypeC<{

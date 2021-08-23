@@ -12,14 +12,14 @@ export const analysisMoveRequestPayload = io.type({
 });
 export type AnalysisMoveRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
 
-export const analysisFocusRequestPayload = io.type({
+export const analysisRefocusRequestPayload = io.type({
   kind: io.literal('analysisRefocusRequest'),
   content: io.type({
     id: io.string,
     focusIndex: chessHistoryIndex,
   }),
 });
-export type AnalysisFocusRequestPayload = io.TypeOf<typeof analysisMoveRequestPayload>;
+export type AnalysisRefocusRequestPayload = io.TypeOf<typeof analysisRefocusRequestPayload>;
 
 export const analysisUpdatedResponsePayload = io.type({
   kind: io.literal('analysisUpdatedResponse'),
