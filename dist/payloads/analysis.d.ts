@@ -16,11 +16,11 @@ export declare const analysisRefocusRequestPayload: io.TypeC<{
     }>;
 }>;
 export declare type AnalysisRefocusRequestPayload = io.TypeOf<typeof analysisRefocusRequestPayload>;
-export declare const analysisDrawableUpdatedRequestPayload: io.TypeC<{
-    kind: io.LiteralC<"analysisDrawableUpdatedResquest">;
+export declare const analysisDrawnShapesUpdatedRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"analysisDrawnShapesUpdatedRequest">;
     content: io.TypeC<{
         id: io.StringC;
-        drawable: io.ArrayC<io.IntersectionC<[io.TypeC<{
+        drawnShapes: io.ArrayC<io.IntersectionC<[io.TypeC<{
             orig: io.StringC;
             visible: io.BooleanC;
             defaultSnapToValidMove: io.BooleanC;
@@ -31,7 +31,7 @@ export declare const analysisDrawableUpdatedRequestPayload: io.TypeC<{
         }>]>>;
     }>;
 }>;
-export declare type AnalysisDrawableUpdatedRequestPayload = io.TypeOf<typeof analysisDrawableUpdatedRequestPayload>;
+export declare type AnalysisDrawnShapesUpdatedRequestPayload = io.TypeOf<typeof analysisDrawnShapesUpdatedRequestPayload>;
 export declare const analysisUpdatedResponsePayload: io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
     content: io.IntersectionC<[io.TypeC<{
@@ -41,7 +41,7 @@ export declare const analysisUpdatedResponsePayload: io.TypeC<{
         history: io.Type<import("../chessGame").ChessRecursiveHistory, import("../chessGame").ChessRecursiveHistory, unknown>;
         focusIndex: io.Type<import("../chessGame").ChessHistoryIndex, import("../chessGame").ChessHistoryIndex, unknown>;
     }>, io.TypeC<{
-        drawable: io.ArrayC<io.IntersectionC<[io.TypeC<{
+        drawnShapes: io.ArrayC<io.IntersectionC<[io.TypeC<{
             orig: io.StringC;
             visible: io.BooleanC;
             defaultSnapToValidMove: io.BooleanC;
