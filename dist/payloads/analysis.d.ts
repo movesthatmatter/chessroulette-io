@@ -16,6 +16,22 @@ export declare const analysisRefocusRequestPayload: io.TypeC<{
     }>;
 }>;
 export declare type AnalysisRefocusRequestPayload = io.TypeOf<typeof analysisRefocusRequestPayload>;
+export declare const analysisDrawableUpdatedRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"analysisDrawableUpdatedResquest">;
+    content: io.TypeC<{
+        id: io.StringC;
+        drawable: io.ArrayC<io.IntersectionC<[io.TypeC<{
+            orig: io.StringC;
+            visible: io.BooleanC;
+            defaultSnapToValidMove: io.BooleanC;
+            eraseOnClick: io.BooleanC;
+        }>, io.PartialC<{
+            dest: io.StringC;
+            brush: io.StringC;
+        }>]>>;
+    }>;
+}>;
+export declare type AnalysisDrawableUpdatedRequestPayload = io.TypeOf<typeof analysisDrawableUpdatedRequestPayload>;
 export declare const analysisUpdatedResponsePayload: io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
     content: io.IntersectionC<[io.TypeC<{

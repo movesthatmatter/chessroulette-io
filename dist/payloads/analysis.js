@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.analysisUpdatedResponsePayload = exports.analysisRefocusRequestPayload = exports.analysisMoveRequestPayload = void 0;
+exports.analysisUpdatedResponsePayload = exports.analysisDrawableUpdatedRequestPayload = exports.analysisRefocusRequestPayload = exports.analysisMoveRequestPayload = void 0;
 var io = require("io-ts");
 var analysisRecord_1 = require("../records/analysisRecord");
 var chessGame_1 = require("../chessGame");
@@ -17,6 +17,13 @@ exports.analysisRefocusRequestPayload = io.type({
     content: io.type({
         id: io.string,
         focusIndex: chessGame_1.chessHistoryIndex,
+    }),
+});
+exports.analysisDrawableUpdatedRequestPayload = io.type({
+    kind: io.literal('analysisDrawableUpdatedResquest'),
+    content: io.type({
+        id: io.string,
+        drawable: io.array(analysisRecord_1.chessBoardDrawShape),
     }),
 });
 exports.analysisUpdatedResponsePayload = io.type({

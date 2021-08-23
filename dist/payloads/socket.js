@@ -102,6 +102,7 @@ exports.socketPayload = io.union([
     // Analysis
     analysis_1.analysisMoveRequestPayload,
     analysis_1.analysisRefocusRequestPayload,
+    analysis_1.analysisDrawableUpdatedRequestPayload,
     analysis_1.analysisUpdatedResponsePayload,
     // Room & Game
     room_1.joinedRoomAndGameUpdatedPayload,
