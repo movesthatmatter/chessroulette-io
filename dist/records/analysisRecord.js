@@ -4,17 +4,34 @@ exports.analysisRecord = exports.chessBoardDrawShape = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
-// Taken from here https://github.com/ornicar/chessground/blob/2b267687e6c8a11c3889e920dde2de341cc6d9db/src/draw.ts
+// Taken from here https://github.com/ornicar/chessground/blob/2b267687e6c8a11c3889e920dde2de341cc6d9db/src/draw.ts#L6
 exports.chessBoardDrawShape = io.intersection([
     io.type({
         orig: io.string,
-        visible: io.boolean,
-        defaultSnapToValidMove: io.boolean,
-        eraseOnClick: io.boolean,
     }),
     io.partial({
         dest: io.string,
         brush: io.string,
+        modifiers: io.partial({
+            lineWidth: io.number,
+        }),
+        piece: io.intersection([
+            io.type({
+                role: io.keyof({
+                    king: null,
+                    queen: null,
+                    rook: null,
+                    bishop: null,
+                    knight: null,
+                    pawn: null,
+                }),
+                color: chessGame_1.chessGameColor,
+            }),
+            io.partial({
+                scale: io.number,
+            }),
+        ]),
+        customSvg: io.string,
     }),
 ]);
 exports.analysisRecord = io.intersection([
@@ -25,7 +42,7 @@ exports.analysisRecord = io.intersection([
         history: chessGame_1.chessRecursiveHistory,
         focusIndex: chessGame_1.chessHistoryIndex,
     }),
-    io.type({
+    io.partial({
         drawnShapes: io.array(exports.chessBoardDrawShape),
     }),
 ]);
