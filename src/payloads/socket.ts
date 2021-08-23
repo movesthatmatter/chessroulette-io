@@ -17,7 +17,7 @@ import {
 import { statsSocketPayload } from './stats';
 import { challengeRecord } from '../records/challengeRecord';
 import {
-  analysisFocusRequestPayload,
+  analysisRefocusRequestPayload,
   analysisMoveRequestPayload,
   analysisUpdatedResponsePayload,
 } from './analysis';
@@ -131,7 +131,7 @@ export const socketPayload = io.union([
 
   // Analysis
   analysisMoveRequestPayload,
-  analysisFocusRequestPayload,
+  analysisRefocusRequestPayload,
   analysisUpdatedResponsePayload,
 
   // Room & Game
