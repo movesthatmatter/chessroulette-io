@@ -24877,13 +24877,23 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
-    content: io.TypeC<{
+    content: io.IntersectionC<[io.TypeC<{
         id: io.StringC;
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         history: io.Type<import("..").ChessRecursiveHistory, import("..").ChessRecursiveHistory, unknown>;
         focusIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
-    }>;
+    }>, io.TypeC<{
+        drawable: io.ArrayC<io.IntersectionC<[io.TypeC<{
+            orig: io.StringC;
+            visible: io.BooleanC;
+            defaultSnapToValidMove: io.BooleanC;
+            eraseOnClick: io.BooleanC;
+        }>, io.PartialC<{
+            dest: io.StringC;
+            brush: io.StringC;
+        }>]>>;
+    }>]>;
 }>, io.TypeC<{
     kind: io.LiteralC<"joinedRoomAndGameUpdated">;
     content: io.TypeC<{
