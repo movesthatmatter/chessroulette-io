@@ -24881,12 +24881,30 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         id: io.StringC;
         drawnShapes: io.ArrayC<io.IntersectionC<[io.TypeC<{
             orig: io.StringC;
-            visible: io.BooleanC;
-            defaultSnapToValidMove: io.BooleanC;
-            eraseOnClick: io.BooleanC;
         }>, io.PartialC<{
             dest: io.StringC;
             brush: io.StringC;
+            modifiers: io.PartialC<{
+                lineWidth: io.NumberC;
+            }>;
+            piece: io.IntersectionC<[io.TypeC<{
+                role: io.KeyofC<{
+                    king: null;
+                    queen: null;
+                    rook: null;
+                    bishop: null;
+                    knight: null;
+                    pawn: null;
+                }>;
+                color: io.UnionC<[io.KeyofC<{
+                    white: null;
+                }>, io.KeyofC<{
+                    black: null;
+                }>]>;
+            }>, io.PartialC<{
+                scale: io.NumberC;
+            }>]>;
+            customSvg: io.StringC;
         }>]>>;
     }>;
 }>, io.TypeC<{
@@ -24897,15 +24915,33 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         history: io.Type<import("..").ChessRecursiveHistory, import("..").ChessRecursiveHistory, unknown>;
         focusIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
-    }>, io.TypeC<{
+    }>, io.PartialC<{
         drawnShapes: io.ArrayC<io.IntersectionC<[io.TypeC<{
             orig: io.StringC;
-            visible: io.BooleanC;
-            defaultSnapToValidMove: io.BooleanC;
-            eraseOnClick: io.BooleanC;
         }>, io.PartialC<{
             dest: io.StringC;
             brush: io.StringC;
+            modifiers: io.PartialC<{
+                lineWidth: io.NumberC;
+            }>;
+            piece: io.IntersectionC<[io.TypeC<{
+                role: io.KeyofC<{
+                    king: null;
+                    queen: null;
+                    rook: null;
+                    bishop: null;
+                    knight: null;
+                    pawn: null;
+                }>;
+                color: io.UnionC<[io.KeyofC<{
+                    white: null;
+                }>, io.KeyofC<{
+                    black: null;
+                }>]>;
+            }>, io.PartialC<{
+                scale: io.NumberC;
+            }>]>;
+            customSvg: io.StringC;
         }>]>>;
     }>]>;
 }>, io.TypeC<{
