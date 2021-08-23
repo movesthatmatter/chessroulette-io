@@ -21,15 +21,15 @@ export const analysisRefocusRequestPayload = io.type({
 });
 export type AnalysisRefocusRequestPayload = io.TypeOf<typeof analysisRefocusRequestPayload>;
 
-export const analysisDrawableUpdatedRequestPayload = io.type({
-  kind: io.literal('analysisDrawableUpdatedResquest'),
+export const analysisDrawnShapesUpdatedRequestPayload = io.type({
+  kind: io.literal('analysisDrawnShapesUpdatedRequest'),
   content: io.type({
     id: io.string,
-    drawable: io.array(chessBoardDrawShape),
+    drawnShapes: io.array(chessBoardDrawShape),
   }),
 });
 
-export type AnalysisDrawableUpdatedRequestPayload = io.TypeOf<typeof analysisDrawableUpdatedRequestPayload>;
+export type AnalysisDrawnShapesUpdatedRequestPayload = io.TypeOf<typeof analysisDrawnShapesUpdatedRequestPayload>;
 
 export const analysisUpdatedResponsePayload = io.type({
   kind: io.literal('analysisUpdatedResponse'),

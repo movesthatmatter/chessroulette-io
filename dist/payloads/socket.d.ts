@@ -24876,10 +24876,10 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         focusIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
     }>;
 }>, io.TypeC<{
-    kind: io.LiteralC<"analysisDrawableUpdatedResquest">;
+    kind: io.LiteralC<"analysisDrawnShapesUpdatedRequest">;
     content: io.TypeC<{
         id: io.StringC;
-        drawable: io.ArrayC<io.IntersectionC<[io.TypeC<{
+        drawnShapes: io.ArrayC<io.IntersectionC<[io.TypeC<{
             orig: io.StringC;
             visible: io.BooleanC;
             defaultSnapToValidMove: io.BooleanC;
@@ -24898,7 +24898,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         history: io.Type<import("..").ChessRecursiveHistory, import("..").ChessRecursiveHistory, unknown>;
         focusIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
     }>, io.TypeC<{
-        drawable: io.ArrayC<io.IntersectionC<[io.TypeC<{
+        drawnShapes: io.ArrayC<io.IntersectionC<[io.TypeC<{
             orig: io.StringC;
             visible: io.BooleanC;
             defaultSnapToValidMove: io.BooleanC;

@@ -26,7 +26,7 @@ exports.analysisRecord = io.intersection([
         focusIndex: chessGame_1.chessHistoryIndex,
     }),
     io.type({
-        drawable: io.array(exports.chessBoardDrawShape),
+        drawnShapes: io.array(exports.chessBoardDrawShape),
     }),
 ]);
 //# sourceMappingURL=analysisRecord.js.map

@@ -26,7 +26,7 @@ export const analysisRecord = io.intersection([
     focusIndex: chessHistoryIndex,
   }),
   io.type({
-    drawable: io.array(chessBoardDrawShape),
+    drawnShapes: io.array(chessBoardDrawShape),
   }),
 ]);
 
