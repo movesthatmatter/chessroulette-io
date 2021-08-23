@@ -24876,6 +24876,20 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         focusIndex: io.Type<import("..").ChessHistoryIndex, import("..").ChessHistoryIndex, unknown>;
     }>;
 }>, io.TypeC<{
+    kind: io.LiteralC<"analysisDrawableUpdatedResquest">;
+    content: io.TypeC<{
+        id: io.StringC;
+        drawable: io.ArrayC<io.IntersectionC<[io.TypeC<{
+            orig: io.StringC;
+            visible: io.BooleanC;
+            defaultSnapToValidMove: io.BooleanC;
+            eraseOnClick: io.BooleanC;
+        }>, io.PartialC<{
+            dest: io.StringC;
+            brush: io.StringC;
+        }>]>>;
+    }>;
+}>, io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
     content: io.IntersectionC<[io.TypeC<{
         id: io.StringC;

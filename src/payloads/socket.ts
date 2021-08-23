@@ -20,6 +20,7 @@ import {
   analysisRefocusRequestPayload,
   analysisMoveRequestPayload,
   analysisUpdatedResponsePayload,
+  analysisDrawableUpdatedRequestPayload
 } from './analysis';
 
 export const userIdentificationPayload = io.type({
@@ -132,6 +133,7 @@ export const socketPayload = io.union([
   // Analysis
   analysisMoveRequestPayload,
   analysisRefocusRequestPayload,
+  analysisDrawableUpdatedRequestPayload,
   analysisUpdatedResponsePayload,
 
   // Room & Game
