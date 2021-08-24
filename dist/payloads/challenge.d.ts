@@ -547,13 +547,8 @@ export declare const quickPairingMatchedResponse: io.TypeC<{
             type: io.LiteralC<"none">;
         }>, io.IntersectionC<[io.TypeC<{
             type: io.LiteralC<"play">;
-        }>, io.UnionC<[io.TypeC<{
-            status: io.LiteralC<"challengePending">;
-            challengeId: io.StringC;
-        }>, io.TypeC<{
-            status: io.LiteralC<"playing">;
             gameId: io.StringC;
-        }>]>, io.PartialC<{
+        }>, io.PartialC<{
             offer: io.UnionC<[io.TypeC<{
                 id: io.StringC;
                 type: io.LiteralC<"draw">;
@@ -3163,7 +3158,9 @@ export declare const quickPairingMatchedResponse: io.TypeC<{
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
         code: io.StringC;
-    }>]>]>;
+    }>]>, io.PartialC<{
+        pendingChallengeId: io.StringC;
+    }>]>;
 }>;
 export declare type QuickPairingMatchedResponse = io.TypeOf<typeof quickPairingMatchedResponse>;
 export declare const quickPairingPendingResponse: io.TypeC<{
@@ -3533,13 +3530,8 @@ export declare const quickPairingResponse: io.UnionC<[io.TypeC<{
             type: io.LiteralC<"none">;
         }>, io.IntersectionC<[io.TypeC<{
             type: io.LiteralC<"play">;
-        }>, io.UnionC<[io.TypeC<{
-            status: io.LiteralC<"challengePending">;
-            challengeId: io.StringC;
-        }>, io.TypeC<{
-            status: io.LiteralC<"playing">;
             gameId: io.StringC;
-        }>]>, io.PartialC<{
+        }>, io.PartialC<{
             offer: io.UnionC<[io.TypeC<{
                 id: io.StringC;
                 type: io.LiteralC<"draw">;
@@ -6149,7 +6141,9 @@ export declare const quickPairingResponse: io.UnionC<[io.TypeC<{
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
         code: io.StringC;
-    }>]>]>;
+    }>]>, io.PartialC<{
+        pendingChallengeId: io.StringC;
+    }>]>;
 }>, io.TypeC<{
     matched: io.LiteralC<false>;
     challenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
@@ -6520,13 +6514,8 @@ export declare const challengeAcceptedPayload: io.TypeC<{
                 type: io.LiteralC<"none">;
             }>, io.IntersectionC<[io.TypeC<{
                 type: io.LiteralC<"play">;
-            }>, io.UnionC<[io.TypeC<{
-                status: io.LiteralC<"challengePending">;
-                challengeId: io.StringC;
-            }>, io.TypeC<{
-                status: io.LiteralC<"playing">;
                 gameId: io.StringC;
-            }>]>, io.PartialC<{
+            }>, io.PartialC<{
                 offer: io.UnionC<[io.TypeC<{
                     id: io.StringC;
                     type: io.LiteralC<"draw">;
@@ -9136,7 +9125,9 @@ export declare const challengeAcceptedPayload: io.TypeC<{
         }>, io.TypeC<{
             type: io.LiteralC<"private">;
             code: io.StringC;
-        }>]>]>;
+        }>]>, io.PartialC<{
+            pendingChallengeId: io.StringC;
+        }>]>;
     }>;
 }>;
 export declare type ChallengeAcceptedPayload = io.TypeOf<typeof challengeAcceptedPayload>;
