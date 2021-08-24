@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-import { gameSpecsRecord } from 'src/chessGame';
+import { gameSpecsRecord } from '../chessGame';
 import { gameRecord } from '../records/gameRecord';
 import { peerRecord } from '../records/peerRecord';
 import {
