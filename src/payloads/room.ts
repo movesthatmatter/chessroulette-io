@@ -1,15 +1,15 @@
 import * as io from 'io-ts';
+import { gameSpecsRecord } from 'src/chessGame';
 import { gameRecord } from '../records/gameRecord';
 import { peerRecord } from '../records/peerRecord';
-import { 
+import {
   roomRecord,
   roomType,
   publicRoomRecord,
   privateRoomRecord,
-  roomActivityType,
 } from '../records/roomRecord';
 
-// TODO: Not sure how to split the HTTP/Socket payloads while still keeping them 
+// TODO: Not sure how to split the HTTP/Socket payloads while still keeping them
 //  grouped by feature/module
 
 // HTTP
@@ -19,9 +19,21 @@ export const createRoomRequest = io.intersection([
     userId: io.string,
     type: roomType,
   }),
+  io.union([
+    io.type({
+      activityType: io.literal('play'),
+      gameSpecs: gameSpecsRecord,
+    }),
+    io.type({
+      activityType: io.literal('anlysis'),
+      // Add more stuff if needed
+    }),
+    io.type({
+      activityType: io.literal('none'),
+    }),
+  ]),
   io.partial({
     name: io.string,
-    activityType: roomActivityType, // TODO: "Play" should be excluded from here
   }),
 ]);
 export type CreateRoomRequest = io.TypeOf<typeof createRoomRequest>;
@@ -58,7 +70,7 @@ export const joinedRoomAndGameUpdatedPayload = io.type({
 export type JoinedRoomAndGameUpdatedPayload = io.TypeOf<typeof joinedRoomAndGameUpdatedPayload>;
 
 // This is different b/c the client is like a client request
-//  while the others are server responses. 
+//  while the others are server responses.
 //  Not sure I need to make a distinction between them (yet).
 export const joinRoomRequestPayload = io.type({
   kind: io.literal('joinRoomRequest'),
@@ -104,4 +116,4 @@ export const peerJoinedRoomPayload = io.type({
     peerId: io.string,
   }),
 });
-export type PeerJoinedRoomPayload = io.TypeOf<typeof peerJoinedRoomPayload>; 
+export type PeerJoinedRoomPayload = io.TypeOf<typeof peerJoinedRoomPayload>;

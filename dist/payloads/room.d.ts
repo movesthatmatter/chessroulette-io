@@ -5,13 +5,37 @@ export declare const createRoomRequest: io.IntersectionC<[io.TypeC<{
         public: null;
         private: null;
     }>;
-}>, io.PartialC<{
-    name: io.StringC;
-    activityType: io.KeyofC<{
-        none: null;
-        play: null;
-        analysis: null;
+}>, io.UnionC<[io.TypeC<{
+    activityType: io.LiteralC<"play">;
+    gameSpecs: io.TypeC<{
+        timeLimit: io.KeyofC<{
+            bullet30: null;
+            bullet1: null;
+            blitz2: null;
+            blitz3: null;
+            blitz5: null;
+            rapid10: null;
+            rapid15: null;
+            rapid20: null;
+            rapid30: null;
+            rapid45: null;
+            rapid60: null;
+            untimed: null;
+        }>;
+        preferredColor: io.UnionC<[io.KeyofC<{
+            black: null;
+        }>, io.KeyofC<{
+            white: null;
+        }>, io.KeyofC<{
+            random: null;
+        }>]>;
     }>;
+}>, io.TypeC<{
+    activityType: io.LiteralC<"anlysis">;
+}>, io.TypeC<{
+    activityType: io.LiteralC<"none">;
+}>]>, io.PartialC<{
+    name: io.StringC;
 }>]>;
 export declare type CreateRoomRequest = io.TypeOf<typeof createRoomRequest>;
 export declare const createRoomResponse: io.IntersectionC<[io.TypeC<{

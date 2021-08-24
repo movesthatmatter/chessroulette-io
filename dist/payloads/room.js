@@ -2,10 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.peerJoinedRoomPayload = exports.leaveRoomRequestPayload = exports.joinRoomFailurePayload = exports.joinRoomSuccessPayload = exports.joinRoomRequestPayload = exports.joinedRoomAndGameUpdatedPayload = exports.joinedRoomUpdatedPayload = exports.roomResponsePayload = exports.publicRoomsResponsePayload = exports.privateRoomResponsePayload = exports.publicRoomResponsePayload = exports.createRoomResponse = exports.createRoomRequest = void 0;
 var io = require("io-ts");
+var chessGame_1 = require("src/chessGame");
 var gameRecord_1 = require("../records/gameRecord");
 var peerRecord_1 = require("../records/peerRecord");
 var roomRecord_1 = require("../records/roomRecord");
-// TODO: Not sure how to split the HTTP/Socket payloads while still keeping them 
+// TODO: Not sure how to split the HTTP/Socket payloads while still keeping them
 //  grouped by feature/module
 // HTTP
 exports.createRoomRequest = io.intersection([
@@ -13,9 +14,20 @@ exports.createRoomRequest = io.intersection([
         userId: io.string,
         type: roomRecord_1.roomType,
     }),
+    io.union([
+        io.type({
+            activityType: io.literal('play'),
+            gameSpecs: chessGame_1.gameSpecsRecord,
+        }),
+        io.type({
+            activityType: io.literal('anlysis'),
+        }),
+        io.type({
+            activityType: io.literal('none'),
+        }),
+    ]),
     io.partial({
         name: io.string,
-        activityType: roomRecord_1.roomActivityType,
     }),
 ]);
 exports.createRoomResponse = roomRecord_1.roomRecord;
@@ -36,7 +48,7 @@ exports.joinedRoomAndGameUpdatedPayload = io.type({
     }),
 });
 // This is different b/c the client is like a client request
-//  while the others are server responses. 
+//  while the others are server responses.
 //  Not sure I need to make a distinction between them (yet).
 exports.joinRoomRequestPayload = io.type({
     kind: io.literal('joinRoomRequest'),
