@@ -250,8 +250,11 @@ export type ChessGameTakebackOffer = io.TypeOf<typeof chessGameTakebackOffer>;
 export const chessGameOffer = io.union([
   chessGameDrawOffer,
   chessGameRematchOffer,
-  chessGameChallengeOffer,
   chessGameTakebackOffer,
+
+  // TODO: Deprecate from here and move into activity challlenge to be in tune with the new way
+  //  A challenge can be internal (just inside the room), public (to everyone) or to specific to a user
+  chessGameChallengeOffer,
 ]);
 export type ChessGameOffer = io.TypeOf<typeof chessGameOffer>;
 
