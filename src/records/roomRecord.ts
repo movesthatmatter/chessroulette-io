@@ -23,7 +23,7 @@ export const roomPlayActivityRecord = io.intersection([
     type: io.literal('play'),
     gameId: io.string,
   }),
-  
+
   // io.union([
   //   io.type({
   //     status: io.literal('challengePending'),
@@ -42,7 +42,6 @@ export const roomPlayActivityRecord = io.intersection([
 ]);
 
 export type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
-
 
 export const roomAnalysisActivityRecord = io.type({
   type: io.literal('analysis'),
@@ -85,6 +84,8 @@ export const roomRecord = io.intersection([
     // TODO: Temporarily additon to match the room stats record
     // game: chessGameState,
     // gameOffer: chessGameOffer,
+
+    pendingChallenges: io.record(io.string, challengeRecord),
   }),
   io.union([
     io.type({
@@ -96,13 +97,8 @@ export const roomRecord = io.intersection([
       code: io.string,
     }),
   ]),
-  io.partial({
-    // This is only present while there is a challenge going on
-    pendingChallenge: challengeRecord,
-  }),
 ]);
 export type RoomRecord = io.TypeOf<typeof roomRecord>;
-
 
 export const publicRoomRecord = io.intersection([
   roomRecord,

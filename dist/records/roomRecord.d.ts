@@ -7565,14 +7565,7 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -7632,8 +7625,14 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>;
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>;
 export declare type RoomRecord = io.TypeOf<typeof roomRecord>;
 export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.TypeC<{
     id: io.StringC;
@@ -10540,14 +10539,7 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -10607,8 +10599,14 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     type: io.LiteralC<"public">;
 }>]>;
 export declare type PublicRoomRecord = io.TypeOf<typeof publicRoomRecord>;
@@ -13517,14 +13515,7 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -13584,8 +13575,14 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     type: io.LiteralC<"private">;
 }>]>;
 export declare type PrivateRoomRecord = io.TypeOf<typeof privateRoomRecord>;
@@ -16494,14 +16491,7 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -16561,8 +16551,14 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     activity: io.TypeC<{
         type: io.LiteralC<"none">;
     }>;
@@ -19473,14 +19469,7 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -19540,8 +19529,14 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     activity: io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
         gameId: io.StringC;
@@ -24766,14 +24761,7 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -24833,8 +24821,14 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     activity: io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;

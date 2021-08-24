@@ -2904,14 +2904,7 @@ export declare const roomStatsRecord: io.IntersectionC<[io.IntersectionC<[io.Typ
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -2971,8 +2964,14 @@ export declare const roomStatsRecord: io.IntersectionC<[io.IntersectionC<[io.Typ
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     peersCount: io.NumberC;
 }>]>;
 export declare type RoomStatsRecord = io.TypeOf<typeof roomStatsRecord>;
