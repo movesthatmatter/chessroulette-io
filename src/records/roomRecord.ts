@@ -22,14 +22,14 @@ export const roomPlayActivityRecord = io.intersection([
     type: io.literal('play'),
   }),
   io.union([
-    io.intersection([
-      io.type({ gameId: io.string }),
-      io.partial({ challengeId: io.undefined }),
-    ]),
-    io.intersection([
-      io.type({ challengeId: io.string }),
-      io.partial({ gameId: io.undefined }),
-    ]),
+    io.type({
+      gameId: io.string,
+      challengeId: io.undefined,
+    }),
+    io.type({
+      challengeId: io.string,
+      gameId: io.undefined,
+    }),
   ]),
   io.partial({
     offer: chessGameOffer,

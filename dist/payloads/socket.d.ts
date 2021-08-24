@@ -919,15 +919,13 @@ export declare const iamResponsePayload: io.TypeC<{
                 type: io.LiteralC<"none">;
             }>, io.IntersectionC<[io.TypeC<{
                 type: io.LiteralC<"play">;
-            }>, io.UnionC<[io.IntersectionC<[io.TypeC<{
+            }>, io.UnionC<[io.TypeC<{
                 gameId: io.StringC;
-            }>, io.PartialC<{
                 challengeId: io.UndefinedC;
-            }>]>, io.IntersectionC<[io.TypeC<{
+            }>, io.TypeC<{
                 challengeId: io.StringC;
-            }>, io.PartialC<{
                 gameId: io.UndefinedC;
-            }>]>]>, io.PartialC<{
+            }>]>, io.PartialC<{
                 offer: io.UnionC<[io.TypeC<{
                     id: io.StringC;
                     type: io.LiteralC<"draw">;
@@ -4526,15 +4524,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 type: io.LiteralC<"none">;
             }>, io.IntersectionC<[io.TypeC<{
                 type: io.LiteralC<"play">;
-            }>, io.UnionC<[io.IntersectionC<[io.TypeC<{
+            }>, io.UnionC<[io.TypeC<{
                 gameId: io.StringC;
-            }>, io.PartialC<{
                 challengeId: io.UndefinedC;
-            }>]>, io.IntersectionC<[io.TypeC<{
+            }>, io.TypeC<{
                 challengeId: io.StringC;
-            }>, io.PartialC<{
                 gameId: io.UndefinedC;
-            }>]>]>, io.PartialC<{
+            }>]>, io.PartialC<{
                 offer: io.UnionC<[io.TypeC<{
                     id: io.StringC;
                     type: io.LiteralC<"draw">;
@@ -7518,15 +7514,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 type: io.LiteralC<"none">;
             }>, io.IntersectionC<[io.TypeC<{
                 type: io.LiteralC<"play">;
-            }>, io.UnionC<[io.IntersectionC<[io.TypeC<{
+            }>, io.UnionC<[io.TypeC<{
                 gameId: io.StringC;
-            }>, io.PartialC<{
                 challengeId: io.UndefinedC;
-            }>]>, io.IntersectionC<[io.TypeC<{
+            }>, io.TypeC<{
                 challengeId: io.StringC;
-            }>, io.PartialC<{
                 gameId: io.UndefinedC;
-            }>]>]>, io.PartialC<{
+            }>]>, io.PartialC<{
                 offer: io.UnionC<[io.TypeC<{
                     id: io.StringC;
                     type: io.LiteralC<"draw">;
@@ -10453,15 +10447,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 type: io.LiteralC<"none">;
             }>, io.IntersectionC<[io.TypeC<{
                 type: io.LiteralC<"play">;
-            }>, io.UnionC<[io.IntersectionC<[io.TypeC<{
+            }>, io.UnionC<[io.TypeC<{
                 gameId: io.StringC;
-            }>, io.PartialC<{
                 challengeId: io.UndefinedC;
-            }>]>, io.IntersectionC<[io.TypeC<{
+            }>, io.TypeC<{
                 challengeId: io.StringC;
-            }>, io.PartialC<{
                 gameId: io.UndefinedC;
-            }>]>]>, io.PartialC<{
+            }>]>, io.PartialC<{
                 offer: io.UnionC<[io.TypeC<{
                     id: io.StringC;
                     type: io.LiteralC<"draw">;
@@ -13676,15 +13668,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             type: io.LiteralC<"none">;
         }>, io.IntersectionC<[io.TypeC<{
             type: io.LiteralC<"play">;
-        }>, io.UnionC<[io.IntersectionC<[io.TypeC<{
+        }>, io.UnionC<[io.TypeC<{
             gameId: io.StringC;
-        }>, io.PartialC<{
             challengeId: io.UndefinedC;
-        }>]>, io.IntersectionC<[io.TypeC<{
+        }>, io.TypeC<{
             challengeId: io.StringC;
-        }>, io.PartialC<{
             gameId: io.UndefinedC;
-        }>]>]>, io.PartialC<{
+        }>]>, io.PartialC<{
             offer: io.UnionC<[io.TypeC<{
                 id: io.StringC;
                 type: io.LiteralC<"draw">;
@@ -25282,15 +25272,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 type: io.LiteralC<"none">;
             }>, io.IntersectionC<[io.TypeC<{
                 type: io.LiteralC<"play">;
-            }>, io.UnionC<[io.IntersectionC<[io.TypeC<{
+            }>, io.UnionC<[io.TypeC<{
                 gameId: io.StringC;
-            }>, io.PartialC<{
                 challengeId: io.UndefinedC;
-            }>]>, io.IntersectionC<[io.TypeC<{
+            }>, io.TypeC<{
                 challengeId: io.StringC;
-            }>, io.PartialC<{
                 gameId: io.UndefinedC;
-            }>]>]>, io.PartialC<{
+            }>]>, io.PartialC<{
                 offer: io.UnionC<[io.TypeC<{
                     id: io.StringC;
                     type: io.LiteralC<"draw">;
@@ -36846,15 +36834,13 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             type: io.LiteralC<"none">;
         }>, io.IntersectionC<[io.TypeC<{
             type: io.LiteralC<"play">;
-        }>, io.UnionC<[io.IntersectionC<[io.TypeC<{
+        }>, io.UnionC<[io.TypeC<{
             gameId: io.StringC;
-        }>, io.PartialC<{
             challengeId: io.UndefinedC;
-        }>]>, io.IntersectionC<[io.TypeC<{
+        }>, io.TypeC<{
             challengeId: io.StringC;
-        }>, io.PartialC<{
             gameId: io.UndefinedC;
-        }>]>]>, io.PartialC<{
+        }>]>, io.PartialC<{
             offer: io.UnionC<[io.TypeC<{
                 id: io.StringC;
                 type: io.LiteralC<"draw">;
