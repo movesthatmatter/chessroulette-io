@@ -4,6 +4,7 @@ exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = ex
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
+var challengeRecord_1 = require("./challengeRecord");
 var chatRecords_1 = require("./chatRecords");
 var peerRecord_1 = require("./peerRecord");
 exports.roomActivityType = io.keyof({
@@ -70,7 +71,7 @@ exports.roomRecord = io.intersection([
     ]),
     io.partial({
         // This is only present while there is a challenge going on
-        pendingChallengeId: io.string,
+        pendingChallenge: challengeRecord_1.challengeRecord,
     }),
 ]);
 exports.publicRoomRecord = io.intersection([
