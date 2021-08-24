@@ -2943,14 +2943,7 @@ export declare const createRoomResponse: io.IntersectionC<[io.TypeC<{
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -3010,8 +3003,14 @@ export declare const createRoomResponse: io.IntersectionC<[io.TypeC<{
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>;
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>;
 export declare type CreateRoomResponse = io.TypeOf<typeof createRoomResponse>;
 export declare const publicRoomResponsePayload: io.IntersectionC<[io.IntersectionC<[io.TypeC<{
     id: io.StringC;
@@ -5918,14 +5917,7 @@ export declare const publicRoomResponsePayload: io.IntersectionC<[io.Intersectio
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -5985,8 +5977,14 @@ export declare const publicRoomResponsePayload: io.IntersectionC<[io.Intersectio
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     type: io.LiteralC<"public">;
 }>]>;
 export declare type PublicRoomResponsePayload = io.TypeOf<typeof publicRoomResponsePayload>;
@@ -8895,14 +8893,7 @@ export declare const privateRoomResponsePayload: io.IntersectionC<[io.Intersecti
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -8962,8 +8953,14 @@ export declare const privateRoomResponsePayload: io.IntersectionC<[io.Intersecti
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     type: io.LiteralC<"private">;
 }>]>;
 export declare type PrivateRoomResponsePayload = io.TypeOf<typeof privateRoomResponsePayload>;
@@ -11872,14 +11869,7 @@ export declare const publicRoomsResponsePayload: io.ArrayC<io.IntersectionC<[io.
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -11939,8 +11929,14 @@ export declare const publicRoomsResponsePayload: io.ArrayC<io.IntersectionC<[io.
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>, io.TypeC<{
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>, io.TypeC<{
     type: io.LiteralC<"public">;
 }>]>>;
 export declare type PublicRoomsResponsePayload = io.TypeOf<typeof publicRoomsResponsePayload>;
@@ -14849,14 +14845,7 @@ export declare const roomResponsePayload: io.IntersectionC<[io.TypeC<{
             }>, io.UndefinedC]>;
         }>]>]>>;
     }>;
-}>, io.UnionC<[io.TypeC<{
-    type: io.LiteralC<"public">;
-    code: io.NullC;
-}>, io.TypeC<{
-    type: io.LiteralC<"private">;
-    code: io.StringC;
-}>]>, io.PartialC<{
-    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+    pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -14916,8 +14905,14 @@ export declare const roomResponsePayload: io.IntersectionC<[io.TypeC<{
         slug: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"private">;
-    }>]>]>;
-}>]>;
+    }>]>]>>;
+}>, io.UnionC<[io.TypeC<{
+    type: io.LiteralC<"public">;
+    code: io.NullC;
+}>, io.TypeC<{
+    type: io.LiteralC<"private">;
+    code: io.StringC;
+}>]>]>;
 export declare type RoomResponsePayload = io.TypeOf<typeof roomResponsePayload>;
 export declare const joinedRoomUpdatedPayload: io.TypeC<{
     kind: io.LiteralC<"joinedRoomUpdated">;
@@ -17826,14 +17821,7 @@ export declare const joinedRoomUpdatedPayload: io.TypeC<{
                 }>, io.UndefinedC]>;
             }>]>]>>;
         }>;
-    }>, io.UnionC<[io.TypeC<{
-        type: io.LiteralC<"public">;
-        code: io.NullC;
-    }>, io.TypeC<{
-        type: io.LiteralC<"private">;
-        code: io.StringC;
-    }>]>, io.PartialC<{
-        pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
             gameSpecs: io.TypeC<{
                 timeLimit: io.KeyofC<{
                     bullet30: null;
@@ -17893,8 +17881,14 @@ export declare const joinedRoomUpdatedPayload: io.TypeC<{
             slug: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"private">;
-        }>]>]>;
-    }>]>;
+        }>]>]>>;
+    }>, io.UnionC<[io.TypeC<{
+        type: io.LiteralC<"public">;
+        code: io.NullC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+        code: io.StringC;
+    }>]>]>;
 }>;
 export declare type JoinedRoomUpdatedPayload = io.TypeOf<typeof joinedRoomUpdatedPayload>;
 export declare const joinedRoomAndGameUpdatedPayload: io.TypeC<{
@@ -20805,14 +20799,7 @@ export declare const joinedRoomAndGameUpdatedPayload: io.TypeC<{
                     }>, io.UndefinedC]>;
                 }>]>]>>;
             }>;
-        }>, io.UnionC<[io.TypeC<{
-            type: io.LiteralC<"public">;
-            code: io.NullC;
-        }>, io.TypeC<{
-            type: io.LiteralC<"private">;
-            code: io.StringC;
-        }>]>, io.PartialC<{
-            pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+            pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
                 gameSpecs: io.TypeC<{
                     timeLimit: io.KeyofC<{
                         bullet30: null;
@@ -20872,8 +20859,14 @@ export declare const joinedRoomAndGameUpdatedPayload: io.TypeC<{
                 slug: io.StringC;
             }>, io.TypeC<{
                 type: io.LiteralC<"private">;
-            }>]>]>;
-        }>]>;
+            }>]>]>>;
+        }>, io.UnionC<[io.TypeC<{
+            type: io.LiteralC<"public">;
+            code: io.NullC;
+        }>, io.TypeC<{
+            type: io.LiteralC<"private">;
+            code: io.StringC;
+        }>]>]>;
         game: io.IntersectionC<[io.UnionC<[io.TypeC<{
             state: io.LiteralC<"pending">;
             timeLimit: io.KeyofC<{
@@ -32143,14 +32136,7 @@ export declare const joinRoomSuccessPayload: io.TypeC<{
                     }>, io.UndefinedC]>;
                 }>]>]>>;
             }>;
-        }>, io.UnionC<[io.TypeC<{
-            type: io.LiteralC<"public">;
-            code: io.NullC;
-        }>, io.TypeC<{
-            type: io.LiteralC<"private">;
-            code: io.StringC;
-        }>]>, io.PartialC<{
-            pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+            pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
                 gameSpecs: io.TypeC<{
                     timeLimit: io.KeyofC<{
                         bullet30: null;
@@ -32210,8 +32196,14 @@ export declare const joinRoomSuccessPayload: io.TypeC<{
                 slug: io.StringC;
             }>, io.TypeC<{
                 type: io.LiteralC<"private">;
-            }>]>]>;
-        }>]>;
+            }>]>]>>;
+        }>, io.UnionC<[io.TypeC<{
+            type: io.LiteralC<"public">;
+            code: io.NullC;
+        }>, io.TypeC<{
+            type: io.LiteralC<"private">;
+            code: io.StringC;
+        }>]>]>;
         me: io.IntersectionC<[io.TypeC<{
             id: io.StringC;
             user: io.UnionC<[io.IntersectionC<[io.TypeC<{

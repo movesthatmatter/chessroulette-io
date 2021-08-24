@@ -3152,14 +3152,7 @@ export declare const quickPairingMatchedResponse: io.TypeC<{
                 }>, io.UndefinedC]>;
             }>]>]>>;
         }>;
-    }>, io.UnionC<[io.TypeC<{
-        type: io.LiteralC<"public">;
-        code: io.NullC;
-    }>, io.TypeC<{
-        type: io.LiteralC<"private">;
-        code: io.StringC;
-    }>]>, io.PartialC<{
-        pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
             gameSpecs: io.TypeC<{
                 timeLimit: io.KeyofC<{
                     bullet30: null;
@@ -3219,8 +3212,14 @@ export declare const quickPairingMatchedResponse: io.TypeC<{
             slug: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"private">;
-        }>]>]>;
-    }>]>;
+        }>]>]>>;
+    }>, io.UnionC<[io.TypeC<{
+        type: io.LiteralC<"public">;
+        code: io.NullC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+        code: io.StringC;
+    }>]>]>;
 }>;
 export declare type QuickPairingMatchedResponse = io.TypeOf<typeof quickPairingMatchedResponse>;
 export declare const quickPairingPendingResponse: io.TypeC<{
@@ -6195,14 +6194,7 @@ export declare const quickPairingResponse: io.UnionC<[io.TypeC<{
                 }>, io.UndefinedC]>;
             }>]>]>>;
         }>;
-    }>, io.UnionC<[io.TypeC<{
-        type: io.LiteralC<"public">;
-        code: io.NullC;
-    }>, io.TypeC<{
-        type: io.LiteralC<"private">;
-        code: io.StringC;
-    }>]>, io.PartialC<{
-        pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
             gameSpecs: io.TypeC<{
                 timeLimit: io.KeyofC<{
                     bullet30: null;
@@ -6262,8 +6254,14 @@ export declare const quickPairingResponse: io.UnionC<[io.TypeC<{
             slug: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"private">;
-        }>]>]>;
-    }>]>;
+        }>]>]>>;
+    }>, io.UnionC<[io.TypeC<{
+        type: io.LiteralC<"public">;
+        code: io.NullC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+        code: io.StringC;
+    }>]>]>;
 }>, io.TypeC<{
     matched: io.LiteralC<false>;
     challenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
@@ -9239,14 +9237,7 @@ export declare const challengeAcceptedPayload: io.TypeC<{
                     }>, io.UndefinedC]>;
                 }>]>]>>;
             }>;
-        }>, io.UnionC<[io.TypeC<{
-            type: io.LiteralC<"public">;
-            code: io.NullC;
-        }>, io.TypeC<{
-            type: io.LiteralC<"private">;
-            code: io.StringC;
-        }>]>, io.PartialC<{
-            pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+            pendingChallenges: io.RecordC<io.StringC, io.UnionC<[io.IntersectionC<[io.TypeC<{
                 gameSpecs: io.TypeC<{
                     timeLimit: io.KeyofC<{
                         bullet30: null;
@@ -9306,8 +9297,14 @@ export declare const challengeAcceptedPayload: io.TypeC<{
                 slug: io.StringC;
             }>, io.TypeC<{
                 type: io.LiteralC<"private">;
-            }>]>]>;
-        }>]>;
+            }>]>]>>;
+        }>, io.UnionC<[io.TypeC<{
+            type: io.LiteralC<"public">;
+            code: io.NullC;
+        }>, io.TypeC<{
+            type: io.LiteralC<"private">;
+            code: io.StringC;
+        }>]>]>;
     }>;
 }>;
 export declare type ChallengeAcceptedPayload = io.TypeOf<typeof challengeAcceptedPayload>;

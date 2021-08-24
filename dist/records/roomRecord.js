@@ -58,6 +58,13 @@ exports.roomRecord = io.intersection([
         peers: io.record(io.string, peerRecord_1.peerRecord),
         activity: exports.roomActivityRecord,
         chatHistory: chatRecords_1.chatHistoryRecord,
+        // TODO: Add
+        // lastJoinedAt: null | ISODateTime;
+        // lastLeftAt: null | ISODateTime;
+        // TODO: Temporarily additon to match the room stats record
+        // game: chessGameState,
+        // gameOffer: chessGameOffer,
+        pendingChallenges: io.record(io.string, challengeRecord_1.challengeRecord),
     }),
     io.union([
         io.type({
@@ -69,10 +76,6 @@ exports.roomRecord = io.intersection([
             code: io.string,
         }),
     ]),
-    io.partial({
-        // This is only present while there is a challenge going on
-        pendingChallenge: challengeRecord_1.challengeRecord,
-    }),
 ]);
 exports.publicRoomRecord = io.intersection([
     exports.roomRecord,
