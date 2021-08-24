@@ -20,19 +20,21 @@ export type RoomNoActivityRecord = io.TypeOf<typeof roomNoActivityRecord>;
 export const roomPlayActivityRecord = io.intersection([
   io.type({
     type: io.literal('play'),
+    gameId: io.string,
   }),
-  io.union([
-    io.type({
-      status: io.literal('challengePending'),
-      challengeId: io.string,
-    }),
-    io.type({
-      status: io.literal('playing'),
-      gameId: io.string,
-    }),
+  
+  // io.union([
+  //   io.type({
+  //     status: io.literal('challengePending'),
+  //     challengeId: io.string,
+  //   }),
+  //   io.type({
+  //     status: io.literal('playing'),
+  //     gameId: io.string,
+  //   }),
 
-    // TODO: Add other types if needed
-  ]),
+  //   // TODO: Add other types if needed
+  // ]),
   io.partial({
     offer: chessGameOffer,
   }),
@@ -93,6 +95,10 @@ export const roomRecord = io.intersection([
       code: io.string,
     }),
   ]),
+  io.partial({
+    // This is only present while there is a challenge going on
+    pendingChallengeId: io.string,
+  }),
 ]);
 export type RoomRecord = io.TypeOf<typeof roomRecord>;
 
