@@ -1,6 +1,7 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
 import { chessGameOffer } from '../chessGame';
+import { challengeRecord } from './challengeRecord';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
 
@@ -97,10 +98,11 @@ export const roomRecord = io.intersection([
   ]),
   io.partial({
     // This is only present while there is a challenge going on
-    pendingChallengeId: io.string,
+    pendingChallenge: challengeRecord,
   }),
 ]);
 export type RoomRecord = io.TypeOf<typeof roomRecord>;
+
 
 export const publicRoomRecord = io.intersection([
   roomRecord,

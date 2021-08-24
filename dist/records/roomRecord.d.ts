@@ -7572,7 +7572,67 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
     type: io.LiteralC<"private">;
     code: io.StringC;
 }>]>, io.PartialC<{
-    pendingChallengeId: io.StringC;
+    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"public">;
+    }>]>, io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+    }>]>]>;
 }>]>;
 export declare type RoomRecord = io.TypeOf<typeof roomRecord>;
 export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.TypeC<{
@@ -10487,7 +10547,67 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
     type: io.LiteralC<"private">;
     code: io.StringC;
 }>]>, io.PartialC<{
-    pendingChallengeId: io.StringC;
+    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"public">;
+    }>]>, io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+    }>]>]>;
 }>]>, io.TypeC<{
     type: io.LiteralC<"public">;
 }>]>;
@@ -13404,7 +13524,67 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
     type: io.LiteralC<"private">;
     code: io.StringC;
 }>]>, io.PartialC<{
-    pendingChallengeId: io.StringC;
+    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"public">;
+    }>]>, io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+    }>]>]>;
 }>]>, io.TypeC<{
     type: io.LiteralC<"private">;
 }>]>;
@@ -16321,7 +16501,67 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
     type: io.LiteralC<"private">;
     code: io.StringC;
 }>]>, io.PartialC<{
-    pendingChallengeId: io.StringC;
+    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"public">;
+    }>]>, io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+    }>]>]>;
 }>]>, io.TypeC<{
     activity: io.TypeC<{
         type: io.LiteralC<"none">;
@@ -19240,7 +19480,67 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
     type: io.LiteralC<"private">;
     code: io.StringC;
 }>]>, io.PartialC<{
-    pendingChallengeId: io.StringC;
+    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"public">;
+    }>]>, io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+    }>]>]>;
 }>]>, io.TypeC<{
     activity: io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
@@ -24473,7 +24773,67 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
     type: io.LiteralC<"private">;
     code: io.StringC;
 }>]>, io.PartialC<{
-    pendingChallengeId: io.StringC;
+    pendingChallenge: io.UnionC<[io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"public">;
+    }>]>, io.IntersectionC<[io.TypeC<{
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
+        id: io.StringC;
+        createdBy: io.StringC;
+        createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        slug: io.StringC;
+    }>, io.TypeC<{
+        type: io.LiteralC<"private">;
+    }>]>]>;
 }>]>, io.TypeC<{
     activity: io.TypeC<{
         type: io.LiteralC<"analysis">;
