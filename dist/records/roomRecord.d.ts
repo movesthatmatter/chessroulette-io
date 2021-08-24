@@ -12,11 +12,11 @@ export declare type RoomNoActivityRecord = io.TypeOf<typeof roomNoActivityRecord
 export declare const roomPlayActivityRecord: io.IntersectionC<[io.TypeC<{
     type: io.LiteralC<"play">;
 }>, io.UnionC<[io.TypeC<{
-    gameId: io.StringC;
-    challengeId: io.UndefinedC;
-}>, io.TypeC<{
+    status: io.LiteralC<"challengePending">;
     challengeId: io.StringC;
-    gameId: io.UndefinedC;
+}>, io.TypeC<{
+    status: io.LiteralC<"challengeAccepted">;
+    gameId: io.StringC;
 }>]>, io.PartialC<{
     offer: io.UnionC<[io.TypeC<{
         id: io.StringC;
@@ -2342,11 +2342,11 @@ export declare const roomActivityRecord: io.UnionC<[io.TypeC<{
 }>, io.IntersectionC<[io.TypeC<{
     type: io.LiteralC<"play">;
 }>, io.UnionC<[io.TypeC<{
-    gameId: io.StringC;
-    challengeId: io.UndefinedC;
-}>, io.TypeC<{
+    status: io.LiteralC<"challengePending">;
     challengeId: io.StringC;
-    gameId: io.UndefinedC;
+}>, io.TypeC<{
+    status: io.LiteralC<"challengeAccepted">;
+    gameId: io.StringC;
 }>]>, io.PartialC<{
     offer: io.UnionC<[io.TypeC<{
         id: io.StringC;
@@ -4971,11 +4971,11 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
     }>, io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;
@@ -7889,11 +7889,11 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
     }>, io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;
@@ -10809,11 +10809,11 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
     }>, io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;
@@ -13729,11 +13729,11 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
     }>, io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;
@@ -16651,11 +16651,11 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
     }>, io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;
@@ -19270,11 +19270,11 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
     activity: io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;
@@ -21892,11 +21892,11 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
     }>, io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;

@@ -20,12 +20,12 @@ exports.roomPlayActivityRecord = io.intersection([
     }),
     io.union([
         io.type({
-            gameId: io.string,
-            challengeId: io.undefined,
+            status: io.literal('challengePending'),
+            challengeId: io.string,
         }),
         io.type({
-            challengeId: io.string,
-            gameId: io.undefined,
+            status: io.literal('challengeAccepted'),
+            gameId: io.string,
         }),
     ]),
     io.partial({

@@ -23,13 +23,15 @@ export const roomPlayActivityRecord = io.intersection([
   }),
   io.union([
     io.type({
-      gameId: io.string,
-      challengeId: io.undefined,
+      status: io.literal('challengePending'),
+      challengeId: io.string,
     }),
     io.type({
-      challengeId: io.string,
-      gameId: io.undefined,
+      status: io.literal('challengeAccepted'),
+      gameId: io.string,
     }),
+
+    // TODO: Add other types if needed
   ]),
   io.partial({
     offer: chessGameOffer,
@@ -37,6 +39,7 @@ export const roomPlayActivityRecord = io.intersection([
 ]);
 
 export type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
+
 
 export const roomAnalysisActivityRecord = io.type({
   type: io.literal('analysis'),
