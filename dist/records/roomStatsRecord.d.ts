@@ -300,11 +300,11 @@ export declare const roomStatsRecord: io.IntersectionC<[io.IntersectionC<[io.Typ
     }>, io.IntersectionC<[io.TypeC<{
         type: io.LiteralC<"play">;
     }>, io.UnionC<[io.TypeC<{
-        gameId: io.StringC;
-        challengeId: io.UndefinedC;
-    }>, io.TypeC<{
+        status: io.LiteralC<"challengePending">;
         challengeId: io.StringC;
-        gameId: io.UndefinedC;
+    }>, io.TypeC<{
+        status: io.LiteralC<"challengeAccepted">;
+        gameId: io.StringC;
     }>]>, io.PartialC<{
         offer: io.UnionC<[io.TypeC<{
             id: io.StringC;
