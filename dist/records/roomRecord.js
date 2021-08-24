@@ -17,8 +17,17 @@ exports.roomNoActivityRecord = io.type({
 exports.roomPlayActivityRecord = io.intersection([
     io.type({
         type: io.literal('play'),
-        gameId: io.string,
     }),
+    io.union([
+        io.intersection([
+            io.type({ gameId: io.string }),
+            io.partial({ challengeId: io.undefined }),
+        ]),
+        io.intersection([
+            io.type({ challengeId: io.string }),
+            io.partial({ gameId: io.undefined }),
+        ]),
+    ]),
     io.partial({
         offer: chessGame_1.chessGameOffer,
     }),
@@ -55,8 +64,8 @@ exports.roomRecord = io.intersection([
         io.type({
             type: io.literal('private'),
             code: io.string,
-        })
-    ])
+        }),
+    ]),
 ]);
 exports.publicRoomRecord = io.intersection([
     exports.roomRecord,
@@ -70,7 +79,6 @@ exports.privateRoomRecord = io.intersection([
         type: io.literal('private'),
     }),
 ]);
-;
 exports.roomWithNoActivityRecord = io.intersection([
     exports.roomRecord,
     io.type({
