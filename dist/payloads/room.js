@@ -20,7 +20,7 @@ exports.createRoomRequest = io.intersection([
             gameSpecs: chessGame_1.gameSpecsRecord,
         }),
         io.type({
-            activityType: io.literal('anlysis'),
+            activityType: io.literal('analysis'),
         }),
         io.type({
             activityType: io.literal('none'),
