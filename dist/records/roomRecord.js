@@ -24,7 +24,7 @@ exports.roomPlayActivityRecord = io.intersection([
             challengeId: io.string,
         }),
         io.type({
-            status: io.literal('challengeAccepted'),
+            status: io.literal('playing'),
             gameId: io.string,
         }),
     ]),

@@ -204,8 +204,10 @@ exports.chessGameTakebackOffer = io.type({
 exports.chessGameOffer = io.union([
     exports.chessGameDrawOffer,
     exports.chessGameRematchOffer,
-    exports.chessGameChallengeOffer,
     exports.chessGameTakebackOffer,
+    // TODO: Deprecate from here and move into activity challlenge to be in tune with the new way
+    //  A challenge can be internal (just inside the room), public (to everyone) or to specific to a user
+    exports.chessGameChallengeOffer,
 ]);
 exports.capturedPiecesRecord = io.type({
     white: io.record(exports.capturableChessPieceType, io.number),
