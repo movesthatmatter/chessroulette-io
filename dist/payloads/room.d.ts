@@ -31,7 +31,7 @@ export declare const createRoomRequest: io.IntersectionC<[io.TypeC<{
         }>]>;
     }>;
 }>, io.TypeC<{
-    activityType: io.LiteralC<"anlysis">;
+    activityType: io.LiteralC<"analysis">;
 }>, io.TypeC<{
     activityType: io.LiteralC<"none">;
 }>]>, io.PartialC<{

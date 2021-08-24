@@ -25,7 +25,7 @@ export const createRoomRequest = io.intersection([
       gameSpecs: gameSpecsRecord,
     }),
     io.type({
-      activityType: io.literal('anlysis'),
+      activityType: io.literal('analysis'),
       // Add more stuff if needed
     }),
     io.type({
