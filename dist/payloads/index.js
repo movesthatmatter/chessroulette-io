@@ -13,6 +13,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // export * from './http';
 __exportStar(require("./signaling"), exports);
 __exportStar(require("./socket"), exports);
+__exportStar(require("./lead"), exports);
 __exportStar(require("./peer"), exports);
 __exportStar(require("./user"), exports);
 __exportStar(require("./game"), exports);

@@ -587,7 +587,7 @@ export declare namespace ConnectExternalAccount {
         type: io.LiteralC<"BadRequestError">;
         content: io.UndefinedC;
     }>, {
-        vendor: "facebook" | "lichess" | "twitch";
+        vendor: "twitch" | "facebook" | "lichess";
         accessToken: string;
     }, {
         id: string;
