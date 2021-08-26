@@ -25,8 +25,8 @@ export const facebookExternalUserRecord = io.type({
 export type FacebookExternalUserRecord = io.TypeOf<typeof facebookExternalUserRecord>;
 
 export const externalUserRecord = io.union([
-  lichessUserRecord,
-  facebookUserRecord,
-  twitchUserRecord,
+  twitchExternalUserRecord,
+  lichessExternalUserRecord,
+  facebookExternalUserRecord,
 ]);
 export type ExternalUserRecord = io.TypeOf<typeof externalUserRecord>;

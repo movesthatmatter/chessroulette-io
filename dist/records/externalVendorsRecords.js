@@ -21,8 +21,8 @@ exports.facebookExternalUserRecord = io.type({
     accessToken: io.string,
 });
 exports.externalUserRecord = io.union([
-    lichessRecords_1.lichessUserRecord,
-    facebookRecords_1.facebookUserRecord,
-    twitchRecords_1.twitchUserRecord,
+    exports.twitchExternalUserRecord,
+    exports.lichessExternalUserRecord,
+    exports.facebookExternalUserRecord,
 ]);
 //# sourceMappingURL=externalVendorsRecords.js.map
