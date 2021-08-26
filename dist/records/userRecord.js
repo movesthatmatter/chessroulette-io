@@ -28,9 +28,13 @@ exports.registeredUserInfoRecord = io.intersection([
     }),
 ]);
 exports.userInfoRecord = io.union([exports.guestUserInfoRecord, exports.registeredUserInfoRecord]);
-exports.userExternalAccountRecord = io.type({
-    userId: io.union([io.undefined, io.string]),
-});
+exports.userExternalAccountRecord = io.union([
+    io.undefined,
+    io.type({
+        userId: io.string,
+        accessToken: io.string,
+    }),
+]);
 exports.userExternalAccountByVendorMap = io.type({
     facebook: io.union([io.undefined, exports.userExternalAccountRecord]),
     lichess: io.union([io.undefined, exports.userExternalAccountRecord]),

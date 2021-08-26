@@ -293,15 +293,18 @@ export declare const createRoomResponse: io.IntersectionC<[io.TypeC<{
         }>]>, io.TypeC<{
             email: io.StringC;
             externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
+                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
             }>]>;
         }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
@@ -3218,15 +3221,18 @@ export declare const publicRoomResponsePayload: io.IntersectionC<[io.Intersectio
         }>]>, io.TypeC<{
             email: io.StringC;
             externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
+                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
             }>]>;
         }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
@@ -6145,15 +6151,18 @@ export declare const privateRoomResponsePayload: io.IntersectionC<[io.Intersecti
         }>]>, io.TypeC<{
             email: io.StringC;
             externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
+                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
             }>]>;
         }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
@@ -9072,15 +9081,18 @@ export declare const publicRoomsResponsePayload: io.ArrayC<io.IntersectionC<[io.
         }>]>, io.TypeC<{
             email: io.StringC;
             externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
+                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
             }>]>;
         }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
@@ -11999,15 +12011,18 @@ export declare const roomResponsePayload: io.IntersectionC<[io.TypeC<{
         }>]>, io.TypeC<{
             email: io.StringC;
             externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
-                twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                }>]>;
+                facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
+                twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                    userId: io.StringC;
+                    accessToken: io.StringC;
+                }>]>]>;
             }>]>;
         }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             id: io.StringC;
@@ -14926,15 +14941,18 @@ export declare const joinedRoomUpdatedPayload: io.TypeC<{
             }>]>, io.TypeC<{
                 email: io.StringC;
                 externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                    }>]>;
-                    lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                    }>]>;
-                    twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                    }>]>;
+                    facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.StringC;
+                        accessToken: io.StringC;
+                    }>]>]>;
+                    lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.StringC;
+                        accessToken: io.StringC;
+                    }>]>]>;
+                    twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.StringC;
+                        accessToken: io.StringC;
+                    }>]>]>;
                 }>]>;
             }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
                 id: io.StringC;
@@ -17855,15 +17873,18 @@ export declare const joinedRoomAndGameUpdatedPayload: io.TypeC<{
                 }>]>, io.TypeC<{
                     email: io.StringC;
                     externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                        }>]>;
-                        lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                        }>]>;
-                        twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                        }>]>;
+                        facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                            userId: io.StringC;
+                            accessToken: io.StringC;
+                        }>]>]>;
+                        lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                            userId: io.StringC;
+                            accessToken: io.StringC;
+                        }>]>]>;
+                        twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                            userId: io.StringC;
+                            accessToken: io.StringC;
+                        }>]>]>;
                     }>]>;
                 }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
                     id: io.StringC;
@@ -28705,15 +28726,18 @@ export declare const joinRoomSuccessPayload: io.TypeC<{
                 }>]>, io.TypeC<{
                     email: io.StringC;
                     externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                        }>]>;
-                        lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                        }>]>;
-                        twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                        }>]>;
+                        facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                            userId: io.StringC;
+                            accessToken: io.StringC;
+                        }>]>]>;
+                        lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                            userId: io.StringC;
+                            accessToken: io.StringC;
+                        }>]>]>;
+                        twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                            userId: io.StringC;
+                            accessToken: io.StringC;
+                        }>]>]>;
                     }>]>;
                 }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
                     id: io.StringC;
@@ -31623,15 +31647,18 @@ export declare const joinRoomSuccessPayload: io.TypeC<{
             }>]>, io.TypeC<{
                 email: io.StringC;
                 externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-                    facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                    }>]>;
-                    lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                    }>]>;
-                    twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-                        userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-                    }>]>;
+                    facebook: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.StringC;
+                        accessToken: io.StringC;
+                    }>]>]>;
+                    lichess: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.StringC;
+                        accessToken: io.StringC;
+                    }>]>]>;
+                    twitch: io.UnionC<[io.UndefinedC, io.UnionC<[io.UndefinedC, io.TypeC<{
+                        userId: io.StringC;
+                        accessToken: io.StringC;
+                    }>]>]>;
                 }>]>;
             }>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
                 id: io.StringC;

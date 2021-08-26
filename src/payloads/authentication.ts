@@ -1,5 +1,8 @@
 import * as io from 'io-ts';
-import { externalUserRecord } from '../records/externalVendorsRecords';
+import { facebookUserRecord } from '../records/facebookRecords';
+import { lichessUserRecord } from '../records/lichessRecords';
+import { twitchUserRecord } from '../records/twitchRecords';
+
 import { guestUserRecord } from '../records/userRecord';
 import {
   errHttpResponsePayload,
@@ -63,8 +66,19 @@ export const userCheckInexitentUserResponsePayloadData = io.type({
   external: io.union([
     io.undefined,
     io.type({
-      vendor: externalVendor,
-      user: externalUserRecord,
+      vendor: io.literal('facebook'),
+      user: facebookUserRecord,
+      accessToken: io.string,
+    }),
+    io.type({
+      vendor: io.literal('lichess'),
+      user: lichessUserRecord,
+      accessToken: io.string,
+    }),
+    io.type({
+      vendor: io.literal('twitch'),
+      user: twitchUserRecord,
+      accessToken: io.string,
     }),
   ]),
 });

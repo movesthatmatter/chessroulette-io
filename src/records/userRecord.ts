@@ -32,9 +32,13 @@ export const registeredUserInfoRecord = io.intersection([
 export const userInfoRecord = io.union([guestUserInfoRecord, registeredUserInfoRecord]);
 export type UserInfoRecord = io.TypeOf<typeof userInfoRecord>;
 
-export const userExternalAccountRecord = io.type({
-  userId: io.union([io.undefined, io.string]),
-});
+export const userExternalAccountRecord = io.union([
+  io.undefined,
+  io.type({
+    userId: io.string,
+    accessToken: io.string,
+  }),
+]);
 
 export type UserExternalAccountRecord = io.TypeOf<typeof userExternalAccountRecord>;
 
