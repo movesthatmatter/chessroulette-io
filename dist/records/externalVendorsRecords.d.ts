@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-export declare const twitchExternalUserRecord: io.TypeC<{
+export declare const twitchExternalVendorRecord: io.TypeC<{
     vendor: io.LiteralC<"twitch">;
     user: io.TypeC<{
         id: io.StringC;
@@ -10,8 +10,8 @@ export declare const twitchExternalUserRecord: io.TypeC<{
     }>;
     accessToken: io.StringC;
 }>;
-export declare type TwitchExternalUserRecord = io.TypeOf<typeof twitchExternalUserRecord>;
-export declare const lichessExternalUserRecord: io.TypeC<{
+export declare type TwitchExternalVendorRecord = io.TypeOf<typeof twitchExternalVendorRecord>;
+export declare const lichessExternalVendorRecord: io.TypeC<{
     vendor: io.LiteralC<"lichess">;
     user: io.TypeC<{
         email: io.StringC;
@@ -46,8 +46,8 @@ export declare const lichessExternalUserRecord: io.TypeC<{
     }>;
     accessToken: io.StringC;
 }>;
-export declare type LichessExternalUserRecord = io.TypeOf<typeof lichessExternalUserRecord>;
-export declare const facebookExternalUserRecord: io.TypeC<{
+export declare type LichessExternalVendorRecord = io.TypeOf<typeof lichessExternalVendorRecord>;
+export declare const facebookExternalVendorRecord: io.TypeC<{
     vendor: io.LiteralC<"facebook">;
     user: io.TypeC<{
         id: io.StringC;
@@ -58,8 +58,8 @@ export declare const facebookExternalUserRecord: io.TypeC<{
     }>;
     accessToken: io.StringC;
 }>;
-export declare type FacebookExternalUserRecord = io.TypeOf<typeof facebookExternalUserRecord>;
-export declare const externalUserRecord: io.UnionC<[io.TypeC<{
+export declare type FacebookExternalVendorRecord = io.TypeOf<typeof facebookExternalVendorRecord>;
+export declare const externalVendorRecord: io.UnionC<[io.TypeC<{
     vendor: io.LiteralC<"twitch">;
     user: io.TypeC<{
         id: io.StringC;
@@ -114,4 +114,4 @@ export declare const externalUserRecord: io.UnionC<[io.TypeC<{
     }>;
     accessToken: io.StringC;
 }>]>;
-export declare type ExternalUserRecord = io.TypeOf<typeof externalUserRecord>;
+export declare type ExternalVendorRecord = io.TypeOf<typeof externalVendorRecord>;

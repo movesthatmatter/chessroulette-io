@@ -3,30 +3,30 @@ import { lichessUserRecord } from './lichessRecords';
 import { facebookUserRecord } from './facebookRecords';
 import { twitchUserRecord } from './twitchRecords';
 
-export const twitchExternalUserRecord = io.type({
+export const twitchExternalVendorRecord = io.type({
   vendor: io.literal('twitch'),
   user: twitchUserRecord,
   accessToken: io.string,
 });
-export type TwitchExternalUserRecord = io.TypeOf<typeof twitchExternalUserRecord>;
+export type TwitchExternalVendorRecord = io.TypeOf<typeof twitchExternalVendorRecord>;
 
-export const lichessExternalUserRecord = io.type({
+export const lichessExternalVendorRecord = io.type({
   vendor: io.literal('lichess'),
   user: lichessUserRecord,
   accessToken: io.string,
 });
-export type LichessExternalUserRecord = io.TypeOf<typeof lichessExternalUserRecord>;
+export type LichessExternalVendorRecord = io.TypeOf<typeof lichessExternalVendorRecord>;
 
-export const facebookExternalUserRecord = io.type({
+export const facebookExternalVendorRecord = io.type({
   vendor: io.literal('facebook'),
   user: facebookUserRecord,
   accessToken: io.string,
 });
-export type FacebookExternalUserRecord = io.TypeOf<typeof facebookExternalUserRecord>;
+export type FacebookExternalVendorRecord = io.TypeOf<typeof facebookExternalVendorRecord>;
 
-export const externalUserRecord = io.union([
-  twitchExternalUserRecord,
-  lichessExternalUserRecord,
-  facebookExternalUserRecord,
+export const externalVendorRecord = io.union([
+  twitchExternalVendorRecord,
+  lichessExternalVendorRecord,
+  facebookExternalVendorRecord,
 ]);
-export type ExternalUserRecord = io.TypeOf<typeof externalUserRecord>;
+export type ExternalVendorRecord = io.TypeOf<typeof externalVendorRecord>;
