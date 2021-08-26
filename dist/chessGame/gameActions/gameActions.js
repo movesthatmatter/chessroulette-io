@@ -120,7 +120,10 @@ var moveAction = function (prev, _a) {
             lastActivityAt: movedAt });
     }
     var instance = sdk_1.getNewChessGame();
-    var isValidPgn = prev.state === 'pending' || instance.load_pgn(util_1.chessHistoryToSimplePgn(prev.history));
+    //Add if history is an empty array it will consider it as an invalid PGN
+    var isValidPgn = prev.state === 'pending' ||
+        instance.load_pgn(util_1.chessHistoryToSimplePgn(prev.history)) ||
+        prev.history.length === 0;
     if (!isValidPgn) {
         return prev;
     }
@@ -129,9 +132,10 @@ var moveAction = function (prev, _a) {
         return prev;
     }
     var promotion = validMove.promotion, flags = validMove.flags, piece = validMove.piece, restValidMove = __rest(validMove, ["promotion", "flags", "piece"]);
-    var nextMove = __assign(__assign(__assign({}, restValidMove), promotion && promotion !== 'k' && {
+    var nextMove = __assign(__assign(__assign({}, restValidMove), (promotion &&
+        promotion !== 'k' && {
         promotion: promotion,
-    }), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
+    })), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
     var nextHistory = __spreadArrays((prev.history || []), [nextMove]);
     var nextStartedGameProps = {
         state: 'started',
@@ -172,6 +176,29 @@ var abortAction = function (prev) {
 var resignAction = function (prev, resigningColor) {
     return __assign(__assign({}, prev), { state: 'stopped', winner: util_1.otherChessColor(resigningColor) });
 };
+var takebackAction = function (prev, _a) {
+    var _b;
+    var movedAt = _a.movedAt;
+    var updateHistory = prev.history.slice(0, prev.history.length - 1);
+    var newPGN = util_1.chessHistoryToSimplePgn(updateHistory);
+    var _c = prev.lastMoveBy, prevTurn = _c === void 0 ? 'black' : _c;
+    var turn = util_1.otherChessColor(prevTurn);
+    var movedAtAsDate = new Date(movedAt);
+    var lastMoveAt = new Date(prev.lastMoveAt);
+    var elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
+    var nextTimeLeft = prev.timeLeft[turn] - elapsed;
+    var nextStartedGameProps = {
+        state: 'started',
+        pgn: newPGN,
+        history: updateHistory,
+        lastMoveAt: movedAt,
+        lastMoveBy: turn,
+        timeLeft: __assign(__assign({}, prev.timeLeft), (_b = {}, _b[turn] = nextTimeLeft, _b)),
+        winner: undefined,
+        lastActivityAt: movedAt,
+    };
+    return __assign(__assign({}, prev), nextStartedGameProps);
+};
 var drawAction = function (prev) {
     return __assign(__assign({}, prev), { state: 'stopped', winner: '1/2' });
 };
@@ -182,6 +209,7 @@ exports.actions = {
     draw: drawAction,
     abort: abortAction,
     statusCheck: statusCheck,
+    takeback: takebackAction,
     // @deprecate in favor of statusCheck
     timerFinished: timerFinishedAction,
 };

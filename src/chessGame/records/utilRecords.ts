@@ -235,10 +235,23 @@ export const chessGameChallengeOffer = io.type({
 });
 export type ChessGameChallengeOffer = io.TypeOf<typeof chessGameChallengeOffer>;
 
+export const chessGameTakebackOffer = io.type({
+  id: io.string,
+  type: io.literal('takeback'),
+  content: io.type({
+    gameId: io.string,
+    byUser: userInfoRecord,
+    toUser: userInfoRecord,
+  }),
+});
+
+export type ChessGameTakebackOffer = io.TypeOf<typeof chessGameTakebackOffer>;
+
 export const chessGameOffer = io.union([
   chessGameDrawOffer,
   chessGameRematchOffer,
   chessGameChallengeOffer,
+  chessGameTakebackOffer,
 ]);
 export type ChessGameOffer = io.TypeOf<typeof chessGameOffer>;
 
@@ -246,6 +259,7 @@ export const capturedPiecesRecord = io.type({
   white: io.record(capturableChessPieceType, io.number),
   black: io.record(capturableChessPieceType, io.number),
 });
+
 export type CapturedPiecesRecord = io.TypeOf<typeof capturedPiecesRecord>;
 
 export const activePiecesRecord = capturedPiecesRecord;

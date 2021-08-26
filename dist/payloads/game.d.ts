@@ -253,6 +253,21 @@ export declare const gameRematchDenyRequestPayload: io.TypeC<{
     content: io.UndefinedC;
 }>;
 export declare type GameRematchDenyRequestPayload = io.TypeOf<typeof gameRematchDenyRequestPayload>;
+export declare const gameTakebackOfferingRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingRequest">;
+    content: io.UndefinedC;
+}>;
+export declare type GameTakebackOfferingRequestPayload = io.TypeOf<typeof gameTakebackOfferingRequestPayload>;
+export declare const gameTakebackOfferingAcceptRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingAcceptRequest">;
+    content: io.UndefinedC;
+}>;
+export declare type GameTakebackOfferingAcceptRequestPayload = io.TypeOf<typeof gameTakebackOfferingAcceptRequestPayload>;
+export declare const gameTakebackOfferingDenyRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingDenyRequest">;
+    content: io.UndefinedC;
+}>;
+export declare type GameTakebackOfferingDenyRequestPayload = io.TypeOf<typeof gameTakebackOfferingDenyRequestPayload>;
 export declare const gameOfferingCancelRequestPayload: io.TypeC<{
     kind: io.LiteralC<"gameOfferingCancelRequest">;
     content: io.UndefinedC;
@@ -274,6 +289,15 @@ export declare const gameActionRequestPayload: io.UnionC<[io.TypeC<{
     content: io.UndefinedC;
 }>, io.TypeC<{
     kind: io.LiteralC<"gameDrawOfferingRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingAcceptRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingDenyRequest">;
     content: io.UndefinedC;
 }>, io.TypeC<{
     kind: io.LiteralC<"gameResignationRequest">;
