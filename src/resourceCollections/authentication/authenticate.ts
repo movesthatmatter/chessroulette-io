@@ -1,9 +1,10 @@
 import * as io from 'io-ts';
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../sdk/resource';
-import { externalVendor } from '../../payloads';
-import { facebookUserRecord } from '../../records/facebookRecords';
-import { lichessUserRecord } from '../../records/lichessRecords';
-import { twitchUserRecord } from '../../records/twitchRecords';
+import {
+  externalVendor,
+  userCheckInexitentUserResponsePayloadData,
+  userCheckExistentUserResponsePayloadData,
+} from '../../payloads';
 
 export namespace Authenticate {
   const internalAccountRequest = io.type({
@@ -20,34 +21,8 @@ export namespace Authenticate {
 
   const request = io.union([internalAccountRequest, externalAccountRequest]);
 
-  const okResponseInexistentUser = io.type({
-    status: io.literal('InexistentUser'),
-    // This holds the actual information such as email, external user id, etc.
-    verificationToken: io.string,
-    external: io.union([
-      io.undefined,
-      io.type({
-        vendor: io.literal('facebook'),
-        user: facebookUserRecord,
-        accessToken: io.string,
-      }),
-      io.type({
-        vendor: io.literal('lichess'),
-        user: lichessUserRecord,
-        accessToken: io.string,
-      }),
-      io.type({
-        vendor: io.literal('twitch'),
-        user: twitchUserRecord,
-        accessToken: io.string,
-      }),
-    ]),
-  });
-
-  const okResponseExistentUser = io.type({
-    status: io.literal('ExistentUser'),
-    accessToken: io.string,
-  });
+  const okResponseInexistentUser = userCheckInexitentUserResponsePayloadData;
+  const okResponseExistentUser = userCheckExistentUserResponsePayloadData;
 
   // This means that an user wasn't found in our User Base based on
   //  the external user id, but one of it's external identifiers (only email for now)

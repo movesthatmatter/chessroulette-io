@@ -15,7 +15,6 @@ export declare namespace Authenticate {
         accessToken: io.StringC;
     }>]>, io.UnionC<[io.TypeC<{
         status: io.LiteralC<"InexistentUser">;
-        verificationToken: io.StringC;
         external: io.UnionC<[io.UndefinedC, io.TypeC<{
             vendor: io.LiteralC<"facebook">;
             user: io.TypeC<{
@@ -95,7 +94,6 @@ export declare namespace Authenticate {
         accessToken: string;
     }, {
         status: "InexistentUser";
-        verificationToken: string;
         external: {
             vendor: "facebook";
             user: {
