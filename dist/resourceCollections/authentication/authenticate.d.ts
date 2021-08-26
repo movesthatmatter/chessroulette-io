@@ -70,6 +70,7 @@ export declare namespace Authenticate {
             }>;
             accessToken: io.StringC;
         }>]>;
+        verificationToken: io.StringC;
     }>, io.TypeC<{
         status: io.LiteralC<"ExistentUser">;
         accessToken: io.StringC;
@@ -149,6 +150,7 @@ export declare namespace Authenticate {
             };
             accessToken: string;
         } | undefined;
+        verificationToken: string;
     } | {
         status: "ExistentUser";
         accessToken: string;

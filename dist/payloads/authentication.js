@@ -52,6 +52,8 @@ exports.userCheckInexitentUserResponsePayloadData = io.type({
             accessToken: io.string,
         }),
     ]),
+    // This holds the actual information such as email, external user id, etc.
+    verificationToken: io.string,
 });
 exports.userCheckExistentUserResponsePayloadData = io.type({
     status: io.literal('ExistentUser'),

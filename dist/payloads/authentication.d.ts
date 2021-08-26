@@ -115,6 +115,7 @@ export declare const userCheckInexitentUserResponsePayloadData: io.TypeC<{
         }>;
         accessToken: io.StringC;
     }>]>;
+    verificationToken: io.StringC;
 }>;
 export declare type UserCheckInexitentUserResponsePayloadData = io.TypeOf<typeof userCheckInexitentUserResponsePayloadData>;
 export declare const userCheckExistentUserResponsePayloadData: io.TypeC<{
@@ -182,6 +183,7 @@ export declare const userCheckResponsePayload: io.UnionC<[io.TypeC<{
             }>;
             accessToken: io.StringC;
         }>]>;
+        verificationToken: io.StringC;
     }>, io.TypeC<{
         status: io.LiteralC<"ExistentUser">;
         accessToken: io.StringC;

@@ -81,6 +81,8 @@ export const userCheckInexitentUserResponsePayloadData = io.type({
       accessToken: io.string,
     }),
   ]),
+  // This holds the actual information such as email, external user id, etc.
+  verificationToken: io.string,
 });
 export type UserCheckInexitentUserResponsePayloadData = io.TypeOf<
   typeof userCheckInexitentUserResponsePayloadData
