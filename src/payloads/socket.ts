@@ -13,6 +13,7 @@ import {
   joinRoomFailurePayload,
   leaveRoomRequestPayload,
   joinedRoomAndGameUpdatedPayload,
+  switchRoomActivityRequestPayload,
 } from './room';
 import { statsSocketPayload } from './stats';
 import { challengeRecord } from '../records/challengeRecord';
@@ -122,6 +123,7 @@ export const socketPayload = io.union([
   joinRoomFailurePayload,
   leaveRoomRequestPayload,
   joinedRoomUpdatedPayload,
+  switchRoomActivityRequestPayload,
 
   // Chat
   broadcastChatMessagePayload,

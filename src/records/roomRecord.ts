@@ -1,6 +1,6 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
-import { chessGameOffer } from '../chessGame';
+import { chessGameOffer, gameSpecsRecord } from '../chessGame';
 import { challengeRecord } from './challengeRecord';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
@@ -139,3 +139,19 @@ export const roomWithAnalysisActivityRecord = io.intersection([
   }),
 ]);
 export type RoomWithAnalysisActivityRecord = io.TypeOf<typeof roomWithAnalysisActivityRecord>;
+
+export const roomActivityCreationRecord = io.union([
+  io.type({
+    activityType: io.literal('play'),
+    gameSpecs: gameSpecsRecord,
+  }),
+  io.type({
+    activityType: io.literal('analysis'),
+    // Add more stuff if needed
+  }),
+  io.type({
+    activityType: io.literal('none'),
+  }),
+]);
+
+export type RoomActivityCreationRecord = io.TypeOf<typeof roomActivityCreationRecord>;

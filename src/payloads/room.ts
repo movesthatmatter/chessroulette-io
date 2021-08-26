@@ -1,5 +1,4 @@
 import * as io from 'io-ts';
-import { gameSpecsRecord } from '../chessGame';
 import { gameRecord } from '../records/gameRecord';
 import { peerRecord } from '../records/peerRecord';
 import {
@@ -7,34 +6,18 @@ import {
   roomType,
   publicRoomRecord,
   privateRoomRecord,
+  roomActivityCreationRecord,
 } from '../records/roomRecord';
-
-// TODO: Not sure how to split the HTTP/Socket payloads while still keeping them
-//  grouped by feature/module
-
-// HTTP
 
 export const createRoomRequest = io.intersection([
   io.type({
     userId: io.string,
     type: roomType,
   }),
-  io.union([
-    io.type({
-      activityType: io.literal('play'),
-      gameSpecs: gameSpecsRecord,
-    }),
-    io.type({
-      activityType: io.literal('analysis'),
-      // Add more stuff if needed
-    }),
-    io.type({
-      activityType: io.literal('none'),
-    }),
-  ]),
   io.partial({
     name: io.string,
   }),
+  roomActivityCreationRecord,
 ]);
 export type CreateRoomRequest = io.TypeOf<typeof createRoomRequest>;
 
@@ -117,3 +100,10 @@ export const peerJoinedRoomPayload = io.type({
   }),
 });
 export type PeerJoinedRoomPayload = io.TypeOf<typeof peerJoinedRoomPayload>;
+
+export const switchRoomActivityRequestPayload = io.type({
+  kind: io.literal('switchJoinedRoomActivityRequest'),
+  content: roomActivityCreationRecord,
+});
+
+export type SwitchRoomActivityRequestPayload = io.TypeOf<typeof switchRoomActivityRequestPayload>;

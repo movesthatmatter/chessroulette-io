@@ -24835,3 +24835,34 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
     }>;
 }>]>;
 export declare type RoomWithAnalysisActivityRecord = io.TypeOf<typeof roomWithAnalysisActivityRecord>;
+export declare const roomActivityCreationRecord: io.UnionC<[io.TypeC<{
+    activityType: io.LiteralC<"play">;
+    gameSpecs: io.TypeC<{
+        timeLimit: io.KeyofC<{
+            bullet30: null;
+            bullet1: null;
+            blitz2: null;
+            blitz3: null;
+            blitz5: null;
+            rapid10: null;
+            rapid15: null;
+            rapid20: null;
+            rapid30: null;
+            rapid45: null;
+            rapid60: null;
+            untimed: null;
+        }>;
+        preferredColor: io.UnionC<[io.KeyofC<{
+            black: null;
+        }>, io.KeyofC<{
+            white: null;
+        }>, io.KeyofC<{
+            random: null;
+        }>]>;
+    }>;
+}>, io.TypeC<{
+    activityType: io.LiteralC<"analysis">;
+}>, io.TypeC<{
+    activityType: io.LiteralC<"none">;
+}>]>;
+export declare type RoomActivityCreationRecord = io.TypeOf<typeof roomActivityCreationRecord>;

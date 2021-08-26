@@ -94,6 +94,7 @@ exports.socketPayload = io.union([
     room_1.joinRoomFailurePayload,
     room_1.leaveRoomRequestPayload,
     room_1.joinedRoomUpdatedPayload,
+    room_1.switchRoomActivityRequestPayload,
     // Chat
     chat_1.broadcastChatMessagePayload,
     // Game Actions

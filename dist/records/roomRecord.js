@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
+exports.roomActivityCreationRecord = exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
@@ -105,6 +105,18 @@ exports.roomWithAnalysisActivityRecord = io.intersection([
     exports.roomRecord,
     io.type({
         activity: exports.roomAnalysisActivityRecord,
+    }),
+]);
+exports.roomActivityCreationRecord = io.union([
+    io.type({
+        activityType: io.literal('play'),
+        gameSpecs: chessGame_1.gameSpecsRecord,
+    }),
+    io.type({
+        activityType: io.literal('analysis'),
+    }),
+    io.type({
+        activityType: io.literal('none'),
     }),
 ]);
 //# sourceMappingURL=roomRecord.js.map
