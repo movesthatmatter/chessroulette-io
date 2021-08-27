@@ -2614,6 +2614,9 @@ export declare const roomStatsRecord: io.IntersectionC<[io.IntersectionC<[io.Typ
             }>;
         }>]>;
     }>]>, io.TypeC<{
+        type: io.LiteralC<"lichess">;
+        gameId: io.StringC;
+    }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
     }>]>;

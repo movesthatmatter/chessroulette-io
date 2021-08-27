@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomActivityCreationRecord = exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
+exports.roomActivityCreationRecord = exports.roomWithAnalysisActivityRecord = exports.roomWithLichessActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomLichessActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
@@ -35,6 +35,10 @@ exports.roomPlayActivityRecord = io.intersection([
         offer: chessGame_1.chessGameOffer,
     }),
 ]);
+exports.roomLichessActivityRecord = io.type({
+    type: io.literal('lichess'),
+    gameId: io.string,
+});
 exports.roomAnalysisActivityRecord = io.type({
     type: io.literal('analysis'),
     analysisId: io.string,
@@ -42,6 +46,7 @@ exports.roomAnalysisActivityRecord = io.type({
 exports.roomActivityRecord = io.union([
     exports.roomNoActivityRecord,
     exports.roomPlayActivityRecord,
+    exports.roomLichessActivityRecord,
     exports.roomAnalysisActivityRecord,
 ]);
 exports.roomType = io.keyof({
@@ -101,6 +106,12 @@ exports.roomWithPlayActivityRecord = io.intersection([
         activity: exports.roomPlayActivityRecord,
     }),
 ]);
+exports.roomWithLichessActivityRecord = io.intersection([
+    exports.roomRecord,
+    io.type({
+        activity: exports.roomLichessActivityRecord,
+    }),
+]);
 exports.roomWithAnalysisActivityRecord = io.intersection([
     exports.roomRecord,
     io.type({
@@ -117,6 +128,10 @@ exports.roomActivityCreationRecord = io.union([
     }),
     io.type({
         activityType: io.literal('none'),
+    }),
+    io.type({
+        activityType: io.literal('lichess'),
+        gameSpecs: chessGame_1.gameSpecsRecord,
     }),
 ]);
 //# sourceMappingURL=roomRecord.js.map

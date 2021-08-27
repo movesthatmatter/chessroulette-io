@@ -2616,6 +2616,9 @@ export declare const roomsStatsPayload: io.TypeC<{
                 }>;
             }>]>;
         }>]>, io.TypeC<{
+            type: io.LiteralC<"lichess">;
+            gameId: io.StringC;
+        }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
         }>]>;
@@ -6181,6 +6184,9 @@ export declare const statsSocketPayload: io.UnionC<[io.TypeC<{
                 }>;
             }>]>;
         }>]>, io.TypeC<{
+            type: io.LiteralC<"lichess">;
+            gameId: io.StringC;
+        }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
         }>]>;
