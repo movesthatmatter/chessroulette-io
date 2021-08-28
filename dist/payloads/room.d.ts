@@ -2679,7 +2679,6 @@ export declare const createRoomResponse: io.IntersectionC<[io.TypeC<{
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
-        gameId: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -5656,7 +5655,6 @@ export declare const publicRoomResponsePayload: io.IntersectionC<[io.Intersectio
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
-        gameId: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -8635,7 +8633,6 @@ export declare const privateRoomResponsePayload: io.IntersectionC<[io.Intersecti
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
-        gameId: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -11614,7 +11611,6 @@ export declare const publicRoomsResponsePayload: io.ArrayC<io.IntersectionC<[io.
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
-        gameId: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -14593,7 +14589,6 @@ export declare const roomResponsePayload: io.IntersectionC<[io.TypeC<{
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
-        gameId: io.StringC;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -17572,7 +17567,6 @@ export declare const joinedRoomUpdatedPayload: io.TypeC<{
             }>]>;
         }>]>, io.TypeC<{
             type: io.LiteralC<"lichess">;
-            gameId: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
@@ -20553,7 +20547,6 @@ export declare const joinedRoomAndGameUpdatedPayload: io.TypeC<{
                 }>]>;
             }>]>, io.TypeC<{
                 type: io.LiteralC<"lichess">;
-                gameId: io.StringC;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -31893,7 +31886,6 @@ export declare const joinRoomSuccessPayload: io.TypeC<{
                 }>]>;
             }>]>, io.TypeC<{
                 type: io.LiteralC<"lichess">;
-                gameId: io.StringC;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;

@@ -37,7 +37,6 @@ exports.roomPlayActivityRecord = io.intersection([
 ]);
 exports.roomLichessActivityRecord = io.type({
     type: io.literal('lichess'),
-    gameId: io.string,
 });
 exports.roomAnalysisActivityRecord = io.type({
     type: io.literal('analysis'),
