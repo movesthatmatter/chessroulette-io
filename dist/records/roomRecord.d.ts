@@ -2328,6 +2328,29 @@ export declare const roomPlayActivityRecord: io.IntersectionC<[io.TypeC<{
 }>]>;
 export declare const roomLichessActivityRecord: io.TypeC<{
     type: io.LiteralC<"lichess">;
+    gameSpecs: io.TypeC<{
+        timeLimit: io.KeyofC<{
+            bullet30: null;
+            bullet1: null;
+            blitz2: null;
+            blitz3: null;
+            blitz5: null;
+            rapid10: null;
+            rapid15: null;
+            rapid20: null;
+            rapid30: null;
+            rapid45: null;
+            rapid60: null;
+            untimed: null;
+        }>;
+        preferredColor: io.UnionC<[io.KeyofC<{
+            black: null;
+        }>, io.KeyofC<{
+            white: null;
+        }>, io.KeyofC<{
+            random: null;
+        }>]>;
+    }>;
 }>;
 export declare type RoomLichessActivityRecord = io.TypeOf<typeof roomLichessActivityRecord>;
 export declare type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
@@ -4656,6 +4679,29 @@ export declare const roomActivityRecord: io.UnionC<[io.TypeC<{
     }>]>;
 }>]>, io.TypeC<{
     type: io.LiteralC<"lichess">;
+    gameSpecs: io.TypeC<{
+        timeLimit: io.KeyofC<{
+            bullet30: null;
+            bullet1: null;
+            blitz2: null;
+            blitz3: null;
+            blitz5: null;
+            rapid10: null;
+            rapid15: null;
+            rapid20: null;
+            rapid30: null;
+            rapid45: null;
+            rapid60: null;
+            untimed: null;
+        }>;
+        preferredColor: io.UnionC<[io.KeyofC<{
+            black: null;
+        }>, io.KeyofC<{
+            white: null;
+        }>, io.KeyofC<{
+            random: null;
+        }>]>;
+    }>;
 }>, io.TypeC<{
     type: io.LiteralC<"analysis">;
     analysisId: io.StringC;
@@ -7282,6 +7328,29 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -10258,6 +10327,29 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -13236,6 +13328,29 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -16214,6 +16329,29 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -19194,6 +19332,29 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -24488,6 +24649,29 @@ export declare const roomWithLichessActivityRecord: io.IntersectionC<[io.Interse
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -24849,6 +25033,29 @@ export declare const roomWithLichessActivityRecord: io.IntersectionC<[io.Interse
 }>]>]>, io.TypeC<{
     activity: io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>;
 }>]>;
 export declare type RoomWithLichessActivityRecord = io.TypeOf<typeof roomWithLichessActivityRecord>;
@@ -27468,6 +27675,29 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
         }>]>;
     }>]>, io.TypeC<{
         type: io.LiteralC<"lichess">;
+        gameSpecs: io.TypeC<{
+            timeLimit: io.KeyofC<{
+                bullet30: null;
+                bullet1: null;
+                blitz2: null;
+                blitz3: null;
+                blitz5: null;
+                rapid10: null;
+                rapid15: null;
+                rapid20: null;
+                rapid30: null;
+                rapid45: null;
+                rapid60: null;
+                untimed: null;
+            }>;
+            preferredColor: io.UnionC<[io.KeyofC<{
+                black: null;
+            }>, io.KeyofC<{
+                white: null;
+            }>, io.KeyofC<{
+                random: null;
+            }>]>;
+        }>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
