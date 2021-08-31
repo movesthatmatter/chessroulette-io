@@ -41,7 +41,6 @@ exports.roomLichessActivityRecord = io.type({
 });
 exports.roomLichessActivityWithGameRecord = io.type({
     type: io.literal('lichess'),
-    gameSpecs: chessGame_1.gameSpecsRecord,
     gameId: io.string,
 });
 exports.roomAnalysisActivityRecord = io.type({
