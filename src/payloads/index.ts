@@ -13,5 +13,5 @@ export * from './challenge';
 export * from './chat';
 export * from './authentication';
 export * from './vendors';
-
+export * from './lichessGame';
 export * from './analysis';
