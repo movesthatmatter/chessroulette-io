@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomActivityCreationRecord = exports.roomWithAnalysisActivityRecord = exports.roomWithLichessActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomLichessActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
+exports.roomActivityCreationRecord = exports.roomWithAnalysisActivityRecord = exports.roomWithLichessActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomLichessActivityWithGameRecord = exports.roomLichessActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
@@ -39,6 +39,11 @@ exports.roomLichessActivityRecord = io.type({
     type: io.literal('lichess'),
     gameSpecs: chessGame_1.gameSpecsRecord,
 });
+exports.roomLichessActivityWithGameRecord = io.type({
+    type: io.literal('lichess'),
+    gameSpecs: chessGame_1.gameSpecsRecord,
+    gameId: io.string,
+});
 exports.roomAnalysisActivityRecord = io.type({
     type: io.literal('analysis'),
     analysisId: io.string,
@@ -47,6 +52,7 @@ exports.roomActivityRecord = io.union([
     exports.roomNoActivityRecord,
     exports.roomPlayActivityRecord,
     exports.roomLichessActivityRecord,
+    exports.roomLichessActivityWithGameRecord,
     exports.roomAnalysisActivityRecord,
 ]);
 exports.roomType = io.keyof({

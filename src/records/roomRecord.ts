@@ -46,7 +46,15 @@ export const roomLichessActivityRecord = io.type({
   gameSpecs: gameSpecsRecord,
 });
 
+export const roomLichessActivityWithGameRecord = io.type({
+  type: io.literal('lichess'),
+  gameSpecs: gameSpecsRecord,
+  gameId: io.string,
+});
+
 export type RoomLichessActivityRecord = io.TypeOf<typeof roomLichessActivityRecord>;
+
+export type RoomLichessActivityWithGameRecord = io.TypeOf<typeof roomLichessActivityWithGameRecord>;
 
 export type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
 
@@ -61,6 +69,7 @@ export const roomActivityRecord = io.union([
   roomNoActivityRecord,
   roomPlayActivityRecord,
   roomLichessActivityRecord,
+  roomLichessActivityWithGameRecord,
   roomAnalysisActivityRecord,
 ]);
 
