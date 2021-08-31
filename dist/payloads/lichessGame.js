@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.lichessGameUpdateRequest = exports.lichessGameJoinRequest = void 0;
+exports.lichessGameRequestPayloads = exports.lichessGameUpdateRequest = exports.lichessGameJoinRequest = void 0;
 var io = require("io-ts");
 var gameRecord_1 = require("src/records/gameRecord");
 exports.lichessGameJoinRequest = io.type({
@@ -16,4 +16,8 @@ exports.lichessGameUpdateRequest = io.type({
         game: gameRecord_1.gameRecord,
     }),
 });
+exports.lichessGameRequestPayloads = io.union([
+    exports.lichessGameJoinRequest,
+    exports.lichessGameUpdateRequest,
+]);
 //# sourceMappingURL=lichessGame.js.map

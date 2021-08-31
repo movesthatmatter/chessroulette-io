@@ -16,6 +16,13 @@ export const lichessGameUpdateRequest = io.type({
   }),
 });
 
+export const lichessGameRequestPayloads = io.union([
+  lichessGameJoinRequest,
+  lichessGameUpdateRequest,
+]);
+
 export type LichessGameJoinRequest = io.TypeOf<typeof lichessGameJoinRequest>;
 
 export type LichessGameUpdateRequest = io.TypeOf<typeof lichessGameUpdateRequest>;
+
+export type LichessGameRequestPayloads = io.TypeOf<typeof lichessGameRequestPayloads>;

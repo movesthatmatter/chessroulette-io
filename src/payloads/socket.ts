@@ -23,6 +23,7 @@ import {
   analysisUpdatedResponsePayload,
   analysisDrawnShapesUpdatedRequestPayload,
 } from './analysis';
+import { lichessGameRequestPayloads } from './lichessGame';
 
 export const userIdentificationPayload = io.type({
   kind: io.literal('userIdentification'),
@@ -131,6 +132,9 @@ export const socketPayload = io.union([
   // Game Actions
   gameActionRequestPayload,
   joinedGameUpdatedPayload,
+
+  //Lichess Game
+  lichessGameRequestPayloads,
 
   // Analysis
   analysisMoveRequestPayload,

@@ -12,6 +12,7 @@ var room_1 = require("./room");
 var stats_1 = require("./stats");
 var challengeRecord_1 = require("../records/challengeRecord");
 var analysis_1 = require("./analysis");
+var lichessGame_1 = require("./lichessGame");
 exports.userIdentificationPayload = io.type({
     kind: io.literal('userIdentification'),
     content: io.union([
@@ -100,6 +101,8 @@ exports.socketPayload = io.union([
     // Game Actions
     game_1.gameActionRequestPayload,
     game_1.joinedGameUpdatedPayload,
+    //Lichess Game
+    lichessGame_1.lichessGameRequestPayloads,
     // Analysis
     analysis_1.analysisMoveRequestPayload,
     analysis_1.analysisRefocusRequestPayload,
