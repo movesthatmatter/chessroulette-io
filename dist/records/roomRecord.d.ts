@@ -2351,7 +2351,7 @@ export declare const roomLichessActivityRecord: io.TypeC<{
             random: null;
         }>]>;
     }>;
-    gameId: io.StringC;
+    gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
 }>;
 export declare type RoomLichessActivityRecord = io.TypeOf<typeof roomLichessActivityRecord>;
 export declare type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
@@ -4703,7 +4703,7 @@ export declare const roomActivityRecord: io.UnionC<[io.TypeC<{
             random: null;
         }>]>;
     }>;
-    gameId: io.StringC;
+    gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
 }>, io.TypeC<{
     type: io.LiteralC<"analysis">;
     analysisId: io.StringC;
@@ -7353,7 +7353,7 @@ export declare const roomRecord: io.IntersectionC<[io.TypeC<{
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -10353,7 +10353,7 @@ export declare const publicRoomRecord: io.IntersectionC<[io.IntersectionC<[io.Ty
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -13355,7 +13355,7 @@ export declare const privateRoomRecord: io.IntersectionC<[io.IntersectionC<[io.T
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -16357,7 +16357,7 @@ export declare const roomWithNoActivityRecord: io.IntersectionC<[io.Intersection
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -19361,7 +19361,7 @@ export declare const roomWithPlayActivityRecord: io.IntersectionC<[io.Intersecti
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -24679,7 +24679,7 @@ export declare const roomWithLichessActivityRecord: io.IntersectionC<[io.Interse
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -25064,7 +25064,7 @@ export declare const roomWithLichessActivityRecord: io.IntersectionC<[io.Interse
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>;
 }>]>;
 export declare type RoomWithLichessActivityRecord = io.TypeOf<typeof roomWithLichessActivityRecord>;
@@ -27707,7 +27707,7 @@ export declare const roomWithAnalysisActivityRecord: io.IntersectionC<[io.Inters
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;

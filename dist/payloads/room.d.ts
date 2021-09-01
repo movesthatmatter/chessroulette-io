@@ -2702,7 +2702,7 @@ export declare const createRoomResponse: io.IntersectionC<[io.TypeC<{
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -5702,7 +5702,7 @@ export declare const publicRoomResponsePayload: io.IntersectionC<[io.Intersectio
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -8704,7 +8704,7 @@ export declare const privateRoomResponsePayload: io.IntersectionC<[io.Intersecti
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -11706,7 +11706,7 @@ export declare const publicRoomsResponsePayload: io.ArrayC<io.IntersectionC<[io.
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -14708,7 +14708,7 @@ export declare const roomResponsePayload: io.IntersectionC<[io.TypeC<{
                 random: null;
             }>]>;
         }>;
-        gameId: io.StringC;
+        gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
     }>, io.TypeC<{
         type: io.LiteralC<"analysis">;
         analysisId: io.StringC;
@@ -17710,7 +17710,7 @@ export declare const joinedRoomUpdatedPayload: io.TypeC<{
                     random: null;
                 }>]>;
             }>;
-            gameId: io.StringC;
+            gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
@@ -20714,7 +20714,7 @@ export declare const joinedRoomAndGameUpdatedPayload: io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -32077,7 +32077,7 @@ export declare const joinRoomSuccessPayload: io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;

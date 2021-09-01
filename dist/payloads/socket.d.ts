@@ -3258,7 +3258,7 @@ export declare const iamResponsePayload: io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -6945,7 +6945,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -10017,7 +10017,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -13032,7 +13032,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -16335,7 +16335,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                     random: null;
                 }>]>;
             }>;
-            gameId: io.StringC;
+            gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
@@ -44787,7 +44787,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -56431,7 +56431,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                     random: null;
                 }>]>;
             }>;
-            gameId: io.StringC;
+            gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;

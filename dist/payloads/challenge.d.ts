@@ -2886,7 +2886,7 @@ export declare const quickPairingMatchedResponse: io.TypeC<{
                     random: null;
                 }>]>;
             }>;
-            gameId: io.StringC;
+            gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
@@ -5954,7 +5954,7 @@ export declare const quickPairingResponse: io.UnionC<[io.TypeC<{
                     random: null;
                 }>]>;
             }>;
-            gameId: io.StringC;
+            gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
@@ -9023,7 +9023,7 @@ export declare const challengeAcceptedPayload: io.TypeC<{
                         random: null;
                     }>]>;
                 }>;
-                gameId: io.StringC;
+                gameId: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;

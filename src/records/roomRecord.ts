@@ -44,7 +44,7 @@ export const roomPlayActivityRecord = io.intersection([
 export const roomLichessActivityRecord = io.type({
   type: io.literal('lichess'),
   gameSpecs: gameSpecsRecord,
-  gameId: io.string,
+  gameId: io.union([io.string, io.undefined]),
 });
 
 export type RoomLichessActivityRecord = io.TypeOf<typeof roomLichessActivityRecord>;
