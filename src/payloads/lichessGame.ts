@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-import { gameRecord } from 'src/records/gameRecord';
+import { gameRecord } from '../records/gameRecord';
 
 export const lichessGameJoinRequest = io.type({
   kind: io.literal('lichessGameJoinRequest'),
