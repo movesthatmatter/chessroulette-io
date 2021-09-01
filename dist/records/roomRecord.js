@@ -50,7 +50,6 @@ exports.roomActivityRecord = io.union([
     exports.roomNoActivityRecord,
     exports.roomPlayActivityRecord,
     exports.roomLichessActivityRecord,
-    exports.roomLichessActivityWithGameRecord,
     exports.roomAnalysisActivityRecord,
 ]);
 exports.roomType = io.keyof({

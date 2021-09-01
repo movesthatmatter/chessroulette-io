@@ -3236,9 +3236,6 @@ export declare const iamResponsePayload: io.TypeC<{
             }>]>, io.TypeC<{
                 type: io.LiteralC<"lichess">;
             }>, io.TypeC<{
-                type: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-            }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
             }>]>;
@@ -6902,9 +6899,6 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             }>]>, io.TypeC<{
                 type: io.LiteralC<"lichess">;
             }>, io.TypeC<{
-                type: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-            }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
             }>]>;
@@ -9953,9 +9947,6 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             }>]>, io.TypeC<{
                 type: io.LiteralC<"lichess">;
             }>, io.TypeC<{
-                type: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-            }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
             }>]>;
@@ -12946,9 +12937,6 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 }>]>;
             }>]>, io.TypeC<{
                 type: io.LiteralC<"lichess">;
-            }>, io.TypeC<{
-                type: io.LiteralC<"lichess">;
-                gameId: io.StringC;
             }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
@@ -16228,9 +16216,6 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             }>]>;
         }>]>, io.TypeC<{
             type: io.LiteralC<"lichess">;
-        }>, io.TypeC<{
-            type: io.LiteralC<"lichess">;
-            gameId: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;
@@ -44660,9 +44645,6 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             }>]>, io.TypeC<{
                 type: io.LiteralC<"lichess">;
             }>, io.TypeC<{
-                type: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-            }>, io.TypeC<{
                 type: io.LiteralC<"analysis">;
                 analysisId: io.StringC;
             }>]>;
@@ -56282,9 +56264,6 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             }>]>;
         }>]>, io.TypeC<{
             type: io.LiteralC<"lichess">;
-        }>, io.TypeC<{
-            type: io.LiteralC<"lichess">;
-            gameId: io.StringC;
         }>, io.TypeC<{
             type: io.LiteralC<"analysis">;
             analysisId: io.StringC;

@@ -68,7 +68,6 @@ export const roomActivityRecord = io.union([
   roomNoActivityRecord,
   roomPlayActivityRecord,
   roomLichessActivityRecord,
-  roomLichessActivityWithGameRecord,
   roomAnalysisActivityRecord,
 ]);
 
