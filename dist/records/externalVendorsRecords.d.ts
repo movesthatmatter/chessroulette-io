@@ -7,6 +7,7 @@ export declare const twitchExternalVendorRecord: io.TypeC<{
         displayName: io.StringC;
         profileImageUrl: io.StringC;
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        testGabe: io.LiteralC<"asd">;
     }>;
     accessToken: io.StringC;
 }>;
@@ -67,6 +68,7 @@ export declare const externalVendorRecord: io.UnionC<[io.TypeC<{
         displayName: io.StringC;
         profileImageUrl: io.StringC;
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        testGabe: io.LiteralC<"asd">;
     }>;
     accessToken: io.StringC;
 }>, io.TypeC<{

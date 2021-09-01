@@ -7,6 +7,7 @@ export declare const leadResponsePayload: io.TypeC<{
         displayName: io.StringC;
         profileImageUrl: io.StringC;
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        testGabe: io.LiteralC<"asd">;
     }>, io.TypeC<{
         accessToken: io.StringC;
     }>]>;

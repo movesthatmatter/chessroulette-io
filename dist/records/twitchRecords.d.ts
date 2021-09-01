@@ -5,6 +5,7 @@ export declare const twitchUserRecord: io.TypeC<{
     displayName: io.StringC;
     profileImageUrl: io.StringC;
     createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+    testGabe: io.LiteralC<"asd">;
 }>;
 export declare type TwitchUserRecord = io.TypeOf<typeof twitchUserRecord>;
 export declare const leadRegistrationTwitchVendorData: io.IntersectionC<[io.TypeC<{
@@ -13,6 +14,7 @@ export declare const leadRegistrationTwitchVendorData: io.IntersectionC<[io.Type
     displayName: io.StringC;
     profileImageUrl: io.StringC;
     createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+    testGabe: io.LiteralC<"asd">;
 }>, io.TypeC<{
     accessToken: io.StringC;
 }>]>;
