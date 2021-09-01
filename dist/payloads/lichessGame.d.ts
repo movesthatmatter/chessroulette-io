@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-export declare const lichessGameJoinRequest: io.TypeC<{
+export declare const lichessGameJoinRequestPayload: io.TypeC<{
     kind: io.LiteralC<"lichessGameJoinRequest">;
     content: io.TypeC<{
         game: io.IntersectionC<[io.UnionC<[io.TypeC<{
@@ -8354,7 +8354,7 @@ export declare const lichessGameJoinRequest: io.TypeC<{
         }>]>;
     }>;
 }>;
-export declare const lichessGameUpdateRequest: io.TypeC<{
+export declare const lichessGameUpdateRequestPayload: io.TypeC<{
     kind: io.LiteralC<"lichessGameUpdateRequest">;
     content: io.TypeC<{
         id: io.StringC;
@@ -33420,6 +33420,6 @@ export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
         }>]>;
     }>;
 }>]>;
-export declare type LichessGameJoinRequest = io.TypeOf<typeof lichessGameJoinRequest>;
-export declare type LichessGameUpdateRequest = io.TypeOf<typeof lichessGameUpdateRequest>;
+export declare type LichessGameJoinRequestPayload = io.TypeOf<typeof lichessGameJoinRequestPayload>;
+export declare type LichessGameUpdateRequestPayload = io.TypeOf<typeof lichessGameUpdateRequestPayload>;
 export declare type LichessGameRequestPayloads = io.TypeOf<typeof lichessGameRequestPayloads>;

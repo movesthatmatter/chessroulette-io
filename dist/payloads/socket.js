@@ -102,7 +102,8 @@ exports.socketPayload = io.union([
     game_1.gameActionRequestPayload,
     game_1.joinedGameUpdatedPayload,
     //Lichess Game
-    lichessGame_1.lichessGameRequestPayloads,
+    lichessGame_1.lichessGameUpdateRequestPayload,
+    lichessGame_1.lichessGameJoinRequestPayload,
     // Analysis
     analysis_1.analysisMoveRequestPayload,
     analysis_1.analysisRefocusRequestPayload,

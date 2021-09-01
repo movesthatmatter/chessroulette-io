@@ -1,14 +1,14 @@
 import * as io from 'io-ts';
 import { gameRecord } from '../records/gameRecord';
 
-export const lichessGameJoinRequest = io.type({
+export const lichessGameJoinRequestPayload = io.type({
   kind: io.literal('lichessGameJoinRequest'),
   content: io.type({
     game: gameRecord,
   }),
 });
 
-export const lichessGameUpdateRequest = io.type({
+export const lichessGameUpdateRequestPayload = io.type({
   kind: io.literal('lichessGameUpdateRequest'),
   content: io.type({
     id: io.string,
@@ -17,12 +17,12 @@ export const lichessGameUpdateRequest = io.type({
 });
 
 export const lichessGameRequestPayloads = io.union([
-  lichessGameJoinRequest,
-  lichessGameUpdateRequest,
+  lichessGameJoinRequestPayload,
+  lichessGameUpdateRequestPayload,
 ]);
 
-export type LichessGameJoinRequest = io.TypeOf<typeof lichessGameJoinRequest>;
+export type LichessGameJoinRequestPayload = io.TypeOf<typeof lichessGameJoinRequestPayload>;
 
-export type LichessGameUpdateRequest = io.TypeOf<typeof lichessGameUpdateRequest>;
+export type LichessGameUpdateRequestPayload = io.TypeOf<typeof lichessGameUpdateRequestPayload>;
 
 export type LichessGameRequestPayloads = io.TypeOf<typeof lichessGameRequestPayloads>;
