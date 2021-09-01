@@ -9,7 +9,6 @@ exports.twitchUserRecord = io.type({
     displayName: io.string,
     profileImageUrl: io.string,
     createdAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
-    testGabe: io.literal('asd'),
 });
 exports.leadRegistrationTwitchVendorData = io.intersection([
     exports.twitchUserRecord,

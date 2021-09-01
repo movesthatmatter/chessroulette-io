@@ -6,7 +6,6 @@ export declare const verifyTwitchUserResponsePayload: io.TypeC<{
         displayName: io.StringC;
         profileImageUrl: io.StringC;
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        testGabe: io.LiteralC<"asd">;
     }>;
 }>;
 export declare type VerifyTwitchUserResponsePayload = io.TypeOf<typeof verifyTwitchUserResponsePayload>;

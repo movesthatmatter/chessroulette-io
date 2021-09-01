@@ -67,7 +67,6 @@ export declare namespace Authenticate {
                 displayName: io.StringC;
                 profileImageUrl: io.StringC;
                 createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-                testGabe: io.LiteralC<"asd">;
             }>;
             accessToken: io.StringC;
         }>]>;
@@ -148,7 +147,6 @@ export declare namespace Authenticate {
                 displayName: string;
                 profileImageUrl: string;
                 createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-                testGabe: "asd";
             };
             accessToken: string;
         } | undefined;

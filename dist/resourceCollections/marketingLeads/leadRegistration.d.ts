@@ -9,7 +9,6 @@ export declare namespace LeadRegistration {
             displayName: import("io-ts").StringC;
             profileImageUrl: import("io-ts").StringC;
             createdAt: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-            testGabe: import("io-ts").LiteralC<"asd">;
         }>, import("io-ts").TypeC<{
             accessToken: import("io-ts").StringC;
         }>]>;
@@ -21,7 +20,6 @@ export declare namespace LeadRegistration {
             displayName: import("io-ts").StringC;
             profileImageUrl: import("io-ts").StringC;
             createdAt: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-            testGabe: import("io-ts").LiteralC<"asd">;
         }>, import("io-ts").TypeC<{
             accessToken: import("io-ts").StringC;
         }>]>;
@@ -37,7 +35,6 @@ export declare namespace LeadRegistration {
             displayName: string;
             profileImageUrl: string;
             createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-            testGabe: "asd";
         } & {
             accessToken: string;
         };
@@ -49,7 +46,6 @@ export declare namespace LeadRegistration {
             displayName: string;
             profileImageUrl: string;
             createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-            testGabe: "asd";
         } & {
             accessToken: string;
         };
