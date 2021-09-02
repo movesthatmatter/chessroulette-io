@@ -28,7 +28,7 @@ export const gameRecord = io.intersection([
   }),
   io.partial({
     isVendorGame: io.literal(true),
-    vendorData,
+    vendorData: vendorData,
   }),
 ]);
 
