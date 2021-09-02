@@ -1,4 +1,10 @@
-import { chessHistoryToSimplePgn, getActivePieces, simplePGNtoMoves } from './util';
+import { SimplePGN } from '../pgnUtil';
+import {
+  chessHistoryToSimplePgn,
+  getActivePieces,
+  simplePgnToChessHistory,
+  simplePGNtoMoves,
+} from './util';
 
 export const hours = (int: number) => int * minutes(60);
 export const minutes = (int: number) => int * seconds(60);
@@ -52,7 +58,7 @@ describe('chessHistoryToSimplePgn', () => {
         san: 'd6',
         color: 'black',
         clock: seconds(55),
-      }
+      },
     ]);
 
     const expected = '1. e4 e5 2. d4 d6';
@@ -105,6 +111,61 @@ describe('chessHistoryToSimplePgn', () => {
   });
 });
 
+describe('simplePgnToChessHistory', () => {
+  test('simple chess history', () => {
+    const actual = simplePgnToChessHistory('1. e4 f6 2. d4 g5 3. Qh5#' as SimplePGN);
+    const expected = [
+      {
+        clock: -1,
+        color: 'white',
+        flags: 'b',
+        from: 'e2',
+        piece: 'p',
+        san: 'e4',
+        to: 'e4',
+      },
+      {
+        clock: -1,
+        color: 'black',
+        flags: 'n',
+        from: 'f7',
+        piece: 'p',
+        san: 'f6',
+        to: 'f6',
+      },
+      {
+        clock: -1,
+        color: 'white',
+        flags: 'b',
+        from: 'd2',
+        piece: 'p',
+        san: 'd4',
+        to: 'd4',
+      },
+      {
+        clock: -1,
+        color: 'black',
+        flags: 'b',
+        from: 'g7',
+        piece: 'p',
+        san: 'g5',
+        to: 'g5',
+      },
+      {
+        clock: -1,
+        color: 'white',
+        flags: 'n',
+        from: 'd1',
+        piece: 'q',
+        san: 'Qh5#',
+        to: 'h5',
+      },
+    ];
+
+    expect(actual).toEqual(expected);
+  });
+});
+
 describe('getCapturedPiecesFromPgn', () => {
   const initialActivePieces = {
     white: { p: 8, n: 2, b: 2, r: 2, q: 1 },
@@ -127,14 +188,16 @@ describe('getCapturedPiecesFromPgn', () => {
       black: {
         ...initialActivePieces.black,
         p: initialActivePieces.white.p - 1,
-      }
+      },
     };
 
     expect(actual).toEqual(expected);
   });
 
   test('Captures and Promotions', () => {
-    const actual = getActivePieces(simplePGNtoMoves('1. e4 d5 2. exd5 Nf6 3. d6 e5 4. d7+ Ke7 5. dxc8=Q'));
+    const actual = getActivePieces(
+      simplePGNtoMoves('1. e4 d5 2. exd5 Nf6 3. d6 e5 4. d7+ Ke7 5. dxc8=Q')
+    );
 
     const expected = {
       white: {
@@ -145,7 +208,7 @@ describe('getCapturedPiecesFromPgn', () => {
         ...initialActivePieces.black,
         p: initialActivePieces.white.p - 1,
         b: initialActivePieces.white.b - 1,
-      }
+      },
     };
 
     expect(actual).toEqual(expected);

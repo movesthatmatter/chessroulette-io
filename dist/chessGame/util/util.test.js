@@ -61,7 +61,7 @@ describe('chessHistoryToSimplePgn', function () {
                 san: 'd6',
                 color: 'black',
                 clock: exports.seconds(55),
-            }
+            },
         ]);
         var expected = '1. e4 e5 2. d4 d6';
         expect(actual).toBe(expected);
@@ -108,6 +108,59 @@ describe('chessHistoryToSimplePgn', function () {
         expect(actual).toBe(expected);
     });
 });
+describe('simplePgnToChessHistory', function () {
+    test('simple chess history', function () {
+        var actual = util_1.simplePgnToChessHistory('1. e4 f6 2. d4 g5 3. Qh5#');
+        var expected = [
+            {
+                clock: -1,
+                color: 'white',
+                flags: 'b',
+                from: 'e2',
+                piece: 'p',
+                san: 'e4',
+                to: 'e4',
+            },
+            {
+                clock: -1,
+                color: 'black',
+                flags: 'n',
+                from: 'f7',
+                piece: 'p',
+                san: 'f6',
+                to: 'f6',
+            },
+            {
+                clock: -1,
+                color: 'white',
+                flags: 'b',
+                from: 'd2',
+                piece: 'p',
+                san: 'd4',
+                to: 'd4',
+            },
+            {
+                clock: -1,
+                color: 'black',
+                flags: 'b',
+                from: 'g7',
+                piece: 'p',
+                san: 'g5',
+                to: 'g5',
+            },
+            {
+                clock: -1,
+                color: 'white',
+                flags: 'n',
+                from: 'd1',
+                piece: 'q',
+                san: 'Qh5#',
+                to: 'h5',
+            },
+        ];
+        expect(actual).toEqual(expected);
+    });
+});
 describe('getCapturedPiecesFromPgn', function () {
     var initialActivePieces = {
         white: { p: 8, n: 2, b: 2, r: 2, q: 1 },
@@ -127,7 +180,7 @@ describe('getCapturedPiecesFromPgn', function () {
         var actual = util_1.getActivePieces(util_1.simplePGNtoMoves('1. e4 d5 2. exd5 Nf6 3. d6 e5 4. d7+ Ke7 5. dxc8=Q'));
         var expected = {
             white: __assign(__assign({}, initialActivePieces.white), { q: initialActivePieces.white.q + 1 }),
-            black: __assign(__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1, b: initialActivePieces.white.b - 1 })
+            black: __assign(__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1, b: initialActivePieces.white.b - 1 }),
         };
         expect(actual).toEqual(expected);
     });
