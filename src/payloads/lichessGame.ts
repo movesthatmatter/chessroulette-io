@@ -1,12 +1,12 @@
 import * as io from 'io-ts';
-import { chessGameState } from '../';
+import { chessGameState } from '../chessGame/records/gameStateRecords';
 import { gameRecord, vendorDataRecord } from '../records/gameRecord';
 
 export const lichessGameJoinRequestPayload = io.type({
   kind: io.literal('lichessGameJoinRequest'),
   content: io.type({
     game: chessGameState,
-    // vendorData: vendorDataRecord,
+    vendorData: vendorDataRecord,
   }),
 });
 

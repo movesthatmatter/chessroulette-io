@@ -25353,7 +25353,18 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         id: io.StringC;
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-    }>]>;
+    }>, io.UnionC<[io.TypeC<{
+        isVendorGame: io.LiteralC<true>;
+        vendorData: io.TypeC<{
+            vendor: io.LiteralC<"lichess">;
+            gameId: io.StringC;
+            playerId: io.StringC;
+            userRating: io.NumberC;
+        }>;
+    }>, io.PartialC<{
+        isVendorGame: io.UndefinedC;
+        vendorData: io.UndefinedC;
+    }>]>]>;
 }>, io.TypeC<{
     kind: io.LiteralC<"lichessGameUpdateRequest">;
     content: io.TypeC<{
@@ -33706,7 +33717,18 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             id: io.StringC;
             createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>]>;
+        }>, io.UnionC<[io.TypeC<{
+            isVendorGame: io.LiteralC<true>;
+            vendorData: io.TypeC<{
+                vendor: io.LiteralC<"lichess">;
+                gameId: io.StringC;
+                playerId: io.StringC;
+                userRating: io.NumberC;
+            }>;
+        }>, io.PartialC<{
+            isVendorGame: io.UndefinedC;
+            vendorData: io.UndefinedC;
+        }>]>]>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"lichessGameJoinRequest">;
@@ -42057,6 +42079,12 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             startedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             lastActivityAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         }>]>;
+        vendorData: io.TypeC<{
+            vendor: io.LiteralC<"lichess">;
+            gameId: io.StringC;
+            playerId: io.StringC;
+            userRating: io.NumberC;
+        }>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"analysisMoveRequest">;
@@ -53491,7 +53519,18 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             id: io.StringC;
             createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>]>;
+        }>, io.UnionC<[io.TypeC<{
+            isVendorGame: io.LiteralC<true>;
+            vendorData: io.TypeC<{
+                vendor: io.LiteralC<"lichess">;
+                gameId: io.StringC;
+                playerId: io.StringC;
+                userRating: io.NumberC;
+            }>;
+        }>, io.PartialC<{
+            isVendorGame: io.UndefinedC;
+            vendorData: io.UndefinedC;
+        }>]>]>;
     }>;
 }>, io.UnionC<[io.TypeC<{
     kind: io.LiteralC<"peersStats">;

@@ -17,6 +17,16 @@ exports.gameRecord = io.intersection([
         createdAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
         updatedAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
     }),
+    io.union([
+        io.type({
+            isVendorGame: io.literal(true),
+            vendorData: exports.vendorDataRecord,
+        }),
+        io.partial({
+            isVendorGame: io.undefined,
+            vendorData: io.undefined,
+        }),
+    ]),
 ]);
 exports.gameRecordFromGameState = function (gameStateCodec) {
     return io.intersection([
