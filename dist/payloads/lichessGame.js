@@ -2,12 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.lichessGameRequestPayloads = exports.lichessGameUpdateRequestPayload = exports.lichessGameJoinRequestPayload = void 0;
 var io = require("io-ts");
-var src_1 = require("src");
+var __1 = require("../");
 var gameRecord_1 = require("../records/gameRecord");
 exports.lichessGameJoinRequestPayload = io.type({
     kind: io.literal('lichessGameJoinRequest'),
     content: io.type({
-        game: src_1.chessGameState,
+        game: __1.chessGameState,
         vendorData: gameRecord_1.vendorData,
     }),
 });

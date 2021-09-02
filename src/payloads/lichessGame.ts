@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-import { chessGameState } from 'src';
+import { chessGameState } from '../';
 import { gameRecord, vendorData } from '../records/gameRecord';
 
 export const lichessGameJoinRequestPayload = io.type({
