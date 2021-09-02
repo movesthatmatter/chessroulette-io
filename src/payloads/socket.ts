@@ -22,6 +22,7 @@ import {
   analysisMoveRequestPayload,
   analysisUpdatedResponsePayload,
   analysisDrawnShapesUpdatedRequestPayload,
+  analysisImportPgnRequestPayload,
 } from './analysis';
 
 export const userIdentificationPayload = io.type({
@@ -136,6 +137,7 @@ export const socketPayload = io.union([
   analysisMoveRequestPayload,
   analysisRefocusRequestPayload,
   analysisDrawnShapesUpdatedRequestPayload,
+  analysisImportPgnRequestPayload,
   analysisUpdatedResponsePayload,
 
   // Room & Game
