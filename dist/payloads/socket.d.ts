@@ -25245,6 +25245,11 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
         }>]>>;
     }>;
 }>, io.TypeC<{
+    kind: io.LiteralC<"analysisImportPgnRequest">;
+    content: io.TypeC<{
+        pgn: io.StringC;
+    }>;
+}>, io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
     content: io.IntersectionC<[io.TypeC<{
         id: io.StringC;
