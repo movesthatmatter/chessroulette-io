@@ -10,6 +10,15 @@ import {
   chessGameStateStopped,
 } from '../chessGame';
 
+export const vendorData = io.type({
+  vendor: io.literal('lichess'),
+  gameId: io.string,
+  playerId: io.string,
+  userRating: io.number,
+});
+
+export type GameVendorData = io.TypeOf<typeof vendorData>;
+
 export const gameRecord = io.intersection([
   chessGameState,
   io.type({
@@ -19,12 +28,7 @@ export const gameRecord = io.intersection([
   }),
   io.partial({
     isVendorGame: io.literal(true),
-    vendorData: io.type({
-      vendor: io.literal('lichess'),
-      gameId: io.string,
-      playerId: io.string,
-      userRating: io.number,
-    }),
+    vendorData,
   }),
 ]);
 

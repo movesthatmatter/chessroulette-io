@@ -1,9 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.gameRecordWithoutPlayerInfo = exports.gameRecordFinished = exports.gameRecordStopped = exports.gameRecordNeverStarted = exports.gameRecordStarted = exports.gameRecordPending = exports.gameRecordFromGameState = exports.gameRecord = void 0;
+exports.gameRecordWithoutPlayerInfo = exports.gameRecordFinished = exports.gameRecordStopped = exports.gameRecordNeverStarted = exports.gameRecordStarted = exports.gameRecordPending = exports.gameRecordFromGameState = exports.gameRecord = exports.vendorData = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
+exports.vendorData = io.type({
+    vendor: io.literal('lichess'),
+    gameId: io.string,
+    playerId: io.string,
+    userRating: io.number,
+});
 exports.gameRecord = io.intersection([
     chessGame_1.chessGameState,
     io.type({
@@ -13,12 +19,7 @@ exports.gameRecord = io.intersection([
     }),
     io.partial({
         isVendorGame: io.literal(true),
-        vendorData: io.type({
-            vendor: io.literal('lichess'),
-            gameId: io.string,
-            playerId: io.string,
-            userRating: io.number,
-        }),
+        vendorData: exports.vendorData,
     }),
 ]);
 exports.gameRecordFromGameState = function (gameStateCodec) {

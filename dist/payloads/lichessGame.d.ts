@@ -2,7 +2,7 @@ import * as io from 'io-ts';
 export declare const lichessGameJoinRequestPayload: io.TypeC<{
     kind: io.LiteralC<"lichessGameJoinRequest">;
     content: io.TypeC<{
-        game: io.IntersectionC<[io.UnionC<[io.TypeC<{
+        game: io.UnionC<[io.TypeC<{
             state: io.LiteralC<"pending">;
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -8347,25 +8347,18 @@ export declare const lichessGameJoinRequestPayload: io.TypeC<{
             lastMoveAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             startedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             lastActivityAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>]>, io.TypeC<{
-            id: io.StringC;
-            createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-            updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>, io.PartialC<{
-            isVendorGame: io.LiteralC<true>;
-            vendorData: io.TypeC<{
-                vendor: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-                playerId: io.StringC;
-                userRating: io.NumberC;
-            }>;
         }>]>;
+        vendorData: io.TypeC<{
+            vendor: io.LiteralC<"lichess">;
+            gameId: io.StringC;
+            playerId: io.StringC;
+            userRating: io.NumberC;
+        }>;
     }>;
 }>;
 export declare const lichessGameUpdateRequestPayload: io.TypeC<{
     kind: io.LiteralC<"lichessGameUpdateRequest">;
     content: io.TypeC<{
-        id: io.StringC;
         game: io.IntersectionC<[io.UnionC<[io.TypeC<{
             state: io.LiteralC<"pending">;
             timeLimit: io.KeyofC<{
@@ -16729,7 +16722,7 @@ export declare const lichessGameUpdateRequestPayload: io.TypeC<{
 export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
     kind: io.LiteralC<"lichessGameJoinRequest">;
     content: io.TypeC<{
-        game: io.IntersectionC<[io.UnionC<[io.TypeC<{
+        game: io.UnionC<[io.TypeC<{
             state: io.LiteralC<"pending">;
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -25074,24 +25067,17 @@ export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
             lastMoveAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             startedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             lastActivityAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>]>, io.TypeC<{
-            id: io.StringC;
-            createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-            updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>, io.PartialC<{
-            isVendorGame: io.LiteralC<true>;
-            vendorData: io.TypeC<{
-                vendor: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-                playerId: io.StringC;
-                userRating: io.NumberC;
-            }>;
         }>]>;
+        vendorData: io.TypeC<{
+            vendor: io.LiteralC<"lichess">;
+            gameId: io.StringC;
+            playerId: io.StringC;
+            userRating: io.NumberC;
+        }>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"lichessGameUpdateRequest">;
     content: io.TypeC<{
-        id: io.StringC;
         game: io.IntersectionC<[io.UnionC<[io.TypeC<{
             state: io.LiteralC<"pending">;
             timeLimit: io.KeyofC<{
