@@ -8874,6 +8874,16 @@ export declare const joinedGameUpdatedPayload: io.TypeC<{
         id: io.StringC;
         createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-    }>]>;
+    }>, io.UnionC<[io.TypeC<{
+        isVendorGame: io.LiteralC<true>;
+        vendorData: io.TypeC<{
+            vendor: io.LiteralC<"lichess">;
+            gameId: io.StringC;
+            playerId: io.StringC;
+        }>;
+    }>, io.PartialC<{
+        isVendorGame: io.LiteralC<false>;
+        vendorData: io.UndefinedC;
+    }>]>]>;
 }>;
 export declare type JoinedGameUpdatedPayload = io.TypeOf<typeof joinedGameUpdatedPayload>;

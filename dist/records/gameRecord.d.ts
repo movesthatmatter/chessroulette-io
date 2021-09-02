@@ -8349,7 +8349,17 @@ export declare const gameRecord: io.IntersectionC<[io.UnionC<[io.TypeC<{
     id: io.StringC;
     createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
     updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-}>]>;
+}>, io.UnionC<[io.TypeC<{
+    isVendorGame: io.LiteralC<true>;
+    vendorData: io.TypeC<{
+        vendor: io.LiteralC<"lichess">;
+        gameId: io.StringC;
+        playerId: io.StringC;
+    }>;
+}>, io.PartialC<{
+    isVendorGame: io.LiteralC<false>;
+    vendorData: io.UndefinedC;
+}>]>]>;
 export declare type GameRecord = io.TypeOf<typeof gameRecord>;
 export declare const gameRecordFromGameState: <TCodec extends io.Mixed>(gameStateCodec: TCodec) => io.IntersectionC<[TCodec, io.TypeC<{
     id: io.StringC;
@@ -25081,7 +25091,17 @@ export declare const gameRecordWithoutPlayerInfo: io.IntersectionC<[io.Intersect
     id: io.StringC;
     createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
     updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-}>]>, io.TypeC<{
+}>, io.UnionC<[io.TypeC<{
+    isVendorGame: io.LiteralC<true>;
+    vendorData: io.TypeC<{
+        vendor: io.LiteralC<"lichess">;
+        gameId: io.StringC;
+        playerId: io.StringC;
+    }>;
+}>, io.PartialC<{
+    isVendorGame: io.LiteralC<false>;
+    vendorData: io.UndefinedC;
+}>]>]>, io.TypeC<{
     players: io.StringC;
 }>]>;
 export declare type GameRecordWithoutPlayerInfo = io.TypeOf<typeof gameRecordWithoutPlayerInfo>;

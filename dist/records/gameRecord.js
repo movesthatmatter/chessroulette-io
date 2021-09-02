@@ -11,6 +11,20 @@ exports.gameRecord = io.intersection([
         createdAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
         updatedAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
     }),
+    io.union([
+        io.type({
+            isVendorGame: io.literal(true),
+            vendorData: io.type({
+                vendor: io.literal('lichess'),
+                gameId: io.string,
+                playerId: io.string,
+            }),
+        }),
+        io.partial({
+            isVendorGame: io.literal(false),
+            vendorData: io.undefined,
+        }),
+    ]),
 ]);
 exports.gameRecordFromGameState = function (gameStateCodec) {
     return io.intersection([

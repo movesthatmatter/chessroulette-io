@@ -17,6 +17,20 @@ export const gameRecord = io.intersection([
     createdAt: isoDateTimeFromIsoString,
     updatedAt: isoDateTimeFromIsoString,
   }),
+  io.union([
+    io.type({
+      isVendorGame: io.literal(true),
+      vendorData: io.type({
+        vendor: io.literal('lichess'),
+        gameId: io.string,
+        playerId: io.string,
+      }),
+    }),
+    io.partial({
+      isVendorGame: io.literal(false),
+      vendorData: io.undefined,
+    }),
+  ]),
 ]);
 
 export type GameRecord = io.TypeOf<typeof gameRecord>;
