@@ -6,7 +6,7 @@ export const lichessGameJoinRequestPayload = io.type({
   kind: io.literal('lichessGameJoinRequest'),
   content: io.type({
     game: chessGameState,
-    vendorData: vendorDataRecord,
+    // vendorData: vendorDataRecord,
   }),
 });
 

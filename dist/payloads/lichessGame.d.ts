@@ -8348,12 +8348,6 @@ export declare const lichessGameJoinRequestPayload: io.TypeC<{
             startedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             lastActivityAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         }>]>;
-        vendorData: io.TypeC<{
-            vendor: io.LiteralC<"lichess">;
-            gameId: io.StringC;
-            playerId: io.StringC;
-            userRating: io.NumberC;
-        }>;
     }>;
 }>;
 export declare const lichessGameUpdateRequestPayload: io.TypeC<{
@@ -16708,15 +16702,7 @@ export declare const lichessGameUpdateRequestPayload: io.TypeC<{
             id: io.StringC;
             createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>, io.UnionC<[io.TypeC<{
-            isVendorGame: io.LiteralC<true>;
-            vendorData: io.TypeC<{
-                vendor: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-                playerId: io.StringC;
-                userRating: io.NumberC;
-            }>;
-        }>, io.TypeC<{}>]>]>;
+        }>]>;
     }>;
 }>;
 export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
@@ -25068,12 +25054,6 @@ export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
             startedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             lastActivityAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         }>]>;
-        vendorData: io.TypeC<{
-            vendor: io.LiteralC<"lichess">;
-            gameId: io.StringC;
-            playerId: io.StringC;
-            userRating: io.NumberC;
-        }>;
     }>;
 }>, io.TypeC<{
     kind: io.LiteralC<"lichessGameUpdateRequest">;
@@ -33427,15 +33407,7 @@ export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
             id: io.StringC;
             createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             updatedAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-        }>, io.UnionC<[io.TypeC<{
-            isVendorGame: io.LiteralC<true>;
-            vendorData: io.TypeC<{
-                vendor: io.LiteralC<"lichess">;
-                gameId: io.StringC;
-                playerId: io.StringC;
-                userRating: io.NumberC;
-            }>;
-        }>, io.TypeC<{}>]>]>;
+        }>]>;
     }>;
 }>]>;
 export declare type LichessGameJoinRequestPayload = io.TypeOf<typeof lichessGameJoinRequestPayload>;

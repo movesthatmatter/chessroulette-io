@@ -8,7 +8,6 @@ exports.lichessGameJoinRequestPayload = io.type({
     kind: io.literal('lichessGameJoinRequest'),
     content: io.type({
         game: __1.chessGameState,
-        vendorData: gameRecord_1.vendorDataRecord,
     }),
 });
 exports.lichessGameUpdateRequestPayload = io.type({
