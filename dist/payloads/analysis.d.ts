@@ -53,6 +53,7 @@ export declare type AnalysisDrawnShapesUpdatedRequestPayload = io.TypeOf<typeof 
 export declare const analysisImportPgnRequestPayload: io.TypeC<{
     kind: io.LiteralC<"analysisImportPgnRequest">;
     content: io.TypeC<{
+        id: io.StringC;
         pgn: io.StringC;
     }>;
 }>;

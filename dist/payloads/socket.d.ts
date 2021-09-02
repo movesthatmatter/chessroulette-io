@@ -25247,6 +25247,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
 }>, io.TypeC<{
     kind: io.LiteralC<"analysisImportPgnRequest">;
     content: io.TypeC<{
+        id: io.StringC;
         pgn: io.StringC;
     }>;
 }>, io.TypeC<{

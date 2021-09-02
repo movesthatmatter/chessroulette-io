@@ -29,6 +29,7 @@ exports.analysisDrawnShapesUpdatedRequestPayload = io.type({
 exports.analysisImportPgnRequestPayload = io.type({
     kind: io.literal('analysisImportPgnRequest'),
     content: io.type({
+        id: io.string,
         pgn: io.string,
     }),
 });

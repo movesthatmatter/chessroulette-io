@@ -34,6 +34,7 @@ export type AnalysisDrawnShapesUpdatedRequestPayload = io.TypeOf<typeof analysis
 export const analysisImportPgnRequestPayload = io.type({
   kind: io.literal('analysisImportPgnRequest'),
   content: io.type({
+    id: io.string,
     pgn: io.string,
   }),
 });
