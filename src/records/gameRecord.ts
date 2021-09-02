@@ -26,10 +26,16 @@ export const gameRecord = io.intersection([
     createdAt: isoDateTimeFromIsoString,
     updatedAt: isoDateTimeFromIsoString,
   }),
-  io.partial({
-    isVendorGame: io.literal(true),
-    vendorData: vendorData,
-  }),
+  io.union([
+    io.type({
+      isVendorGame: io.literal(true),
+      vendorData: vendorData,
+    }),
+    io.partial({
+      isVendorGame: io.undefined,
+      vendorData: io.undefined,
+    }),
+  ]),
 ]);
 
 export type GameRecord = io.TypeOf<typeof gameRecord>;
