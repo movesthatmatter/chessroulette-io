@@ -24,6 +24,7 @@ export const gameRecord = io.intersection([
         vendor: io.literal('lichess'),
         gameId: io.string,
         playerId: io.string,
+        userRating: io.number,
       }),
     }),
     io.partial({

@@ -8355,6 +8355,7 @@ export declare const gameRecord: io.IntersectionC<[io.UnionC<[io.TypeC<{
         vendor: io.LiteralC<"lichess">;
         gameId: io.StringC;
         playerId: io.StringC;
+        userRating: io.NumberC;
     }>;
 }>, io.PartialC<{
     isVendorGame: io.LiteralC<false>;
@@ -25097,6 +25098,7 @@ export declare const gameRecordWithoutPlayerInfo: io.IntersectionC<[io.Intersect
         vendor: io.LiteralC<"lichess">;
         gameId: io.StringC;
         playerId: io.StringC;
+        userRating: io.NumberC;
     }>;
 }>, io.PartialC<{
     isVendorGame: io.LiteralC<false>;

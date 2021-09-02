@@ -29429,6 +29429,7 @@ export declare const joinedRoomAndGameUpdatedPayload: io.TypeC<{
                 vendor: io.LiteralC<"lichess">;
                 gameId: io.StringC;
                 playerId: io.StringC;
+                userRating: io.NumberC;
             }>;
         }>, io.PartialC<{
             isVendorGame: io.LiteralC<false>;

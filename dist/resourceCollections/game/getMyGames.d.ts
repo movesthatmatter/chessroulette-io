@@ -8356,6 +8356,7 @@ export declare namespace GetMyGames {
             vendor: io.LiteralC<"lichess">;
             gameId: io.StringC;
             playerId: io.StringC;
+            userRating: io.NumberC;
         }>;
     }>, io.PartialC<{
         isVendorGame: io.LiteralC<false>;
@@ -8508,6 +8509,7 @@ export declare namespace GetMyGames {
             vendor: "lichess";
             gameId: string;
             playerId: string;
+            userRating: number;
         };
     }) | ({
         state: "pending";
@@ -8796,6 +8798,7 @@ export declare namespace GetMyGames {
             vendor: "lichess";
             gameId: string;
             playerId: string;
+            userRating: number;
         };
     }) | ({
         state: "neverStarted";
@@ -9104,6 +9107,7 @@ export declare namespace GetMyGames {
             vendor: "lichess";
             gameId: string;
             playerId: string;
+            userRating: number;
         };
     }) | ({
         timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
@@ -9432,6 +9436,7 @@ export declare namespace GetMyGames {
             vendor: "lichess";
             gameId: string;
             playerId: string;
+            userRating: number;
         };
     }) | ({
         state: "finished";
@@ -9760,6 +9765,7 @@ export declare namespace GetMyGames {
             vendor: "lichess";
             gameId: string;
             playerId: string;
+            userRating: number;
         };
     }) | ({
         state: "stopped";

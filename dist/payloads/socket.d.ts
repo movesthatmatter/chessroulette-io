@@ -25359,6 +25359,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
             vendor: io.LiteralC<"lichess">;
             gameId: io.StringC;
             playerId: io.StringC;
+            userRating: io.NumberC;
         }>;
     }>, io.PartialC<{
         isVendorGame: io.LiteralC<false>;
@@ -33723,6 +33724,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 vendor: io.LiteralC<"lichess">;
                 gameId: io.StringC;
                 playerId: io.StringC;
+                userRating: io.NumberC;
             }>;
         }>, io.PartialC<{
             isVendorGame: io.LiteralC<false>;
@@ -42087,6 +42089,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 vendor: io.LiteralC<"lichess">;
                 gameId: io.StringC;
                 playerId: io.StringC;
+                userRating: io.NumberC;
             }>;
         }>, io.PartialC<{
             isVendorGame: io.LiteralC<false>;
@@ -53532,6 +53535,7 @@ export declare const socketPayload: io.UnionC<[io.TypeC<{
                 vendor: io.LiteralC<"lichess">;
                 gameId: io.StringC;
                 playerId: io.StringC;
+                userRating: io.NumberC;
             }>;
         }>, io.PartialC<{
             isVendorGame: io.LiteralC<false>;
