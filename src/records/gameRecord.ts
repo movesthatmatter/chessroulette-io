@@ -31,10 +31,11 @@ export const gameRecord = io.intersection([
       isVendorGame: io.literal(true),
       vendorData: vendorDataRecord,
     }),
-    io.partial({
-      isVendorGame: io.undefined,
-      vendorData: io.undefined,
-    }),
+    io.type({}),
+    // io.partial({
+    //   isVendorGame: io.undefined,
+    //   vendorData: io.undefined,
+    // }),
   ]),
 ]);
 

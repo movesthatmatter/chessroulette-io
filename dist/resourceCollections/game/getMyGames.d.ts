@@ -8358,10 +8358,7 @@ export declare namespace GetMyGames {
             playerId: io.StringC;
             userRating: io.NumberC;
         }>;
-    }>, io.PartialC<{
-        isVendorGame: io.UndefinedC;
-        vendorData: io.UndefinedC;
-    }>]>]>>, io.TypeC<{
+    }>, io.TypeC<{}>]>]>>, io.TypeC<{
         type: io.LiteralC<"BadRequestError">;
         content: io.UndefinedC;
     }>, void | {} | null | undefined, (({
@@ -8650,10 +8647,7 @@ export declare namespace GetMyGames {
         id: string;
         createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
         updatedAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-    } & {
-        isVendorGame?: undefined;
-        vendorData?: undefined;
-    }) | ({
+    } & {}) | ({
         state: "neverStarted";
         timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
         players: [{
@@ -8939,10 +8933,7 @@ export declare namespace GetMyGames {
         id: string;
         createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
         updatedAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-    } & {
-        isVendorGame?: undefined;
-        vendorData?: undefined;
-    }) | ({
+    } & {}) | ({
         timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
         state: "started";
         players: [{
@@ -9268,10 +9259,7 @@ export declare namespace GetMyGames {
         id: string;
         createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
         updatedAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-    } & {
-        isVendorGame?: undefined;
-        vendorData?: undefined;
-    }) | ({
+    } & {}) | ({
         state: "finished";
         timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
         players: [{
@@ -9597,10 +9585,7 @@ export declare namespace GetMyGames {
         id: string;
         createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
         updatedAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-    } & {
-        isVendorGame?: undefined;
-        vendorData?: undefined;
-    }) | ({
+    } & {}) | ({
         state: "stopped";
         timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
         players: [{
@@ -9926,10 +9911,7 @@ export declare namespace GetMyGames {
         id: string;
         createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
         updatedAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-    } & {
-        isVendorGame?: undefined;
-        vendorData?: undefined;
-    }))[], {
+    } & {}))[], {
         type: "BadRequestError";
         content: undefined;
     }>;

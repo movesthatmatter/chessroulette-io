@@ -22,10 +22,7 @@ exports.gameRecord = io.intersection([
             isVendorGame: io.literal(true),
             vendorData: exports.vendorDataRecord,
         }),
-        io.partial({
-            isVendorGame: io.undefined,
-            vendorData: io.undefined,
-        }),
+        io.type({}),
     ]),
 ]);
 exports.gameRecordFromGameState = function (gameStateCodec) {

@@ -16716,10 +16716,7 @@ export declare const lichessGameUpdateRequestPayload: io.TypeC<{
                 playerId: io.StringC;
                 userRating: io.NumberC;
             }>;
-        }>, io.PartialC<{
-            isVendorGame: io.UndefinedC;
-            vendorData: io.UndefinedC;
-        }>]>]>;
+        }>, io.TypeC<{}>]>]>;
     }>;
 }>;
 export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
@@ -33438,10 +33435,7 @@ export declare const lichessGameRequestPayloads: io.UnionC<[io.TypeC<{
                 playerId: io.StringC;
                 userRating: io.NumberC;
             }>;
-        }>, io.PartialC<{
-            isVendorGame: io.UndefinedC;
-            vendorData: io.UndefinedC;
-        }>]>]>;
+        }>, io.TypeC<{}>]>]>;
     }>;
 }>]>;
 export declare type LichessGameJoinRequestPayload = io.TypeOf<typeof lichessGameJoinRequestPayload>;

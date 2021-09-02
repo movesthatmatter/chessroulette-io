@@ -8364,10 +8364,7 @@ export declare const gameRecord: io.IntersectionC<[io.UnionC<[io.TypeC<{
         playerId: io.StringC;
         userRating: io.NumberC;
     }>;
-}>, io.PartialC<{
-    isVendorGame: io.UndefinedC;
-    vendorData: io.UndefinedC;
-}>]>]>;
+}>, io.TypeC<{}>]>]>;
 export declare type GameRecord = io.TypeOf<typeof gameRecord>;
 export declare const gameRecordFromGameState: <TCodec extends io.Mixed>(gameStateCodec: TCodec) => io.IntersectionC<[TCodec, io.TypeC<{
     id: io.StringC;
@@ -25107,10 +25104,7 @@ export declare const gameRecordWithoutPlayerInfo: io.IntersectionC<[io.Intersect
         playerId: io.StringC;
         userRating: io.NumberC;
     }>;
-}>, io.PartialC<{
-    isVendorGame: io.UndefinedC;
-    vendorData: io.UndefinedC;
-}>]>]>, io.TypeC<{
+}>, io.TypeC<{}>]>]>, io.TypeC<{
     players: io.StringC;
 }>]>;
 export declare type GameRecordWithoutPlayerInfo = io.TypeOf<typeof gameRecordWithoutPlayerInfo>;
