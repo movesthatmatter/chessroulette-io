@@ -10,14 +10,14 @@ import {
   chessGameStateStopped,
 } from '../chessGame';
 
-export const vendorData = io.type({
+export const vendorDataRecord = io.type({
   vendor: io.literal('lichess'),
   gameId: io.string,
   playerId: io.string,
   userRating: io.number,
 });
 
-export type GameVendorData = io.TypeOf<typeof vendorData>;
+export type GameVendorDataRecord = io.TypeOf<typeof vendorDataRecord>;
 
 export const gameRecord = io.intersection([
   chessGameState,
@@ -29,7 +29,7 @@ export const gameRecord = io.intersection([
   io.union([
     io.type({
       isVendorGame: io.literal(true),
-      vendorData: vendorData,
+      vendorData: vendorDataRecord,
     }),
     io.partial({
       isVendorGame: io.undefined,

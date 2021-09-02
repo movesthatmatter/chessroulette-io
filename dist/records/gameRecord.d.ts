@@ -1,12 +1,12 @@
 import * as io from 'io-ts';
 import { ChessGameState } from '../chessGame';
-export declare const vendorData: io.TypeC<{
+export declare const vendorDataRecord: io.TypeC<{
     vendor: io.LiteralC<"lichess">;
     gameId: io.StringC;
     playerId: io.StringC;
     userRating: io.NumberC;
 }>;
-export declare type GameVendorData = io.TypeOf<typeof vendorData>;
+export declare type GameVendorDataRecord = io.TypeOf<typeof vendorDataRecord>;
 export declare const gameRecord: io.IntersectionC<[io.UnionC<[io.TypeC<{
     state: io.LiteralC<"pending">;
     timeLimit: io.KeyofC<{
