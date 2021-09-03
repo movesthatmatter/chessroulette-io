@@ -1,6 +1,6 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
-import { chessGameOffer, gameSpecsRecord } from '../chessGame';
+import { chessGameOffer, chessHistory, gameSpecsRecord } from '../chessGame';
 import { challengeRecord } from './challengeRecord';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
@@ -147,7 +147,7 @@ export const roomActivityCreationRecord = io.union([
   }),
   io.type({
     activityType: io.literal('analysis'),
-    // Add more stuff if needed
+    history: chessHistory,
   }),
   io.type({
     activityType: io.literal('none'),

@@ -114,6 +114,7 @@ exports.roomActivityCreationRecord = io.union([
     }),
     io.type({
         activityType: io.literal('analysis'),
+        history: chessGame_1.chessHistory,
     }),
     io.type({
         activityType: io.literal('none'),
