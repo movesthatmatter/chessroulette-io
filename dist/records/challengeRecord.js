@@ -6,12 +6,14 @@ var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var ChessGame = require("../chessGame");
 var chessGame_1 = require("../chessGame");
+var userRecord_1 = require("./userRecord");
 exports.baseChallengeRecord = io.type({
     gameSpecs: ChessGame.gameSpecsRecord,
     id: io.string,
     createdBy: io.string,
     createdAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
     slug: io.string,
+    createdByUser: userRecord_1.userInfoRecord,
 });
 exports.lichessSeekChallengeRecord = io.type({
     gameSpecs: ChessGame.gameSpecsRecord,

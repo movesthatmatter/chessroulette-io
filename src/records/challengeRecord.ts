@@ -2,6 +2,7 @@ import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
 import * as ChessGame from '../chessGame';
 import { gameSpecsRecord } from '../chessGame';
+import { userInfoRecord } from './userRecord';
 
 export const baseChallengeRecord = io.type({
   gameSpecs: ChessGame.gameSpecsRecord,
@@ -9,6 +10,7 @@ export const baseChallengeRecord = io.type({
   createdBy: io.string,
   createdAt: isoDateTimeFromIsoString,
   slug: io.string,
+  createdByUser: userInfoRecord,
 });
 
 export const lichessSeekChallengeRecord = io.type({
