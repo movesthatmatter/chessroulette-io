@@ -9,6 +9,7 @@ export const roomActivityType = io.keyof({
   none: null,
   play: null,
   analysis: null,
+  lichess: null,
 });
 export type RoomActivityType = io.TypeOf<typeof roomActivityType>;
 

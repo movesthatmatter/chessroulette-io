@@ -11,6 +11,7 @@ exports.roomActivityType = io.keyof({
     none: null,
     play: null,
     analysis: null,
+    lichess: null,
 });
 exports.roomNoActivityRecord = io.type({
     type: io.literal('none'),

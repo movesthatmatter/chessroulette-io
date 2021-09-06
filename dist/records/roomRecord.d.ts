@@ -3,6 +3,7 @@ export declare const roomActivityType: io.KeyofC<{
     none: null;
     play: null;
     analysis: null;
+    lichess: null;
 }>;
 export declare type RoomActivityType = io.TypeOf<typeof roomActivityType>;
 export declare const roomNoActivityRecord: io.TypeC<{
