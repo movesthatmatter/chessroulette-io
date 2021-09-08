@@ -42,11 +42,15 @@ export const roomPlayActivityRecord = io.intersection([
   }),
 ]);
 
-export const roomLichessActivityRecord = io.type({
-  type: io.literal('lichess'),
-  gameSpecs: gameSpecsRecord,
-  gameId: io.union([io.string, io.undefined]),
-});
+export const roomLichessActivityRecord = io.intersection([
+  io.type({
+    type: io.literal('lichess'),
+    gameId: io.union([io.string, io.undefined]),
+  }),
+  io.partial({
+    offer: chessGameOffer,
+  }),
+]);
 
 export type RoomLichessActivityRecord = io.TypeOf<typeof roomLichessActivityRecord>;
 

@@ -36,11 +36,15 @@ exports.roomPlayActivityRecord = io.intersection([
         offer: chessGame_1.chessGameOffer,
     }),
 ]);
-exports.roomLichessActivityRecord = io.type({
-    type: io.literal('lichess'),
-    gameSpecs: chessGame_1.gameSpecsRecord,
-    gameId: io.union([io.string, io.undefined]),
-});
+exports.roomLichessActivityRecord = io.intersection([
+    io.type({
+        type: io.literal('lichess'),
+        gameId: io.union([io.string, io.undefined]),
+    }),
+    io.partial({
+        offer: chessGame_1.chessGameOffer,
+    }),
+]);
 exports.roomAnalysisActivityRecord = io.type({
     type: io.literal('analysis'),
     analysisId: io.string,
