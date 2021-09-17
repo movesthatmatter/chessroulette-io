@@ -64,6 +64,10 @@ export const roomType = io.keyof({
 });
 export type RoomType = io.TypeOf<typeof roomType>;
 
+export const pendingRoomChallenge = challengeRecord;
+
+export type PendingRoomChallenge = io.TypeOf<typeof pendingRoomChallenge>;
+
 export const roomRecord = io.intersection([
   io.type({
     id: io.string,
@@ -85,7 +89,7 @@ export const roomRecord = io.intersection([
     // game: chessGameState,
     // gameOffer: chessGameOffer,
 
-    pendingChallenges: io.record(io.string, challengeRecord),
+    pendingChallenges: io.record(io.string, pendingRoomChallenge),
   }),
   io.union([
     io.type({

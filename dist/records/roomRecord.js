@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.roomActivityCreationRecord = exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
+exports.roomActivityCreationRecord = exports.roomWithAnalysisActivityRecord = exports.roomWithPlayActivityRecord = exports.roomWithNoActivityRecord = exports.privateRoomRecord = exports.publicRoomRecord = exports.roomRecord = exports.pendingRoomChallenge = exports.roomType = exports.roomActivityRecord = exports.roomAnalysisActivityRecord = exports.roomPlayActivityRecord = exports.roomNoActivityRecord = exports.roomActivityType = void 0;
 var io = require("io-ts");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
@@ -48,6 +48,7 @@ exports.roomType = io.keyof({
     public: null,
     private: null,
 });
+exports.pendingRoomChallenge = challengeRecord_1.challengeRecord;
 exports.roomRecord = io.intersection([
     io.type({
         id: io.string,
@@ -64,7 +65,7 @@ exports.roomRecord = io.intersection([
         // TODO: Temporarily additon to match the room stats record
         // game: chessGameState,
         // gameOffer: chessGameOffer,
-        pendingChallenges: io.record(io.string, challengeRecord_1.challengeRecord),
+        pendingChallenges: io.record(io.string, exports.pendingRoomChallenge),
     }),
     io.union([
         io.type({
