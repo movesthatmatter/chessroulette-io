@@ -1,4 +1,4 @@
-import { roomRecord } from 'src/records/roomRecord';
+import { roomRecord } from '../../../records/roomRecord';
 import {
   ErrResponseOf,
   OkResponseOf,

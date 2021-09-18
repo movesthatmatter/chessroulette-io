@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-import { baseCreateChallengeRequest } from 'src/payloads';
+import { baseCreateChallengeRequest } from '../../../payloads';
 import { roomChallengeRecord } from '../../../records/roomChallenge';
 import { roomRecord } from '../../../records/roomRecord';
 

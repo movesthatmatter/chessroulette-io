@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createOrUpdateResponse = exports.updateRequest = exports.createRequest = void 0;
 var io = require("io-ts");
-var payloads_1 = require("src/payloads");
+var payloads_1 = require("../../../payloads");
 var roomChallenge_1 = require("../../../records/roomChallenge");
 var roomRecord_1 = require("../../../records/roomRecord");
 exports.createRequest = io.intersection([

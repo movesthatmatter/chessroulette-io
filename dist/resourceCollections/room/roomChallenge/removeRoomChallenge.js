@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RemoveRoomChallenge = void 0;
-var roomRecord_1 = require("src/records/roomRecord");
+var roomRecord_1 = require("../../../records/roomRecord");
 var resource_1 = require("../../../sdk/resource");
 var records_1 = require("./records");
 var RemoveRoomChallenge;
