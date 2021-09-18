@@ -5,7 +5,12 @@ var io = require("io-ts");
 var payloads_1 = require("src/payloads");
 var roomChallenge_1 = require("../../../records/roomChallenge");
 var roomRecord_1 = require("../../../records/roomRecord");
-exports.createRequest = payloads_1.baseCreateChallengeRequest;
+exports.createRequest = io.intersection([
+    payloads_1.baseCreateChallengeRequest,
+    io.type({
+        roomId: io.string,
+    }),
+]);
 exports.updateRequest = io.type({
     challengeId: io.string,
     roomId: io.string,

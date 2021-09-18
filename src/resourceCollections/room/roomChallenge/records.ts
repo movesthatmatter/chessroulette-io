@@ -3,8 +3,13 @@ import { baseCreateChallengeRequest } from 'src/payloads';
 import { roomChallengeRecord } from '../../../records/roomChallenge';
 import { roomRecord } from '../../../records/roomRecord';
 
-export const createRequest = baseCreateChallengeRequest;
-export type CreateRRequest = io.TypeOf<typeof createRequest>;
+export const createRequest = io.intersection([
+  baseCreateChallengeRequest,
+  io.type({
+    roomId: io.string,
+  }),
+]);
+export type CreateRequest = io.TypeOf<typeof createRequest>;
 
 export const updateRequest = io.type({
   challengeId: io.string,

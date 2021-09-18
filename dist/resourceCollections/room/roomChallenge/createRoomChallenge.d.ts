@@ -1,6 +1,6 @@
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../../sdk/resource';
 export declare namespace CreateRoomChallenge {
-    const resource: Resource<import("io-ts").TypeC<{
+    const resource: Resource<import("io-ts").IntersectionC<[import("io-ts").TypeC<{
         gameSpecs: import("io-ts").TypeC<{
             timeLimit: import("io-ts").KeyofC<{
                 bullet30: null;
@@ -26,6 +26,8 @@ export declare namespace CreateRoomChallenge {
         }>;
         userId: import("io-ts").StringC;
     }>, import("io-ts").TypeC<{
+        roomId: import("io-ts").StringC;
+    }>]>, import("io-ts").TypeC<{
         challenge: import("io-ts").TypeC<{
             gameSpecs: import("io-ts").TypeC<{
                 timeLimit: import("io-ts").KeyofC<{
@@ -3874,6 +3876,8 @@ export declare namespace CreateRoomChallenge {
             preferredColor: "white" | "black" | "random";
         };
         userId: string;
+    } & {
+        roomId: string;
     }, {
         challenge: {
             gameSpecs: {
