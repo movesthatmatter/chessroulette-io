@@ -27,7 +27,7 @@ export declare const createRequest: io.TypeC<{
 }>;
 export declare type CreateRRequest = io.TypeOf<typeof createRequest>;
 export declare const updateRequest: io.TypeC<{
-    challegeId: io.StringC;
+    challengeId: io.StringC;
     roomId: io.StringC;
     userId: io.StringC;
 }>;

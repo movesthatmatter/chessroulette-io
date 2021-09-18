@@ -7,7 +7,7 @@ var roomChallenge_1 = require("../../../records/roomChallenge");
 var roomRecord_1 = require("../../../records/roomRecord");
 exports.createRequest = payloads_1.baseCreateChallengeRequest;
 exports.updateRequest = io.type({
-    challegeId: io.string,
+    challengeId: io.string,
     roomId: io.string,
     userId: io.string,
 });

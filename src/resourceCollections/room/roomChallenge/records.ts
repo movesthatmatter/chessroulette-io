@@ -7,7 +7,7 @@ export const createRequest = baseCreateChallengeRequest;
 export type CreateRRequest = io.TypeOf<typeof createRequest>;
 
 export const updateRequest = io.type({
-  challegeId: io.string,
+  challengeId: io.string,
   roomId: io.string,
   userId: io.string,
 });

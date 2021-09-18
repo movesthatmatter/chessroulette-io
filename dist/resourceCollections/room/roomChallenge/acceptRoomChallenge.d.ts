@@ -1,7 +1,7 @@
 import { ErrResponseOf, OkResponseOf, RequestOf, Resource, ResponseOf } from '../../../sdk/resource';
 export declare namespace AcceptRoomChallenge {
     const resource: Resource<import("io-ts").TypeC<{
-        challegeId: import("io-ts").StringC;
+        challengeId: import("io-ts").StringC;
         roomId: import("io-ts").StringC;
         userId: import("io-ts").StringC;
     }>, import("io-ts").TypeC<{
@@ -3848,7 +3848,7 @@ export declare namespace AcceptRoomChallenge {
         type: import("io-ts").LiteralC<"BadRequestError">;
         content: import("io-ts").UndefinedC;
     }>, {
-        challegeId: string;
+        challengeId: string;
         roomId: string;
         userId: string;
     }, {
