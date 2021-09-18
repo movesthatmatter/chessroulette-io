@@ -3,7 +3,7 @@ import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
 import { chessGameOffer, chessHistory, gameSpecsRecord } from '../chessGame';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
-import { roomChallengeRecord } from './roomChallenge';
+import { roomChallengeRecord } from './roomChallengeRecord';
 
 export const roomActivityType = io.keyof({
   none: null,

@@ -6,6 +6,7 @@ export * from './records/twitchRecords';
 export * from './records/collabLeadRecord';
 export * from './records/lichessRecords';
 export * from './records/roomRecord';
+export * from './records/roomChallengeRecord';
 export * from './records/challengeRecord';
 export * from './records/chatRecords';
 export * from './records/externalVendorsRecords';

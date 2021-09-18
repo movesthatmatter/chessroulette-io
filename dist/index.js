@@ -20,6 +20,7 @@ __exportStar(require("./records/twitchRecords"), exports);
 __exportStar(require("./records/collabLeadRecord"), exports);
 __exportStar(require("./records/lichessRecords"), exports);
 __exportStar(require("./records/roomRecord"), exports);
+__exportStar(require("./records/roomChallengeRecord"), exports);
 __exportStar(require("./records/challengeRecord"), exports);
 __exportStar(require("./records/chatRecords"), exports);
 __exportStar(require("./records/externalVendorsRecords"), exports);

@@ -6,7 +6,7 @@ var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 var chessGame_1 = require("../chessGame");
 var chatRecords_1 = require("./chatRecords");
 var peerRecord_1 = require("./peerRecord");
-var roomChallenge_1 = require("./roomChallenge");
+var roomChallengeRecord_1 = require("./roomChallengeRecord");
 exports.roomActivityType = io.keyof({
     none: null,
     play: null,
@@ -64,7 +64,7 @@ exports.roomRecord = io.intersection([
         // TODO: Temporarily additon to match the room stats record
         // game: chessGameState,
         // gameOffer: chessGameOffer,
-        pendingChallenges: io.record(io.string, roomChallenge_1.roomChallengeRecord),
+        pendingChallenges: io.record(io.string, roomChallengeRecord_1.roomChallengeRecord),
     }),
     io.union([
         io.type({

@@ -1,6 +1,6 @@
 import * as io from 'io-ts';
 import { baseCreateChallengeRequest } from '../../../payloads';
-import { roomChallengeRecord } from '../../../records/roomChallenge';
+import { roomChallengeRecord } from '../../../records/roomChallengeRecord';
 import { roomRecord } from '../../../records/roomRecord';
 
 export const createRequest = io.intersection([
