@@ -35,7 +35,7 @@ export declare const updateRequest: io.TypeC<{
 }>;
 export declare type UpdateRequest = io.TypeOf<typeof updateRequest>;
 export declare const createOrUpdateResponse: io.TypeC<{
-    challenge: io.TypeC<{
+    challenge: io.IntersectionC<[io.TypeC<{
         gameSpecs: io.TypeC<{
             timeLimit: io.KeyofC<{
                 bullet30: null;
@@ -342,7 +342,9 @@ export declare const createOrUpdateResponse: io.TypeC<{
                 }>;
             }>, io.UndefinedC]>;
         }>]>]>;
-    }>;
+    }>, io.TypeC<{
+        roomId: io.StringC;
+    }>]>;
     room: io.IntersectionC<[io.TypeC<{
         id: io.StringC;
         name: io.StringC;

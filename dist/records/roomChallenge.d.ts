@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-export declare const roomChallengeRecord: io.TypeC<{
+export declare const roomChallengeRecord: io.IntersectionC<[io.TypeC<{
     gameSpecs: io.TypeC<{
         timeLimit: io.KeyofC<{
             bullet30: null;
@@ -306,5 +306,7 @@ export declare const roomChallengeRecord: io.TypeC<{
             }>;
         }>, io.UndefinedC]>;
     }>]>]>;
-}>;
+}>, io.TypeC<{
+    roomId: io.StringC;
+}>]>;
 export declare type RoomChallengeRecord = io.TypeOf<typeof roomChallengeRecord>;
