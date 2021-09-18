@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createOrUpdateResponse = exports.updateRequest = exports.createRequest = void 0;
+exports.createOrUpdateResponse = exports.updateRequest = exports.removeOrAcceptResponse = exports.createRequest = void 0;
 var io = require("io-ts");
 var payloads_1 = require("../../../payloads");
 var roomChallengeRecord_1 = require("../../../records/roomChallengeRecord");
@@ -11,6 +11,7 @@ exports.createRequest = io.intersection([
         roomId: io.string,
     }),
 ]);
+exports.removeOrAcceptResponse = roomRecord_1.roomRecord;
 exports.updateRequest = io.type({
     challengeId: io.string,
     roomId: io.string,

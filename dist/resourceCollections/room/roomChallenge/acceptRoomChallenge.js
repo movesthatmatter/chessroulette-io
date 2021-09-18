@@ -6,7 +6,7 @@ var records_1 = require("./records");
 var AcceptRoomChallenge;
 (function (AcceptRoomChallenge) {
     var request = records_1.updateRequest;
-    var response = records_1.createOrUpdateResponse;
+    var response = records_1.removeOrAcceptResponse;
     AcceptRoomChallenge.resource = new resource_1.Resource(request, response);
 })(AcceptRoomChallenge = exports.AcceptRoomChallenge || (exports.AcceptRoomChallenge = {}));
 //# sourceMappingURL=acceptRoomChallenge.js.map

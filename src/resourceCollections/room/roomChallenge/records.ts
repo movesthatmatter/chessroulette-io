@@ -11,6 +11,9 @@ export const createRequest = io.intersection([
 ]);
 export type CreateRequest = io.TypeOf<typeof createRequest>;
 
+export const removeOrAcceptResponse = roomRecord;
+export type RemoveOrAcceptResponse = io.TypeOf<typeof roomRecord>;
+
 export const updateRequest = io.type({
   challengeId: io.string,
   roomId: io.string,

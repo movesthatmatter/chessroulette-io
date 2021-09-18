@@ -1,4 +1,3 @@
-import { roomRecord } from '../../../records/roomRecord';
 import {
   ErrResponseOf,
   OkResponseOf,
@@ -6,11 +5,11 @@ import {
   Resource,
   ResponseOf,
 } from '../../../sdk/resource';
-import { updateRequest } from './records';
+import { removeOrAcceptResponse, updateRequest } from './records';
 
 export namespace RemoveRoomChallenge {
   const request = updateRequest;
-  const response = roomRecord;
+  const response = removeOrAcceptResponse;
 
   export const resource = new Resource(request, response);
 

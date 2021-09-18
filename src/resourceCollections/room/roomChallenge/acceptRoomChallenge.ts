@@ -5,11 +5,11 @@ import {
   Resource,
   ResponseOf,
 } from '../../../sdk/resource';
-import { createOrUpdateResponse, updateRequest } from './records';
+import { removeOrAcceptResponse, updateRequest } from './records';
 
 export namespace AcceptRoomChallenge {
   const request = updateRequest;
-  const response = createOrUpdateResponse;
+  const response = removeOrAcceptResponse;
 
   export const resource = new Resource(request, response);
 
