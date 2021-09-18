@@ -3220,7 +3220,7 @@ export declare namespace AcceptRoomChallenge {
                     }>, import("io-ts").UndefinedC]>;
                 }>]>]>>;
             }>;
-            pendingChallenges: import("io-ts").RecordC<import("io-ts").StringC, import("io-ts").UnionC<[import("io-ts").IntersectionC<[import("io-ts").TypeC<{
+            pendingChallenges: import("io-ts").RecordC<import("io-ts").StringC, import("io-ts").IntersectionC<[import("io-ts").TypeC<{
                 gameSpecs: import("io-ts").TypeC<{
                     timeLimit: import("io-ts").KeyofC<{
                         bullet30: null;
@@ -3528,317 +3528,8 @@ export declare namespace AcceptRoomChallenge {
                     }>, import("io-ts").UndefinedC]>;
                 }>]>]>;
             }>, import("io-ts").TypeC<{
-                type: import("io-ts").LiteralC<"public">;
-            }>]>, import("io-ts").IntersectionC<[import("io-ts").TypeC<{
-                gameSpecs: import("io-ts").TypeC<{
-                    timeLimit: import("io-ts").KeyofC<{
-                        bullet30: null;
-                        bullet1: null;
-                        blitz2: null;
-                        blitz3: null;
-                        blitz5: null;
-                        rapid10: null;
-                        rapid15: null;
-                        rapid20: null;
-                        rapid30: null;
-                        rapid45: null;
-                        rapid60: null;
-                        untimed: null;
-                    }>;
-                    preferredColor: import("io-ts").UnionC<[import("io-ts").KeyofC<{
-                        black: null;
-                    }>, import("io-ts").KeyofC<{
-                        white: null;
-                    }>, import("io-ts").KeyofC<{
-                        random: null;
-                    }>]>;
-                }>;
-                id: import("io-ts").StringC;
-                createdBy: import("io-ts").StringC;
-                createdAt: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-                slug: import("io-ts").StringC;
-                createdByUser: import("io-ts").UnionC<[import("io-ts").IntersectionC<[import("io-ts").TypeC<{
-                    id: import("io-ts").StringC;
-                    firstName: import("io-ts").StringC;
-                    lastName: import("io-ts").StringC;
-                    avatarId: import("io-ts").StringC;
-                    name: import("io-ts").StringC;
-                }>, import("io-ts").TypeC<{
-                    isGuest: import("io-ts").LiteralC<true>;
-                }>]>, import("io-ts").IntersectionC<[import("io-ts").TypeC<{
-                    id: import("io-ts").StringC;
-                    firstName: import("io-ts").StringC;
-                    lastName: import("io-ts").StringC;
-                    avatarId: import("io-ts").StringC;
-                    name: import("io-ts").StringC;
-                }>, import("io-ts").TypeC<{
-                    isGuest: import("io-ts").LiteralC<false>;
-                    profilePicUrl: import("io-ts").UnionC<[import("io-ts").StringC, import("io-ts").UndefinedC]>;
-                    username: import("io-ts").StringC;
-                    country: import("io-ts").UnionC<[import("io-ts").TypeC<{
-                        name: import("io-ts").StringC;
-                        languages: import("io-ts").ArrayC<import("io-ts").StringC>;
-                        flagEmoji: import("io-ts").StringC;
-                        flagEmojiU: import("io-ts").StringC;
-                        phone: import("io-ts").StringC;
-                        currency: import("io-ts").StringC;
-                        code: import("io-ts").KeyofC<{
-                            AD: null;
-                            AE: null;
-                            AF: null;
-                            AG: null;
-                            AI: null;
-                            AL: null;
-                            AM: null;
-                            AO: null;
-                            AQ: null;
-                            AR: null;
-                            AS: null;
-                            AT: null;
-                            AU: null;
-                            AW: null;
-                            AX: null;
-                            AZ: null;
-                            BA: null;
-                            BB: null;
-                            BD: null;
-                            BE: null;
-                            BF: null;
-                            BG: null;
-                            BH: null;
-                            BI: null;
-                            BJ: null;
-                            BL: null;
-                            BM: null;
-                            BN: null;
-                            BO: null;
-                            BQ: null;
-                            BR: null;
-                            BS: null;
-                            BT: null;
-                            BV: null;
-                            BW: null;
-                            BY: null;
-                            BZ: null;
-                            CA: null;
-                            CC: null;
-                            CD: null;
-                            CF: null;
-                            CG: null;
-                            CH: null;
-                            CI: null;
-                            CK: null;
-                            CL: null;
-                            CM: null;
-                            CN: null;
-                            CO: null;
-                            CR: null;
-                            CU: null;
-                            CV: null;
-                            CW: null;
-                            CX: null;
-                            CY: null;
-                            CZ: null;
-                            DE: null;
-                            DJ: null;
-                            DK: null;
-                            DM: null;
-                            DO: null;
-                            DZ: null;
-                            EC: null;
-                            EE: null;
-                            EG: null;
-                            EH: null;
-                            ER: null;
-                            ES: null;
-                            ET: null;
-                            FI: null;
-                            FJ: null;
-                            FK: null;
-                            FM: null;
-                            FO: null;
-                            FR: null;
-                            GA: null;
-                            GB: null;
-                            GD: null;
-                            GE: null;
-                            GF: null;
-                            GG: null;
-                            GH: null;
-                            GI: null;
-                            GL: null;
-                            GM: null;
-                            GN: null;
-                            GP: null;
-                            GQ: null;
-                            GR: null;
-                            GS: null;
-                            GT: null;
-                            GU: null;
-                            GW: null;
-                            GY: null;
-                            HK: null;
-                            HM: null;
-                            HN: null;
-                            HR: null;
-                            HT: null;
-                            HU: null;
-                            ID: null;
-                            IE: null;
-                            IL: null;
-                            IM: null;
-                            IN: null;
-                            IO: null;
-                            IQ: null;
-                            IR: null;
-                            IS: null;
-                            IT: null;
-                            JE: null;
-                            JM: null;
-                            JO: null;
-                            JP: null;
-                            KE: null;
-                            KG: null;
-                            KH: null;
-                            KI: null;
-                            KM: null;
-                            KN: null;
-                            KP: null;
-                            KR: null;
-                            KW: null;
-                            KY: null;
-                            KZ: null;
-                            LA: null;
-                            LB: null;
-                            LC: null;
-                            LI: null;
-                            LK: null;
-                            LR: null;
-                            LS: null;
-                            LT: null;
-                            LU: null;
-                            LV: null;
-                            LY: null;
-                            MA: null;
-                            MC: null;
-                            MD: null;
-                            ME: null;
-                            MF: null;
-                            MG: null;
-                            MH: null;
-                            MK: null;
-                            ML: null;
-                            MM: null;
-                            MN: null;
-                            MO: null;
-                            MP: null;
-                            MQ: null;
-                            MR: null;
-                            MS: null;
-                            MT: null;
-                            MU: null;
-                            MV: null;
-                            MW: null;
-                            MX: null;
-                            MY: null;
-                            MZ: null;
-                            NA: null;
-                            NC: null;
-                            NE: null;
-                            NF: null;
-                            NG: null;
-                            NI: null;
-                            NL: null;
-                            NO: null;
-                            NP: null;
-                            NR: null;
-                            NU: null;
-                            NZ: null;
-                            OM: null;
-                            PA: null;
-                            PE: null;
-                            PF: null;
-                            PG: null;
-                            PH: null;
-                            PK: null;
-                            PL: null;
-                            PM: null;
-                            PN: null;
-                            PR: null;
-                            PS: null;
-                            PT: null;
-                            PW: null;
-                            PY: null;
-                            QA: null;
-                            RE: null;
-                            RO: null;
-                            RS: null;
-                            RU: null;
-                            RW: null;
-                            SA: null;
-                            SB: null;
-                            SC: null;
-                            SD: null;
-                            SE: null;
-                            SG: null;
-                            SH: null;
-                            SI: null;
-                            SJ: null;
-                            SK: null;
-                            SL: null;
-                            SM: null;
-                            SN: null;
-                            SO: null;
-                            SR: null;
-                            SS: null;
-                            ST: null;
-                            SV: null;
-                            SX: null;
-                            SY: null;
-                            SZ: null;
-                            TC: null;
-                            TD: null;
-                            TF: null;
-                            TG: null;
-                            TH: null;
-                            TJ: null;
-                            TK: null;
-                            TL: null;
-                            TM: null;
-                            TN: null;
-                            TO: null;
-                            TR: null;
-                            TT: null;
-                            TV: null;
-                            TW: null;
-                            TZ: null;
-                            UA: null;
-                            UG: null;
-                            UM: null;
-                            US: null;
-                            UY: null;
-                            UZ: null;
-                            VA: null;
-                            VC: null;
-                            VE: null;
-                            VG: null;
-                            VI: null;
-                            VN: null;
-                            VU: null;
-                            WF: null;
-                            WS: null;
-                            XK: null;
-                            YE: null;
-                            YT: null;
-                            ZA: null;
-                            ZM: null;
-                            ZW: null;
-                        }>;
-                    }>, import("io-ts").UndefinedC]>;
-                }>]>]>;
-            }>, import("io-ts").TypeC<{
-                type: import("io-ts").LiteralC<"private">;
-            }>]>]>>;
+                roomId: import("io-ts").StringC;
+            }>]>>;
         }>, import("io-ts").UnionC<[import("io-ts").TypeC<{
             type: import("io-ts").LiteralC<"public">;
             code: import("io-ts").NullC;
@@ -4278,7 +3969,7 @@ export declare namespace AcceptRoomChallenge {
                 };
             };
             pendingChallenges: {
-                [x: string]: ({
+                [x: string]: {
                     gameSpecs: {
                         timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
                         preferredColor: "white" | "black" | "random";
@@ -4316,47 +4007,8 @@ export declare namespace AcceptRoomChallenge {
                         } | undefined;
                     });
                 } & {
-                    type: "public";
-                }) | ({
-                    gameSpecs: {
-                        timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
-                        preferredColor: "white" | "black" | "random";
-                    };
-                    id: string;
-                    createdBy: string;
-                    createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-                    slug: string;
-                    createdByUser: ({
-                        id: string;
-                        firstName: string;
-                        lastName: string;
-                        avatarId: string;
-                        name: string;
-                    } & {
-                        isGuest: true;
-                    }) | ({
-                        id: string;
-                        firstName: string;
-                        lastName: string;
-                        avatarId: string;
-                        name: string;
-                    } & {
-                        isGuest: false;
-                        profilePicUrl: string | undefined;
-                        username: string;
-                        country: {
-                            name: string;
-                            languages: string[];
-                            flagEmoji: string;
-                            flagEmojiU: string;
-                            phone: string;
-                            currency: string;
-                            code: "AD" | "AE" | "AF" | "AG" | "AI" | "AL" | "AM" | "AO" | "AQ" | "AR" | "AS" | "AT" | "AU" | "AW" | "AX" | "AZ" | "BA" | "BB" | "BD" | "BE" | "BF" | "BG" | "BH" | "BI" | "BJ" | "BL" | "BM" | "BN" | "BO" | "BQ" | "BR" | "BS" | "BT" | "BV" | "BW" | "BY" | "BZ" | "CA" | "CC" | "CD" | "CF" | "CG" | "CH" | "CI" | "CK" | "CL" | "CM" | "CN" | "CO" | "CR" | "CU" | "CV" | "CW" | "CX" | "CY" | "CZ" | "DE" | "DJ" | "DK" | "DM" | "DO" | "DZ" | "EC" | "EE" | "EG" | "EH" | "ER" | "ES" | "ET" | "FI" | "FJ" | "FK" | "FM" | "FO" | "FR" | "GA" | "GB" | "GD" | "GE" | "GF" | "GG" | "GH" | "GI" | "GL" | "GM" | "GN" | "GP" | "GQ" | "GR" | "GS" | "GT" | "GU" | "GW" | "GY" | "HK" | "HM" | "HN" | "HR" | "HT" | "HU" | "ID" | "IE" | "IL" | "IM" | "IN" | "IO" | "IQ" | "IR" | "IS" | "IT" | "JE" | "JM" | "JO" | "JP" | "KE" | "KG" | "KH" | "KI" | "KM" | "KN" | "KP" | "KR" | "KW" | "KY" | "KZ" | "LA" | "LB" | "LC" | "LI" | "LK" | "LR" | "LS" | "LT" | "LU" | "LV" | "LY" | "MA" | "MC" | "MD" | "ME" | "MF" | "MG" | "MH" | "MK" | "ML" | "MM" | "MN" | "MO" | "MP" | "MQ" | "MR" | "MS" | "MT" | "MU" | "MV" | "MW" | "MX" | "MY" | "MZ" | "NA" | "NC" | "NE" | "NF" | "NG" | "NI" | "NL" | "NO" | "NP" | "NR" | "NU" | "NZ" | "OM" | "PA" | "PE" | "PF" | "PG" | "PH" | "PK" | "PL" | "PM" | "PN" | "PR" | "PS" | "PT" | "PW" | "PY" | "QA" | "RE" | "RO" | "RS" | "RU" | "RW" | "SA" | "SB" | "SC" | "SD" | "SE" | "SG" | "SH" | "SI" | "SJ" | "SK" | "SL" | "SM" | "SN" | "SO" | "SR" | "SS" | "ST" | "SV" | "SX" | "SY" | "SZ" | "TC" | "TD" | "TF" | "TG" | "TH" | "TJ" | "TK" | "TL" | "TM" | "TN" | "TO" | "TR" | "TT" | "TV" | "TW" | "TZ" | "UA" | "UG" | "UM" | "US" | "UY" | "UZ" | "VA" | "VC" | "VE" | "VG" | "VI" | "VN" | "VU" | "WF" | "WS" | "XK" | "YE" | "YT" | "ZA" | "ZM" | "ZW";
-                        } | undefined;
-                    });
-                } & {
-                    type: "private";
-                });
+                    roomId: string;
+                };
             };
         } & {
             type: "public";
@@ -4745,7 +4397,7 @@ export declare namespace AcceptRoomChallenge {
                 };
             };
             pendingChallenges: {
-                [x: string]: ({
+                [x: string]: {
                     gameSpecs: {
                         timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
                         preferredColor: "white" | "black" | "random";
@@ -4783,47 +4435,8 @@ export declare namespace AcceptRoomChallenge {
                         } | undefined;
                     });
                 } & {
-                    type: "public";
-                }) | ({
-                    gameSpecs: {
-                        timeLimit: "bullet30" | "bullet1" | "blitz2" | "blitz3" | "blitz5" | "rapid10" | "rapid15" | "rapid20" | "rapid30" | "rapid45" | "rapid60" | "untimed";
-                        preferredColor: "white" | "black" | "random";
-                    };
-                    id: string;
-                    createdBy: string;
-                    createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-                    slug: string;
-                    createdByUser: ({
-                        id: string;
-                        firstName: string;
-                        lastName: string;
-                        avatarId: string;
-                        name: string;
-                    } & {
-                        isGuest: true;
-                    }) | ({
-                        id: string;
-                        firstName: string;
-                        lastName: string;
-                        avatarId: string;
-                        name: string;
-                    } & {
-                        isGuest: false;
-                        profilePicUrl: string | undefined;
-                        username: string;
-                        country: {
-                            name: string;
-                            languages: string[];
-                            flagEmoji: string;
-                            flagEmojiU: string;
-                            phone: string;
-                            currency: string;
-                            code: "AD" | "AE" | "AF" | "AG" | "AI" | "AL" | "AM" | "AO" | "AQ" | "AR" | "AS" | "AT" | "AU" | "AW" | "AX" | "AZ" | "BA" | "BB" | "BD" | "BE" | "BF" | "BG" | "BH" | "BI" | "BJ" | "BL" | "BM" | "BN" | "BO" | "BQ" | "BR" | "BS" | "BT" | "BV" | "BW" | "BY" | "BZ" | "CA" | "CC" | "CD" | "CF" | "CG" | "CH" | "CI" | "CK" | "CL" | "CM" | "CN" | "CO" | "CR" | "CU" | "CV" | "CW" | "CX" | "CY" | "CZ" | "DE" | "DJ" | "DK" | "DM" | "DO" | "DZ" | "EC" | "EE" | "EG" | "EH" | "ER" | "ES" | "ET" | "FI" | "FJ" | "FK" | "FM" | "FO" | "FR" | "GA" | "GB" | "GD" | "GE" | "GF" | "GG" | "GH" | "GI" | "GL" | "GM" | "GN" | "GP" | "GQ" | "GR" | "GS" | "GT" | "GU" | "GW" | "GY" | "HK" | "HM" | "HN" | "HR" | "HT" | "HU" | "ID" | "IE" | "IL" | "IM" | "IN" | "IO" | "IQ" | "IR" | "IS" | "IT" | "JE" | "JM" | "JO" | "JP" | "KE" | "KG" | "KH" | "KI" | "KM" | "KN" | "KP" | "KR" | "KW" | "KY" | "KZ" | "LA" | "LB" | "LC" | "LI" | "LK" | "LR" | "LS" | "LT" | "LU" | "LV" | "LY" | "MA" | "MC" | "MD" | "ME" | "MF" | "MG" | "MH" | "MK" | "ML" | "MM" | "MN" | "MO" | "MP" | "MQ" | "MR" | "MS" | "MT" | "MU" | "MV" | "MW" | "MX" | "MY" | "MZ" | "NA" | "NC" | "NE" | "NF" | "NG" | "NI" | "NL" | "NO" | "NP" | "NR" | "NU" | "NZ" | "OM" | "PA" | "PE" | "PF" | "PG" | "PH" | "PK" | "PL" | "PM" | "PN" | "PR" | "PS" | "PT" | "PW" | "PY" | "QA" | "RE" | "RO" | "RS" | "RU" | "RW" | "SA" | "SB" | "SC" | "SD" | "SE" | "SG" | "SH" | "SI" | "SJ" | "SK" | "SL" | "SM" | "SN" | "SO" | "SR" | "SS" | "ST" | "SV" | "SX" | "SY" | "SZ" | "TC" | "TD" | "TF" | "TG" | "TH" | "TJ" | "TK" | "TL" | "TM" | "TN" | "TO" | "TR" | "TT" | "TV" | "TW" | "TZ" | "UA" | "UG" | "UM" | "US" | "UY" | "UZ" | "VA" | "VC" | "VE" | "VG" | "VI" | "VN" | "VU" | "WF" | "WS" | "XK" | "YE" | "YT" | "ZA" | "ZM" | "ZW";
-                        } | undefined;
-                    });
-                } & {
-                    type: "private";
-                });
+                    roomId: string;
+                };
             };
         } & {
             type: "private";

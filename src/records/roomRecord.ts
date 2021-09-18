@@ -1,9 +1,9 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
 import { chessGameOffer, chessHistory, gameSpecsRecord } from '../chessGame';
-import { challengeRecord } from './challengeRecord';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
+import { roomChallengeRecord } from './roomChallenge';
 
 export const roomActivityType = io.keyof({
   none: null,
@@ -64,10 +64,6 @@ export const roomType = io.keyof({
 });
 export type RoomType = io.TypeOf<typeof roomType>;
 
-export const pendingRoomChallenge = challengeRecord;
-
-export type PendingRoomChallenge = io.TypeOf<typeof pendingRoomChallenge>;
-
 export const roomRecord = io.intersection([
   io.type({
     id: io.string,
@@ -89,7 +85,7 @@ export const roomRecord = io.intersection([
     // game: chessGameState,
     // gameOffer: chessGameOffer,
 
-    pendingChallenges: io.record(io.string, pendingRoomChallenge),
+    pendingChallenges: io.record(io.string, roomChallengeRecord),
   }),
   io.union([
     io.type({
