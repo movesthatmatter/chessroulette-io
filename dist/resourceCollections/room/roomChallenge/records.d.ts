@@ -3255,7 +3255,6 @@ export declare type RemoveOrAcceptResponse = io.TypeOf<typeof roomRecord>;
 export declare const updateRequest: io.TypeC<{
     challengeId: io.StringC;
     roomId: io.StringC;
-    userId: io.StringC;
 }>;
 export declare type UpdateRequest = io.TypeOf<typeof updateRequest>;
 export declare const createOrUpdateResponse: io.TypeC<{

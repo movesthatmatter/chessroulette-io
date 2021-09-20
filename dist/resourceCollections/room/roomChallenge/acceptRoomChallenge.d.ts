@@ -3,7 +3,6 @@ export declare namespace AcceptRoomChallenge {
     const resource: Resource<import("io-ts").TypeC<{
         challengeId: import("io-ts").StringC;
         roomId: import("io-ts").StringC;
-        userId: import("io-ts").StringC;
     }>, import("io-ts").IntersectionC<[import("io-ts").TypeC<{
         id: import("io-ts").StringC;
         name: import("io-ts").StringC;
@@ -3231,7 +3230,6 @@ export declare namespace AcceptRoomChallenge {
     }>, {
         challengeId: string;
         roomId: string;
-        userId: string;
     }, ({
         id: string;
         name: string;

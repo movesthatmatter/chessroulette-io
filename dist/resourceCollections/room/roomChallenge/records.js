@@ -15,7 +15,6 @@ exports.removeOrAcceptResponse = roomRecord_1.roomRecord;
 exports.updateRequest = io.type({
     challengeId: io.string,
     roomId: io.string,
-    userId: io.string,
 });
 exports.createOrUpdateResponse = io.type({
     challenge: roomChallengeRecord_1.roomChallengeRecord,

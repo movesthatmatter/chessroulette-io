@@ -17,7 +17,6 @@ export type RemoveOrAcceptResponse = io.TypeOf<typeof roomRecord>;
 export const updateRequest = io.type({
   challengeId: io.string,
   roomId: io.string,
-  userId: io.string,
 });
 export type UpdateRequest = io.TypeOf<typeof updateRequest>;
 
