@@ -4,6 +4,7 @@ import { chessGameOffer, chessHistory, gameSpecsRecord } from '../chessGame';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
 import { roomChallengeRecord } from './roomChallengeRecord';
+import { userInfoRecord } from './userRecord';
 
 export const roomActivityType = io.keyof({
   none: null,
@@ -70,6 +71,7 @@ export const roomRecord = io.intersection([
     name: io.string,
     createdAt: isoDateTimeFromIsoString,
     createdBy: io.string,
+    createdByUser: userInfoRecord,
     slug: io.string,
 
     peers: io.record(io.string, peerRecord),
