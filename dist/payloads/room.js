@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.switchRoomActivityRequestPayload = exports.peerJoinedRoomPayload = exports.leaveRoomRequestPayload = exports.joinRoomFailurePayload = exports.joinRoomSuccessPayload = exports.joinRoomRequestPayload = exports.joinedRoomAndGameUpdatedPayload = exports.joinedRoomUpdatedPayload = exports.roomResponsePayload = exports.publicRoomsResponsePayload = exports.privateRoomResponsePayload = exports.publicRoomResponsePayload = exports.createRoomResponse = exports.createRoomRequest = void 0;
 var io = require("io-ts");
+var chessGame_1 = require("../chessGame");
 var gameRecord_1 = require("../records/gameRecord");
 var peerRecord_1 = require("../records/peerRecord");
 var roomRecord_1 = require("../records/roomRecord");
@@ -10,6 +11,18 @@ exports.createRoomRequest = io.intersection([
         userId: io.string,
         type: roomRecord_1.roomType,
     }),
+    io.union([
+        io.type({
+            activityType: io.literal('play'),
+            gameSpecs: chessGame_1.gameSpecsRecord,
+        }),
+        io.type({
+            activityType: io.literal('analysis'),
+        }),
+        io.type({
+            activityType: io.literal('none'),
+        }),
+    ]),
     io.partial({
         name: io.string,
     }),

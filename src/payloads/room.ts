@@ -1,4 +1,5 @@
 import * as io from 'io-ts';
+import { gameSpecsRecord } from '../chessGame';
 import { gameRecord } from '../records/gameRecord';
 import { peerRecord } from '../records/peerRecord';
 import {
@@ -14,6 +15,19 @@ export const createRoomRequest = io.intersection([
     userId: io.string,
     type: roomType,
   }),
+  io.union([
+    io.type({
+      activityType: io.literal('play'),
+      gameSpecs: gameSpecsRecord,
+    }),
+    io.type({
+      activityType: io.literal('analysis'),
+      // Add more stuff if needed
+    }),
+    io.type({
+      activityType: io.literal('none'),
+    }),
+  ]),
   io.partial({
     name: io.string,
   }),
