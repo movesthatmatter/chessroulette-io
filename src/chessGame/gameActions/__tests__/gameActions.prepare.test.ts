@@ -1,6 +1,6 @@
-import { UserInfoRecord } from '../../records/userRecord';
-import { actions } from './gameActions';
-import { ChessHistory } from '../records';
+import { UserInfoRecord } from '../../../records/userRecord';
+import { actions } from '../gameActions';
+import { ChessHistory } from '../../records';
 import { toISODateTime } from 'io-ts-isodatetime';
 
 export const hours = (int: number) => int * minutes(60);

@@ -64,9 +64,9 @@ export declare namespace Authenticate {
             user: io.TypeC<{
                 id: io.StringC;
                 email: io.StringC;
-                display_name: io.StringC;
-                profile_image_url: io.StringC;
-                created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+                displayName: io.StringC;
+                profileImageUrl: io.StringC;
+                createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             }>;
             accessToken: io.StringC;
         }>]>;
@@ -91,7 +91,7 @@ export declare namespace Authenticate {
         verificationCode: string;
     } | {
         type: "external";
-        vendor: "twitch" | "lichess" | "facebook";
+        vendor: "lichess" | "twitch" | "facebook";
         accessToken: string;
     }, {
         status: "InexistentUser";
@@ -144,9 +144,9 @@ export declare namespace Authenticate {
             user: {
                 id: string;
                 email: string;
-                display_name: string;
-                profile_image_url: string;
-                created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+                displayName: string;
+                profileImageUrl: string;
+                createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
             };
             accessToken: string;
         } | undefined;
@@ -157,7 +157,7 @@ export declare namespace Authenticate {
     } | {
         status: "InexistentExternalUserMatchesExistentUser:Email";
         email: string;
-        vendor: "twitch" | "lichess" | "facebook";
+        vendor: "lichess" | "twitch" | "facebook";
     }, {
         type: "VerificationFailed";
         content: undefined;

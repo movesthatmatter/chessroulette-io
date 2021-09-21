@@ -11,6 +11,7 @@ var peer_1 = require("./peer");
 var room_1 = require("./room");
 var stats_1 = require("./stats");
 var challengeRecord_1 = require("../records/challengeRecord");
+var analysis_1 = require("./analysis");
 exports.userIdentificationPayload = io.type({
     kind: io.literal('userIdentification'),
     content: io.union([
@@ -22,7 +23,7 @@ exports.userIdentificationPayload = io.type({
             isGuest: io.literal(false),
             acessToken: io.string,
         }),
-    ])
+    ]),
 });
 exports.statsReaderIdentificationPayload = io.type({
     kind: io.literal('statsReaderIdentificationPayload'),
@@ -93,11 +94,18 @@ exports.socketPayload = io.union([
     room_1.joinRoomFailurePayload,
     room_1.leaveRoomRequestPayload,
     room_1.joinedRoomUpdatedPayload,
+    room_1.switchRoomActivityRequestPayload,
     // Chat
     chat_1.broadcastChatMessagePayload,
     // Game Actions
     game_1.gameActionRequestPayload,
     game_1.joinedGameUpdatedPayload,
+    // Analysis
+    analysis_1.analysisMoveRequestPayload,
+    analysis_1.analysisRefocusRequestPayload,
+    analysis_1.analysisDrawnShapesUpdatedRequestPayload,
+    analysis_1.analysisImportPgnRequestPayload,
+    analysis_1.analysisUpdatedResponsePayload,
     // Room & Game
     room_1.joinedRoomAndGameUpdatedPayload,
     // Stats

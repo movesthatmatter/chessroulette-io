@@ -1152,7 +1152,7 @@ export declare namespace GetUserGames {
                 black: io.NumberC;
             }>;
             pgn: io.StringC;
-            history: io.ArrayC<io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+            history: io.ArrayC<io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
                 from: io.KeyofC<{
                     a8: undefined;
                     b8: undefined;
@@ -1294,13 +1294,159 @@ export declare namespace GetUserGames {
                 }>;
             }>]>, io.TypeC<{
                 san: io.StringC;
-                color: io.UnionC<[io.KeyofC<{
-                    white: null;
-                }>, io.KeyofC<{
-                    black: null;
-                }>]>;
                 clock: io.NumberC;
-            }>]>>;
+            }>]>, io.TypeC<{
+                color: io.KeyofC<{
+                    white: null;
+                }>;
+            }>]>, io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+                from: io.KeyofC<{
+                    a8: undefined;
+                    b8: undefined;
+                    c8: undefined;
+                    d8: undefined;
+                    e8: undefined;
+                    f8: undefined;
+                    g8: undefined;
+                    h8: undefined;
+                    a7: undefined;
+                    b7: undefined;
+                    c7: undefined;
+                    d7: undefined;
+                    e7: undefined;
+                    f7: undefined;
+                    g7: undefined;
+                    h7: undefined;
+                    a6: undefined;
+                    b6: undefined;
+                    c6: undefined;
+                    d6: undefined;
+                    e6: undefined;
+                    f6: undefined;
+                    g6: undefined;
+                    h6: undefined;
+                    a5: undefined;
+                    b5: undefined;
+                    c5: undefined;
+                    d5: undefined;
+                    e5: undefined;
+                    f5: undefined;
+                    g5: undefined;
+                    h5: undefined;
+                    a4: undefined;
+                    b4: undefined;
+                    c4: undefined;
+                    d4: undefined;
+                    e4: undefined;
+                    f4: undefined;
+                    g4: undefined;
+                    h4: undefined;
+                    a3: undefined;
+                    b3: undefined;
+                    c3: undefined;
+                    d3: undefined;
+                    e3: undefined;
+                    f3: undefined;
+                    g3: undefined;
+                    h3: undefined;
+                    a2: undefined;
+                    b2: undefined;
+                    c2: undefined;
+                    d2: undefined;
+                    e2: undefined;
+                    f2: undefined;
+                    g2: undefined;
+                    h2: undefined;
+                    a1: undefined;
+                    b1: undefined;
+                    c1: undefined;
+                    d1: undefined;
+                    e1: undefined;
+                    f1: undefined;
+                    g1: undefined;
+                    h1: undefined;
+                }>;
+                to: io.KeyofC<{
+                    a8: undefined;
+                    b8: undefined;
+                    c8: undefined;
+                    d8: undefined;
+                    e8: undefined;
+                    f8: undefined;
+                    g8: undefined;
+                    h8: undefined;
+                    a7: undefined;
+                    b7: undefined;
+                    c7: undefined;
+                    d7: undefined;
+                    e7: undefined;
+                    f7: undefined;
+                    g7: undefined;
+                    h7: undefined;
+                    a6: undefined;
+                    b6: undefined;
+                    c6: undefined;
+                    d6: undefined;
+                    e6: undefined;
+                    f6: undefined;
+                    g6: undefined;
+                    h6: undefined;
+                    a5: undefined;
+                    b5: undefined;
+                    c5: undefined;
+                    d5: undefined;
+                    e5: undefined;
+                    f5: undefined;
+                    g5: undefined;
+                    h5: undefined;
+                    a4: undefined;
+                    b4: undefined;
+                    c4: undefined;
+                    d4: undefined;
+                    e4: undefined;
+                    f4: undefined;
+                    g4: undefined;
+                    h4: undefined;
+                    a3: undefined;
+                    b3: undefined;
+                    c3: undefined;
+                    d3: undefined;
+                    e3: undefined;
+                    f3: undefined;
+                    g3: undefined;
+                    h3: undefined;
+                    a2: undefined;
+                    b2: undefined;
+                    c2: undefined;
+                    d2: undefined;
+                    e2: undefined;
+                    f2: undefined;
+                    g2: undefined;
+                    h2: undefined;
+                    a1: undefined;
+                    b1: undefined;
+                    c1: undefined;
+                    d1: undefined;
+                    e1: undefined;
+                    f1: undefined;
+                    g1: undefined;
+                    h1: undefined;
+                }>;
+            }>, io.PartialC<{
+                promotion: io.KeyofC<{
+                    n: undefined;
+                    b: undefined;
+                    r: undefined;
+                    q: undefined;
+                }>;
+            }>]>, io.TypeC<{
+                san: io.StringC;
+                clock: io.NumberC;
+            }>]>, io.TypeC<{
+                color: io.KeyofC<{
+                    black: null;
+                }>;
+            }>]>]>>;
             winner: io.UnionC<[io.UnionC<[io.KeyofC<{
                 white: null;
             }>, io.KeyofC<{
@@ -3025,7 +3171,7 @@ export declare namespace GetUserGames {
                 black: io.NumberC;
             }>;
             pgn: io.StringC;
-            history: io.ArrayC<io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+            history: io.ArrayC<io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
                 from: io.KeyofC<{
                     a8: undefined;
                     b8: undefined;
@@ -3167,13 +3313,159 @@ export declare namespace GetUserGames {
                 }>;
             }>]>, io.TypeC<{
                 san: io.StringC;
-                color: io.UnionC<[io.KeyofC<{
-                    white: null;
-                }>, io.KeyofC<{
-                    black: null;
-                }>]>;
                 clock: io.NumberC;
-            }>]>>;
+            }>]>, io.TypeC<{
+                color: io.KeyofC<{
+                    white: null;
+                }>;
+            }>]>, io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+                from: io.KeyofC<{
+                    a8: undefined;
+                    b8: undefined;
+                    c8: undefined;
+                    d8: undefined;
+                    e8: undefined;
+                    f8: undefined;
+                    g8: undefined;
+                    h8: undefined;
+                    a7: undefined;
+                    b7: undefined;
+                    c7: undefined;
+                    d7: undefined;
+                    e7: undefined;
+                    f7: undefined;
+                    g7: undefined;
+                    h7: undefined;
+                    a6: undefined;
+                    b6: undefined;
+                    c6: undefined;
+                    d6: undefined;
+                    e6: undefined;
+                    f6: undefined;
+                    g6: undefined;
+                    h6: undefined;
+                    a5: undefined;
+                    b5: undefined;
+                    c5: undefined;
+                    d5: undefined;
+                    e5: undefined;
+                    f5: undefined;
+                    g5: undefined;
+                    h5: undefined;
+                    a4: undefined;
+                    b4: undefined;
+                    c4: undefined;
+                    d4: undefined;
+                    e4: undefined;
+                    f4: undefined;
+                    g4: undefined;
+                    h4: undefined;
+                    a3: undefined;
+                    b3: undefined;
+                    c3: undefined;
+                    d3: undefined;
+                    e3: undefined;
+                    f3: undefined;
+                    g3: undefined;
+                    h3: undefined;
+                    a2: undefined;
+                    b2: undefined;
+                    c2: undefined;
+                    d2: undefined;
+                    e2: undefined;
+                    f2: undefined;
+                    g2: undefined;
+                    h2: undefined;
+                    a1: undefined;
+                    b1: undefined;
+                    c1: undefined;
+                    d1: undefined;
+                    e1: undefined;
+                    f1: undefined;
+                    g1: undefined;
+                    h1: undefined;
+                }>;
+                to: io.KeyofC<{
+                    a8: undefined;
+                    b8: undefined;
+                    c8: undefined;
+                    d8: undefined;
+                    e8: undefined;
+                    f8: undefined;
+                    g8: undefined;
+                    h8: undefined;
+                    a7: undefined;
+                    b7: undefined;
+                    c7: undefined;
+                    d7: undefined;
+                    e7: undefined;
+                    f7: undefined;
+                    g7: undefined;
+                    h7: undefined;
+                    a6: undefined;
+                    b6: undefined;
+                    c6: undefined;
+                    d6: undefined;
+                    e6: undefined;
+                    f6: undefined;
+                    g6: undefined;
+                    h6: undefined;
+                    a5: undefined;
+                    b5: undefined;
+                    c5: undefined;
+                    d5: undefined;
+                    e5: undefined;
+                    f5: undefined;
+                    g5: undefined;
+                    h5: undefined;
+                    a4: undefined;
+                    b4: undefined;
+                    c4: undefined;
+                    d4: undefined;
+                    e4: undefined;
+                    f4: undefined;
+                    g4: undefined;
+                    h4: undefined;
+                    a3: undefined;
+                    b3: undefined;
+                    c3: undefined;
+                    d3: undefined;
+                    e3: undefined;
+                    f3: undefined;
+                    g3: undefined;
+                    h3: undefined;
+                    a2: undefined;
+                    b2: undefined;
+                    c2: undefined;
+                    d2: undefined;
+                    e2: undefined;
+                    f2: undefined;
+                    g2: undefined;
+                    h2: undefined;
+                    a1: undefined;
+                    b1: undefined;
+                    c1: undefined;
+                    d1: undefined;
+                    e1: undefined;
+                    f1: undefined;
+                    g1: undefined;
+                    h1: undefined;
+                }>;
+            }>, io.PartialC<{
+                promotion: io.KeyofC<{
+                    n: undefined;
+                    b: undefined;
+                    r: undefined;
+                    q: undefined;
+                }>;
+            }>]>, io.TypeC<{
+                san: io.StringC;
+                clock: io.NumberC;
+            }>]>, io.TypeC<{
+                color: io.KeyofC<{
+                    black: null;
+                }>;
+            }>]>]>>;
             winner: io.UnionC<[io.UnionC<[io.KeyofC<{
                 white: null;
             }>, io.KeyofC<{
@@ -3892,16 +4184,27 @@ export declare namespace GetUserGames {
                 black: number;
             };
             pgn: string;
-            history: ({
+            history: (({
                 from: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
                 to: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
             } & {
                 promotion?: "n" | "b" | "r" | "q" | undefined;
             } & {
                 san: string;
-                color: "white" | "black";
                 clock: number;
-            })[];
+            } & {
+                color: "white";
+            }) | ({
+                from: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
+                to: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
+            } & {
+                promotion?: "n" | "b" | "r" | "q" | undefined;
+            } & {
+                san: string;
+                clock: number;
+            } & {
+                color: "black";
+            }))[];
             winner: "white" | "black" | "1/2";
             lastMoveBy: "white" | "black";
             lastMoveAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
@@ -4040,16 +4343,27 @@ export declare namespace GetUserGames {
                 black: number;
             };
             pgn: string;
-            history: ({
+            history: (({
                 from: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
                 to: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
             } & {
                 promotion?: "n" | "b" | "r" | "q" | undefined;
             } & {
                 san: string;
-                color: "white" | "black";
                 clock: number;
-            })[];
+            } & {
+                color: "white";
+            }) | ({
+                from: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
+                to: "a8" | "b8" | "c8" | "d8" | "e8" | "f8" | "g8" | "h8" | "a7" | "b7" | "c7" | "d7" | "e7" | "f7" | "g7" | "h7" | "a6" | "b6" | "c6" | "d6" | "e6" | "f6" | "g6" | "h6" | "a5" | "b5" | "c5" | "d5" | "e5" | "f5" | "g5" | "h5" | "a4" | "b4" | "c4" | "d4" | "e4" | "f4" | "g4" | "h4" | "a3" | "b3" | "c3" | "d3" | "e3" | "f3" | "g3" | "h3" | "a2" | "b2" | "c2" | "d2" | "e2" | "f2" | "g2" | "h2" | "a1" | "b1" | "c1" | "d1" | "e1" | "f1" | "g1" | "h1";
+            } & {
+                promotion?: "n" | "b" | "r" | "q" | undefined;
+            } & {
+                san: string;
+                clock: number;
+            } & {
+                color: "black";
+            }))[];
             winner: "white" | "black" | "1/2";
             lastMoveBy: "white" | "black";
             lastMoveAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;

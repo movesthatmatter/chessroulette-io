@@ -1,6 +1,6 @@
-import { UserInfoRecord } from '../../records/userRecord';
-import { actions } from './gameActions';
-import { ChessGameStateStarted } from '../records';
+import { UserInfoRecord } from '../../../records/userRecord';
+import { actions } from '../gameActions';
+import { ChessGameStateStarted } from '../../records';
 import { toISODateTime } from 'io-ts-isodatetime';
 import { addSeconds } from 'date-fns';
 

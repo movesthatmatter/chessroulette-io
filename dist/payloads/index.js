@@ -25,4 +25,5 @@ __exportStar(require("./challenge"), exports);
 __exportStar(require("./chat"), exports);
 __exportStar(require("./authentication"), exports);
 __exportStar(require("./vendors"), exports);
+__exportStar(require("./analysis"), exports);
 //# sourceMappingURL=index.js.map

@@ -1,14 +1,16 @@
 import * as io from 'io-ts';
 import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
-import { chessGameOffer } from '../chessGame';
+import { chessGameOffer, gameSpecsRecord } from '../chessGame';
+import { challengeRecord } from './challengeRecord';
 import { chatHistoryRecord } from './chatRecords';
 import { peerRecord } from './peerRecord';
 
-export const roomActivityOption = io.keyof({
+export const roomActivityType = io.keyof({
   none: null,
   play: null,
+  analysis: null,
 });
-export type RoomActivityOption = io.TypeOf<typeof roomActivityOption>;
+export type RoomActivityType = io.TypeOf<typeof roomActivityType>;
 
 export const roomNoActivityRecord = io.type({
   type: io.literal('none'),
@@ -21,6 +23,19 @@ export const roomPlayActivityRecord = io.intersection([
     type: io.literal('play'),
     gameId: io.string,
   }),
+
+  // io.union([
+  //   io.type({
+  //     status: io.literal('challengePending'),
+  //     challengeId: io.string,
+  //   }),
+  //   io.type({
+  //     status: io.literal('playing'),
+  //     gameId: io.string,
+  //   }),
+
+  //   // TODO: Add other types if needed
+  // ]),
   io.partial({
     offer: chessGameOffer,
   }),
@@ -28,9 +43,17 @@ export const roomPlayActivityRecord = io.intersection([
 
 export type RoomPlayActivityRecord = io.TypeOf<typeof roomPlayActivityRecord>;
 
+export const roomAnalysisActivityRecord = io.type({
+  type: io.literal('analysis'),
+  analysisId: io.string,
+});
+
+export type RoomAnalysisActivityRecord = io.TypeOf<typeof roomAnalysisActivityRecord>;
+
 export const roomActivityRecord = io.union([
   roomNoActivityRecord,
   roomPlayActivityRecord,
+  roomAnalysisActivityRecord,
 ]);
 
 export type RoomActivityRecord = io.TypeOf<typeof roomActivityRecord>;
@@ -61,6 +84,8 @@ export const roomRecord = io.intersection([
     // TODO: Temporarily additon to match the room stats record
     // game: chessGameState,
     // gameOffer: chessGameOffer,
+
+    pendingChallenges: io.record(io.string, challengeRecord),
   }),
   io.union([
     io.type({
@@ -70,8 +95,8 @@ export const roomRecord = io.intersection([
     io.type({
       type: io.literal('private'),
       code: io.string,
-    })
-  ])
+    }),
+  ]),
 ]);
 export type RoomRecord = io.TypeOf<typeof roomRecord>;
 
@@ -88,8 +113,16 @@ export const privateRoomRecord = io.intersection([
   io.type({
     type: io.literal('private'),
   }),
-]);;
+]);
 export type PrivateRoomRecord = io.TypeOf<typeof privateRoomRecord>;
+
+export const roomWithNoActivityRecord = io.intersection([
+  roomRecord,
+  io.type({
+    activity: roomNoActivityRecord,
+  }),
+]);
+export type RoomWithNoActivityRecord = io.TypeOf<typeof roomWithNoActivityRecord>;
 
 export const roomWithPlayActivityRecord = io.intersection([
   roomRecord,
@@ -99,10 +132,26 @@ export const roomWithPlayActivityRecord = io.intersection([
 ]);
 export type RoomWithPlayActivityRecord = io.TypeOf<typeof roomWithPlayActivityRecord>;
 
-export const roomWithNoActivityRecord = io.intersection([
+export const roomWithAnalysisActivityRecord = io.intersection([
   roomRecord,
   io.type({
-    activity: roomNoActivityRecord,
+    activity: roomAnalysisActivityRecord,
   }),
 ]);
-export type RoomWithNoActivityRecord = io.TypeOf<typeof roomWithNoActivityRecord>;
+export type RoomWithAnalysisActivityRecord = io.TypeOf<typeof roomWithAnalysisActivityRecord>;
+
+export const roomActivityCreationRecord = io.union([
+  io.type({
+    activityType: io.literal('play'),
+    gameSpecs: gameSpecsRecord,
+  }),
+  io.type({
+    activityType: io.literal('analysis'),
+    // Add more stuff if needed
+  }),
+  io.type({
+    activityType: io.literal('none'),
+  }),
+]);
+
+export type RoomActivityCreationRecord = io.TypeOf<typeof roomActivityCreationRecord>;
