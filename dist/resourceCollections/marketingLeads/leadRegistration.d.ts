@@ -3,24 +3,26 @@ export declare namespace LeadRegistration {
     const resource: Resource<import("io-ts").TypeC<{
         vendor: import("io-ts").LiteralC<"twitch">;
         campaign: import("io-ts").StringC;
-        vendorData: import("io-ts").TypeC<{
+        vendorData: import("io-ts").IntersectionC<[import("io-ts").TypeC<{
             id: import("io-ts").StringC;
             email: import("io-ts").StringC;
-            display_name: import("io-ts").StringC;
-            profile_image_url: import("io-ts").StringC;
-            created_at: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+            displayName: import("io-ts").StringC;
+            profileImageUrl: import("io-ts").StringC;
+            createdAt: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        }>, import("io-ts").TypeC<{
             accessToken: import("io-ts").StringC;
-        }>;
+        }>]>;
     }>, import("io-ts").TypeC<{
         status: import("io-ts").UnionC<[import("io-ts").LiteralC<"ExistentLead">, import("io-ts").LiteralC<"NewLeadRegisterdSuccessful">]>;
-        data: import("io-ts").TypeC<{
+        data: import("io-ts").IntersectionC<[import("io-ts").TypeC<{
             id: import("io-ts").StringC;
             email: import("io-ts").StringC;
-            display_name: import("io-ts").StringC;
-            profile_image_url: import("io-ts").StringC;
-            created_at: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+            displayName: import("io-ts").StringC;
+            profileImageUrl: import("io-ts").StringC;
+            createdAt: import("io-ts").Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+        }>, import("io-ts").TypeC<{
             accessToken: import("io-ts").StringC;
-        }>;
+        }>]>;
     }>, import("io-ts").TypeC<{
         type: import("io-ts").LiteralC<"BadRequestError">;
         content: import("io-ts").UndefinedC;
@@ -30,9 +32,10 @@ export declare namespace LeadRegistration {
         vendorData: {
             id: string;
             email: string;
-            display_name: string;
-            profile_image_url: string;
-            created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+            displayName: string;
+            profileImageUrl: string;
+            createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+        } & {
             accessToken: string;
         };
     }, {
@@ -40,9 +43,10 @@ export declare namespace LeadRegistration {
         data: {
             id: string;
             email: string;
-            display_name: string;
-            profile_image_url: string;
-            created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+            displayName: string;
+            profileImageUrl: string;
+            createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+        } & {
             accessToken: string;
         };
     }, {

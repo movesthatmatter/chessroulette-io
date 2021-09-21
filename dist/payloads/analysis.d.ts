@@ -50,6 +50,13 @@ export declare const analysisDrawnShapesUpdatedRequestPayload: io.TypeC<{
     }>;
 }>;
 export declare type AnalysisDrawnShapesUpdatedRequestPayload = io.TypeOf<typeof analysisDrawnShapesUpdatedRequestPayload>;
+export declare const analysisImportPgnRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"analysisImportPgnRequest">;
+    content: io.TypeC<{
+        pgn: io.StringC;
+    }>;
+}>;
+export declare type AnalysisImportPgnRequestPayload = io.TypeOf<typeof analysisImportPgnRequestPayload>;
 export declare const analysisUpdatedResponsePayload: io.TypeC<{
     kind: io.LiteralC<"analysisUpdatedResponse">;
     content: io.IntersectionC<[io.TypeC<{

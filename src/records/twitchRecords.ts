@@ -4,20 +4,18 @@ import { isoDateTimeFromIsoString } from 'io-ts-isodatetime';
 export const twitchUserRecord = io.type({
   id: io.string,
   email: io.string,
-  display_name: io.string,
-  profile_image_url: io.string,
-  created_at: isoDateTimeFromIsoString,
+  displayName: io.string,
+  profileImageUrl: io.string,
+  createdAt: isoDateTimeFromIsoString,
 });
 
 export type TwitchUserRecord = io.TypeOf<typeof twitchUserRecord>;
 
-export const leadRegistrationTwitchVendorData = io.type({
-  id: io.string,
-  email: io.string,
-  display_name: io.string,
-  profile_image_url: io.string,
-  created_at: isoDateTimeFromIsoString,
-  accessToken: io.string,
-});
+export const leadRegistrationTwitchVendorData = io.intersection([
+  twitchUserRecord,
+  io.type({
+    accessToken: io.string,
+  }),
+]);
 
 export type TwitchRecordWithAccessToken = io.TypeOf<typeof leadRegistrationTwitchVendorData>;
