@@ -109,9 +109,9 @@ export declare const userCheckInexitentUserResponsePayloadData: io.TypeC<{
         user: io.TypeC<{
             id: io.StringC;
             email: io.StringC;
-            display_name: io.StringC;
-            profile_image_url: io.StringC;
-            created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+            displayName: io.StringC;
+            profileImageUrl: io.StringC;
+            createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
         }>;
         accessToken: io.StringC;
     }>]>;
@@ -177,9 +177,9 @@ export declare const userCheckResponsePayload: io.UnionC<[io.TypeC<{
             user: io.TypeC<{
                 id: io.StringC;
                 email: io.StringC;
-                display_name: io.StringC;
-                profile_image_url: io.StringC;
-                created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+                displayName: io.StringC;
+                profileImageUrl: io.StringC;
+                createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
             }>;
             accessToken: io.StringC;
         }>]>;

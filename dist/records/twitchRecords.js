@@ -6,16 +6,14 @@ var io_ts_isodatetime_1 = require("io-ts-isodatetime");
 exports.twitchUserRecord = io.type({
     id: io.string,
     email: io.string,
-    display_name: io.string,
-    profile_image_url: io.string,
-    created_at: io_ts_isodatetime_1.isoDateTimeFromIsoString,
+    displayName: io.string,
+    profileImageUrl: io.string,
+    createdAt: io_ts_isodatetime_1.isoDateTimeFromIsoString,
 });
-exports.leadRegistrationTwitchVendorData = io.type({
-    id: io.string,
-    email: io.string,
-    display_name: io.string,
-    profile_image_url: io.string,
-    created_at: io_ts_isodatetime_1.isoDateTimeFromIsoString,
-    accessToken: io.string,
-});
+exports.leadRegistrationTwitchVendorData = io.intersection([
+    exports.twitchUserRecord,
+    io.type({
+        accessToken: io.string,
+    }),
+]);
 //# sourceMappingURL=twitchRecords.js.map
