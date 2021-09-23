@@ -38,9 +38,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Resource = void 0;
 var io = require("io-ts");
-var AsyncBox_1 = require("../../AsyncResult/AsyncBox");
 var io_1 = require("../io");
 var ts_results_1 = require("ts-results");
+var ts_async_results_1 = require("ts-async-results");
 var errors_1 = require("./errors");
 var util_1 = require("./util");
 var responseAsOkResult = function (data) { return io.type({
@@ -90,7 +90,7 @@ var Resource = /** @class */ (function () {
     });
     Resource.prototype.request = function (requestPayload, senderFn) {
         var _this = this;
-        return new AsyncBox_1.AsyncResultWrapper(function () { return __awaiter(_this, void 0, void 0, function () {
+        return new ts_async_results_1.AsyncResultWrapper(function () { return __awaiter(_this, void 0, void 0, function () {
             var data, responseAsResultCodec, result, error, error, e_1, error_1, error;
             return __generator(this, function (_a) {
                 switch (_a.label) {
@@ -147,7 +147,7 @@ var Resource = /** @class */ (function () {
         }); });
     };
     Resource.prototype.parseRequest = function (data) {
-        return new AsyncBox_1.AsyncResultWrapper(io_1.toResult(this.requestPayloadCodec.decode(data))
+        return new ts_async_results_1.AsyncResultWrapper(io_1.toResult(this.requestPayloadCodec.decode(data))
             .mapErr(function (e) { return ({
             type: 'BadRequestError',
             content: e,
@@ -167,13 +167,13 @@ var Resource = /** @class */ (function () {
                 ok: false,
                 error: error,
             });
-            return new AsyncBox_1.AsyncErr({
+            return new ts_async_results_1.AsyncErr({
                 type: 'ResourceFailureHandled',
                 content: undefined,
             });
         }
         catch (e) {
-            return new AsyncBox_1.AsyncErr(error);
+            return new ts_async_results_1.AsyncErr(error);
         }
     };
     return Resource;

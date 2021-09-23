@@ -35,7 +35,4 @@ __exportStar(require("./chessGame"), exports); // TODO add as game namespae
 exports.analysis = require("./analysis");
 exports.metadata = require("./metadata");
 exports.Resources = require("./resources");
-// Deprecate
-__exportStar(require("./AsyncResult/AsyncBox"), exports);
-__exportStar(require("ts-results"), exports);
 //# sourceMappingURL=index.js.map

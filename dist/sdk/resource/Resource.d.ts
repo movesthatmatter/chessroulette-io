@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-import { AsyncErr, AsyncResultWrapper } from '../../AsyncResult/AsyncBox';
+import { AsyncResultWrapper, AsyncErr } from 'ts-async-results';
 import { CommonResponseErrors, BadRequestErrorCodec, ResourceFailureHandledError } from './errors';
 declare type BaseRequestPayloadCodec = io.Mixed;
 declare type BaseResponseOkPayloadCodec = io.Mixed;
@@ -36,13 +36,10 @@ export declare class Resource<RequestPayloadCodec extends BaseRequestPayloadCode
         type: "BadRequestError";
         content: undefined;
     } | {
-        type: "BadResponseError";
+        type: "BadEncodingError";
         content: undefined;
     } | {
-        type: "ServerError";
-        content: string | undefined;
-    } | {
-        type: "BadEncodingError";
+        type: "BadResponseError";
         content: undefined;
     } | {
         type: "NetworkError";
@@ -50,6 +47,9 @@ export declare class Resource<RequestPayloadCodec extends BaseRequestPayloadCode
     } | {
         type: "BadErrorEncodingError";
         content: undefined;
+    } | {
+        type: "ServerError";
+        content: string | undefined;
     } | ResponseErrPayload>;
     private getResponseError;
     parseRequest(data: unknown): AsyncResultWrapper<RequestPayload, {

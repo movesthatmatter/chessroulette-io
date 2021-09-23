@@ -27,8 +27,3 @@ export * as analysis from './analysis';
 
 export * as metadata from './metadata';
 export * as Resources from './resources';
-
-
-// Deprecate
-export * from './AsyncResult/AsyncBox';
-export * from 'ts-results';
