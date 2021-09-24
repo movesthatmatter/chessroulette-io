@@ -13,9 +13,17 @@ import {
   joinRoomFailurePayload,
   leaveRoomRequestPayload,
   joinedRoomAndGameUpdatedPayload,
+  switchRoomActivityRequestPayload,
 } from './room';
 import { statsSocketPayload } from './stats';
 import { challengeRecord } from '../records/challengeRecord';
+import {
+  analysisRefocusRequestPayload,
+  analysisMoveRequestPayload,
+  analysisUpdatedResponsePayload,
+  analysisDrawnShapesUpdatedRequestPayload,
+  analysisImportPgnRequestPayload,
+} from './analysis';
 
 export const userIdentificationPayload = io.type({
   kind: io.literal('userIdentification'),
@@ -28,7 +36,7 @@ export const userIdentificationPayload = io.type({
       isGuest: io.literal(false),
       acessToken: io.string,
     }),
-  ])
+  ]),
 });
 export type UserIdentificationPayload = io.TypeOf<typeof userIdentificationPayload>;
 
@@ -116,6 +124,7 @@ export const socketPayload = io.union([
   joinRoomFailurePayload,
   leaveRoomRequestPayload,
   joinedRoomUpdatedPayload,
+  switchRoomActivityRequestPayload,
 
   // Chat
   broadcastChatMessagePayload,
@@ -123,6 +132,13 @@ export const socketPayload = io.union([
   // Game Actions
   gameActionRequestPayload,
   joinedGameUpdatedPayload,
+
+  // Analysis
+  analysisMoveRequestPayload,
+  analysisRefocusRequestPayload,
+  analysisDrawnShapesUpdatedRequestPayload,
+  analysisImportPgnRequestPayload,
+  analysisUpdatedResponsePayload,
 
   // Room & Game
   joinedRoomAndGameUpdatedPayload,

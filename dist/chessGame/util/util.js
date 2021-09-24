@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.chessHistoryToSimplePgn = exports.simplePGNtoMoves = exports.getActivePieces = exports.getCapturedPiecesFromPgn = exports.getCapturedPiecesState = exports.getRandomChessColor = exports.otherChessColor = void 0;
+exports.simplePgnToChessHistory = exports.chessHistoryToSimplePgn = exports.simplePGNtoMoves = exports.getActivePieces = exports.getCapturedPiecesFromPgn = exports.getCapturedPiecesState = exports.getRandomChessColor = exports.otherChessColor = void 0;
+var tslib_1 = require("tslib");
 var sdk_1 = require("../sdk");
 function otherChessColor(c) {
     return c === 'white' ? 'black' : 'white';
@@ -61,11 +62,23 @@ exports.simplePGNtoMoves = function (pgn) {
 };
 exports.chessHistoryToSimplePgn = function (history) {
     var instance = sdk_1.getNewChessGame();
-    // TODO: This might not be the most efficient 
+    // TODO: This might not be the most efficient
     //  but it's ok for now to ensure the validaty of the pgn
     history.forEach(function (move) {
         instance.move(move);
     });
     return instance.pgn();
+};
+exports.simplePgnToChessHistory = function (pgn) {
+    var instance = sdk_1.getNewChessGame(pgn);
+    return instance.history({ verbose: true }).reduce(function (prev, _a) {
+        var promotion = _a.promotion, move = tslib_1.__rest(_a, ["promotion"]);
+        return tslib_1.__spreadArrays(prev, [
+            tslib_1.__assign(tslib_1.__assign(tslib_1.__assign({}, move), { color: move.color === 'b' ? 'black' : 'white', clock: -1 }), (promotion &&
+                promotion !== 'k' && {
+                promotion: promotion,
+            })),
+        ]);
+    }, []);
 };
 //# sourceMappingURL=util.js.map

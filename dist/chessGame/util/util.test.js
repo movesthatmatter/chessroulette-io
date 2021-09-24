@@ -1,17 +1,7 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.milliseconds = exports.second = exports.seconds = exports.minutes = exports.hours = void 0;
+var tslib_1 = require("tslib");
 var util_1 = require("./util");
 exports.hours = function (int) { return int * exports.minutes(60); };
 exports.minutes = function (int) { return int * exports.seconds(60); };
@@ -61,7 +51,7 @@ describe('chessHistoryToSimplePgn', function () {
                 san: 'd6',
                 color: 'black',
                 clock: exports.seconds(55),
-            }
+            },
         ]);
         var expected = '1. e4 e5 2. d4 d6';
         expect(actual).toBe(expected);
@@ -108,6 +98,59 @@ describe('chessHistoryToSimplePgn', function () {
         expect(actual).toBe(expected);
     });
 });
+describe('simplePgnToChessHistory', function () {
+    test('simple chess history', function () {
+        var actual = util_1.simplePgnToChessHistory('1. e4 f6 2. d4 g5 3. Qh5#');
+        var expected = [
+            {
+                clock: -1,
+                color: 'white',
+                flags: 'b',
+                from: 'e2',
+                piece: 'p',
+                san: 'e4',
+                to: 'e4',
+            },
+            {
+                clock: -1,
+                color: 'black',
+                flags: 'n',
+                from: 'f7',
+                piece: 'p',
+                san: 'f6',
+                to: 'f6',
+            },
+            {
+                clock: -1,
+                color: 'white',
+                flags: 'b',
+                from: 'd2',
+                piece: 'p',
+                san: 'd4',
+                to: 'd4',
+            },
+            {
+                clock: -1,
+                color: 'black',
+                flags: 'b',
+                from: 'g7',
+                piece: 'p',
+                san: 'g5',
+                to: 'g5',
+            },
+            {
+                clock: -1,
+                color: 'white',
+                flags: 'n',
+                from: 'd1',
+                piece: 'q',
+                san: 'Qh5#',
+                to: 'h5',
+            },
+        ];
+        expect(actual).toEqual(expected);
+    });
+});
 describe('getCapturedPiecesFromPgn', function () {
     var initialActivePieces = {
         white: { p: 8, n: 2, b: 2, r: 2, q: 1 },
@@ -120,14 +163,14 @@ describe('getCapturedPiecesFromPgn', function () {
     });
     test('One Captured Pawn', function () {
         var actual = util_1.getActivePieces(util_1.simplePGNtoMoves('1. e4 d5 2. exd5'));
-        var expected = __assign(__assign({}, initialActivePieces), { black: __assign(__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1 }) });
+        var expected = tslib_1.__assign(tslib_1.__assign({}, initialActivePieces), { black: tslib_1.__assign(tslib_1.__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1 }) });
         expect(actual).toEqual(expected);
     });
     test('Captures and Promotions', function () {
         var actual = util_1.getActivePieces(util_1.simplePGNtoMoves('1. e4 d5 2. exd5 Nf6 3. d6 e5 4. d7+ Ke7 5. dxc8=Q'));
         var expected = {
-            white: __assign(__assign({}, initialActivePieces.white), { q: initialActivePieces.white.q + 1 }),
-            black: __assign(__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1, b: initialActivePieces.white.b - 1 })
+            white: tslib_1.__assign(tslib_1.__assign({}, initialActivePieces.white), { q: initialActivePieces.white.q + 1 }),
+            black: tslib_1.__assign(tslib_1.__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1, b: initialActivePieces.white.b - 1 }),
         };
         expect(actual).toEqual(expected);
     });

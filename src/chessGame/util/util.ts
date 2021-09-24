@@ -10,6 +10,7 @@ import {
 import { getNewChessGame } from '../sdk';
 import { Move } from 'chess.js';
 import { SimplePGN } from '../pgnUtil';
+import { getRandomInt } from 'src/analysis/testUtil';
 
 // I don't know why this needs to be typed like this
 //  with a function declaration but if it's declared
@@ -78,7 +79,7 @@ export const getActivePieces = (history: Move[]): ActivePiecesRecord => {
     white: result.w,
     black: result.b,
   };
-}
+};
 
 // export const pgnToChessHistory = (pgn: SimplePGN | EnhancedPGN): ChessHistory => {
 //   const instance = getNewChessGame(pgn);
@@ -89,16 +90,35 @@ export const simplePGNtoMoves = (pgn: string): Move[] => {
   const instance = getNewChessGame(pgn);
 
   return instance.history({ verbose: true });
-}
+};
 
 export const chessHistoryToSimplePgn = (history: ChessHistory): SimplePGN => {
   const instance = getNewChessGame();
 
-  // TODO: This might not be the most efficient 
+  // TODO: This might not be the most efficient
   //  but it's ok for now to ensure the validaty of the pgn
   history.forEach((move) => {
     instance.move(move);
   });
 
   return instance.pgn() as SimplePGN;
-}
+};
+
+export const simplePgnToChessHistory = (pgn: SimplePGN): ChessHistory => {
+  const instance = getNewChessGame(pgn);
+
+  return instance.history({ verbose: true }).reduce((prev, { promotion, ...move }) => {
+    return [
+      ...prev,
+      {
+        ...move,
+        color: move.color === 'b' ? 'black' : 'white',
+        clock: -1,
+        ...(promotion &&
+          promotion !== 'k' && {
+            promotion,
+          }),
+      } as const,
+    ];
+  }, [] as ChessHistory);
+};

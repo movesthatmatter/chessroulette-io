@@ -1,17 +1,8 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-__exportStar(require("./emailVerification"), exports);
-__exportStar(require("./guestAuthentication"), exports);
-__exportStar(require("./authenticate"), exports);
-__exportStar(require("./userRegistration"), exports);
+var tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./emailVerification"), exports);
+tslib_1.__exportStar(require("./guestAuthentication"), exports);
+tslib_1.__exportStar(require("./authenticate"), exports);
+tslib_1.__exportStar(require("./userRegistration"), exports);
 //# sourceMappingURL=index.js.map

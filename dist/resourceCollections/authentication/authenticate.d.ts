@@ -15,14 +15,19 @@ export declare namespace Authenticate {
         accessToken: io.StringC;
     }>]>, io.UnionC<[io.TypeC<{
         status: io.LiteralC<"InexistentUser">;
-        verificationToken: io.StringC;
         external: io.UnionC<[io.UndefinedC, io.TypeC<{
-            vendor: io.KeyofC<{
-                facebook: null;
-                lichess: null;
-                twitch: null;
+            vendor: io.LiteralC<"facebook">;
+            user: io.TypeC<{
+                id: io.StringC;
+                email: io.StringC;
+                firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
+                lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
+                name: io.UnionC<[io.StringC, io.UndefinedC]>;
             }>;
-            user: io.UnionC<[io.TypeC<{
+            accessToken: io.StringC;
+        }>, io.TypeC<{
+            vendor: io.LiteralC<"lichess">;
+            user: io.TypeC<{
                 email: io.StringC;
                 id: io.StringC;
                 username: io.StringC;
@@ -52,20 +57,20 @@ export declare namespace Authenticate {
                         rating: io.NumberC;
                     }>;
                 }>;
-            }>, io.TypeC<{
+            }>;
+            accessToken: io.StringC;
+        }>, io.TypeC<{
+            vendor: io.LiteralC<"twitch">;
+            user: io.TypeC<{
                 id: io.StringC;
                 email: io.StringC;
-                firstName: io.UnionC<[io.StringC, io.UndefinedC]>;
-                lastName: io.UnionC<[io.StringC, io.UndefinedC]>;
-                name: io.UnionC<[io.StringC, io.UndefinedC]>;
-            }>, io.TypeC<{
-                id: io.StringC;
-                email: io.StringC;
-                display_name: io.StringC;
-                profile_image_url: io.StringC;
-                created_at: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
-            }>]>;
+                displayName: io.StringC;
+                profileImageUrl: io.StringC;
+                createdAt: io.Type<import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand, string, unknown>;
+            }>;
+            accessToken: io.StringC;
         }>]>;
+        verificationToken: io.StringC;
     }>, io.TypeC<{
         status: io.LiteralC<"ExistentUser">;
         accessToken: io.StringC;
@@ -86,26 +91,23 @@ export declare namespace Authenticate {
         verificationCode: string;
     } | {
         type: "external";
-        vendor: "facebook" | "lichess" | "twitch";
+        vendor: "lichess" | "twitch" | "facebook";
         accessToken: string;
     }, {
         status: "InexistentUser";
-        verificationToken: string;
         external: {
-            vendor: "facebook" | "lichess" | "twitch";
+            vendor: "facebook";
             user: {
                 id: string;
                 email: string;
                 firstName: string | undefined;
                 lastName: string | undefined;
                 name: string | undefined;
-            } | {
-                id: string;
-                email: string;
-                display_name: string;
-                profile_image_url: string;
-                created_at: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
-            } | {
+            };
+            accessToken: string;
+        } | {
+            vendor: "lichess";
+            user: {
                 email: string;
                 id: string;
                 username: string;
@@ -136,14 +138,26 @@ export declare namespace Authenticate {
                     } | undefined;
                 };
             };
+            accessToken: string;
+        } | {
+            vendor: "twitch";
+            user: {
+                id: string;
+                email: string;
+                displayName: string;
+                profileImageUrl: string;
+                createdAt: import("io-ts-isodatetime/dist/lib/ISODateTime").ISODateTimeBrand;
+            };
+            accessToken: string;
         } | undefined;
+        verificationToken: string;
     } | {
         status: "ExistentUser";
         accessToken: string;
     } | {
         status: "InexistentExternalUserMatchesExistentUser:Email";
         email: string;
-        vendor: "facebook" | "lichess" | "twitch";
+        vendor: "lichess" | "twitch" | "facebook";
     }, {
         type: "VerificationFailed";
         content: undefined;

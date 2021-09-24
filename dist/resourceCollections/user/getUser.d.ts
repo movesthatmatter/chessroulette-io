@@ -273,15 +273,18 @@ export declare namespace GetUser {
     }>]>, import("io-ts").TypeC<{
         email: import("io-ts").StringC;
         externalAccounts: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-            facebook: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
-            }>]>;
-            lichess: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
-            }>]>;
-            twitch: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
-            }>]>;
+            facebook: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").StringC;
+                accessToken: import("io-ts").StringC;
+            }>]>]>;
+            lichess: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").StringC;
+                accessToken: import("io-ts").StringC;
+            }>]>]>;
+            twitch: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").StringC;
+                accessToken: import("io-ts").StringC;
+            }>]>]>;
         }>]>;
     }>]>;
     const resource: Resource<import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").NullC, import("io-ts").VoidC, import("io-ts").TypeC<{}>]>, import("io-ts").IntersectionC<[import("io-ts").IntersectionC<[import("io-ts").TypeC<{
@@ -557,15 +560,18 @@ export declare namespace GetUser {
     }>]>, import("io-ts").TypeC<{
         email: import("io-ts").StringC;
         externalAccounts: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-            facebook: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
-            }>]>;
-            lichess: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
-            }>]>;
-            twitch: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
-                userId: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").StringC]>;
-            }>]>;
+            facebook: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").StringC;
+                accessToken: import("io-ts").StringC;
+            }>]>]>;
+            lichess: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").StringC;
+                accessToken: import("io-ts").StringC;
+            }>]>]>;
+            twitch: import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").UnionC<[import("io-ts").UndefinedC, import("io-ts").TypeC<{
+                userId: import("io-ts").StringC;
+                accessToken: import("io-ts").StringC;
+            }>]>]>;
         }>]>;
     }>]>, import("io-ts").TypeC<{
         type: import("io-ts").LiteralC<"BadRequestError">;
@@ -593,13 +599,16 @@ export declare namespace GetUser {
         email: string;
         externalAccounts: {
             facebook: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
             lichess: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
             twitch: {
-                userId: string | undefined;
+                userId: string;
+                accessToken: string;
             } | undefined;
         } | undefined;
     }, {

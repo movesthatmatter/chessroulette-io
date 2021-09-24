@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.userRecord = exports.guestUserRecord = exports.registeredUserRecord = exports.userExternalAccountByVendorMap = exports.userExternalAccountRecord = exports.userInfoRecord = exports.registeredUserInfoRecord = exports.guestUserInfoRecord = void 0;
+exports.userRecord = exports.internalUserRecord = exports.guestUserRecord = exports.registeredUserRecord = exports.userExternalAccountByVendorMap = exports.userExternalAccountRecord = exports.userInfoRecord = exports.registeredUserInfoRecord = exports.guestUserInfoRecord = void 0;
 var io = require("io-ts");
 var locationRecords_1 = require("./locationRecords");
 var basicUserInfoRecord = io.type({
@@ -28,9 +28,13 @@ exports.registeredUserInfoRecord = io.intersection([
     }),
 ]);
 exports.userInfoRecord = io.union([exports.guestUserInfoRecord, exports.registeredUserInfoRecord]);
-exports.userExternalAccountRecord = io.type({
-    userId: io.union([io.undefined, io.string]),
-});
+exports.userExternalAccountRecord = io.union([
+    io.undefined,
+    io.type({
+        userId: io.string,
+        accessToken: io.string,
+    }),
+]);
 exports.userExternalAccountByVendorMap = io.type({
     facebook: io.union([io.undefined, exports.userExternalAccountRecord]),
     lichess: io.union([io.undefined, exports.userExternalAccountRecord]),
@@ -51,5 +55,6 @@ exports.guestUserRecord = io.intersection([
         sid: io.string,
     }),
 ]);
-exports.userRecord = io.union([exports.registeredUserRecord, exports.guestUserRecord]);
+exports.internalUserRecord = io.union([exports.registeredUserRecord, exports.guestUserRecord]);
+exports.userRecord = io.union([exports.registeredUserInfoRecord, exports.guestUserInfoRecord]);
 //# sourceMappingURL=userRecord.js.map

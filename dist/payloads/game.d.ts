@@ -253,6 +253,21 @@ export declare const gameRematchDenyRequestPayload: io.TypeC<{
     content: io.UndefinedC;
 }>;
 export declare type GameRematchDenyRequestPayload = io.TypeOf<typeof gameRematchDenyRequestPayload>;
+export declare const gameTakebackOfferingRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingRequest">;
+    content: io.UndefinedC;
+}>;
+export declare type GameTakebackOfferingRequestPayload = io.TypeOf<typeof gameTakebackOfferingRequestPayload>;
+export declare const gameTakebackOfferingAcceptRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingAcceptRequest">;
+    content: io.UndefinedC;
+}>;
+export declare type GameTakebackOfferingAcceptRequestPayload = io.TypeOf<typeof gameTakebackOfferingAcceptRequestPayload>;
+export declare const gameTakebackOfferingDenyRequestPayload: io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingDenyRequest">;
+    content: io.UndefinedC;
+}>;
+export declare type GameTakebackOfferingDenyRequestPayload = io.TypeOf<typeof gameTakebackOfferingDenyRequestPayload>;
 export declare const gameOfferingCancelRequestPayload: io.TypeC<{
     kind: io.LiteralC<"gameOfferingCancelRequest">;
     content: io.UndefinedC;
@@ -274,6 +289,15 @@ export declare const gameActionRequestPayload: io.UnionC<[io.TypeC<{
     content: io.UndefinedC;
 }>, io.TypeC<{
     kind: io.LiteralC<"gameDrawOfferingRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingAcceptRequest">;
+    content: io.UndefinedC;
+}>, io.TypeC<{
+    kind: io.LiteralC<"gameTakebackOfferingDenyRequest">;
     content: io.UndefinedC;
 }>, io.TypeC<{
     kind: io.LiteralC<"gameResignationRequest">;
@@ -2799,7 +2823,7 @@ export declare const joinedGameUpdatedPayload: io.TypeC<{
             black: io.NumberC;
         }>;
         pgn: io.StringC;
-        history: io.ArrayC<io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        history: io.ArrayC<io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             from: io.KeyofC<{
                 a8: undefined;
                 b8: undefined;
@@ -2941,13 +2965,159 @@ export declare const joinedGameUpdatedPayload: io.TypeC<{
             }>;
         }>]>, io.TypeC<{
             san: io.StringC;
-            color: io.UnionC<[io.KeyofC<{
-                white: null;
-            }>, io.KeyofC<{
-                black: null;
-            }>]>;
             clock: io.NumberC;
-        }>]>>;
+        }>]>, io.TypeC<{
+            color: io.KeyofC<{
+                white: null;
+            }>;
+        }>]>, io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+            from: io.KeyofC<{
+                a8: undefined;
+                b8: undefined;
+                c8: undefined;
+                d8: undefined;
+                e8: undefined;
+                f8: undefined;
+                g8: undefined;
+                h8: undefined;
+                a7: undefined;
+                b7: undefined;
+                c7: undefined;
+                d7: undefined;
+                e7: undefined;
+                f7: undefined;
+                g7: undefined;
+                h7: undefined;
+                a6: undefined;
+                b6: undefined;
+                c6: undefined;
+                d6: undefined;
+                e6: undefined;
+                f6: undefined;
+                g6: undefined;
+                h6: undefined;
+                a5: undefined;
+                b5: undefined;
+                c5: undefined;
+                d5: undefined;
+                e5: undefined;
+                f5: undefined;
+                g5: undefined;
+                h5: undefined;
+                a4: undefined;
+                b4: undefined;
+                c4: undefined;
+                d4: undefined;
+                e4: undefined;
+                f4: undefined;
+                g4: undefined;
+                h4: undefined;
+                a3: undefined;
+                b3: undefined;
+                c3: undefined;
+                d3: undefined;
+                e3: undefined;
+                f3: undefined;
+                g3: undefined;
+                h3: undefined;
+                a2: undefined;
+                b2: undefined;
+                c2: undefined;
+                d2: undefined;
+                e2: undefined;
+                f2: undefined;
+                g2: undefined;
+                h2: undefined;
+                a1: undefined;
+                b1: undefined;
+                c1: undefined;
+                d1: undefined;
+                e1: undefined;
+                f1: undefined;
+                g1: undefined;
+                h1: undefined;
+            }>;
+            to: io.KeyofC<{
+                a8: undefined;
+                b8: undefined;
+                c8: undefined;
+                d8: undefined;
+                e8: undefined;
+                f8: undefined;
+                g8: undefined;
+                h8: undefined;
+                a7: undefined;
+                b7: undefined;
+                c7: undefined;
+                d7: undefined;
+                e7: undefined;
+                f7: undefined;
+                g7: undefined;
+                h7: undefined;
+                a6: undefined;
+                b6: undefined;
+                c6: undefined;
+                d6: undefined;
+                e6: undefined;
+                f6: undefined;
+                g6: undefined;
+                h6: undefined;
+                a5: undefined;
+                b5: undefined;
+                c5: undefined;
+                d5: undefined;
+                e5: undefined;
+                f5: undefined;
+                g5: undefined;
+                h5: undefined;
+                a4: undefined;
+                b4: undefined;
+                c4: undefined;
+                d4: undefined;
+                e4: undefined;
+                f4: undefined;
+                g4: undefined;
+                h4: undefined;
+                a3: undefined;
+                b3: undefined;
+                c3: undefined;
+                d3: undefined;
+                e3: undefined;
+                f3: undefined;
+                g3: undefined;
+                h3: undefined;
+                a2: undefined;
+                b2: undefined;
+                c2: undefined;
+                d2: undefined;
+                e2: undefined;
+                f2: undefined;
+                g2: undefined;
+                h2: undefined;
+                a1: undefined;
+                b1: undefined;
+                c1: undefined;
+                d1: undefined;
+                e1: undefined;
+                f1: undefined;
+                g1: undefined;
+                h1: undefined;
+            }>;
+        }>, io.PartialC<{
+            promotion: io.KeyofC<{
+                n: undefined;
+                b: undefined;
+                r: undefined;
+                q: undefined;
+            }>;
+        }>]>, io.TypeC<{
+            san: io.StringC;
+            clock: io.NumberC;
+        }>]>, io.TypeC<{
+            color: io.KeyofC<{
+                black: null;
+            }>;
+        }>]>]>>;
         winner: io.UndefinedC;
         lastMoveBy: io.KeyofC<{
             white: io.TypeC<{
@@ -4664,7 +4834,7 @@ export declare const joinedGameUpdatedPayload: io.TypeC<{
             black: io.NumberC;
         }>;
         pgn: io.StringC;
-        history: io.ArrayC<io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        history: io.ArrayC<io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             from: io.KeyofC<{
                 a8: undefined;
                 b8: undefined;
@@ -4806,13 +4976,159 @@ export declare const joinedGameUpdatedPayload: io.TypeC<{
             }>;
         }>]>, io.TypeC<{
             san: io.StringC;
-            color: io.UnionC<[io.KeyofC<{
-                white: null;
-            }>, io.KeyofC<{
-                black: null;
-            }>]>;
             clock: io.NumberC;
-        }>]>>;
+        }>]>, io.TypeC<{
+            color: io.KeyofC<{
+                white: null;
+            }>;
+        }>]>, io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+            from: io.KeyofC<{
+                a8: undefined;
+                b8: undefined;
+                c8: undefined;
+                d8: undefined;
+                e8: undefined;
+                f8: undefined;
+                g8: undefined;
+                h8: undefined;
+                a7: undefined;
+                b7: undefined;
+                c7: undefined;
+                d7: undefined;
+                e7: undefined;
+                f7: undefined;
+                g7: undefined;
+                h7: undefined;
+                a6: undefined;
+                b6: undefined;
+                c6: undefined;
+                d6: undefined;
+                e6: undefined;
+                f6: undefined;
+                g6: undefined;
+                h6: undefined;
+                a5: undefined;
+                b5: undefined;
+                c5: undefined;
+                d5: undefined;
+                e5: undefined;
+                f5: undefined;
+                g5: undefined;
+                h5: undefined;
+                a4: undefined;
+                b4: undefined;
+                c4: undefined;
+                d4: undefined;
+                e4: undefined;
+                f4: undefined;
+                g4: undefined;
+                h4: undefined;
+                a3: undefined;
+                b3: undefined;
+                c3: undefined;
+                d3: undefined;
+                e3: undefined;
+                f3: undefined;
+                g3: undefined;
+                h3: undefined;
+                a2: undefined;
+                b2: undefined;
+                c2: undefined;
+                d2: undefined;
+                e2: undefined;
+                f2: undefined;
+                g2: undefined;
+                h2: undefined;
+                a1: undefined;
+                b1: undefined;
+                c1: undefined;
+                d1: undefined;
+                e1: undefined;
+                f1: undefined;
+                g1: undefined;
+                h1: undefined;
+            }>;
+            to: io.KeyofC<{
+                a8: undefined;
+                b8: undefined;
+                c8: undefined;
+                d8: undefined;
+                e8: undefined;
+                f8: undefined;
+                g8: undefined;
+                h8: undefined;
+                a7: undefined;
+                b7: undefined;
+                c7: undefined;
+                d7: undefined;
+                e7: undefined;
+                f7: undefined;
+                g7: undefined;
+                h7: undefined;
+                a6: undefined;
+                b6: undefined;
+                c6: undefined;
+                d6: undefined;
+                e6: undefined;
+                f6: undefined;
+                g6: undefined;
+                h6: undefined;
+                a5: undefined;
+                b5: undefined;
+                c5: undefined;
+                d5: undefined;
+                e5: undefined;
+                f5: undefined;
+                g5: undefined;
+                h5: undefined;
+                a4: undefined;
+                b4: undefined;
+                c4: undefined;
+                d4: undefined;
+                e4: undefined;
+                f4: undefined;
+                g4: undefined;
+                h4: undefined;
+                a3: undefined;
+                b3: undefined;
+                c3: undefined;
+                d3: undefined;
+                e3: undefined;
+                f3: undefined;
+                g3: undefined;
+                h3: undefined;
+                a2: undefined;
+                b2: undefined;
+                c2: undefined;
+                d2: undefined;
+                e2: undefined;
+                f2: undefined;
+                g2: undefined;
+                h2: undefined;
+                a1: undefined;
+                b1: undefined;
+                c1: undefined;
+                d1: undefined;
+                e1: undefined;
+                f1: undefined;
+                g1: undefined;
+                h1: undefined;
+            }>;
+        }>, io.PartialC<{
+            promotion: io.KeyofC<{
+                n: undefined;
+                b: undefined;
+                r: undefined;
+                q: undefined;
+            }>;
+        }>]>, io.TypeC<{
+            san: io.StringC;
+            clock: io.NumberC;
+        }>]>, io.TypeC<{
+            color: io.KeyofC<{
+                black: null;
+            }>;
+        }>]>]>>;
         winner: io.UnionC<[io.UnionC<[io.KeyofC<{
             white: null;
         }>, io.KeyofC<{
@@ -7685,7 +8001,7 @@ export declare const joinedGameUpdatedPayload: io.TypeC<{
             black: io.NumberC;
         }>;
         pgn: io.StringC;
-        history: io.ArrayC<io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+        history: io.ArrayC<io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
             from: io.KeyofC<{
                 a8: undefined;
                 b8: undefined;
@@ -7827,13 +8143,159 @@ export declare const joinedGameUpdatedPayload: io.TypeC<{
             }>;
         }>]>, io.TypeC<{
             san: io.StringC;
-            color: io.UnionC<[io.KeyofC<{
-                white: null;
-            }>, io.KeyofC<{
-                black: null;
-            }>]>;
             clock: io.NumberC;
-        }>]>>;
+        }>]>, io.TypeC<{
+            color: io.KeyofC<{
+                white: null;
+            }>;
+        }>]>, io.IntersectionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+            from: io.KeyofC<{
+                a8: undefined;
+                b8: undefined;
+                c8: undefined;
+                d8: undefined;
+                e8: undefined;
+                f8: undefined;
+                g8: undefined;
+                h8: undefined;
+                a7: undefined;
+                b7: undefined;
+                c7: undefined;
+                d7: undefined;
+                e7: undefined;
+                f7: undefined;
+                g7: undefined;
+                h7: undefined;
+                a6: undefined;
+                b6: undefined;
+                c6: undefined;
+                d6: undefined;
+                e6: undefined;
+                f6: undefined;
+                g6: undefined;
+                h6: undefined;
+                a5: undefined;
+                b5: undefined;
+                c5: undefined;
+                d5: undefined;
+                e5: undefined;
+                f5: undefined;
+                g5: undefined;
+                h5: undefined;
+                a4: undefined;
+                b4: undefined;
+                c4: undefined;
+                d4: undefined;
+                e4: undefined;
+                f4: undefined;
+                g4: undefined;
+                h4: undefined;
+                a3: undefined;
+                b3: undefined;
+                c3: undefined;
+                d3: undefined;
+                e3: undefined;
+                f3: undefined;
+                g3: undefined;
+                h3: undefined;
+                a2: undefined;
+                b2: undefined;
+                c2: undefined;
+                d2: undefined;
+                e2: undefined;
+                f2: undefined;
+                g2: undefined;
+                h2: undefined;
+                a1: undefined;
+                b1: undefined;
+                c1: undefined;
+                d1: undefined;
+                e1: undefined;
+                f1: undefined;
+                g1: undefined;
+                h1: undefined;
+            }>;
+            to: io.KeyofC<{
+                a8: undefined;
+                b8: undefined;
+                c8: undefined;
+                d8: undefined;
+                e8: undefined;
+                f8: undefined;
+                g8: undefined;
+                h8: undefined;
+                a7: undefined;
+                b7: undefined;
+                c7: undefined;
+                d7: undefined;
+                e7: undefined;
+                f7: undefined;
+                g7: undefined;
+                h7: undefined;
+                a6: undefined;
+                b6: undefined;
+                c6: undefined;
+                d6: undefined;
+                e6: undefined;
+                f6: undefined;
+                g6: undefined;
+                h6: undefined;
+                a5: undefined;
+                b5: undefined;
+                c5: undefined;
+                d5: undefined;
+                e5: undefined;
+                f5: undefined;
+                g5: undefined;
+                h5: undefined;
+                a4: undefined;
+                b4: undefined;
+                c4: undefined;
+                d4: undefined;
+                e4: undefined;
+                f4: undefined;
+                g4: undefined;
+                h4: undefined;
+                a3: undefined;
+                b3: undefined;
+                c3: undefined;
+                d3: undefined;
+                e3: undefined;
+                f3: undefined;
+                g3: undefined;
+                h3: undefined;
+                a2: undefined;
+                b2: undefined;
+                c2: undefined;
+                d2: undefined;
+                e2: undefined;
+                f2: undefined;
+                g2: undefined;
+                h2: undefined;
+                a1: undefined;
+                b1: undefined;
+                c1: undefined;
+                d1: undefined;
+                e1: undefined;
+                f1: undefined;
+                g1: undefined;
+                h1: undefined;
+            }>;
+        }>, io.PartialC<{
+            promotion: io.KeyofC<{
+                n: undefined;
+                b: undefined;
+                r: undefined;
+                q: undefined;
+            }>;
+        }>]>, io.TypeC<{
+            san: io.StringC;
+            clock: io.NumberC;
+        }>]>, io.TypeC<{
+            color: io.KeyofC<{
+                black: null;
+            }>;
+        }>]>]>>;
         winner: io.UnionC<[io.UnionC<[io.KeyofC<{
             white: null;
         }>, io.KeyofC<{

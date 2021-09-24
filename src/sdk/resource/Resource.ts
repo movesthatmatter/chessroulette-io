@@ -1,7 +1,7 @@
 import * as io from 'io-ts';
-import { AsyncErr, AsyncResultWrapper } from '../../AsyncResult/AsyncBox';
 import { toResult } from '../io';
 import { Err, Ok } from 'ts-results';
+import { AsyncResultWrapper, AsyncErr } from 'ts-async-results';
 import {
   badRequestError,
   commonResponseErrors,

@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-export declare const registerUserResponsePayload: io.UnionC<[io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+export declare const registerUserResponsePayload: io.UnionC<[io.IntersectionC<[io.TypeC<{
     id: io.StringC;
     firstName: io.StringC;
     lastName: io.StringC;
@@ -269,20 +269,7 @@ export declare const registerUserResponsePayload: io.UnionC<[io.IntersectionC<[i
             ZW: null;
         }>;
     }>, io.UndefinedC]>;
-}>]>, io.TypeC<{
-    email: io.StringC;
-    externalAccounts: io.UnionC<[io.UndefinedC, io.TypeC<{
-        facebook: io.UnionC<[io.UndefinedC, io.TypeC<{
-            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-        }>]>;
-        lichess: io.UnionC<[io.UndefinedC, io.TypeC<{
-            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-        }>]>;
-        twitch: io.UnionC<[io.UndefinedC, io.TypeC<{
-            userId: io.UnionC<[io.UndefinedC, io.StringC]>;
-        }>]>;
-    }>]>;
-}>]>, io.IntersectionC<[io.IntersectionC<[io.TypeC<{
+}>]>, io.IntersectionC<[io.TypeC<{
     id: io.StringC;
     firstName: io.StringC;
     lastName: io.StringC;
@@ -290,7 +277,5 @@ export declare const registerUserResponsePayload: io.UnionC<[io.IntersectionC<[i
     name: io.StringC;
 }>, io.TypeC<{
     isGuest: io.LiteralC<true>;
-}>]>, io.TypeC<{
-    sid: io.StringC;
 }>]>]>;
 export declare type RegisterUserResponsePayload = io.TypeOf<typeof registerUserResponsePayload>;

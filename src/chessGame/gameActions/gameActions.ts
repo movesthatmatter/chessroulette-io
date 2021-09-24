@@ -186,8 +186,11 @@ const moveAction = (
 
   const instance = getNewChessGame();
 
+  //Add if history is an empty array it will consider it as an invalid PGN
   const isValidPgn =
-    prev.state === 'pending' || instance.load_pgn(chessHistoryToSimplePgn(prev.history));
+    prev.state === 'pending' ||
+    instance.load_pgn(chessHistoryToSimplePgn(prev.history)) ||
+    prev.history.length === 0;
 
   if (!isValidPgn) {
     return prev;
@@ -203,13 +206,13 @@ const moveAction = (
 
   const nextMove: ChessHistoryMove = {
     ...restValidMove,
-    ...promotion && promotion !== 'k' && {
-      promotion,
-    },
+    ...(promotion &&
+      promotion !== 'k' && {
+        promotion,
+      }),
     color: validMove.color === 'b' ? 'black' : 'white',
     clock: nextTimeLeft,
   };
-
   const nextHistory = [...(prev.history || []), nextMove];
 
   const nextStartedGameProps = {
@@ -303,6 +306,41 @@ const resignAction = (
   };
 };
 
+const takebackAction = (
+  prev: ChessGameStateStarted,
+  { movedAt }: { movedAt: ISODateTime }
+): ChessGameStateStarted => {
+  const updateHistory = prev.history.slice(0, prev.history.length - 1);
+  const newPGN = chessHistoryToSimplePgn(updateHistory);
+  const { lastMoveBy: prevTurn = 'black' } = prev;
+  const turn = otherChessColor(prevTurn);
+
+  const movedAtAsDate = new Date(movedAt);
+
+  const lastMoveAt = new Date(prev.lastMoveAt);
+  const elapsed = movedAtAsDate.getTime() - lastMoveAt.getTime();
+  const nextTimeLeft = prev.timeLeft[turn] - elapsed;
+
+  const nextStartedGameProps = {
+    state: 'started',
+    pgn: newPGN,
+    history: updateHistory,
+    lastMoveAt: movedAt,
+    lastMoveBy: turn,
+    timeLeft: {
+      ...prev.timeLeft,
+      [turn]: nextTimeLeft,
+    },
+    winner: undefined,
+    lastActivityAt: movedAt,
+  } as const;
+
+  return {
+    ...prev,
+    ...nextStartedGameProps,
+  };
+};
+
 const drawAction = (prev: ChessGameStateStarted): ChessGameStateStopped => {
   return {
     ...prev,
@@ -318,7 +356,7 @@ export const actions = {
   draw: drawAction,
   abort: abortAction,
   statusCheck,
-
+  takeback: takebackAction,
   // @deprecate in favor of statusCheck
   timerFinished: timerFinishedAction,
 };

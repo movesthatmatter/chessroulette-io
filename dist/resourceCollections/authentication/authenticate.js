@@ -4,7 +4,6 @@ exports.Authenticate = void 0;
 var io = require("io-ts");
 var resource_1 = require("../../sdk/resource");
 var payloads_1 = require("../../payloads");
-var externalVendorsRecords_1 = require("../../records/externalVendorsRecords");
 var Authenticate;
 (function (Authenticate) {
     var internalAccountRequest = io.type({
@@ -17,26 +16,9 @@ var Authenticate;
         vendor: payloads_1.externalVendor,
         accessToken: io.string,
     });
-    var request = io.union([
-        internalAccountRequest,
-        externalAccountRequest,
-    ]);
-    var okResponseInexistentUser = io.type({
-        status: io.literal('InexistentUser'),
-        // This holds the actual information such as email, external user id, etc.
-        verificationToken: io.string,
-        external: io.union([
-            io.undefined,
-            io.type({
-                vendor: payloads_1.externalVendor,
-                user: externalVendorsRecords_1.externalUserRecord,
-            }),
-        ]),
-    });
-    var okResponseExistentUser = io.type({
-        status: io.literal('ExistentUser'),
-        accessToken: io.string,
-    });
+    var request = io.union([internalAccountRequest, externalAccountRequest]);
+    var okResponseInexistentUser = payloads_1.userCheckInexitentUserResponsePayloadData;
+    var okResponseExistentUser = payloads_1.userCheckExistentUserResponsePayloadData;
     // This means that an user wasn't found in our User Base based on
     //  the external user id, but one of it's external identifiers (only email for now)
     //  matches an existent user

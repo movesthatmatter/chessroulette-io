@@ -1,7 +1,7 @@
 // export * from './http';
 export * from './signaling';
 export * from './socket';
-
+export * from './lead';
 export * from './peer';
 export * from './user';
 export * from './game';
@@ -13,3 +13,5 @@ export * from './challenge';
 export * from './chat';
 export * from './authentication';
 export * from './vendors';
+
+export * from './analysis';
