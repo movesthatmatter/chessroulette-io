@@ -20,5 +20,3 @@ export * from './chessGame';
 export * as analysis from './analysis';
 export * as metadata from './metadata';
 export * as Resources from './resources';
-export * from './AsyncResult/AsyncBox';
-export * from 'ts-results';

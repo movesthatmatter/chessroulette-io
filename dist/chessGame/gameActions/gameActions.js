@@ -1,35 +1,7 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = void 0;
+var tslib_1 = require("tslib");
 var util_1 = require("../util/util");
 var sdk_1 = require("../sdk");
 var io_ts_isodatetime_1 = require("io-ts-isodatetime");
@@ -86,7 +58,7 @@ var prepareStartedGame = function (props) {
     // If it's white's turn that means black moved last!
     var lastMovedBy = instance.turn() === 'w' ? 'black' : 'white';
     var last2Moves = props.history.slice(-2);
-    var nextGame = __assign(__assign({}, pendingGame), { timeLeft: __assign(__assign(__assign({}, pendingGame.timeLeft), (last2Moves[0] && (_a = {},
+    var nextGame = tslib_1.__assign(tslib_1.__assign({}, pendingGame), { timeLeft: tslib_1.__assign(tslib_1.__assign(tslib_1.__assign({}, pendingGame.timeLeft), (last2Moves[0] && (_a = {},
             _a[last2Moves[0].color] = last2Moves[0].clock,
             _a))), (last2Moves[1] && (_b = {},
             _b[last2Moves[1].color] = last2Moves[1].clock,
@@ -95,9 +67,9 @@ var prepareStartedGame = function (props) {
         // TODO: Maybe in the future this should also be adjusted
         startedAt: props.lastMoveAt });
     if (instance.game_over()) {
-        return __assign(__assign({}, nextGame), { state: 'finished', winner: instance.in_draw() ? '1/2' : lastMovedBy });
+        return tslib_1.__assign(tslib_1.__assign({}, nextGame), { state: 'finished', winner: instance.in_draw() ? '1/2' : lastMovedBy });
     }
-    return __assign(__assign({}, nextGame), { state: 'started', winner: undefined });
+    return tslib_1.__assign(tslib_1.__assign({}, nextGame), { state: 'started', winner: undefined });
 };
 var moveAction = function (prev, _a) {
     var _b, _c;
@@ -115,7 +87,7 @@ var moveAction = function (prev, _a) {
     var nextTimeLeft = prev.timeLeft[turn] - elapsed;
     // Finish The Game if the time has passed
     if (prev.timeLimit !== 'untimed' && prev.state !== 'pending' && nextTimeLeft < 0) {
-        return __assign(__assign({}, prev), { state: 'finished', timeLeft: __assign(__assign({}, prev.timeLeft), (_b = {}, _b[turn] = 0, _b)), winner: prevTurn, 
+        return tslib_1.__assign(tslib_1.__assign({}, prev), { state: 'finished', timeLeft: tslib_1.__assign(tslib_1.__assign({}, prev.timeLeft), (_b = {}, _b[turn] = 0, _b)), winner: prevTurn, 
             // Last activity is the state change!
             lastActivityAt: movedAt });
     }
@@ -131,29 +103,29 @@ var moveAction = function (prev, _a) {
     if (!validMove) {
         return prev;
     }
-    var promotion = validMove.promotion, flags = validMove.flags, piece = validMove.piece, restValidMove = __rest(validMove, ["promotion", "flags", "piece"]);
-    var nextMove = __assign(__assign(__assign({}, restValidMove), (promotion &&
+    var promotion = validMove.promotion, flags = validMove.flags, piece = validMove.piece, restValidMove = tslib_1.__rest(validMove, ["promotion", "flags", "piece"]);
+    var nextMove = tslib_1.__assign(tslib_1.__assign(tslib_1.__assign({}, restValidMove), (promotion &&
         promotion !== 'k' && {
         promotion: promotion,
     })), { color: validMove.color === 'b' ? 'black' : 'white', clock: nextTimeLeft });
-    var nextHistory = __spreadArrays((prev.history || []), [nextMove]);
+    var nextHistory = tslib_1.__spreadArrays((prev.history || []), [nextMove]);
     var nextStartedGameProps = {
         state: 'started',
         pgn: instance.pgn(),
         history: nextHistory,
         lastMoveAt: movedAt,
         lastMoveBy: turn,
-        timeLeft: __assign(__assign({}, prev.timeLeft), (_c = {}, _c[turn] = nextTimeLeft, _c)),
+        timeLeft: tslib_1.__assign(tslib_1.__assign({}, prev.timeLeft), (_c = {}, _c[turn] = nextTimeLeft, _c)),
         winner: undefined,
         lastActivityAt: movedAt,
     };
     if (prev.state === 'pending') {
-        return __assign(__assign(__assign({}, prev), nextStartedGameProps), { startedAt: movedAt });
+        return tslib_1.__assign(tslib_1.__assign(tslib_1.__assign({}, prev), nextStartedGameProps), { startedAt: movedAt });
     }
     if (instance.game_over()) {
-        return __assign(__assign(__assign({}, prev), nextStartedGameProps), { state: 'finished', winner: instance.in_draw() ? '1/2' : turn, pgn: instance.pgn(), history: nextHistory, lastMoveAt: movedAt, lastMoveBy: turn, lastActivityAt: movedAt });
+        return tslib_1.__assign(tslib_1.__assign(tslib_1.__assign({}, prev), nextStartedGameProps), { state: 'finished', winner: instance.in_draw() ? '1/2' : turn, pgn: instance.pgn(), history: nextHistory, lastMoveAt: movedAt, lastMoveBy: turn, lastActivityAt: movedAt });
     }
-    return __assign(__assign({}, prev), nextStartedGameProps);
+    return tslib_1.__assign(tslib_1.__assign({}, prev), nextStartedGameProps);
 };
 var statusCheck = function (prev, at) {
     var _a;
@@ -161,20 +133,20 @@ var statusCheck = function (prev, at) {
         var turn = util_1.otherChessColor(prev.lastMoveBy);
         var delta = at.getTime() - (new Date(prev.lastMoveAt).getTime() + prev.timeLeft[turn]);
         if (delta > 0) {
-            return __assign(__assign({}, prev), { state: 'finished', winner: prev.lastMoveBy, timeLeft: __assign(__assign({}, prev.timeLeft), (_a = {}, _a[turn] = 0, _a)) });
+            return tslib_1.__assign(tslib_1.__assign({}, prev), { state: 'finished', winner: prev.lastMoveBy, timeLeft: tslib_1.__assign(tslib_1.__assign({}, prev.timeLeft), (_a = {}, _a[turn] = 0, _a)) });
         }
     }
     return prev;
 };
 // @deprecated
 var timerFinishedAction = function (prev) {
-    return __assign(__assign({}, prev), { state: 'finished', winner: util_1.otherChessColor(prev.lastMoveBy) });
+    return tslib_1.__assign(tslib_1.__assign({}, prev), { state: 'finished', winner: util_1.otherChessColor(prev.lastMoveBy) });
 };
 var abortAction = function (prev) {
-    return __assign(__assign({}, prev), { state: 'neverStarted', lastActivityAt: io_ts_isodatetime_1.toISODateTime(new Date()) });
+    return tslib_1.__assign(tslib_1.__assign({}, prev), { state: 'neverStarted', lastActivityAt: io_ts_isodatetime_1.toISODateTime(new Date()) });
 };
 var resignAction = function (prev, resigningColor) {
-    return __assign(__assign({}, prev), { state: 'stopped', winner: util_1.otherChessColor(resigningColor) });
+    return tslib_1.__assign(tslib_1.__assign({}, prev), { state: 'stopped', winner: util_1.otherChessColor(resigningColor) });
 };
 var takebackAction = function (prev, _a) {
     var _b;
@@ -193,14 +165,14 @@ var takebackAction = function (prev, _a) {
         history: updateHistory,
         lastMoveAt: movedAt,
         lastMoveBy: turn,
-        timeLeft: __assign(__assign({}, prev.timeLeft), (_b = {}, _b[turn] = nextTimeLeft, _b)),
+        timeLeft: tslib_1.__assign(tslib_1.__assign({}, prev.timeLeft), (_b = {}, _b[turn] = nextTimeLeft, _b)),
         winner: undefined,
         lastActivityAt: movedAt,
     };
-    return __assign(__assign({}, prev), nextStartedGameProps);
+    return tslib_1.__assign(tslib_1.__assign({}, prev), nextStartedGameProps);
 };
 var drawAction = function (prev) {
-    return __assign(__assign({}, prev), { state: 'stopped', winner: '1/2' });
+    return tslib_1.__assign(tslib_1.__assign({}, prev), { state: 'stopped', winner: '1/2' });
 };
 exports.actions = {
     prepareGame: prepareGameAction,

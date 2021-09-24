@@ -1,24 +1,7 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = exports.getNextAvailableParallelIndex = exports.incrementChessRecursiveHistoryIndex = exports.getBranchedHistoryLastIndex = exports.getHistoryBranch = exports.getChessHistoryMoveIndex = exports.normalizeChessHistoryIndex = exports.isChessHistoryIndexEqualTo = exports.isChessHistoryIndexLowerThan = exports.isChessHistoryIndexHigherThan = exports.decrementChessHistoryIndex = exports.incrementChessHistoryIndex = exports.getAllFollowingMoves = exports.every = exports.getAlternativeFollowingMoves = exports.getMainFollowingMove = exports.getMoveAtIndex = exports.getBranchAtIndex = exports.getChessHistoryAtIndex = exports.addMoveToChessHistoryAtNextAvailableIndex = exports.addMoveToChessHistory = exports.getNestedChessHistoryIndex = exports.isChessRecursiveHistoryIndex = void 0;
+var tslib_1 = require("tslib");
 exports.isChessRecursiveHistoryIndex = function (a) {
     return Array.isArray(a) &&
         (a.length === 2 || a.length === 3) &&
@@ -38,27 +21,27 @@ exports.addMoveToChessHistory = function (history, m, chessHistoryIndex) {
         if (currentMove.branchedHistories) {
             var _a = exports.addMoveToChessHistory(currentMove.branchedHistories[branchIndex], m, nestedBranchIndex), nextNestedHistory = _a[0], nextNestedHistoryIndex = _a[1];
             var nextBranchedHistories_1 = currentMove.branchedHistories
-                ? __spreadArrays(currentMove.branchedHistories.slice(0, branchIndex), [
+                ? tslib_1.__spreadArrays(currentMove.branchedHistories.slice(0, branchIndex), [
                     nextNestedHistory
                 ], currentMove.branchedHistories.slice(branchIndex + 1)) : [[m]];
-            var nextHistory_1 = __spreadArrays(history.slice(0, moveIndex), [
-                __assign(__assign({}, history[moveIndex]), { branchedHistories: nextBranchedHistories_1 })
+            var nextHistory_1 = tslib_1.__spreadArrays(history.slice(0, moveIndex), [
+                tslib_1.__assign(tslib_1.__assign({}, history[moveIndex]), { branchedHistories: nextBranchedHistories_1 })
             ], history.slice(moveIndex + 1));
             return [nextHistory_1, [moveIndex, branchIndex, nextNestedHistoryIndex]];
         }
         var nextBranchedHistories = [[m]];
-        var nextHistory_2 = __spreadArrays(history.slice(0, moveIndex), [
-            __assign(__assign({}, history[moveIndex]), { branchedHistories: nextBranchedHistories })
+        var nextHistory_2 = tslib_1.__spreadArrays(history.slice(0, moveIndex), [
+            tslib_1.__assign(tslib_1.__assign({}, history[moveIndex]), { branchedHistories: nextBranchedHistories })
         ], history.slice(moveIndex + 1));
         return [nextHistory_2, [moveIndex, 0, 0]];
     }
     if (typeof chessHistoryIndex === 'number' && chessHistoryIndex < history.length - 1) {
-        var nextHistory_3 = __spreadArrays(history.slice(0, chessHistoryIndex), [
-            __assign(__assign({}, history[chessHistoryIndex]), { branchedHistories: [[m]] })
+        var nextHistory_3 = tslib_1.__spreadArrays(history.slice(0, chessHistoryIndex), [
+            tslib_1.__assign(tslib_1.__assign({}, history[chessHistoryIndex]), { branchedHistories: [[m]] })
         ], history.slice(chessHistoryIndex + 1));
         return [nextHistory_3, [chessHistoryIndex, 0, 0]];
     }
-    var nextHistory = __spreadArrays((history || []), [m]);
+    var nextHistory = tslib_1.__spreadArrays((history || []), [m]);
     return [nextHistory, nextHistory.length - 1];
 };
 // Adds a new move from the given index at the next availalbe slot
@@ -103,7 +86,7 @@ exports.getChessHistoryAtIndex = function (history, index) {
     if (!move.branchedHistories[branchIndex]) {
         return history.slice(0, moveIndex + 1);
     }
-    return __spreadArrays(history.slice(0, moveIndex + 1), exports.getChessHistoryAtIndex(move.branchedHistories[branchIndex], nestedBranchedHistoryOrMoveIndex));
+    return tslib_1.__spreadArrays(history.slice(0, moveIndex + 1), exports.getChessHistoryAtIndex(move.branchedHistories[branchIndex], nestedBranchedHistoryOrMoveIndex));
 };
 exports.getBranchAtIndex = function (history, index) {
     var _a, _b;
@@ -195,7 +178,7 @@ exports.every = function (index, fn, p) {
 exports.getAllFollowingMoves = function (history, atIndex) {
     var mainFollowingMove = exports.getMainFollowingMove(history, atIndex);
     var alternativeFollowingMoves = exports.getAlternativeFollowingMoves(history, atIndex);
-    return __spreadArrays((mainFollowingMove ? [mainFollowingMove] : []), alternativeFollowingMoves);
+    return tslib_1.__spreadArrays((mainFollowingMove ? [mainFollowingMove] : []), alternativeFollowingMoves);
 };
 exports.incrementChessHistoryIndex = function (index) {
     if (index === undefined) {
@@ -267,7 +250,7 @@ exports.getHistoryBranch = function (history, fromIndex) {
     if (!move.branchedHistories[branchIndex]) {
         return history;
     }
-    return __spreadArrays(history.slice(0, moveIndex + 1), exports.getHistoryBranch(move.branchedHistories[branchIndex], nestedBranchedHistoryOrMoveIndex));
+    return tslib_1.__spreadArrays(history.slice(0, moveIndex + 1), exports.getHistoryBranch(move.branchedHistories[branchIndex], nestedBranchedHistoryOrMoveIndex));
 };
 exports.getBranchedHistoryLastIndex = function (history, fromIndex) {
     // If it's already a number (moveIndex) the actual history is the correct branch

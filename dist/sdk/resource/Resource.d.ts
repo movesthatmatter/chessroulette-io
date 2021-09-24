@@ -1,5 +1,5 @@
 import * as io from 'io-ts';
-import { AsyncErr, AsyncResultWrapper } from '../../AsyncResult/AsyncBox';
+import { AsyncResultWrapper, AsyncErr } from 'ts-async-results';
 import { CommonResponseErrors, BadRequestErrorCodec, ResourceFailureHandledError } from './errors';
 declare type BaseRequestPayloadCodec = io.Mixed;
 declare type BaseResponseOkPayloadCodec = io.Mixed;
