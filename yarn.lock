@@ -3427,10 +3427,10 @@ tr46@^2.0.2:
   dependencies:
     punycode "^2.1.1"
 
-ts-async-results@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/ts-async-results/-/ts-async-results-0.1.6.tgz#75b780c5bd228dcae11c2e9cfaca2d8c76f51755"
-  integrity sha512-ixKujRHe9bXrraRYWFG06tQLEhLRp1+gCB9jjMI8OrUorDjUdMpc0flYRnbxlXz/warE8YGPzczWb5rq99ruOQ==
+ts-async-results@0.2.0-0:
+  version "0.2.0-0"
+  resolved "https://registry.yarnpkg.com/ts-async-results/-/ts-async-results-0.2.0-0.tgz#53f55d65ed9016c6d166f5705ea802871b5ddb9a"
+  integrity sha512-rpErETjiPpiQ0gQI90rwIFrBlgJcD/OvSrOSuOwsaFIgGGMdmEG8utZQPrjKWM3sQbn2GTv4LJtzY8rtbyHjLQ==
   dependencies:
     conditional-type-checks "^1.0.5"
     ts-results "^3.0.0"
