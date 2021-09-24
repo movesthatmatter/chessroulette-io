@@ -1,17 +1,7 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.milliseconds = exports.second = exports.seconds = exports.minutes = exports.hours = void 0;
+var tslib_1 = require("tslib");
 var util_1 = require("./util");
 exports.hours = function (int) { return int * exports.minutes(60); };
 exports.minutes = function (int) { return int * exports.seconds(60); };
@@ -173,14 +163,14 @@ describe('getCapturedPiecesFromPgn', function () {
     });
     test('One Captured Pawn', function () {
         var actual = util_1.getActivePieces(util_1.simplePGNtoMoves('1. e4 d5 2. exd5'));
-        var expected = __assign(__assign({}, initialActivePieces), { black: __assign(__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1 }) });
+        var expected = tslib_1.__assign(tslib_1.__assign({}, initialActivePieces), { black: tslib_1.__assign(tslib_1.__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1 }) });
         expect(actual).toEqual(expected);
     });
     test('Captures and Promotions', function () {
         var actual = util_1.getActivePieces(util_1.simplePGNtoMoves('1. e4 d5 2. exd5 Nf6 3. d6 e5 4. d7+ Ke7 5. dxc8=Q'));
         var expected = {
-            white: __assign(__assign({}, initialActivePieces.white), { q: initialActivePieces.white.q + 1 }),
-            black: __assign(__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1, b: initialActivePieces.white.b - 1 }),
+            white: tslib_1.__assign(tslib_1.__assign({}, initialActivePieces.white), { q: initialActivePieces.white.q + 1 }),
+            black: tslib_1.__assign(tslib_1.__assign({}, initialActivePieces.black), { p: initialActivePieces.white.p - 1, b: initialActivePieces.white.b - 1 }),
         };
         expect(actual).toEqual(expected);
     });

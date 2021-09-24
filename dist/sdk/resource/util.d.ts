@@ -20,7 +20,7 @@ export declare const isBadRequestError: (e: unknown) => e is {
 };
 export declare const emptyRequest: io.UnionC<[io.UndefinedC, io.NullC, io.VoidC, io.TypeC<{}>]>;
 export declare const getValidationErrorCodec: <M extends {
-    [key: string]: io.Mixed | io.StringC | io.NumberC;
+    [key: string]: io.StringC | io.Mixed | io.NumberC;
 }>(model: M) => io.TypeC<{
     type: io.LiteralC<"ValidationErrors">;
     content: io.TypeC<{

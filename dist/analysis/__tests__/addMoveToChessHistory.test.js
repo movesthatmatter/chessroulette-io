@@ -1,23 +1,6 @@
 "use strict";
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 var game_1 = require("../../metadata/game");
 var util_1 = require("../../util");
 var analysisActions_1 = require("../analysisActions");
@@ -51,7 +34,7 @@ test('adds a further move', function () {
         clock: util_1.seconds(10),
     };
     var _a = analysisActions_1.addMoveToChessHistory(history, move), actualHistory = _a[0], actualIndex = _a[1];
-    var expectedHistory = __spreadArrays(history, [move]);
+    var expectedHistory = tslib_1.__spreadArrays(history, [move]);
     var expectedIndex = 3;
     expect(actualHistory).toEqual(expectedHistory);
     expect(actualIndex).toEqual(expectedIndex);
@@ -75,8 +58,8 @@ test('adds a single branched move as white', function () {
         displayedMoveIndex,
         branchIndex,
     ]), actualHistory = _a[0], actualIndex = _a[1];
-    var expectedHistory = __spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
-        __assign(__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [[move]] })
+    var expectedHistory = tslib_1.__spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
+        tslib_1.__assign(tslib_1.__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [[move]] })
     ], originalHistory.slice(displayedMoveIndex + 1));
     var expectedIndex = [displayedMoveIndex, branchIndex, 0];
     expect(actualHistory).toEqual(expectedHistory);
@@ -101,8 +84,8 @@ test('adds a single branched move as black', function () {
         displayedMoveIndex,
         branchIndex,
     ]), actualHistory = _a[0], actualIndex = _a[1];
-    var expectedHistory = __spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
-        __assign(__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [[move]] })
+    var expectedHistory = tslib_1.__spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
+        tslib_1.__assign(tslib_1.__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [[move]] })
     ], originalHistory.slice(displayedMoveIndex + 1));
     var expectedIndex = [displayedMoveIndex, branchIndex, 0];
     expect(actualHistory).toEqual(expectedHistory);
@@ -149,8 +132,8 @@ test('adds multiple consecutive moves in one branch', function () {
         displayedMoveIndex,
         branchIndex,
     ]), actualHistory = _a[0], actualIndex = _a[1];
-    var expectedHistory = __spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
-        __assign(__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [moves] })
+    var expectedHistory = tslib_1.__spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
+        tslib_1.__assign(tslib_1.__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [moves] })
     ], originalHistory.slice(displayedMoveIndex + 1));
     var expectedIndex = [displayedMoveIndex, branchIndex, 2];
     expect(actualHistory).toEqual(expectedHistory);
@@ -193,10 +176,10 @@ test('adds one move in a nested branch', function () {
     var nestedMoveIndex = 1;
     var branchIndex = 0;
     var _a = analysisActions_1.addMoveToChessHistory(historyWithOneBranchedMove, movesBranch1Nested[0], [rootMoveIndex, branchIndex, [nestedMoveIndex, branchIndex]]), actualHistory = _a[0], actualIndex = _a[1];
-    var expectedHistory = __spreadArrays(originalHistory.slice(0, rootMoveIndex), [
-        __assign(__assign({}, originalHistory[rootMoveIndex]), { branchedHistories: [
-                __spreadArrays(movesBranch1.slice(0, nestedMoveIndex), [
-                    __assign(__assign({}, movesBranch1[nestedMoveIndex]), { branchedHistories: [movesBranch1Nested] })
+    var expectedHistory = tslib_1.__spreadArrays(originalHistory.slice(0, rootMoveIndex), [
+        tslib_1.__assign(tslib_1.__assign({}, originalHistory[rootMoveIndex]), { branchedHistories: [
+                tslib_1.__spreadArrays(movesBranch1.slice(0, nestedMoveIndex), [
+                    tslib_1.__assign(tslib_1.__assign({}, movesBranch1[nestedMoveIndex]), { branchedHistories: [movesBranch1Nested] })
                 ], movesBranch1.slice(nestedMoveIndex + 1)),
             ] })
     ], originalHistory.slice(rootMoveIndex + 1));
@@ -258,8 +241,8 @@ test('adds one move in a parallel branch', function () {
         return analysisActions_1.addMoveToChessHistory(prev, nextMove, [displayedMoveIndex, branchIndex])[0];
     }, historyWithOneBranchedMove);
     var _a = analysisActions_1.addMoveToChessHistory(historyWithAnoterBranchedMove, movesBranch2.slice(-1)[0], [displayedMoveIndex, branchIndex]), actualHistory = _a[0], actualIndex = _a[1];
-    var expectedHistory = __spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
-        __assign(__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [movesBranch1, movesBranch2] })
+    var expectedHistory = tslib_1.__spreadArrays(originalHistory.slice(0, displayedMoveIndex), [
+        tslib_1.__assign(tslib_1.__assign({}, originalHistory[displayedMoveIndex]), { branchedHistories: [movesBranch1, movesBranch2] })
     ], originalHistory.slice(displayedMoveIndex + 1));
     var expectedIndex = [displayedMoveIndex, branchIndex, 2];
     expect(actualHistory).toEqual(expectedHistory);
